@@ -4,12 +4,11 @@ parent:
 -->
 
 <div align="center">
-  <h1> FunctionX RPC - Java REST API </h1>
+  <h1>FunctionX ($FX) - FXCore REST API library for Java</h1>
 </div>
-
-![banner](resources/functionx-logo-730-482.jpg)
-
-# Java FXCore REST API
+<p align="center">
+  <img src="https://github.com/FrenchXCore/JavaFxCoreRestAPI/blob/main/resources/logo-functionx-730x482.jpeg" />
+</p>
 
 ## Introduction
 
