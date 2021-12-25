@@ -24,4 +24,12 @@ Have a look at the example interface to understand how to use it.
 
 The RestService class includes all the methods available for query on the RPC interface.
 
+## Testing
+
+This library is not yet fully tested. So please be indulgent.
+
+## Useful to know
+
+Some latest functions of the Cosmos SDK are not yet implemented into the FXCore mainnet or testnet nodes (NFTs...) but methods are already provided.
+
 Have fun !
