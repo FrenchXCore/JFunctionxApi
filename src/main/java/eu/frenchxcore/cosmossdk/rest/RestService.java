@@ -1,22 +1,56 @@
 package eu.frenchxcore.cosmossdk.rest;
 
+import eu.frenchxcore.cosmossdk.types.tx.BroadcastMode;
+import eu.frenchxcore.cosmossdk.types.tx.OrderBy;
+import eu.frenchxcore.cosmossdk.types.tx.Tx;
 import java.math.BigInteger;
-import eu.frenchxcore.cosmossdk.types.staking.BondStatus;
-import eu.frenchxcore.cosmossdk.types.gov.ParamsType;
-import eu.frenchxcore.cosmossdk.types.gov.ProposalStatus;
-import eu.frenchxcore.cosmossdk.types.query.PageRequest;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetBlockByHeightResponse;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetLatestBlockResponse;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetLatestValidatorSetResponse;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetNodeInfoResponse;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetSyncingResponse;
-import eu.frenchxcore.cosmossdk.query.tendermint.GetValidatorSetByHeightResponse;
+import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface RestService {
+
+    ///////////////////////////////////////////////////////
+    ////////// authz
+    ///////////////////////////////////////////////////////
+
+    /**
+     * Returns list of Authorization, granted to the grantee by the granter.
+     *
+     * @param granter
+     * @param grantee
+     * @param msgTypeUrl (Optional) when set, will query only grants matching
+     * given msg type.
+     * @param pagination defines an optional pagination for the request.
+     * @return
+     */
+    @GET("/cosmos/authz/v1beta1/grants")
+    Call<eu.frenchxcore.cosmossdk.query.authz.QueryGrantsResponse> authzGrants(
+            @Path(value = "granter", encoded = false) String granter,
+            @Path(value = "grantee", encoded = false) String grantee,
+            @Path(value = "msg_type_url", encoded = false) String msgTypeUrl,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * GranterGrants returns list of Authorization, granted by granter.
+     *
+     * @param granter
+     * @param pagination defines an optional pagination for the request.
+     * @return
+     */
+    @GET("/cosmos/authz/v1beta1/grants/{granter}")
+    Call<eu.frenchxcore.cosmossdk.query.authz.QueryGrantsResponse> authzGranterGrants(
+            @Path(value = "granter", encoded = false) String granter,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// bank
+    ///////////////////////////////////////////////////////
 
     /**
      * bankBalance queries the balance of a single coin for a single account..
@@ -41,7 +75,7 @@ public interface RestService {
     @GET("/cosmos/bank/v1beta1/balances/{address}")
     Call<eu.frenchxcore.cosmossdk.query.bank.QueryAllBalancesResponse> bankAllBalances(
             @Path(value = "address", encoded = false) String address,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -51,7 +85,7 @@ public interface RestService {
      */
     @GET("/cosmos/bank/v1beta1/supply")
     Call<eu.frenchxcore.cosmossdk.query.bank.QueryTotalSupplyResponse> bankTotalSupply(
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -84,7 +118,7 @@ public interface RestService {
     @GET("/cosmos/bank/v1beta1/denoms_metadata/{denom}")
     Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomMetadataResponse> bankDenomMetadata(
             @Path(value = "denom", encoded = false) String denom,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -109,8 +143,158 @@ public interface RestService {
     @GET("/cosmos/bank/v1beta1/denoms_owners/{denom}")
     Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomOwnersResponse> bankDenomOwners(
             @Path(value = "denom", encoded = false) String denom,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
+
+    ///////////////////////////////////////////////////////
+    ////////// base.reflection
+    ///////////////////////////////////////////////////////
+
+    /**
+     * baseReflectionListAllInterfaces lists all the interfaces registered in
+     * the interface registry.
+     *
+     * @param granter
+     * @param pagination defines an optional pagination for the request.
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/interfaces")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.ListAllInterfacesResponse> baseReflectionListAllInterfaces();
+
+    /**
+     * baseReflectionListImplementations list all the concrete types that
+     * implement a given interface.
+     *
+     * @param interfaceName interface_name defines the interface to query the
+     * implementations for.
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.ListImplementationsResponse> baseReflectionListImplementations(
+            @Path(value = "interface_name", encoded = false) String interfaceName
+    );
+
+    /**
+     * baseReflectionGetAuthnDescriptor returns information on how to
+     * authenticate transactions in the application. NOTE: this RPC is still
+     * experimental and might be subject to breaking changes or removal in
+     * future releases of the cosmos-sdk.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/authn")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetAuthnDescriptorResponse> baseReflectionGetAuthnDescriptor();
+
+    /**
+     * baseReflectionGetChainDescriptor returns the description of the chain
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/chain")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetChainDescriptorResponse> baseReflectionGetChainDescriptor();
+
+    /**
+     * baseReflectionGetCodecDescriptor returns the descriptor of the codec of
+     * the application
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/codec")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetCodecDescriptorResponse> baseReflectionGetCodecDescriptor();
+
+    /**
+     * baseReflectionGetConfigurationDescriptor returns the descriptor for the
+     * sdk.Config of the application
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/configuration")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetConfigurationDescriptorResponse> baseReflectionGetConfigurationDescriptor();
+
+    /**
+     * baseReflectionGetQueryServicesDescriptor returns the available gRPC
+     * queryable services of the application
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/query_services")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetQueryServicesDescriptorResponse> baseReflectionGetQueryServicesDescriptor();
+
+    /**
+     * GetTxDescriptor returns information on the used transaction object and
+     * available msgs that can be used
+     *
+     * @return
+     */
+    @GET("/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor")
+    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetTxDescriptorResponse> baseReflectionGetTxDescriptor();
+
+    ///////////////////////////////////////////////////////
+    ////////// base.tendermint
+    ///////////////////////////////////////////////////////
+
+    /**
+     * baseTendermintGetNodeInfo queries the current node info.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/node_info")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetNodeInfoResponse> baseTendermintGetNodeInfo();
+
+    /**
+     * baseTendermintGetSyncing queries node syncing.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/syncing")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetSyncingResponse> baseTendermintGetSyncing();
+
+    /**
+     * baseTendermintGetLatestBlock returns the latest block.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/blocks/latest")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetLatestBlockResponse> baseTendermintGetLatestBlock();
+
+    /**
+     * baseTendermintGetBlockByHeight queries block for given height.
+     *
+     * @param height
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/blocks/{height}")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetBlockByHeightResponse> baseTendermintGetBlockByHeight(
+            @Path(value = "height", encoded = false) BigInteger height
+    );
+
+    /**
+     * baseTendermintGetLatestValidatorSet queries latest validator-set.
+     *
+     * @param pagination defines an optional pagination for the request.
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/latest")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetLatestValidatorSetResponse> baseTendermintGetLatestValidatorSet(
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * baseTendermintGetValidatorSetByHeight queries validator-set at a given
+     * height.
+     *
+     * @param height
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/{height}")
+    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetValidatorSetByHeightResponse> baseTendermintGetValidatorSetByHeight(
+            @Path(value = "height", encoded = false) BigInteger height,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// distribution
+    ///////////////////////////////////////////////////////
 
     /**
      * distributionParams queries params of the distribution module.
@@ -160,7 +344,7 @@ public interface RestService {
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Query(value = "starting_height", encoded = false) String startingHeight,
             @Query(value = "ending_height", encoded = false) String endingHeight,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -220,6 +404,66 @@ public interface RestService {
     @GET("/cosmos/distribution/v1beta1/community_pool")
     Call<eu.frenchxcore.cosmossdk.query.distribution.QueryCommunityPoolResponse> distributionCommunityPool();
 
+    ///////////////////////////////////////////////////////
+    ////////// evidence
+    ///////////////////////////////////////////////////////
+
+    /**
+     * evidenceEvidence queries evidence based on evidence hash.
+     * 
+     * @param evidenceHash defines the hash of the requested evidence.
+     * @return 
+     */
+    @GET("/cosmos/evidence/v1beta1/evidence/{evidence_hash}")
+    Call<eu.frenchxcore.cosmossdk.query.evidence.QueryEvidenceResponse> evidenceEvidence(
+            @Path(value = "evidence_hash", encoded = false) String evidenceHash
+    );
+
+    /**
+     * evidenceAllEvidence queries all evidence.
+     * 
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/evidence/v1beta1/evidence")
+    Call<eu.frenchxcore.cosmossdk.query.evidence.QueryAllEvidenceResponse> evidenceAllEvidence(
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// feegrant
+    ///////////////////////////////////////////////////////
+
+    /**
+     * Allowance returns fee granted to the grantee by the granter.
+     * 
+     * @param granter is the address of the user granting an allowance of their funds.
+     * @param grantee is the address of the user being granted an allowance of another user's funds.
+     * @return 
+     */
+    @GET("/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}")
+    Call<eu.frenchxcore.cosmossdk.query.feegrant.QueryAllowanceResponse> feegrantAllowance(
+            @Path(value = "granter", encoded = false) String granter,
+            @Path(value = "grantee", encoded = false) String grantee
+    );
+
+    /**
+     * Allowances returns all the grants for address.
+     * 
+     * @param grantee
+     * @param pagination
+     * @return 
+     */
+    @GET("/cosmos/feegrant/v1beta1/allowances/{grantee}")
+    Call<eu.frenchxcore.cosmossdk.query.feegrant.QueryAllowancesResponse> feegrantAllowances(
+            @Path(value = "grantee", encoded = false) String grantee,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// gov
+    ///////////////////////////////////////////////////////
+
     /**
      * govProposal queries proposal details based on ProposalID.
      *
@@ -242,10 +486,10 @@ public interface RestService {
      */
     @GET("/cosmos/gov/v1beta1/proposals}")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalsResponse> govProposals(
-            @Query(value = "proposal_status", encoded = false) ProposalStatus proposalStatus,
+            @Query(value = "proposal_status", encoded = false) eu.frenchxcore.cosmossdk.types.gov.ProposalStatus proposalStatus,
             @Query(value = "voter", encoded = false) String voter,
             @Query(value = "depositor", encoded = false) String depositor,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -271,7 +515,7 @@ public interface RestService {
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/votes")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryVotesResponse> govVotes(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -283,7 +527,7 @@ public interface RestService {
      */
     @GET("/cosmos/gov/v1beta1/params/{params_type}")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryParamsResponse> govParams(
-            @Path(value = "params_type", encoded = false) ParamsType paramsType
+            @Path(value = "params_type", encoded = false) eu.frenchxcore.cosmossdk.types.gov.ParamsType paramsType
     );
 
     /**
@@ -310,7 +554,7 @@ public interface RestService {
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryDepositsResponse> govDeposits(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -323,6 +567,164 @@ public interface RestService {
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryTallyResultResponse> govTallyResult(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId
     );
+
+    ///////////////////////////////////////////////////////
+    ////////// group
+    ///////////////////////////////////////////////////////
+
+    /**
+     * groupGroupInfo queries group info based on group id.
+     * 
+     * @param groupId is the unique ID of the group.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/group_info/{group_id}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupInfoResponse> groupGroupInfo(
+            @Path(value = "group_id", encoded = false) BigInteger groupId
+    );
+
+    /**
+     * groupGroupAccountInfo queries group account info based on group account address.
+     * 
+     * @param address is the account address of the group account.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/group_account_info/{address}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountInfoResponse> groupGroupAccountInfo(
+            @Path(value = "address", encoded = false) String address
+    );
+
+    /**
+     * groupGroupMembers queries members of a group
+     * 
+     * @param groupId is the unique ID of the group.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/group_members/{group_id}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupMembersResponse> groupGroupMembers(
+            @Path(value = "group_id", encoded = false) BigInteger groupId,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupGroupsByAdmin queries groups by admin address.
+     * 
+     * @param admin is the account address of a group's admin.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/groups_by_admin/{admin}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupsByAdminResponse> groupGroupsByAdmin(
+            @Path(value = "admin", encoded = false) String admin,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupGroupAccountsByGroup queries group accounts by group id.
+     * 
+     * @param groupId is the unique ID of the group account's group.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/group_accounts_by_group/{group_id}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountsByGroupResponse> groupGroupAccountsByGroup(
+            @Path(value = "group_id", encoded = false) BigInteger groupId,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupGroupsByAdmin queries group accounts by admin address.
+     * 
+     * @param admin is the admin address of the group account.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/group_accounts_by_admin/{admin}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountsByAdminResponse> groupGroupAccountsByAdmin(
+            @Path(value = "admin", encoded = false) String admin,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupProposal queries a proposal based on proposal id.
+     * 
+     * @param proposalId is the unique ID of a proposal.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/proposal/{proposal_id}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryProposalResponse> groupProposal(
+            @Path(value = "proposal_id", encoded = false) BigInteger proposalId
+    );
+
+    /**
+     * groupProposalsByGroupAccount queries proposals based on group account address.
+     * 
+     * @param address is the group account address related to proposals.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/proposals_by_group_account/{address}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryProposalsByGroupAccountResponse> groupProposalsByGroupAccount(
+            @Path(value = "address", encoded = false) String address,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupVoteByProposalVoter queries a vote by proposal id and voter.
+     * 
+     * @param proposalId is the unique ID of a proposal.
+     * @param voter is a proposal voter account address.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/vote_by_proposal_voter/{proposal_id}/{voter}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryVoteByProposalVoterResponse> groupVoteByProposalVoter(
+            @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
+            @Path(value = "voter", encoded = false) String voter
+    );
+
+    /**
+     * groupVotesByProposal queries a vote by proposal.
+     * 
+     * @param proposalId is the unique ID of a proposal.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/votes_by_proposal/{proposal_id}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryVotesByProposalResponse> groupVotesByProposal(
+            @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupVotesByVoter queries a vote by voter.
+     * 
+     * @param voter is a proposal voter account address.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/votes_by_voter/{voter}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryVotesByVoterResponse> groupVotesByVoter(
+            @Path(value = "voter", encoded = false) String voter,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    /**
+     * groupGroupsByMember queries groups by member address.
+     * 
+     * @param address is the group member address.
+     * @param pagination defines an optional pagination for the request.
+     * @return 
+     */
+    @GET("/cosmos/group/v1beta1/groups_by_member/{address}")
+    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupsByMemberResponse> groupGroupsByMember(
+            @Path(value = "address", encoded = false) String address,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// mint
+    ///////////////////////////////////////////////////////
 
     /**
      * mintParams returns the total set of minting parameters.
@@ -347,6 +749,10 @@ public interface RestService {
      */
     @GET("/cosmos/mint/v1beta1/annual_provisions")
     Call<eu.frenchxcore.cosmossdk.query.mint.QueryAnnualProvisionsResponse> mintAnnualProvisions();
+
+    ///////////////////////////////////////////////////////
+    ////////// nft
+    ///////////////////////////////////////////////////////
 
     /**
      * nftBalance queries the number of NFTs of a given class owned by the
@@ -432,8 +838,12 @@ public interface RestService {
      */
     @GET("/cosmos/nft/v1beta1/classes")
     Call<eu.frenchxcore.cosmossdk.query.nft.QueryClassesResponse> nftClasses(
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
+
+    ///////////////////////////////////////////////////////
+    ////////// params
+    ///////////////////////////////////////////////////////
 
     /**
      * paramsParams queries a specific parameter of a module, given its subspace
@@ -457,6 +867,10 @@ public interface RestService {
      */
     @GET("/cosmos/params/v1beta1/subspaces")
     Call<eu.frenchxcore.cosmossdk.query.params.QuerySubspacesResponse> paramsSubspaces();
+
+    ///////////////////////////////////////////////////////
+    ////////// slashing
+    ///////////////////////////////////////////////////////
 
     /**
      * slashingParams queries the parameters of slashing module
@@ -485,8 +899,12 @@ public interface RestService {
      */
     @GET("/cosmos/slashing/v1beta1/signing_infos")
     Call<eu.frenchxcore.cosmossdk.query.slashing.QuerySigningInfosResponse> slashingSigningInfos(
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
+
+    ///////////////////////////////////////////////////////
+    ////////// staking
+    ///////////////////////////////////////////////////////
 
     /**
      * stakingValidators queries all validators that match the given status.
@@ -497,8 +915,8 @@ public interface RestService {
      */
     @GET("/cosmos/staking/v1beta1/validators")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorsResponse> stakingValidators(
-            @Query(value = "status", encoded = false) BondStatus status,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "status", encoded = false) eu.frenchxcore.cosmossdk.types.staking.BondStatus status,
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -522,7 +940,7 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorDelegationsResponse> stakingValidatorDelegations(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -536,7 +954,7 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/unbonding_delegations")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorUnbondingDelegationsResponse> stakingValidatorUnbondingDelegations(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -578,7 +996,7 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/delegations/{delegator_address}")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorDelegationsResponse> stakingDelegatorDelegations(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -592,7 +1010,7 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/unbonding_delegations")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorUnbondingDelegationsResponse> stakingDelegatorUnbondingDelegations(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -611,7 +1029,7 @@ public interface RestService {
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Query(value = "src_validator_address", encoded = false) String sourceValidatorAddress,
             @Query(value = "dst_validator_address", encoded = false) String destinationValidatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -625,7 +1043,7 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/validators")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorValidatorsResponse> stakingDelegatorValidators(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+            @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination
     );
 
     /**
@@ -669,63 +1087,91 @@ public interface RestService {
     @GET("/cosmos/staking/v1beta1/params")
     Call<eu.frenchxcore.cosmossdk.query.staking.QueryParamsResponse> stakingParams();
 
-    /**
-     * tendermintGetNodeInfo queries the current node info.
-     *
-     * @return
-     */
-    @GET("/cosmos/base/tendermint/v1beta1/node_info")
-    Call<GetNodeInfoResponse> tendermintGetNodeInfo();
+    ///////////////////////////////////////////////////////
+    ////////// tx
+    ///////////////////////////////////////////////////////
 
     /**
-     * tendermintGetSyncing queries node syncing.
-     *
-     * @return
+     * txSimulate simulates executing a transaction for estimating gas usage.
+     * 
+     * @param tx Deprecated. tx is the transaction to simulate. Deprecated. Send raw tx bytes instead.
+     * @param tx_bytes is the raw transaction.
+     * @return 
      */
-    @GET("/cosmos/base/tendermint/v1beta1/syncing")
-    Call<GetSyncingResponse> tendermintGetSyncing();
-
-    /**
-     * tendermintGetLatestBlock returns the latest block.
-     *
-     * @return
-     */
-    @GET("/cosmos/base/tendermint/v1beta1/blocks/latest")
-    Call<GetLatestBlockResponse> tendermintGetLatestBlock();
-
-    /**
-     * tendermintGetBlockByHeight queries block for given height.
-     *
-     * @param height
-     * @return
-     */
-    @GET("/cosmos/base/tendermint/v1beta1/blocks/{height}")
-    Call<GetBlockByHeightResponse> tendermintGetBlockByHeight(
-            @Path(value = "height", encoded = false) BigInteger height
+    @POST("/cosmos/tx/v1beta1/simulate")
+    Call<eu.frenchxcore.cosmossdk.query.tx.SimulateResponse> txSimulate(
+        @Query(value = "tx", encoded = false) Tx tx,
+        @Query(value = "tx_bytes", encoded = false) String txBytes
     );
 
     /**
-     * tendermintGetLatestValidatorSet queries latest validator-set.
-     *
-     * @param pagination defines an optional pagination for the request.
-     * @return
+     * txGetTx fetches a tx by hash.
+     * 
+     * @param hash is the tx hash to query, encoded as a hex string.
+     * @return 
      */
-    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/latest")
-    Call<GetLatestValidatorSetResponse> tendermintGetLatestValidatorSet(
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+    @GET("/cosmos/tx/v1beta1/txs/{hash}")
+    Call<eu.frenchxcore.cosmossdk.query.tx.GetTxResponse> txGetTx(
+        @Query(value = "hash", encoded = false) String hash
     );
 
     /**
-     * tendermintGetValidatorSetByHeight queries validator-set at a given
-     * height.
-     *
-     * @param height
-     * @return
+     * txBroadcastTx broadcast transaction.
+     * 
+     * @param tx_bytes is the raw transaction.
+     * @param mode
+     * @return 
      */
-    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/{height}")
-    Call<GetValidatorSetByHeightResponse> tendermintGetValidatorSetByHeight(
-            @Path(value = "height", encoded = false) BigInteger height,
-            @Query(value = "pagination", encoded = false) PageRequest pagination
+    @POST("/cosmos/tx/v1beta1/txs")
+    Call<eu.frenchxcore.cosmossdk.query.tx.BroadcastTxResponse> txBroadcastTx(
+        @Query(value = "tx_bytes", encoded = false) String txBytes,
+        @Query(value = "mode", encoded = false) BroadcastMode mode
+    );
+
+    /**
+     * txGetTxsEvent fetches txs by event.
+     * 
+     * @return 
+     */
+    @GET("/cosmos/tx/v1beta1/txs")
+    Call<eu.frenchxcore.cosmossdk.query.tx.GetTxsEventResponse> txGetTxsEvent(
+        @Query(value = "events", encoded = false) List<String> events,
+        @Query(value = "pagination", encoded = false) eu.frenchxcore.cosmossdk.types.query.PageRequest pagination,
+        @Query(value = "order_by", encoded = false) OrderBy order_by
+    );
+
+    ///////////////////////////////////////////////////////
+    ////////// upgrade
+    ///////////////////////////////////////////////////////
+
+    /**
+     * upgradeCurrentPlan queries the current upgrade plan.
+     * 
+     * @return 
+     */
+    @GET("/cosmos/upgrade/v1beta1/current_plan")
+    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryCurrentPlanResponse> upgradeCurrentPlan();
+
+    /**
+     * upgradeAppliedPlan queries a previously applied upgrade plan by its name.
+     * 
+     * @param name name is the name of the applied plan to query for.
+     * @return 
+     */
+    @GET("/cosmos/upgrade/v1beta1/applied_plan/{name}")
+    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryAppliedPlanResponse> upgradeAppliedPlan(
+        @Path(value = "name", encoded = false) String name
+    );
+
+    /**
+     * upgradeUpgradedConsensusState queries the consensus state that will serve as a trusted kernel for the next version of this chain. It will only be stored at the last height of this chain. UpgradedConsensusState RPC not supported with legacy querier This rpc is deprecated now that IBC has its own replacement (https://github.com/cosmos/ibc-go/blob/2c880a22e9f9cc75f62b527ca94aa75ce1106001/proto/ibc/core/client/v1/query.proto#L54)
+     * 
+     * @param last_height
+     * @return 
+     */
+    @GET("/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}")
+    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryUpgradedConsensusStateResponse> upgradeUpgradedConsensusState(
+        @Path(value = "last_height", encoded = false) BigInteger lastHeight
     );
 
 }

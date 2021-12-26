@@ -20,16 +20,33 @@ This Java API allows you to interface to a FunctionX mainnet/testnet node in ord
 
 ## Quick start
 
-Have a look at the example interface to understand how to use it.
+<p>First, you need to make sure the node's API is enabled.</p>
+<p>In order to do that, go into the node's configuration directory, and modify the [app] section so that enabled=true, and restart your node.</p>
+<br/>
+<p>Have a look at the 'Example.java' class to understand how to use it.</p>
+<p>The RestService class includes all the methods available for query on any Cosmos-based RPC interface.</p>
 
-The RestService class includes all the methods available for query on the RPC interface.
+## Useful to know
+
+Some latest modules of the Cosmos SDK are not yet implemented into the FXCore mainnet or testnet nodes (authz, nft, etc.) but methods are already provided.
+When used, they will return an error.
+
+## To be achieved
+
+Implementation of "gov(v1beta2)"
 
 ## Testing
 
 This library is not yet fully tested. So please be indulgent.
 
-## Useful to know
+The following queries were tested successfully.
 
-Some latest functions of the Cosmos SDK are not yet implemented into the FXCore mainnet or testnet nodes (NFTs...) but methods are already provided.
+### Module 'slashing'
+- QuerySigningInfosResponse
+
+### Module 'staking'
+- QueryValidatorDelegationsResponse
+
+Testing of each
 
 Have fun !

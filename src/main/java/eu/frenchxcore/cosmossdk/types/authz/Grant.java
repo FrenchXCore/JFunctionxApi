@@ -1,25 +1,26 @@
-package eu.frenchxcore.cosmossdk.types.bank;
+package eu.frenchxcore.cosmossdk.types.authz;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Params defines the parameters for the bank module.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BankParams {
+public class Grant {
 
     /**
      * 
      */
-    @JsonProperty("send_enabled")
-    public List<SendEnabled> sendEnabled;
+    @JsonProperty("authorization")
+    public Map<String, String> authorization;
     
     /**
      * 
      */
-    @JsonProperty("default_send_enabled")
-    public Boolean defaultSendEnabled;
+    @JsonProperty("expiration")
+    public Date expiration;
 
 }
