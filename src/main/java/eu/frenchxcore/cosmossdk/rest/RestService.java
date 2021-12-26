@@ -1,10 +1,16 @@
 package eu.frenchxcore.cosmossdk.rest;
 
 import java.math.BigInteger;
-import eu.frenchxcore.cosmossdk.types._base.BondStatus;
-import eu.frenchxcore.cosmossdk.types._base.ParamsType;
-import eu.frenchxcore.cosmossdk.types._base.ProposalStatus;
-import eu.frenchxcore.cosmossdk.types._base.query.PageRequest;
+import eu.frenchxcore.cosmossdk.types.staking.BondStatus;
+import eu.frenchxcore.cosmossdk.types.gov.ParamsType;
+import eu.frenchxcore.cosmossdk.types.gov.ProposalStatus;
+import eu.frenchxcore.cosmossdk.types.query.PageRequest;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetBlockByHeightResponse;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetLatestBlockResponse;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetLatestValidatorSetResponse;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetNodeInfoResponse;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetSyncingResponse;
+import eu.frenchxcore.cosmossdk.query.tendermint.GetValidatorSetByHeightResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -20,7 +26,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/balances/{address}/{denom}")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryBalanceResponse> bankBalance(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryBalanceResponse> bankBalance(
             @Path(value = "address", encoded = false) String address,
             @Path(value = "denom", encoded = false) String denom
     );
@@ -33,7 +39,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/balances/{address}")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryAllBalancesResponse> bankAllBalances(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryAllBalancesResponse> bankAllBalances(
             @Path(value = "address", encoded = false) String address,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -44,7 +50,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/supply")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryTotalSupplyResponse> bankTotalSupply(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryTotalSupplyResponse> bankTotalSupply(
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
 
@@ -55,7 +61,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/supply/{denom}")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QuerySupplyOfResponse> bankSupplyOf(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QuerySupplyOfResponse> bankSupplyOf(
             @Path(value = "denom", encoded = false) String denom
     );
 
@@ -65,7 +71,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryParamsResponse> bankParams();
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryParamsResponse> bankParams();
 
     /**
      * bankDenomsMetadata queries the client metadata of a given coin
@@ -76,7 +82,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/denoms_metadata/{denom}")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryDenomMetadataResponse> bankDenomMetadata(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomMetadataResponse> bankDenomMetadata(
             @Path(value = "denom", encoded = false) String denom,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -89,7 +95,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/denoms_metadata")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryDenomsMetadataResponse> bankDenomsMetadata();
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomsMetadataResponse> bankDenomsMetadata();
 
     /**
      * bankDenomOwners queries for all account addresses that own a particular
@@ -101,7 +107,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/bank/v1beta1/denoms_owners/{denom}")
-    Call<eu.frenchxcore.cosmossdk.types.bank.QueryDenomOwnersResponse> bankDenomOwners(
+    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomOwnersResponse> bankDenomOwners(
             @Path(value = "denom", encoded = false) String denom,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -112,7 +118,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryParamsResponse> distributionParams();
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryParamsResponse> distributionParams();
 
     /**
      * distributionValidatorOutstandingRewards queries rewards of a validator
@@ -122,7 +128,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryValidatorOutstandingRewardsResponse> distributionValidatorOutstandingRewards(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorOutstandingRewardsResponse> distributionValidatorOutstandingRewards(
             @Path(value = "validator_address", encoded = false) String validatorAddress
     );
 
@@ -134,7 +140,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/commission")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryValidatorCommissionResponse> distributionValidatorCommission(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorCommissionResponse> distributionValidatorCommission(
             @Path(value = "validator_address", encoded = false) String validatorAddress
     );
 
@@ -150,7 +156,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/slashes")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryValidatorSlashesResponse> distributionValidatorSlashes(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorSlashesResponse> distributionValidatorSlashes(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Query(value = "starting_height", encoded = false) String startingHeight,
             @Query(value = "ending_height", encoded = false) String endingHeight,
@@ -166,7 +172,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryDelegationRewardsResponse> distributionDelegationRewards(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegationRewardsResponse> distributionDelegationRewards(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Path(value = "validator_address", encoded = false) String validatorAddress
     );
@@ -179,7 +185,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryDelegationTotalRewardsResponse> distributionDelegationTotalRewards(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegationTotalRewardsResponse> distributionDelegationTotalRewards(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress
     );
 
@@ -190,7 +196,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryDelegatorValidatorsResponse> distributionDelegatorValidators(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegatorValidatorsResponse> distributionDelegatorValidators(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress
     );
 
@@ -202,7 +208,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryDelegatorWithdrawAddressResponse> distributionDelegatorWithdrawAddress(
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegatorWithdrawAddressResponse> distributionDelegatorWithdrawAddress(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress
     );
 
@@ -212,7 +218,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/distribution/v1beta1/community_pool")
-    Call<eu.frenchxcore.cosmossdk.types.distribution.QueryCommunityPoolResponse> distributionCommunityPool();
+    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryCommunityPoolResponse> distributionCommunityPool();
 
     /**
      * govProposal queries proposal details based on ProposalID.
@@ -221,7 +227,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryProposalResponse> govProposal(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalResponse> govProposal(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId
     );
 
@@ -235,7 +241,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals}")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryProposalsResponse> govProposals(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalsResponse> govProposals(
             @Query(value = "proposal_status", encoded = false) ProposalStatus proposalStatus,
             @Query(value = "voter", encoded = false) String voter,
             @Query(value = "depositor", encoded = false) String depositor,
@@ -250,7 +256,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryVoteResponse> govVote(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryVoteResponse> govVote(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
             @Path(value = "voter", encoded = false) String voter
     );
@@ -263,7 +269,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/votes")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryVotesResponse> govVotes(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryVotesResponse> govVotes(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -276,7 +282,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/params/{params_type}")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryParamsResponse> govParams(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryParamsResponse> govParams(
             @Path(value = "params_type", encoded = false) ParamsType paramsType
     );
 
@@ -289,7 +295,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryDepositResponse> govDeposit(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryDepositResponse> govDeposit(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
             @Path(value = "depositor", encoded = false) String depositor
     );
@@ -302,7 +308,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryDepositsResponse> govDeposits(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryDepositsResponse> govDeposits(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -314,7 +320,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/tally")
-    Call<eu.frenchxcore.cosmossdk.types.gov.QueryTallyResultResponse> govTallyResult(
+    Call<eu.frenchxcore.cosmossdk.query.gov.QueryTallyResultResponse> govTallyResult(
             @Path(value = "proposal_id", encoded = false) BigInteger proposalId
     );
 
@@ -324,7 +330,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.types.mint.QueryParamsResponse> mintParams();
+    Call<eu.frenchxcore.cosmossdk.query.mint.QueryParamsResponse> mintParams();
 
     /**
      * mintInflation returns the current minting inflation value.
@@ -332,7 +338,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/inflation")
-    Call<eu.frenchxcore.cosmossdk.types.mint.QueryInflationResponse> mintInflation();
+    Call<eu.frenchxcore.cosmossdk.query.mint.QueryInflationResponse> mintInflation();
 
     /**
      * mintAnnualProvisions current minting annual provisions value.
@@ -340,7 +346,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/annual_provisions")
-    Call<eu.frenchxcore.cosmossdk.types.mint.QueryAnnualProvisionsResponse> mintAnnualProvisions();
+    Call<eu.frenchxcore.cosmossdk.query.mint.QueryAnnualProvisionsResponse> mintAnnualProvisions();
 
     /**
      * nftBalance queries the number of NFTs of a given class owned by the
@@ -351,7 +357,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/balance/{owner]/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryBalanceResponse> nftBalance(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryBalanceResponse> nftBalance(
             @Path(value = "owner", encoded = false) String owner,
             @Path(value = "class_id", encoded = false) String classId
     );
@@ -365,7 +371,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/owner/{class_id}/{id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryOwnerResponse> nftOwner(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryOwnerResponse> nftOwner(
             @Path(value = "class_id", encoded = false) String classId,
             @Path(value = "id", encoded = false) String id
     );
@@ -378,7 +384,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/supply/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QuerySupplyResponse> nftSupply(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QuerySupplyResponse> nftSupply(
             @Path(value = "class_id", encoded = false) String classId
     );
 
@@ -390,7 +396,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/nfts/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryNFTsOfClassResponse> nftNFTsOfClass(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryNFTsOfClassResponse> nftNFTsOfClass(
             @Path(value = "class_id", encoded = false) String classId
     );
 
@@ -402,7 +408,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/nfts/[class_id}/{id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryNFTResponse> nftNFT(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryNFTResponse> nftNFT(
             @Path(value = "class_id", encoded = false) String classId,
             @Path(value = "id", encoded = false) String id
     );
@@ -414,7 +420,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/classes/[class_id}")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryClassResponse> nftClass(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryClassResponse> nftClass(
             @Path(value = "class_id", encoded = false) String classId
     );
 
@@ -425,7 +431,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/classes")
-    Call<eu.frenchxcore.cosmossdk.types.nft.QueryClassesResponse> nftClasses(
+    Call<eu.frenchxcore.cosmossdk.query.nft.QueryClassesResponse> nftClasses(
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
 
@@ -438,7 +444,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/params/v1beta1/params/{subspace}/{key}")
-    Call<eu.frenchxcore.cosmossdk.types.params.QueryParamsResponse> paramsParams(
+    Call<eu.frenchxcore.cosmossdk.query.params.QueryParamsResponse> paramsParams(
             @Path(value = "subspace", encoded = false) String subspace,
             @Path(value = "key", encoded = false) String key
     );
@@ -450,7 +456,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/params/v1beta1/subspaces")
-    Call<eu.frenchxcore.cosmossdk.types.params.QuerySubspacesResponse> paramsSubspaces();
+    Call<eu.frenchxcore.cosmossdk.query.params.QuerySubspacesResponse> paramsSubspaces();
 
     /**
      * slashingParams queries the parameters of slashing module
@@ -458,7 +464,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.types.slashing.QueryParamsResponse> slashingParams();
+    Call<eu.frenchxcore.cosmossdk.query.slashing.QueryParamsResponse> slashingParams();
 
     /**
      * slashingSigningInfo queries the signing info of given cons address
@@ -467,7 +473,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/signing_infos/{cons_address}")
-    Call<eu.frenchxcore.cosmossdk.types.slashing.QuerySigningInfoResponse> slashingSigningInfo(
+    Call<eu.frenchxcore.cosmossdk.query.slashing.QuerySigningInfoResponse> slashingSigningInfo(
             @Path(value = "cons_address", encoded = false) String consAddress
     );
 
@@ -478,7 +484,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/signing_infos")
-    Call<eu.frenchxcore.cosmossdk.types.slashing.QuerySigningInfosResponse> slashingSigningInfos(
+    Call<eu.frenchxcore.cosmossdk.query.slashing.QuerySigningInfosResponse> slashingSigningInfos(
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
 
@@ -490,7 +496,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryValidatorsResponse> stakingValidators(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorsResponse> stakingValidators(
             @Query(value = "status", encoded = false) BondStatus status,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -502,7 +508,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_addr}")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryValidatorResponse> stakingValidator(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorResponse> stakingValidator(
             @Query(value = "validator_addr", encoded = false) String validatorAddress
     );
 
@@ -514,7 +520,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryValidatorDelegationsResponse> stakingValidatorDelegations(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorDelegationsResponse> stakingValidatorDelegations(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -528,7 +534,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/unbonding_delegations")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryValidatorUnbondingDelegationsResponse> stakingValidatorUnbondingDelegations(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorUnbondingDelegationsResponse> stakingValidatorUnbondingDelegations(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -542,7 +548,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations/{delegator_address}")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryDelegationResponse> stakingDelegation(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegationResponse> stakingDelegation(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Path(value = "delegator_address", encoded = false) String delegatorAddress
     );
@@ -556,7 +562,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations/{delegator_address}/unbonding_delegation")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryUnbondingDelegationResponse> stakingUnbondingDelegation(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryUnbondingDelegationResponse> stakingUnbondingDelegation(
             @Path(value = "validator_address", encoded = false) String validatorAddress,
             @Path(value = "delegator_address", encoded = false) String delegatorAddress
     );
@@ -570,7 +576,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegations/{delegator_address}")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryDelegatorDelegationsResponse> stakingDelegatorDelegations(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorDelegationsResponse> stakingDelegatorDelegations(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -584,7 +590,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/unbonding_delegations")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryDelegatorUnbondingDelegationsResponse> stakingDelegatorUnbondingDelegations(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorUnbondingDelegationsResponse> stakingDelegatorUnbondingDelegations(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -601,7 +607,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/redelegations")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryRedelegationsResponse> stakingRedelegations(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryRedelegationsResponse> stakingRedelegations(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Query(value = "src_validator_address", encoded = false) String sourceValidatorAddress,
             @Query(value = "dst_validator_address", encoded = false) String destinationValidatorAddress,
@@ -617,7 +623,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/validators")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryDelegatorValidatorsResponse> stakingDelegatorValidators(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorValidatorsResponse> stakingDelegatorValidators(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Query(value = "pagination", encoded = false) PageRequest pagination
     );
@@ -631,7 +637,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/validators/{validator_address}")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryDelegatorValidatorResponse> stakingDelegatorValidator(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorValidatorResponse> stakingDelegatorValidator(
             @Path(value = "delegator_address", encoded = false) String delegatorAddress,
             @Path(value = "validator_address", encoded = false) String validatorAddress
     );
@@ -643,7 +649,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/historical_info/{height}")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryHistoricalInfoResponse> stakingHistoricalInfo(
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryHistoricalInfoResponse> stakingHistoricalInfo(
             @Path(value = "height", encoded = false) BigInteger height
     );
 
@@ -653,7 +659,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/pool")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryPoolResponse> stakingPool();
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryPoolResponse> stakingPool();
 
     /**
      * stakingParameters queries the staking parameters.
@@ -661,6 +667,65 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.types.staking.QueryParamsResponse> stakingParams();
+    Call<eu.frenchxcore.cosmossdk.query.staking.QueryParamsResponse> stakingParams();
+
+    /**
+     * tendermintGetNodeInfo queries the current node info.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/node_info")
+    Call<GetNodeInfoResponse> tendermintGetNodeInfo();
+
+    /**
+     * tendermintGetSyncing queries node syncing.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/syncing")
+    Call<GetSyncingResponse> tendermintGetSyncing();
+
+    /**
+     * tendermintGetLatestBlock returns the latest block.
+     *
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/blocks/latest")
+    Call<GetLatestBlockResponse> tendermintGetLatestBlock();
+
+    /**
+     * tendermintGetBlockByHeight queries block for given height.
+     *
+     * @param height
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/blocks/{height}")
+    Call<GetBlockByHeightResponse> tendermintGetBlockByHeight(
+            @Path(value = "height", encoded = false) BigInteger height
+    );
+
+    /**
+     * tendermintGetLatestValidatorSet queries latest validator-set.
+     *
+     * @param pagination defines an optional pagination for the request.
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/latest")
+    Call<GetLatestValidatorSetResponse> tendermintGetLatestValidatorSet(
+            @Query(value = "pagination", encoded = false) PageRequest pagination
+    );
+
+    /**
+     * tendermintGetValidatorSetByHeight queries validator-set at a given
+     * height.
+     *
+     * @param height
+     * @return
+     */
+    @GET("/cosmos/base/tendermint/v1beta1/validatorsets/{height}")
+    Call<GetValidatorSetByHeightResponse> tendermintGetValidatorSetByHeight(
+            @Path(value = "height", encoded = false) BigInteger height,
+            @Query(value = "pagination", encoded = false) PageRequest pagination
+    );
 
 }
