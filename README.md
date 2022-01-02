@@ -21,7 +21,7 @@ This Java API allows you to interface to a FunctionX mainnet/testnet node in ord
 ## Quick start
 
 <p>First, you need to make sure the node's API is enabled.</p>
-<p>In order to do that, go into the node's configuration directory, and modify the [app] section so that enabled=true, and restart your node.</p>
+<p>In order to do that, go into the node's configuration directory (usually ~/.fxcore/config), and modify the 'app.toml' file in the [app] section so that enable=true, and restart your node (`sudo systemctl restart fxcored`).</p>
 <br/>
 <p>Have a look at the 'Example.java' class to understand how to use it.</p>
 <p>The RestService class includes all the methods available for query on any Cosmos-based RPC interface.</p>
@@ -29,24 +29,43 @@ This Java API allows you to interface to a FunctionX mainnet/testnet node in ord
 ## Useful to know
 
 Some latest modules of the Cosmos SDK are not yet implemented into the FXCore mainnet or testnet nodes (authz, nft, etc.) but methods are already provided.
-When used, they will return an error.
+When used, they might return an error ("not implemented").
 
 ## To be achieved
 
-Implementation of "gov(v1beta2)"
+Implementation of error messages and full unmarshalling of all messages.
 
 ## Testing
 
 This library is not yet fully tested. So please be indulgent.
 
-The following queries were tested successfully.
+The following methods were tested successfully.
+
+### Module 'bank'
+- bankDenomOwners(...) -> NOT IMPLEMENTED
+
+### Module 'base.tendermint'
++ baseTendermintNodeInfo(...)
++ baseTendermintSyncing(...)
++ baseTendermintLatestBlock(...)
+
+### Module 'distribution'
++ distributionValidatorCommission(...)
 
 ### Module 'slashing'
-- QuerySigningInfosResponse
++ slashingParams()
++ slashingSigningInfos(...)
 
 ### Module 'staking'
-- QueryValidatorDelegationsResponse
++ stakingPool(...)
++ stakingValidators(...)
++ stakingValidatorDelegations(...)
 
-Testing of each
+## Updates
+- v0.1.0 : initial draft version
+- v0.2.0 : refactoring of the packages - addition of the tendermint module - fix : dates
+- v0.3.0 : addition of the following modules: authz, evidence, feegrant, group, tx, upgrade
+- v0.4.0 : fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
+           added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
 
 Have fun !

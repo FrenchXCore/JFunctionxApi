@@ -17,7 +17,7 @@ public class SlashingParams {
     public BigDecimal minSignedPerWindow;
     
     @JsonProperty("downtime_jail_duration")
-    public String downtimeJailDuration;
+    public String downtimeJailDuration; //Duration
     
     @JsonProperty("slash_fraction_double_sign")
     public BigDecimal slashFractionDoubleSign;

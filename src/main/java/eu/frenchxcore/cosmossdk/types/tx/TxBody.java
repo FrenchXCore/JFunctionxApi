@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Map;
 
 /**
  * TxBody is the body of a transaction that all signers sign over.
@@ -15,7 +16,7 @@ public class TxBody {
      * messages is a list of messages to be executed. The required signers of those messages define the number and order of elements in AuthInfo's signer_infos and Tx's signatures. Each required signer address is added to the list only the first time it occurs. By convention, the first required signer (usually from the first message) is referred to as the primary signer and pays the fee for the whole transaction.
      */
     @JsonProperty("messages")
-    public List<String> messages;
+    public List<Map<String,Object>> messages;
 
     /**
      * memo is any arbitrary note/comment to be added to the transaction. WARNING: in clients, any publicly exposed text should not be called memo, but should be called note instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
@@ -33,12 +34,12 @@ public class TxBody {
      * extensionOptions are arbitrary options that can be added by chains when the default options are not sufficient. If any of these are present and can't be handled, the transaction will be rejected
      */
     @JsonProperty("extension_options")
-    public List<String> extensionOptions;
+    public List<Map<String,Object>> extensionOptions;
 
     /**
      * nonCriticalExtensionOptions are arbitrary options that can be added by chains when the default options are not sufficient. If any of these are present and can't be handled, they will be ignored
      */
     @JsonProperty("non_critical_extension_options")
-    public List<String> nonCriticalExtensionOptions;
+    public List<Map<String,Object>> nonCriticalExtensionOptions;
 
 }

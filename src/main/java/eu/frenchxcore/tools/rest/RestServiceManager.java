@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.rest;
+package eu.frenchxcore.tools.rest;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;

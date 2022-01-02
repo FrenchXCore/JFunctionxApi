@@ -2,7 +2,6 @@ package eu.frenchxcore.cosmossdk.types.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StakingParams {
@@ -11,7 +10,7 @@ public class StakingParams {
      * unbonding_time is the time duration of unbonding.
      */
     @JsonProperty("unbonding_time")
-    public Date unbondingTime;
+    public String unbondingTime;    //Duration
 
     /**
      * max_validators is the maximum number of validators.

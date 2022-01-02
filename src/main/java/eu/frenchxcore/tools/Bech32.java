@@ -2,21 +2,64 @@ package eu.frenchxcore.tools;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Base64;
 
 /**
  * @author FrenchXCore-1
  */
 public class Bech32 {
 
+    private static Base64.Decoder Base64Decoder = Base64.getDecoder();
+    private static MessageDigest SHA256;
+
+    private final static String CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
+
+    private final static int[] GEN = new int[] { 0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3 };
+    
+    static {
+        try {
+            SHA256 = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException ex) {
+            throw new IllegalArgumentException(ex);
+        }
+    }
+    
     public static final class Bech {
         public String prefix;
         public byte[] data;
     }
     
-    public final static String CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
-
-    public final static int[] GEN = new int[] { 0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3 };
+    public static byte[] base64Decode(String pubKey) {
+        return Base64Decoder.decode(pubKey);
+    }
+    
+    public static byte[] convertPublicKey(String b64PubKey) {
+        SHA256.reset();
+        SHA256.update(Base64Decoder.decode(b64PubKey));
+        return Arrays.copyOfRange(SHA256.digest(), 0, 20);
+    }
+    
+    public static String getTransactionHashToAscii(String b64Tx) {
+        byte[] hash = getTransactionHash(b64Tx);
+        return toHexAscii(hash);
+    }
+    
+    public static byte[] getTransactionHash(String b64Tx) {
+        SHA256.reset();
+        SHA256.update(Base64Decoder.decode(b64Tx));
+        return SHA256.digest();
+    }
+    
+    public static String toHexAscii(byte[] ba) {
+        StringBuilder ret = new StringBuilder();
+        for (byte i : ba) {
+            ret.append(String.format("%02X", i));
+        }
+        return ret.toString();
+    }
     
     /**
      * ConvertAndEncode converts from a base64 encoded byte string to base32 encoded byte string and then to bech32.

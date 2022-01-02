@@ -2,7 +2,6 @@ package eu.frenchxcore.cosmossdk.types.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Duration;
 
 /**
  * ThresholdDecisionPolicy implements the DecisionPolicy interface
@@ -22,6 +21,6 @@ public class ThresholdDecisionPolicy {
      * voting period Within this times votes and exec messages can be submitted.
      */
     @JsonProperty("timeout")
-    public Duration timeout;
+    public String timeout;    //Duration
 
 }

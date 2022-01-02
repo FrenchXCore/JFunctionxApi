@@ -3,7 +3,6 @@ package eu.frenchxcore.cosmossdk.types.feegrant;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.cosmossdk.types.Coin;
-import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class PeriodicAllowance {
      * period specifies the time duration in which period_spend_limit coins can be spent before that allowance is reset
      */
     @JsonProperty("duration")
-    public Duration duration;
+    public String duration; //Duration
 
     /**
      * period_spend_limit specifies the maximum number of coins that can be spent in the period

@@ -2,6 +2,7 @@ package eu.frenchxcore.cosmossdk.types.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /**
  * Tx is the standard type used for broadcasting transactions.
@@ -28,6 +29,6 @@ public class Tx {
      * like public key and signing mode by position.
      */
     @JsonProperty("signatures")
-    public String signatures;
+    public List<String> signatures;
 
 }

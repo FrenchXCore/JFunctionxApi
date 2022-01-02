@@ -3,6 +3,7 @@ package eu.frenchxcore.cosmossdk.types.tx;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigInteger;
+import java.util.Map;
 
 /**
  * SignerInfo describes the public key and signing mode of a single top-level
@@ -17,7 +18,7 @@ public class SignerInfo {
      * \ signer address for this position and lookup the public key.
      */
     @JsonProperty("public_key")
-    public String publicKey;
+    public Map<String,Object> publicKey;
 
     /**
      * modeInfo describes the signing mode of the signer and is a nested

@@ -2,6 +2,7 @@ package eu.frenchxcore.cosmossdk.types.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import eu.frenchxcore.cosmossdk.types.base.PublicKey;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ public class Validator {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      */
     @JsonProperty("consensus_pubkey")
-    public String consensusPubkey;
+    public PublicKey consensusPubkey;
     
     /**
      * jailed defined whether the validator has been jailed from bonded status or not.

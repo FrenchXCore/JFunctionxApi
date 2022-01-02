@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pool {
 
-    @JsonProperty("unbonded_tokens")
+    @JsonProperty("not_bonded_tokens")
     public String unbondedTokens;
     
     @JsonProperty("bonded_tokens")

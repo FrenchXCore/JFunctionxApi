@@ -4,8 +4,8 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
-import eu.frenchxcore.cosmossdk.rest.RestService;
-import eu.frenchxcore.cosmossdk.rest.RestServiceManager;
+import eu.frenchxcore.tools.rest.RestService;
+import eu.frenchxcore.tools.rest.RestServiceManager;
 import eu.frenchxcore.tools.XLogger;
 
 public class FxCoreApi {
