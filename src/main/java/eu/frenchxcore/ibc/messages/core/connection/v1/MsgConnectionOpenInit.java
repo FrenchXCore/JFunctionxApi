@@ -16,25 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.messages.nft;
+package eu.frenchxcore.ibc.messages.core.connection.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.ibc.types.core.connection.v1.Counterparty;
+import eu.frenchxcore.ibc.types.core.connection.v1.Version;
+import java.math.BigInteger;
 
 /**
- *
+ * MsgConnectionOpenInit defines the msg sent by an account on Chain A to
+ * initialize a connection with Chain B.
  */
-public class MsgSend {
-    
-    @JsonProperty("class_id")
-    public String classId;
-    
-    @JsonProperty("id")
-    public String id;
-    
-    @JsonProperty("sender")
-    public String sender;
-    
-    @JsonProperty("receiver")
-    public String receiver;
-    
+@JsonTypeName("/ibc.core.connection.v1.MsgConnectionOpenInit")
+public class MsgConnectionOpenInit extends BaseMessage {
+
+    @JsonProperty("client_id")
+    public String clientId;
+
+    @JsonProperty("counterparty")
+    public Counterparty counterparty;
+
+    @JsonProperty("version")
+    public Version version;
+
+    @JsonProperty("delay_period")
+    public BigInteger delayPeriod;
+
+    @JsonProperty("signer")
+    public String signer;
+
 }

@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgOracleSetConfirm {
+@JsonTypeName("/fx.gravity.crosschain.v1.MsgOracleSetConfirm")
+public class MsgOracleSetConfirm extends BaseMessage {
     
     @JsonProperty("nonce")
     public BigInteger nonce;

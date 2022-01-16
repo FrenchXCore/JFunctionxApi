@@ -19,11 +19,14 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 
 /**
  *
  */
-public class MsgRequestBatch {
+@JsonTypeName("/fx.gravity.v1.MsgRequestBatch")
+public class MsgRequestBatch extends BaseMessage {
     
     @JsonProperty("sender")
     public String sender;

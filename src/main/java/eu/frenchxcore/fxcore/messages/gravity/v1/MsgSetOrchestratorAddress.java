@@ -19,19 +19,22 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 
 /**
  *
  */
-public class MsgSetOrchestratorAddress {
-    
+@JsonTypeName("/fx.gravity.v1.MsgSetOrchestratorAddress")
+public class MsgSetOrchestratorAddress extends BaseMessage {
+
     @JsonProperty("validator")
     public String validator;
-    
+
     @JsonProperty("orchestrator")
     public String orchestrator;
-    
+
     @JsonProperty("eth_address")
     public String ethAddress;
-    
+
 }

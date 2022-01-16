@@ -19,6 +19,8 @@
 package eu.frenchxcore.cosmossdk.messages.gov.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +28,8 @@ import java.util.Map;
 /**
  *
  */
-public class MsgSubmitProposal {
+@JsonTypeName("/cosmos.gov.v1beta1.MsgSubmitProposal")
+public class MsgSubmitProposal extends BaseMessage {
     
     @JsonProperty("content")
     public Map<String, Object> content;

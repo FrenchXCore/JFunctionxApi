@@ -1,5 +1,6 @@
 package eu.frenchxcore.cosmossdk.types.tx;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -10,6 +11,9 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tx {
 
+    @JsonIgnore
+    public String hash;
+    
     /**
      * body is the processable content of the transaction
      */

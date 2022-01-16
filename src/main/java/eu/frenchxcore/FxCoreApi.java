@@ -14,6 +14,7 @@ public class FxCoreApi {
     private final static Map<String, FxCoreApi> instances = new HashMap<>();
     
     public static FxCoreApi getInstance(String ip, int port) {
+        XLogger.getMainLogger().trace("Creating new FxCoreApi instance on " + ip + ":" + port);
         FxCoreApi ret = null;
         try {
             InetAddress ia = InetAddress.getByName(ip);

@@ -19,13 +19,16 @@
 package eu.frenchxcore.cosmossdk.messages.gov.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.gov.VoteOption;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgVote {
+@JsonTypeName("/cosmos.gov.v1beta1.MsgVote")
+public class MsgVote extends BaseMessage {
     
     @JsonProperty("proposal_id")
     public BigInteger proposalId;

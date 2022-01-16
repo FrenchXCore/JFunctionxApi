@@ -19,6 +19,8 @@
 package eu.frenchxcore.cosmossdk.messages.bank.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.bank.Input;
 import eu.frenchxcore.cosmossdk.types.bank.Output;
 import java.util.List;
@@ -26,7 +28,8 @@ import java.util.List;
 /**
  *
  */
-public class MsgMultiSend {
+@JsonTypeName("/cosmos.bank.v1beta1.MsgMultiSend")
+public class MsgMultiSend extends BaseMessage {
     
     @JsonProperty("inputs")
     public List<Input> inputs;

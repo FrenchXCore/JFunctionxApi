@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 
 /**
  *
  */
-public class MsgAddOracleDeposit {
+@JsonTypeName("/fx.gravity.crosschain.v1.MsgAddOracleDeposit")
+public class MsgAddOracleDeposit extends BaseMessage {
     
     @JsonProperty("oracle")
     public String oracle;

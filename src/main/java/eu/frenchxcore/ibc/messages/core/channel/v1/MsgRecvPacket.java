@@ -19,13 +19,16 @@
 package eu.frenchxcore.ibc.messages.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.core.channel.Packet;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.ibc.types.core.channel.v1.Packet;
 import eu.frenchxcore.ibc.types.core.client.v1.Height;
 
 /**
- *
+ * MsgRecvPacket receives incoming IBC packet
  */
-public class MsgRecvPacket {
+@JsonTypeName("/ibc.core.channel.v1.MsgRecvPacket")
+public class MsgRecvPacket extends BaseMessage {
     
     @JsonProperty("packet")
     public Packet packet;

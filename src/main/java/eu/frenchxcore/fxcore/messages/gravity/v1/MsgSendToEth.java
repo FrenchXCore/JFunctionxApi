@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 
 /**
  *
  */
-public class MsgSendToEth {
+@JsonTypeName("/fx.gravity.v1.MsgSendToEth")
+public class MsgSendToEth extends BaseMessage {
     
     @JsonProperty("sender")
     public String sender;

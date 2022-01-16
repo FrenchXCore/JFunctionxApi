@@ -19,21 +19,25 @@
 package eu.frenchxcore.ibc.messages.core.client.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.tools.TypedAny;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ClientState;
+import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ConsensusState;
 
 /**
  *
  */
-public class MsgUpgradeClient {
+@JsonTypeName("/ibc.core.client.v1.MsgUpgradeClient")
+public class MsgUpgradeClient extends BaseMessage {
     
     @JsonProperty("client_id")
     public String clientId;
     
     @JsonProperty("client_state")
-    public TypedAny clientState;
+    public ClientState clientState;
     
     @JsonProperty("consensus_state")
-    public TypedAny consensusState;
+    public ConsensusState consensusState;
     
     @JsonProperty("proof_upgrade_client")
     public String proofUpgradeClient;

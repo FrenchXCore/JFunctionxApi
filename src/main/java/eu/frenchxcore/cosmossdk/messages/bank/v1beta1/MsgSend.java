@@ -19,13 +19,16 @@
 package eu.frenchxcore.cosmossdk.messages.bank.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 import java.util.List;
 
 /**
  *
  */
-public class MsgSend {
+@JsonTypeName("/cosmos.bank.v1beta1.MsgSend")
+public class MsgSend extends BaseMessage {
     
     @JsonProperty("from_address")
     public String fromAddress;
@@ -35,6 +38,5 @@ public class MsgSend {
     
     @JsonProperty("amount")
     public List<Coin> amount;
-    
-    
+       
 }

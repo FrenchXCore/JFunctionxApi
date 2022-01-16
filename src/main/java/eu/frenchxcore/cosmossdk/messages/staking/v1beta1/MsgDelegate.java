@@ -16,15 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.messages.bank.v1beta1;
+package eu.frenchxcore.cosmossdk.messages.staking.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 
 /**
  *
  */
-public class MsgDelegate {
+@JsonTypeName("/cosmos.staking.v1beta1.MsgDelegate")
+public class MsgDelegate extends BaseMessage {
     
     @JsonProperty("from_address")
     public String fromAddress;

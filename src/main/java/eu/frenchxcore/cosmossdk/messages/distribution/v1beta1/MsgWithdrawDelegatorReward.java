@@ -19,11 +19,14 @@
 package eu.frenchxcore.cosmossdk.messages.distribution.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 
 /**
  *
  */
-public class MsgWithdrawDelegatorReward {
+@JsonTypeName("/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward")
+public class MsgWithdrawDelegatorReward extends BaseMessage {
     
     @JsonProperty("delegator_address")
     public String delegatorAddress;

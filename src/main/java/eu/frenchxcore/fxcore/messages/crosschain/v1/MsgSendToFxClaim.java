@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgSendToFxClaim {
+@JsonTypeName("/fx.gravity.crosschain.v1.MsgSendToFxClaim")
+public class MsgSendToFxClaim extends BaseMessage {
     
     @JsonProperty("event_nonce")
     public BigInteger eventNonce;

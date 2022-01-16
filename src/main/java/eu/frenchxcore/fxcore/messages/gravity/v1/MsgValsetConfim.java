@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgValsetConfim {
+@JsonTypeName("/fx.gravity.v1.MsgValsetConfirm")
+public class MsgValsetConfim extends BaseMessage {
     
     @JsonProperty("nonce")
     public BigInteger nonce;

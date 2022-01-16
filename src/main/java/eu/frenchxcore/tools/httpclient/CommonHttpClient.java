@@ -19,9 +19,9 @@ public class CommonHttpClient {
     public static OkHttpClient get() {
         if (INSTANCE == null) {
             INSTANCE = new OkHttpClient.Builder()
-                .connectTimeout(20000, TimeUnit.MILLISECONDS)
-                .readTimeout(20000, TimeUnit.MILLISECONDS)
-                .writeTimeout(20000, TimeUnit.MILLISECONDS)
+                .connectTimeout(60000, TimeUnit.MILLISECONDS)
+                .readTimeout(60000, TimeUnit.MILLISECONDS)
+                .writeTimeout(60000, TimeUnit.MILLISECONDS)
                 .connectionPool(CONNECTION_POOL)
                 .dispatcher(DISPATCHER)
                 .retryOnConnectionFailure(true)

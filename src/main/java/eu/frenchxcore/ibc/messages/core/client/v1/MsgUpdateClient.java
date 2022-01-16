@@ -19,18 +19,21 @@
 package eu.frenchxcore.ibc.messages.core.client.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.tools.TypedAny;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.Header;
 
 /**
  *
  */
-public class MsgUpdateClient {
+@JsonTypeName("/ibc.core.client.v1.MsgUpdateClient")
+public class MsgUpdateClient extends BaseMessage {
     
     @JsonProperty("client_id")
     public String clientId;
     
     @JsonProperty("header")
-    public TypedAny header;
+    public Header header;
     
     @JsonProperty("signer")
     public String signer;

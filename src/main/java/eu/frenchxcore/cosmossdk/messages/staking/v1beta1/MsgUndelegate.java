@@ -19,12 +19,15 @@
 package eu.frenchxcore.cosmossdk.messages.staking.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.Coin;
 
 /**
  *
  */
-public class MsgUndelegate {
+@JsonTypeName("/cosmos.staking.v1beta1.MsgUndelegate")
+public class MsgUndelegate extends BaseMessage {
     
     @JsonProperty("delegator_address")
     public String delegatorAddress;

@@ -16,16 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.messages.slashing;
+package eu.frenchxcore.cosmossdk.messages.slashing.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 
 /**
- *
+ * Unjail defines a method for unjailing a jailed validator, thus returning them
+ * into the bonded validator set, so they can begin receiving provisions and
+ * rewards again.
  */
-public class MsgUnjail {
-    
+@JsonTypeName("/cosmos.slashing.v1beta1.MsgUnjail")
+public class MsgUnjail extends BaseMessage {
+
     @JsonProperty("validator_addr")
     public String validatorAddr;
-    
+
 }

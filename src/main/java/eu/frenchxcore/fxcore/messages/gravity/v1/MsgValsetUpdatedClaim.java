@@ -19,6 +19,8 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +28,8 @@ import java.util.Map;
 /**
  *
  */
-public class MsgValsetUpdatedClaim {
+@JsonTypeName("/fx.gravity.v1.MsgValsetUpdatedClaim")
+public class MsgValsetUpdatedClaim extends BaseMessage {
     
     @JsonProperty("event_nonce")
     public BigInteger eventNonce;

@@ -2,6 +2,7 @@ package eu.frenchxcore.cosmossdk.types.base.tendermint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import eu.frenchxcore.tendermint.types.crypto.PubKey;
 import java.math.BigInteger;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +18,7 @@ public class Validator {
      * pubKey
      */
     @JsonProperty("pub_key")
-    public String pubKey;
+    public PubKey pubKey;
     
     /**
      * votingPower

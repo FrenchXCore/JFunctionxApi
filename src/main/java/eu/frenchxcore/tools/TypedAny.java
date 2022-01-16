@@ -20,7 +20,6 @@ package eu.frenchxcore.tools;
 
 /**
  *
- * @author Default
  */
 public class TypedAny {
     //TODO

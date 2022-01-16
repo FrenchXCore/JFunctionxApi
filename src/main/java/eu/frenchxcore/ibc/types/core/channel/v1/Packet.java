@@ -1,4 +1,4 @@
-package eu.frenchxcore.ibc.types.core.channel;
+package eu.frenchxcore.ibc.types.core.channel.v1;
 
 import eu.frenchxcore.ibc.types.core.client.v1.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

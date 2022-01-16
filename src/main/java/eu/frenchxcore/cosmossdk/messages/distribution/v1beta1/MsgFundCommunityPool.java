@@ -19,13 +19,16 @@
 package eu.frenchxcore.cosmossdk.messages.distribution.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.cosmossdk.types.Coin;
+import eu.frenchxcore.BaseMessage;
 import java.util.List;
 
 /**
  *
  */
-public class MsgFundCommunityPool {
+@JsonTypeName("/cosmos.distribution.v1beta1.MsgFundCommunityPool")
+public class MsgFundCommunityPool extends BaseMessage {
     
     @JsonProperty("amount")
     public List<Coin> amount;

@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgCancelSendToExternal {
+@JsonTypeName("/fx.gravity.crosschain.v1.MsgCancelSendToExternal")
+public class MsgCancelSendToExternal extends BaseMessage {
     
     @JsonProperty("transaction_id")
     public BigInteger transactionId;

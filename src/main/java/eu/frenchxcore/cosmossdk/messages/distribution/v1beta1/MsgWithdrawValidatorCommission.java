@@ -19,11 +19,14 @@
 package eu.frenchxcore.cosmossdk.messages.distribution.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 
 /**
  *
  */
-public class MsgWithdrawValidatorCommission {
+@JsonTypeName("/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission")
+public class MsgWithdrawValidatorCommission extends BaseMessage {
     
     @JsonProperty("validator_address")
     public String validatorAddress;

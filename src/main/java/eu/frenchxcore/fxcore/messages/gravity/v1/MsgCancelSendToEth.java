@@ -19,12 +19,15 @@
 package eu.frenchxcore.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import java.math.BigInteger;
 
 /**
  *
  */
-public class MsgCancelSendToEth {
+@JsonTypeName("/fx.gravity.v1.MsgCancelSendToEth")
+public class MsgCancelSendToEth extends BaseMessage {
     
     @JsonProperty("transaction_id")
     public BigInteger transactionId;

@@ -19,12 +19,15 @@
 package eu.frenchxcore.cosmossdk.messages.staking.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import eu.frenchxcore.BaseMessage;
 import eu.frenchxcore.cosmossdk.types.staking.Description;
 
 /**
  *
  */
-public class MsgEditValidator {
+@JsonTypeName("/cosmos.staking.v1beta1.MsgEditValidator")
+public class MsgEditValidator extends BaseMessage {
     
     @JsonProperty("description")
     public Description description;
