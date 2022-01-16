@@ -18,6 +18,6 @@ public class Vote {
     public VoteOption option;
     
     @JsonProperty("no_with_veto")
-    public List<WeightedVoteOption> options;
+    public List<WeightedVoteOption> noWithVeto;
     
 }

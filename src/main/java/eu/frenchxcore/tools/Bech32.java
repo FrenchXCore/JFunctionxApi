@@ -6,6 +6,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author FrenchXCore-1
@@ -17,8 +19,8 @@ public class Bech32 {
 
     private final static String CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
 
-    private final static int[] GEN = new int[] { 0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3 };
-    
+    private final static int[] GEN = new int[]{0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3};
+
     static {
         try {
             SHA256 = MessageDigest.getInstance("SHA-256");
@@ -26,33 +28,34 @@ public class Bech32 {
             throw new IllegalArgumentException(ex);
         }
     }
-    
+
     public static final class Bech {
+
         public String prefix;
         public byte[] data;
     }
-    
+
     public static byte[] base64Decode(String pubKey) {
         return Base64Decoder.decode(pubKey);
     }
-    
+
     public static byte[] convertPublicKey(String b64PubKey) {
         SHA256.reset();
         SHA256.update(Base64Decoder.decode(b64PubKey));
         return Arrays.copyOfRange(SHA256.digest(), 0, 20);
     }
-    
+
     public static String getTransactionHashToAscii(String b64Tx) {
         byte[] hash = getTransactionHash(b64Tx);
         return toHexAscii(hash);
     }
-    
+
     public static byte[] getTransactionHash(String b64Tx) {
         SHA256.reset();
         SHA256.update(Base64Decoder.decode(b64Tx));
         return SHA256.digest();
     }
-    
+
     public static String toHexAscii(byte[] ba) {
         StringBuilder ret = new StringBuilder();
         for (byte i : ba) {
@@ -60,12 +63,14 @@ public class Bech32 {
         }
         return ret.toString();
     }
-    
+
     /**
-     * ConvertAndEncode converts from a base64 encoded byte string to base32 encoded byte string and then to bech32.
+     * ConvertAndEncode converts from a base64 encoded byte string to base32
+     * encoded byte string and then to bech32.
+     *
      * @param prefix
      * @param data
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static String ConvertAndEncode(String prefix, byte[] data) throws Exception {
@@ -76,11 +81,13 @@ public class Bech32 {
             throw new Exception("encoding bech32 failed: " + ex.getMessage());
         }
     }
-    
+
     /**
-     * DecodeAndConvert decodes a bech32 encoded string and converts to base64 encoded bytes.
+     * DecodeAndConvert decodes a bech32 encoded string and converts to base64
+     * encoded bytes.
+     *
      * @param sBech
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static Bech DecodeAndConvert(String sBech) throws Exception {
@@ -101,11 +108,12 @@ public class Bech32 {
     }
 
     /**
-     * Decode decodes a bech32 encoded string, returning the human-readable 
-     * part and the data part excluding the checksum.
+     * Decode decodes a bech32 encoded string, returning the human-readable part
+     * and the data part excluding the checksum.
+     *
      * @param bech
      * @param limit
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static Bech Decode(String bech, int limit) throws Exception {
@@ -119,7 +127,7 @@ public class Bech32 {
         // Only	ASCII characters between 33 and 126 are allowed.
         for (char c : bech.toCharArray()) {
             if (c < 33 || c > 126) {
-                throw new Exception("invalid character in string : '"+ c + "'");
+                throw new Exception("invalid character in string : '" + c + "'");
             }
         }
 
@@ -138,22 +146,22 @@ public class Bech32 {
         // last 6 characters of the string (since checksum cannot contain '1'),
         // or if the string is more than 90 characters in total.
         int one = bech.lastIndexOf("1");
-        if (one < 1 || (one+7) > bech.length()) {
+        if (one < 1 || (one + 7) > bech.length()) {
             throw new Exception("invalid index of 1");
         }
 
         // The human-readable part is everything before the last '1'.
         String prefix = bech.substring(0, one);
-        String data = bech.substring(one+1);
+        String data = bech.substring(one + 1);
 
         // Each character corresponds to the byte with value of the index in 'charset'.
         byte[] decoded = toBytes(data);
 
         if (!VerifyChecksum(prefix, decoded)) {
             String moreInfo = "";
-            String checksum = bech.substring(bech.length()-6);
+            String checksum = bech.substring(bech.length() - 6);
             try {
-                String expected = toChars(Checksum(prefix, data.substring(0, decoded.length-6).getBytes()));
+                String expected = toChars(Checksum(prefix, data.substring(0, decoded.length - 6).getBytes()));
                 moreInfo = "Expected " + expected + ", got " + checksum + ".";
             } catch (Exception ex) {
                 throw new Exception("checksum failed. " + moreInfo);
@@ -161,68 +169,72 @@ public class Bech32 {
         }
         ret.prefix = prefix;
         // We exclude the last 6 bytes, which is the checksum.
-        ret.data = Arrays.copyOfRange(decoded, 0, decoded.length-6);
+        ret.data = Arrays.copyOfRange(decoded, 0, decoded.length - 6);
         return ret;
     }
 
     /**
-     * Encode encodes a byte slice into a bech32 string with the human-readable part prefix.Note that the bytes must each encode 5 bits (base32).
+     * Encode encodes a byte slice into a bech32 string with the human-readable
+     * part prefix. Note that the bytes must each encode 5 bits (base32).
+     *
      * @param prefix
      * @param data
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static String Encode(String prefix, byte[] data) throws Exception {
-	// Calculate the checksum of the data and append it at the end.
-	byte[] checksum = Checksum(prefix, data);
+        // Calculate the checksum of the data and append it at the end.
+        byte[] checksum = Checksum(prefix, data);
         byte[] combined = new byte[data.length + checksum.length];
         System.arraycopy(data, 0, combined, 0, data.length);
         System.arraycopy(checksum, 0, combined, data.length, checksum.length);
 
-	// The resulting bech32 string is the concatenation of the hrp, the
-	// separator 1, data and checksum. Everything after the separator is
-	// represented using the specified charset.
+        // The resulting bech32 string is the concatenation of the hrp, the
+        // separator 1, data and checksum. Everything after the separator is
+        // represented using the specified charset.
         String dataChars = null;
         try {
             dataChars = toChars(combined);
         } catch (Exception ex) {
             throw new Exception("unable to convert data bytes to chars: " + ex.getMessage());
         }
-	return prefix + "1" + dataChars;
+        return prefix + "1" + dataChars;
     }
-    
+
     /**
      * For more details on the checksum calculation, please refer to BIP 173.
+     *
      * @param prefix
      * @param data
-     * @return 
+     * @return
      */
     public static byte[] Checksum(String prefix, byte[] data) {
         // Convert the bytes to list of integers, as this is needed for the
         // checksum calculation.
         int[] integers = new int[data.length];
-        for (int i = 0 ; i < data.length ; i++) {
+        for (int i = 0; i < data.length; i++) {
             integers[i] = (int) (data[i] & 0x00ff);
         }
         int[] prefixExpand = PrefixExpand(prefix);
-        int[] padding = new int[] {0, 0, 0, 0, 0, 0};
+        int[] padding = new int[]{0, 0, 0, 0, 0, 0};
         int[] values = new int[prefixExpand.length + integers.length + padding.length];
         System.arraycopy(prefixExpand, 0, values, 0, prefixExpand.length);
         System.arraycopy(integers, 0, values, prefixExpand.length, integers.length);
         System.arraycopy(padding, 0, values, prefixExpand.length + integers.length, padding.length);
         int polymod = Polymod(values) ^ 1;
         byte[] res = new byte[6];
-        for (int i = 0 ; i < 6 ; i++) {
-            res[i] = (byte) ((polymod >> ((5*(5-i))) & 0x001f));
+        for (int i = 0; i < 6; i++) {
+            res[i] = (byte) ((polymod >> ((5 * (5 - i))) & 0x001f));
         }
         return res;
     }
-    
+
     /**
      * toBytes converts each character in the string 'chars' to the value of the
      * index of the correspoding character in 'charset'.
+     *
      * @param string
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static byte[] toBytes(String string) throws Exception {
@@ -235,14 +247,15 @@ public class Bech32 {
             }
             decoded[i++] = (byte) index;
         }
-	return decoded;
-}
+        return decoded;
+    }
 
     /**
-     * toChars converts the byte slice 'data' to a string where each byte in 'data'
-     * encodes the index of a character in 'charset'.
+     * toChars converts the byte slice 'data' to a string where each byte in
+     * 'data' encodes the index of a character in 'charset'.
+     *
      * @param data
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static String toChars(byte[] data) throws Exception {
@@ -254,32 +267,33 @@ public class Bech32 {
             }
             result.append(CHARSET.charAt(ib));
         }
-	return result.toString();
+        return result.toString();
     }
 
     /**
-     * ConvertBits converts a byte slice where each byte is encoding fromBits bits,
-     * to a byte slice where each byte is encoding toBits bits.
+     * ConvertBits converts a byte slice where each byte is encoding fromBits
+     * bits, to a byte slice where each byte is encoding toBits bits.
+     *
      * @param data
      * @param fromBits
      * @param toBits
      * @param pad
-     * @return 
+     * @return
      * @throws java.lang.Exception
      */
     public static byte[] ConvertBits(byte[] data, int fromBits, int toBits, boolean pad) throws Exception {
-	if (fromBits < 1 || fromBits > 8 || toBits < 1 || toBits > 8) {
+        if (fromBits < 1 || fromBits > 8 || toBits < 1 || toBits > 8) {
             throw new Exception("only bit groups between 1 and 8 allowed");
-	}
+        }
 
-	// The final bytes, each byte encoding toBits bits.
+        // The final bytes, each byte encoding toBits bits.
         ByteArrayDataOutput regrouped = ByteStreams.newDataOutput();
 
-	// Keep track of the next byte we create and how many bits we have
-	// added to it out of the toBits goal.
-	byte nextByte = 0;
-	int filledBits = 0;
-        
+        // Keep track of the next byte we create and how many bits we have
+        // added to it out of the toBits goal.
+        byte nextByte = 0;
+        int filledBits = 0;
+
         for (byte b : data) {
             // Discard unused bits.
             b = (byte) ((b & 0x00ff) << (8 - fromBits));
@@ -315,35 +329,36 @@ public class Bech32 {
                     nextByte = 0;
                 }
             }
-	}
+        }
 
-	// We pad any unfinished group if specified.
-	if (pad && filledBits > 0) {
+        // We pad any unfinished group if specified.
+        if (pad && filledBits > 0) {
             nextByte = (byte) ((nextByte & 0x00FF) << (toBits - filledBits));
             regrouped.writeByte(nextByte);
             filledBits = 0;
             nextByte = 0;
-	}
+        }
 
-	// Any incomplete group must be <= 4 bits, and all zeroes.
-	if (filledBits > 0 && (filledBits > 4 || nextByte != 0)) {
+        // Any incomplete group must be <= 4 bits, and all zeroes.
+        if (filledBits > 0 && (filledBits > 4 || nextByte != 0)) {
             throw new Exception("invalid incomplete group");
-	}
+        }
 
-	return regrouped.toByteArray();
+        return regrouped.toByteArray();
     }
-     
+
     /**
      * For more details on the polymod calculation, please refer to BIP 173.
+     *
      * @param values
-     * @return 
+     * @return
      */
     public static int Polymod(int[] values) {
         int chk = 1;
         for (int v : values) {
             byte b = (byte) (chk >> 25);
-            chk = ((chk&0x1ffffff) << 5) ^ v;
-            for (int i = 0 ; i < 5 ; i++) {
+            chk = ((chk & 0x1ffffff) << 5) ^ v;
+            for (int i = 0; i < 5; i++) {
                 if (((b >> i) & 0x01) == 1) {
                     chk ^= GEN[i];
                 }
@@ -354,33 +369,35 @@ public class Bech32 {
 
     /**
      * For more details on HRP expansion, please refer to BIP 173.
+     *
      * @param prefix
-     * @return 
+     * @return
      */
     public static int[] PrefixExpand(String prefix) {
         char[] caPrefix = prefix.toCharArray();
         int[] v = new int[caPrefix.length * 2 + 1];
         int j = 0;
-        for (int i = 0 ; i < prefix.length() ; i++) {
-            v[j++] = caPrefix[i]>>5 & 0x00ff;
+        for (int i = 0; i < prefix.length(); i++) {
+            v[j++] = caPrefix[i] >> 5 & 0x00ff;
         }
         v[j++] = 0;
-        for (int i = 0 ; i < prefix.length() ; i++) {
+        for (int i = 0; i < prefix.length(); i++) {
             v[j++] = caPrefix[i] & 0x001f;
         }
-        
-	return v;
+
+        return v;
     }
 
     /**
      * For more details on the checksum verification, please refer to BIP 173.
+     *
      * @param prefix
      * @param data
-     * @return 
+     * @return
      */
     public static boolean VerifyChecksum(String prefix, byte[] data) {
         int[] integers = new int[data.length];
-        for (int i = 0 ; i < data.length ; i++) {
+        for (int i = 0; i < data.length; i++) {
             integers[i] = data[i] & 0x00ff;
         }
         int[] prefixExpand = PrefixExpand(prefix);
@@ -391,4 +408,3 @@ public class Bech32 {
     }
 
 }
-

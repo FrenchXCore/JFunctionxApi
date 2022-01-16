@@ -67,5 +67,6 @@ The following methods were tested successfully.
 - v0.3.0 : addition of the following modules: authz, evidence, feegrant, group, tx, upgrade
 - v0.4.0 : fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
            added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
+- v0.5.0 : added real message deserialization, and default behaviour for unknown messages
 
 Have fun !
