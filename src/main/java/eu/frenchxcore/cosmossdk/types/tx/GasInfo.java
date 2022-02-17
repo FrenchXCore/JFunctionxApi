@@ -2,9 +2,8 @@ package eu.frenchxcore.cosmossdk.types.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.Coin;
+
 import java.math.BigInteger;
-import java.util.List;
 
 /**
  * GasInfo defines tx execution gas context.

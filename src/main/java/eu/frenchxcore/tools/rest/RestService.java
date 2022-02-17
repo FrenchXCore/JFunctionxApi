@@ -1,5 +1,7 @@
 package eu.frenchxcore.tools.rest;
 
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ParamsType;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ProposalStatus;
 import eu.frenchxcore.cosmossdk.types.tx.BroadcastMode;
 import eu.frenchxcore.cosmossdk.types.tx.OrderBy;
 import eu.frenchxcore.cosmossdk.types.tx.Tx;
@@ -571,7 +573,7 @@ public interface RestService {
      */
     @GET("/cosmos/gov/v1beta1/proposals}")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalsResponse> govProposals(
-            @Query(value = "proposal_status", encoded = false) eu.frenchxcore.cosmossdk.types.gov.ProposalStatus proposalStatus,
+            @Query(value = "proposal_status", encoded = false) ProposalStatus proposalStatus,
             @Query(value = "voter", encoded = false) String voter,
             @Query(value = "depositor", encoded = false) String depositor,
             @Query(value = "pagination.key", encoded = false) String paginationKey,
@@ -624,7 +626,7 @@ public interface RestService {
      */
     @GET("/cosmos/gov/v1beta1/params/{params_type}")
     Call<eu.frenchxcore.cosmossdk.query.gov.QueryParamsResponse> govParams(
-            @Path(value = "params_type", encoded = false) eu.frenchxcore.cosmossdk.types.gov.ParamsType paramsType
+            @Path(value = "params_type", encoded = false) ParamsType paramsType
     );
 
     /**

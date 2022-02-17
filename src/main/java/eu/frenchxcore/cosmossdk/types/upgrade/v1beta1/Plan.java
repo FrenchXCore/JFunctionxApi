@@ -21,7 +21,7 @@ public class Plan {
      * is reached and the software will exit.
      */
     @JsonProperty("name")
-    public String naeme;
+    public String name;
 
     /**
      * Deprecated. Deprecated: Time based upgrades have been deprecated. Time based upgrade logic has been removed from the SDK. If this field is not empty, an error will be thrown.

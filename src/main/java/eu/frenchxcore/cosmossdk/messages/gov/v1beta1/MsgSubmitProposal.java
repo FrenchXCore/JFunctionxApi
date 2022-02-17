@@ -21,7 +21,7 @@ package eu.frenchxcore.cosmossdk.messages.gov.v1beta1;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.cosmossdk.types.Coin;
+import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
 import java.util.List;
 import java.util.Map;
 

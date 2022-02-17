@@ -33,7 +33,7 @@ When used, they might return an error ("not implemented").
 
 ## To be achieved
 
-Implementation of error messages and full unmarshalling of all messages.
+Implementation of error messages.
 
 ## Testing
 
@@ -68,5 +68,6 @@ The following methods were tested successfully.
 - v0.4.0 : fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
            added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
 - v0.5.0 : added real message deserialization, and default behaviour for unknown messages
+- v0.5.1 : added all proposal types deserialization
 
 Have fun !

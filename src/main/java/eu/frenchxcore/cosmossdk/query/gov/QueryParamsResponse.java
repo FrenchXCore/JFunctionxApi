@@ -2,9 +2,9 @@ package eu.frenchxcore.cosmossdk.query.gov;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.gov.DepositParams;
-import eu.frenchxcore.cosmossdk.types.gov.TallyParams;
-import eu.frenchxcore.cosmossdk.types.gov.VotingParams;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.DepositParams;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.TallyParams;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.VotingParams;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryParamsResponse {

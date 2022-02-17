@@ -2,7 +2,7 @@ package eu.frenchxcore.cosmossdk.query.gov;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.gov.TallyResult;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.TallyResult;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryTallyResultResponse {
