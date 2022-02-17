@@ -69,5 +69,6 @@ The following methods were tested successfully.
            added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
 - v0.5.0 : added real message deserialization, and default behaviour for unknown messages
 - v0.5.1 : added all proposal types deserialization
+- v0.5.2 : correction to govProposals
 
 Have fun !
