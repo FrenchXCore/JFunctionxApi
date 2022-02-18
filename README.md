@@ -62,13 +62,13 @@ The following methods were tested successfully.
 + stakingValidatorDelegations(...)
 
 ## Updates
-- v0.1.0 : initial draft version
-- v0.2.0 : refactoring of the packages - addition of the tendermint module - fix : dates
-- v0.3.0 : addition of the following modules: authz, evidence, feegrant, group, tx, upgrade
-- v0.4.0 : fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
-           added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
-- v0.5.0 : added real message deserialization, and default behaviour for unknown messages
-- v0.5.1 : added all proposal types deserialization
-- v0.5.2 : correction to govProposals and javaDoc improvement (RestService) 
+- v0.1.0 :   initial draft version
+- v0.2.0 :   refactoring of the packages - addition of the tendermint module - fix : dates
+- v0.3.0 :   addition of the following modules: authz, evidence, feegrant, group, tx, upgrade
+- v0.4.0 :   fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
+             added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
+- v0.5.0 :   added real message deserialization, and default behaviour for unknown messages
+- v0.5.1-5 : added all proposal types deserialization, fix govProposals, improve javaDoc (RestService),
+             fix cosmossdk.types.gov.v1beta1 & v1beta2.Proposal (withdrawEnableAddr to Boolean)
 
 Have fun !
