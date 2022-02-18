@@ -2,6 +2,7 @@ package eu.frenchxcore.cosmossdk.types.distribution;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
+import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ProposalContent;
 
 import java.util.List;
 
@@ -11,10 +12,7 @@ import java.util.List;
  * recipient account.
  * "@type":"/cosmos.distribution.v1beta1.CommunityPoolSpendProposal"
  */
-public class CommunityPoolSpendProposal {
-
-    @JsonProperty("@type")
-    public String type;
+public class CommunityPoolSpendProposal extends ProposalContent {
 
     /**
      * the title of the proposal

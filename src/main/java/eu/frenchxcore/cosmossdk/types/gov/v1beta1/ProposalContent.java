@@ -9,15 +9,13 @@ import eu.frenchxcore.DefaultMessage;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.PROPERTY,
         property = "@type",
-        visible = true,
-        defaultImpl = ProposalContent.class
+        visible = true
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.distribution.CommunityPoolSpendProposal.class, name = "/cosmos.distribution.v1beta1.CommunityPoolSpendProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.distribution.CommunityPoolSpendProposalWithDeposit.class, name = "/cosmos.distribution.v1beta1.CommunityPoolSpendProposalWithDeposit"),
-        @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.gov.v1beta1.Proposal.class, name = "/cosmos.gov.v1beta1.TextProposal"),
+        @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.gov.v1beta1.TextProposal.class, name = "/cosmos.gov.v1beta1.TextProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.params.v1beta1.ParameterChangeProposal.class, name = "/cosmos.params.v1beta1.ParameterChangeProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.upgrade.v1beta1.SoftwareUpgradeProposal.class, name = "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.cosmossdk.types.upgrade.v1beta1.CancelSoftwareUpgradeProposal.class, name = "/cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal"),
@@ -38,17 +36,5 @@ public class ProposalContent {
      */
     @JsonProperty("@type")
     public String type;
-
-    /**
-     * the title of the proposal
-     */
-    @JsonProperty("title")
-    public String title;
-
-    /**
-     * the description of the proposal
-     */
-    @JsonProperty("description")
-    public String description;
 
 }

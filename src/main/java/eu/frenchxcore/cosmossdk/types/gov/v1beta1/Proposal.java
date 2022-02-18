@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class Proposal<K> {
+public class Proposal {
 
     @JsonProperty("proposal_id")
     public BigInteger proposalId;
