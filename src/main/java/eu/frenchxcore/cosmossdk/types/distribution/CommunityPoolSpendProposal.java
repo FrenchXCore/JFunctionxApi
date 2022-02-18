@@ -10,6 +10,7 @@ import java.util.List;
  * CommunityPoolSpendProposal details a proposal for use of community funds,
  * together with how many coins are proposed to be spent, and to which
  * recipient account.
+ *
  * "@type":"/cosmos.distribution.v1beta1.CommunityPoolSpendProposal"
  */
 public class CommunityPoolSpendProposal extends ProposalContent {
