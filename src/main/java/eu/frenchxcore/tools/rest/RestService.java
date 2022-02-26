@@ -16,6 +16,30 @@ import retrofit2.http.Query;
 public interface RestService {
 
     ///////////////////////////////////////////////////////
+    ////////// auth
+    ///////////////////////////////////////////////////////
+    /**
+     * authAccounts returns all the existing accounts
+     * Since: cosmos-sdk 0.43
+     *
+     * @return all existing accounts
+     */
+    @GET("/cosmos/auth/v1beta1/accounts")
+    Call<eu.frenchxcore.cosmossdk.query.auth.QueryAccountsResponse> authAccounts();
+
+    /**
+     * authAccount returns account details based on address.
+     *
+     * @param address
+     * @return Grants
+     */
+    @GET("/cosmos/auth/v1beta1/accounts/{address}")
+    Call<eu.frenchxcore.cosmossdk.query.auth.QueryAccountResponse> authAccount(
+            @Path(value = "address") String address
+    );
+
+
+    ///////////////////////////////////////////////////////
     ////////// authz
     ///////////////////////////////////////////////////////
     /**
