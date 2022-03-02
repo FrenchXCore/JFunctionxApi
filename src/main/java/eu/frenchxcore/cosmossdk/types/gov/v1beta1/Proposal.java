@@ -35,6 +35,6 @@ public class Proposal {
     public Date votingStartTime;
     
     @JsonProperty("voting_end_time")
-    public Boolean withdrawAddrEnabled;
+    public Date votingEndTime;
     
 }

@@ -39,36 +39,40 @@ Implementation of error messages.
 
 This library is not yet fully tested. So please be indulgent.
 
-The following methods were tested successfully.
-
-### Module 'bank'
-- bankDenomOwners(...) -> NOT IMPLEMENTED
-
-### Module 'base.tendermint'
-+ baseTendermintNodeInfo(...)
-+ baseTendermintSyncing(...)
-+ baseTendermintLatestBlock(...)
-
-### Module 'distribution'
-+ distributionValidatorCommission(...)
-
-### Module 'slashing'
-+ slashingParams()
-+ slashingSigningInfos(...)
-
-### Module 'staking'
-+ stakingPool(...)
-+ stakingValidators(...)
-+ stakingValidatorDelegations(...)
+### Implemented modules (gRPC and/or REST)
+- auth
+- authz
+- bank
+- base
+- capability
+- crisis
+- crypto
+- crosschain
+- distribution
+- evidence
+- feegrant
+- gov
+- gravity
+- group
+- ibc
+- mint
+- nft
+- params
+- query
+- slashing
+- staking
+- tx
+- upgrade
+- vesting
 
 ## Updates
 - v0.1.0 :   initial draft version
 - v0.2.0 :   refactoring of the packages - addition of the tendermint module - fix : dates
 - v0.3.0 :   addition of the following modules: authz, evidence, feegrant, group, tx, upgrade
-- v0.4.0 :   fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx
-             added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
+- v0.4.0 :   fixed : durations, QueryPoolResponse, QueryValidatorsResponse, pagination, tx - added : 'ibc' and 'other' modules, transaction decoding, QueryGasPriceResponse
 - v0.5.0 :   added real message deserialization, and default behaviour for unknown messages
-- v0.5.1-5 : added all proposal types deserialization, fix govProposals, improve javaDoc (RestService),
-             fix cosmossdk.types.gov.v1beta1 & v1beta2.Proposal (withdrawEnableAddr to Boolean)
+- v0.5.1-5 : added all proposal types deserialization, fix govProposals, improve javaDoc (RestService) - fixed : eu.frenchxcore.cosmossdk.types.gov.v1beta1.Proposal and eu.frenchxcore.cosmossdk.types.gov.v1beta2.Proposal (withdrawEnableAddr to Boolean)
+- v0.6.0 :   added gRPC proto interface.
+- v0.6.1-2 : fixed : eu.frenchxcore.cosmossdk.types.gov.v1beta1.Proposal and eu.frenchxcore.cosmossdk.types.gov.v1beta2.Proposal (votingEndTime)
 
 Have fun !
