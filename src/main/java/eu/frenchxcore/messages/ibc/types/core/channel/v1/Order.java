@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.types.core.channel.v1;
+package eu.frenchxcore.messages.ibc.types.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -39,11 +39,11 @@ public enum Order {
      */
     ORDER_ORDERED(2, "ORDERED");
 
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
     
     @JsonValue
-    public String sName;
+    public final String sName;
     
     Order(int iVal, String sVal) {
         this.iVal = iVal;

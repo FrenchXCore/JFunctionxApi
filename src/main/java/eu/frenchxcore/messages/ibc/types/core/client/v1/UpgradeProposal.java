@@ -1,8 +1,8 @@
-package eu.frenchxcore.ibc.types.core.client.v1;
+package eu.frenchxcore.messages.ibc.types.core.client.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.upgrade.v1beta1.Plan;
+import eu.frenchxcore.messages.cosmossdk.types.upgrade.v1beta1.Plan;
 import eu.frenchxcore.tools.TypedAny;
 
 /**

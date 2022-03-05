@@ -1,10 +1,10 @@
-package eu.frenchxcore.cosmossdk.query.group;
+package eu.frenchxcore.messages.cosmossdk.query.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.group.GroupInfo;
+import eu.frenchxcore.messages.cosmossdk.types.group.GroupInfo;
 import java.util.List;
-import eu.frenchxcore.cosmossdk.types.query.PageResponse;
+import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
 
 /**
  * QueryGroupsByMemberResponse is the Query/GroupsByMember response type.

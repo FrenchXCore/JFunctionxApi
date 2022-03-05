@@ -1,8 +1,8 @@
-package eu.frenchxcore.ibc.types.core.commitment.v1;
+package eu.frenchxcore.messages.ibc.types.core.commitment.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.thirdparty.proofs.CommitmentProof;
+import eu.frenchxcore.messages.ibc.types.thirdparty.proofs.CommitmentProof;
 import java.util.List;
 
 /**

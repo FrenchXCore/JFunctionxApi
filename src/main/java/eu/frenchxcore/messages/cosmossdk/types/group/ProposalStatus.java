@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.group;
+package eu.frenchxcore.messages.cosmossdk.types.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,11 +14,11 @@ public enum ProposalStatus {
 
     STATUS_ABORTED      (3, "3-Final status of a proposal when the group was modified before the final tally.");
     
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
     
     ProposalStatus(int iVal, String sVal) {
         this.iVal = iVal;

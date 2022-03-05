@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.query.upgrade;
+package eu.frenchxcore.messages.cosmossdk.query.upgrade;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

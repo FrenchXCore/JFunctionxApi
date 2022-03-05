@@ -1,8 +1,8 @@
-package eu.frenchxcore.ibc.types.core.client.v1;
+package eu.frenchxcore.messages.ibc.types.core.client.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ConsensusState;
+import eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1.ConsensusState;
 
 /**
  * ConsensusStateWithHeight defines a consensus state with an additional height

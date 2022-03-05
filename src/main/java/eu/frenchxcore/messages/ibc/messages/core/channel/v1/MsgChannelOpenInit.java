@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.channel.v1;
+package eu.frenchxcore.messages.ibc.messages.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.ibc.types.core.channel.v1.Channel;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.ibc.types.core.channel.v1.Channel;
 
 /**
  * MsgChannelOpenInit defines an sdk.Msg to initialize a channel handshake. It

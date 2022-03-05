@@ -1,9 +1,8 @@
-package eu.frenchxcore.ibc.types.lightclients.tendermint.v1;
+package eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1;
 
-import eu.frenchxcore.tendermint.types.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.core.client.v1.Height;
+import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Header {
@@ -12,13 +11,13 @@ public class Header {
      * 
      */
     @JsonProperty("signed_header")
-    public SignedHeader signedHeader;
+    public eu.frenchxcore.tendermint.types.SignedHeader signedHeader;
     
     /**
      * 
      */
     @JsonProperty("validator_set")
-    public ValidatorSet validatorSet;
+    public eu.frenchxcore.tendermint.types.ValidatorSet validatorSet;
     
     /**
      * 
@@ -30,6 +29,6 @@ public class Header {
      * 
      */
     @JsonProperty("trusted_validators")
-    public ValidatorSet trustedValidators;
+    public eu.frenchxcore.tendermint.types.ValidatorSet trustedValidators;
     
 }

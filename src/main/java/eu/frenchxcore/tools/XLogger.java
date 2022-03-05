@@ -16,7 +16,6 @@ public final class XLogger {
 
     private final static XLogger INSTANCE;
 
-    private ConfigurationBuilder<BuiltConfiguration> configurationBuilder = null;
     private Logger _logger = null;
     private final static Level LEVEL = Level.ALL;
 
@@ -29,26 +28,27 @@ public final class XLogger {
     }
     
     private XLogger() {
-        this.configurationBuilder = ConfigurationBuilderFactory.newConfigurationBuilder();
-        this.configurationBuilder.setStatusLevel(LEVEL);
-        this.configurationBuilder.setConfigurationName("RollingBuilder");
+        ConfigurationBuilder<BuiltConfiguration> configurationBuilder = ConfigurationBuilderFactory.newConfigurationBuilder();
+        configurationBuilder.setStatusLevel(LEVEL);
+        configurationBuilder.setConfigurationName("RollingBuilder");
         // create a layout builder
-        LayoutComponentBuilder layoutBuilder = this.configurationBuilder.newLayout("PatternLayout").addAttribute("pattern", "%d{DEFAULT} %-5p %m{ansi} %throwable{full} %n").addAttribute("charset", "UTF-8");
+        LayoutComponentBuilder layoutBuilder = configurationBuilder.newLayout("PatternLayout").addAttribute("pattern", "%d{DEFAULT} %-5p %m{ansi} %throwable{full} %n").addAttribute("charset", "UTF-8");
 
         // create a console appender
-        AppenderComponentBuilder appenderBuilder = this.configurationBuilder
+        AppenderComponentBuilder appenderBuilder =
+                configurationBuilder
                 .newAppender("StdoutAppender", "CONSOLE")
                 .addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
         appenderBuilder.add(layoutBuilder);
-        this.configurationBuilder.add(appenderBuilder);
+        configurationBuilder.add(appenderBuilder);
 
-        this.configurationBuilder.add(
-                this.configurationBuilder.newAsyncLogger("General", LEVEL)
-                        .add(this.configurationBuilder.newAppenderRef("StdoutAppender"))
+        configurationBuilder.add(
+                configurationBuilder.newAsyncLogger("General", LEVEL)
+                        .add(configurationBuilder.newAppenderRef("StdoutAppender"))
                 .addAttribute("additivity", false)
         );
 
-        LoggerContext ctx = Configurator.initialize(this.configurationBuilder.build());
+        LoggerContext ctx = Configurator.initialize(configurationBuilder.build());
         ctx.updateLoggers();
         ctx.start();
         this._logger = LogManager.getLogger("General");
@@ -68,18 +68,12 @@ public final class XLogger {
 
     public void logTitle(Level level, String title, Throwable t) {
         int length = title.length();
-        String header = "\r\n";
-        header += "=======";
-        for (int i = 0; i < length; i++) {
-            header += "=";
-        }
-        header += "=======\r\n";
-        String log = header;
-        log += "=====> ";
-        log += title;
-        log += " <=====";
-        log += header;
-        this._logger.log(level, log, t);
+        StringBuilder header = new StringBuilder();
+        header.append("=======\r\n=====> ");
+        header.append(title);
+        header.append(" <=====\n=======");
+        header.append("=".repeat(length));
+        this._logger.log(level, header, t);
     }
 
 }

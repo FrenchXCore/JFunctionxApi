@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.types.bank;
+package eu.frenchxcore.messages.cosmossdk.types.bank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DenomOwner {

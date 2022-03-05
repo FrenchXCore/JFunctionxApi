@@ -1,7 +1,7 @@
-package eu.frenchxcore.cosmossdk.types.params.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.params.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ProposalContent;
+import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ProposalContent;
 
 import java.util.List;
 

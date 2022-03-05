@@ -51,7 +51,7 @@ public class RestServiceManager {
      * @param <T>
      * @param service
      * @param call
-     * @return 
+     * @return
      */
     public static <T> CompletableFuture<T> executeAsync(RestService service, Call<T> call) {
         return Failsafe

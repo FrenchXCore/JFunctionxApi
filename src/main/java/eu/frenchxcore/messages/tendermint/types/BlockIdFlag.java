@@ -10,10 +10,10 @@ public enum BlockIdFlag {
     BlockIDFlagCommit   (2, "BLOCK_ID_FLAG_COMMIT"),
     BlockIDFlagNil      (3, "BLOCK_ID_FLAG_NIL");
     
-    public int iVal;
+    public final int iVal;
     
     @JsonValue
-    public String sVal;
+    public final String sVal;
 
     BlockIdFlag(int iVal, String sVal) {
         this.iVal = iVal;

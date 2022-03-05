@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.tx;
+package eu.frenchxcore.messages.cosmossdk.types.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,10 +12,10 @@ public enum SignMode {
     SIGN_MODE_DIRECT_AUX(3),
     SIGN_MODE_LEGACY_AMINO_JSON(127);
 
-    public int iVal;
+    public final int iVal;
 
     @JsonValue
-    public String name;
+    public final String name;
 
     SignMode(int iVal) {
         this.iVal = iVal;

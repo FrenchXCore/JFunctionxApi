@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.staking;
+package eu.frenchxcore.messages.cosmossdk.query.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.staking.UnbondingDelegation;
+import eu.frenchxcore.messages.cosmossdk.types.staking.UnbondingDelegation;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryUnbondingDelegationResponse {

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.types.thirdparty.proofs;
+package eu.frenchxcore.messages.ibc.types.thirdparty.proofs;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -70,10 +70,10 @@ public enum LengthOp {
      */
     REQUIRE_64_BYTES(8);
 
-    public int iVal;
+    public final int iVal;
 
     @JsonValue
-    public String sName;
+    public final String sName;
 
     LengthOp(int iVal) {
         this.iVal = iVal;

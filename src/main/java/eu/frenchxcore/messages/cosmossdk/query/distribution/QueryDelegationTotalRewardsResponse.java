@@ -1,10 +1,10 @@
-package eu.frenchxcore.cosmossdk.query.distribution;
+package eu.frenchxcore.messages.cosmossdk.query.distribution;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import eu.frenchxcore.cosmossdk.types.base.v1beta1.DecCoin;
-import eu.frenchxcore.cosmossdk.types.distribution.DelegationDelegatorReward;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.DecCoin;
+import eu.frenchxcore.messages.cosmossdk.types.distribution.DelegationDelegatorReward;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryDelegationTotalRewardsResponse {

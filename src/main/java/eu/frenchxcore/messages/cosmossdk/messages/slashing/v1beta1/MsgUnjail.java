@@ -16,11 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.messages.slashing.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.messages.slashing.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.messages.BaseMessage;
 
 /**
  * Unjail defines a method for unjailing a jailed validator, thus returning them

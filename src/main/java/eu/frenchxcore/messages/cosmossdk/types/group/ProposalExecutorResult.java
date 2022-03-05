@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.group;
+package eu.frenchxcore.messages.cosmossdk.types.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,11 +14,11 @@ public enum ProposalExecutorResult {
 
     EXECUTOR_RESULT_FAILURE     (3, "3-The executor returned an error and proposed action didn't update state.");
     
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
     
     ProposalExecutorResult(int iVal, String sVal) {
         this.iVal = iVal;

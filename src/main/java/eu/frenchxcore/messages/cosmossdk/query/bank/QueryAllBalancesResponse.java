@@ -1,10 +1,10 @@
-package eu.frenchxcore.cosmossdk.query.bank;
+package eu.frenchxcore.messages.cosmossdk.query.bank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import eu.frenchxcore.cosmossdk.types.query.PageResponse;
-import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
+import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryAllBalancesResponse {

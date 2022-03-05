@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.auth;
+package eu.frenchxcore.messages.cosmossdk.query.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.auth.Account;
+import eu.frenchxcore.messages.cosmossdk.types.auth.Account;
 
 /**
  * QueryAccountResponse is the response type for the Query/Account RPC method.

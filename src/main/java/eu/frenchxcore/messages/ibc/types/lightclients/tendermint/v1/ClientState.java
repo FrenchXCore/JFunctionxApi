@@ -1,9 +1,9 @@
-package eu.frenchxcore.ibc.types.lightclients.tendermint.v1;
+package eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.core.client.v1.Height;
-import eu.frenchxcore.ibc.types.thirdparty.proofs.ProofSpec;
+import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
+import eu.frenchxcore.messages.ibc.types.thirdparty.proofs.ProofSpec;
 import java.util.List;
 
 /**

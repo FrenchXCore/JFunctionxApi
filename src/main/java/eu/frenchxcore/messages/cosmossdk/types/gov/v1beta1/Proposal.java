@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.types.gov.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;

@@ -16,15 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.types._customdeserializer;
+package eu.frenchxcore.messages.cosmossdk.types._customdeserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import eu.frenchxcore.cosmossdk.types.base.PublicKey;
+import eu.frenchxcore.messages.cosmossdk.types.base.PublicKey;
 import eu.frenchxcore.tools.Bech32;
+
 import java.io.IOException;
 
 /**
@@ -42,7 +42,7 @@ public class PublicKeyDeserializer extends StdDeserializer<PublicKey> {
 
     @Override
     public PublicKey deserialize(JsonParser jp, DeserializationContext ctxt)
-            throws IOException, JsonProcessingException {
+            throws IOException {
         PublicKey pk = new PublicKey();
         JsonNode node = jp.getCodec().readTree(jp);
         String type = node.get("@type").asText();

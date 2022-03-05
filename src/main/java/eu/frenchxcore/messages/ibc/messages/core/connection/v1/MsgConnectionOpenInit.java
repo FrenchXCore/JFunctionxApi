@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.connection.v1;
+package eu.frenchxcore.messages.ibc.messages.core.connection.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.ibc.types.core.connection.v1.Counterparty;
-import eu.frenchxcore.ibc.types.core.connection.v1.Version;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.ibc.types.core.connection.v1.Counterparty;
+import eu.frenchxcore.messages.ibc.types.core.connection.v1.Version;
 import java.math.BigInteger;
 
 /**

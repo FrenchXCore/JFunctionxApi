@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.query.evidence;
+package eu.frenchxcore.messages.cosmossdk.query.evidence;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,7 +1,7 @@
-package eu.frenchxcore.cosmossdk.types.upgrade.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.upgrade.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ProposalContent;
+import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ProposalContent;
 
 /**
  * CancelSoftwareUpgradeProposal is a gov Content type for cancelling a software upgrade.

@@ -1,9 +1,9 @@
-package eu.frenchxcore.cosmossdk.query.tx;
+package eu.frenchxcore.messages.cosmossdk.query.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.tx.GasInfo;
-import eu.frenchxcore.cosmossdk.types.tx.Result;
+import eu.frenchxcore.messages.cosmossdk.types.tx.GasInfo;
+import eu.frenchxcore.messages.cosmossdk.types.tx.Result;
 
 /**
  * SimulateResponse is the response type for the Service.SimulateRPC method.

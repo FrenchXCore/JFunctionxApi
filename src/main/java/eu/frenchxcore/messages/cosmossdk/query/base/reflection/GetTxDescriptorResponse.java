@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.base.reflection;
+package eu.frenchxcore.messages.cosmossdk.query.base.reflection;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.reflection.TxDescriptor;
+import eu.frenchxcore.messages.cosmossdk.types.base.reflection.TxDescriptor;
 
 /**
  * GetTxDescriptorResponse is the response returned by the GetTxDescriptor RPC

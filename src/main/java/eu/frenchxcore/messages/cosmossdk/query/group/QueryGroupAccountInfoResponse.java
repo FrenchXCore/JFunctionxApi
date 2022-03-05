@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.group;
+package eu.frenchxcore.messages.cosmossdk.query.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.group.GroupAccountInfo;
+import eu.frenchxcore.messages.cosmossdk.types.group.GroupAccountInfo;
 
 /**
  * QueryGroupAccountInfoResponse is the Query/GroupAccountInfo response type.

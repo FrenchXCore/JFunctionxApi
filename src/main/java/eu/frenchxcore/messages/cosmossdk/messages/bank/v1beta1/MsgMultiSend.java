@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.cosmossdk.messages.bank.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.messages.bank.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.cosmossdk.types.bank.Input;
-import eu.frenchxcore.cosmossdk.types.bank.Output;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.cosmossdk.types.bank.Input;
+import eu.frenchxcore.messages.cosmossdk.types.bank.Output;
 import java.util.List;
 
 /**

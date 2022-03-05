@@ -1,9 +1,9 @@
-package eu.frenchxcore.cosmossdk.query.base.tendermint;
+package eu.frenchxcore.messages.cosmossdk.query.base.tendermint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.query.PageResponse;
-import eu.frenchxcore.cosmossdk.types.base.tendermint.Validator;
+import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+import eu.frenchxcore.messages.cosmossdk.types.base.tendermint.Validator;
 import java.math.BigInteger;
 import java.util.List;
 

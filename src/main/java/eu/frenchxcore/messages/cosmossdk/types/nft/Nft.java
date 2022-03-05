@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.nft;
+package eu.frenchxcore.messages.cosmossdk.types.nft;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

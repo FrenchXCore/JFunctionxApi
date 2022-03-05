@@ -1,7 +1,7 @@
 package eu.frenchxcore.fxcore.types.gravity.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.v1beta1.Coin;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 
 import java.util.List;
 

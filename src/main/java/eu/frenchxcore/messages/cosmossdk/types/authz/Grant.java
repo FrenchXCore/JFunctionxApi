@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.authz;
+package eu.frenchxcore.messages.cosmossdk.types.authz;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

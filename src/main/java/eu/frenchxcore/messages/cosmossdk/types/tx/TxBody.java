@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.tx;
+package eu.frenchxcore.messages.cosmossdk.types.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,7 +17,7 @@ public class TxBody {
      */
     @JsonProperty("messages")
     //public List<Map<String, Object>> messages;
-    public List<eu.frenchxcore.BaseMessage> messages;
+    public List<eu.frenchxcore.messages.BaseMessage> messages;
 
     /**
      * memo is any arbitrary note/comment to be added to the transaction. WARNING: in clients, any publicly exposed text should not be called memo, but should be called note instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).

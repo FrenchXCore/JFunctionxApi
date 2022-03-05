@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.base.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.base.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

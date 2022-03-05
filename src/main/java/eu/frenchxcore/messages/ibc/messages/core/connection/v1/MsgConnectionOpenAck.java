@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.connection.v1;
+package eu.frenchxcore.messages.ibc.messages.core.connection.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.ibc.types.core.client.v1.Height;
-import eu.frenchxcore.ibc.types.core.connection.v1.Version;
-import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ClientState;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
+import eu.frenchxcore.messages.ibc.types.core.connection.v1.Version;
+import eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1.ClientState;
 
 /**
  * MsgConnectionOpenAck defines a msg sent by a Relayer to Chain A to

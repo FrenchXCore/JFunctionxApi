@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.staking;
+package eu.frenchxcore.messages.cosmossdk.types.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,11 +25,11 @@ public enum BondStatus {
      */
     BOND_STATUS_BONDED      (3, "Bonded");
     
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
     
     BondStatus(int iVal, String sVal) {
         this.iVal = iVal;

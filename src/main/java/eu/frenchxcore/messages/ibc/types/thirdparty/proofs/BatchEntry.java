@@ -1,4 +1,4 @@
-package eu.frenchxcore.ibc.types.thirdparty.proofs;
+package eu.frenchxcore.messages.ibc.types.thirdparty.proofs;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,10 +1,10 @@
-package eu.frenchxcore.cosmossdk.query.staking;
+package eu.frenchxcore.messages.cosmossdk.query.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import eu.frenchxcore.cosmossdk.types.query.PageResponse;
-import eu.frenchxcore.cosmossdk.types.staking.Validator;
+import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+import eu.frenchxcore.messages.cosmossdk.types.staking.Validator;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryValidatorsResponse {

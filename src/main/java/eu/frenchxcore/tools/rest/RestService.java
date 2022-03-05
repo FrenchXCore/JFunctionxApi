@@ -1,10 +1,10 @@
 package eu.frenchxcore.tools.rest;
 
-import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ParamsType;
-import eu.frenchxcore.cosmossdk.types.gov.v1beta1.ProposalStatus;
-import eu.frenchxcore.cosmossdk.types.tx.BroadcastMode;
-import eu.frenchxcore.cosmossdk.types.tx.OrderBy;
-import eu.frenchxcore.cosmossdk.types.tx.Tx;
+import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ParamsType;
+import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ProposalStatus;
+import eu.frenchxcore.messages.cosmossdk.types.tx.BroadcastMode;
+import eu.frenchxcore.messages.cosmossdk.types.tx.OrderBy;
+import eu.frenchxcore.messages.cosmossdk.types.tx.Tx;
 import java.math.BigInteger;
 import java.util.List;
 import retrofit2.Call;
@@ -25,7 +25,7 @@ public interface RestService {
      * @return all existing accounts
      */
     @GET("/cosmos/auth/v1beta1/accounts")
-    Call<eu.frenchxcore.cosmossdk.query.auth.QueryAccountsResponse> authAccounts();
+    Call<eu.frenchxcore.messages.cosmossdk.query.auth.QueryAccountsResponse> authAccounts();
 
     /**
      * authAccount returns account details based on address.
@@ -34,7 +34,7 @@ public interface RestService {
      * @return Grants
      */
     @GET("/cosmos/auth/v1beta1/accounts/{address}")
-    Call<eu.frenchxcore.cosmossdk.query.auth.QueryAccountResponse> authAccount(
+    Call<eu.frenchxcore.messages.cosmossdk.query.auth.QueryAccountResponse> authAccount(
             @Path(value = "address") String address
     );
 
@@ -56,7 +56,7 @@ public interface RestService {
      * @return Grants
      */
     @GET("/cosmos/authz/v1beta1/grants")
-    Call<eu.frenchxcore.cosmossdk.query.authz.QueryGrantsResponse> authzGrants(
+    Call<eu.frenchxcore.messages.cosmossdk.query.authz.QueryGrantsResponse> authzGrants(
             @Path(value = "granter") String granter,
             @Path(value = "grantee") String grantee,
             @Path(value = "msg_type_url") String msgTypeUrl,
@@ -79,7 +79,7 @@ public interface RestService {
      * @return Grants
      */
     @GET("/cosmos/authz/v1beta1/grants/{granter}")
-    Call<eu.frenchxcore.cosmossdk.query.authz.QueryGrantsResponse> authzGranterGrants(
+    Call<eu.frenchxcore.messages.cosmossdk.query.authz.QueryGrantsResponse> authzGranterGrants(
             @Path(value = "granter") String granter,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -99,7 +99,7 @@ public interface RestService {
      * @return Balance
      */
     @GET("/cosmos/bank/v1beta1/balances/{address}/{denom}")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryBalanceResponse> bankBalance(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryBalanceResponse> bankBalance(
             @Path(value = "address") String address,
             @Path(value = "denom") String denom
     );
@@ -116,7 +116,7 @@ public interface RestService {
      * @return AllBalances
      */
     @GET("/cosmos/bank/v1beta1/balances/{address}")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryAllBalancesResponse> bankAllBalances(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryAllBalancesResponse> bankAllBalances(
             @Path(value = "address") String address,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -131,7 +131,7 @@ public interface RestService {
      * @return Total supply of all coins
      */
     @GET("/cosmos/bank/v1beta1/supply")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryTotalSupplyResponse> bankTotalSupply(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryTotalSupplyResponse> bankTotalSupply(
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -146,7 +146,7 @@ public interface RestService {
      * @return Supply of the denom coin
      */
     @GET("/cosmos/bank/v1beta1/supply/{denom}")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QuerySupplyOfResponse> bankSupplyOf(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QuerySupplyOfResponse> bankSupplyOf(
             @Path(value = "denom") String denom
     );
 
@@ -156,7 +156,7 @@ public interface RestService {
      * @return Bank module parameters
      */
     @GET("/cosmos/bank/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryParamsResponse> bankParams();
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryParamsResponse> bankParams();
 
     /**
      * bankDenomsMetadata queries the client metadata of a given coin
@@ -171,7 +171,7 @@ public interface RestService {
      * @return Denom coin metadata
      */
     @GET("/cosmos/bank/v1beta1/denoms_metadata/{denom}")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomMetadataResponse> bankDenomMetadata(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryDenomMetadataResponse> bankDenomMetadata(
             @Path(value = "denom") String denom,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -187,7 +187,7 @@ public interface RestService {
      * @return All denom coins metadata
      */
     @GET("/cosmos/bank/v1beta1/denoms_metadata")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomsMetadataResponse> bankDenomsMetadata();
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryDenomsMetadataResponse> bankDenomsMetadata();
 
     /**
      * bankDenomOwners queries for all account addresses that own a particular
@@ -203,7 +203,7 @@ public interface RestService {
      * @return All denom coin owners
      */
     @GET("/cosmos/bank/v1beta1/denom_owners/{denom}")
-    Call<eu.frenchxcore.cosmossdk.query.bank.QueryDenomOwnersResponse> bankDenomOwners(
+    Call<eu.frenchxcore.messages.cosmossdk.query.bank.QueryDenomOwnersResponse> bankDenomOwners(
             @Path(value = "denom") String denom,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -222,7 +222,7 @@ public interface RestService {
      * @return all interfaces registered.
      */
     @GET("/cosmos/base/reflection/v1beta1/interfaces")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.ListAllInterfacesResponse> baseReflectionListAllInterfaces();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.ListAllInterfacesResponse> baseReflectionListAllInterfaces();
 
     /**
      * baseReflectionListImplementations list all the concrete types that
@@ -233,7 +233,7 @@ public interface RestService {
      * @return All the concrete types that implement the given interface name
      */
     @GET("/cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.ListImplementationsResponse> baseReflectionListImplementations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.ListImplementationsResponse> baseReflectionListImplementations(
             @Path(value = "interface_name") String interfaceName
     );
 
@@ -246,7 +246,7 @@ public interface RestService {
      * @return Information on how to authenticate transactions in the application
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/authn")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetAuthnDescriptorResponse> baseReflectionGetAuthnDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetAuthnDescriptorResponse> baseReflectionGetAuthnDescriptor();
 
     /**
      * baseReflectionGetChainDescriptor returns the description of the chain
@@ -254,7 +254,7 @@ public interface RestService {
      * @return The description of the chain
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/chain")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetChainDescriptorResponse> baseReflectionGetChainDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetChainDescriptorResponse> baseReflectionGetChainDescriptor();
 
     /**
      * baseReflectionGetCodecDescriptor returns the descriptor of the codec of
@@ -263,7 +263,7 @@ public interface RestService {
      * @return The descriptor of the codec of the application
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/codec")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetCodecDescriptorResponse> baseReflectionGetCodecDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetCodecDescriptorResponse> baseReflectionGetCodecDescriptor();
 
     /**
      * baseReflectionGetConfigurationDescriptor returns the descriptor for the
@@ -272,7 +272,7 @@ public interface RestService {
      * @return The descriptor for the sdk.Config of the application
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/configuration")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetConfigurationDescriptorResponse> baseReflectionGetConfigurationDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetConfigurationDescriptorResponse> baseReflectionGetConfigurationDescriptor();
 
     /**
      * baseReflectionGetQueryServicesDescriptor returns the available gRPC
@@ -281,7 +281,7 @@ public interface RestService {
      * @return The available gRPC queryable services of the application
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/query_services")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetQueryServicesDescriptorResponse> baseReflectionGetQueryServicesDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetQueryServicesDescriptorResponse> baseReflectionGetQueryServicesDescriptor();
 
     /**
      * GetTxDescriptor returns information on the used transaction object and
@@ -290,7 +290,7 @@ public interface RestService {
      * @return Information on the used transaction object and available msgs that can be used
      */
     @GET("/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor")
-    Call<eu.frenchxcore.cosmossdk.query.base.reflection.GetTxDescriptorResponse> baseReflectionGetTxDescriptor();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.reflection.GetTxDescriptorResponse> baseReflectionGetTxDescriptor();
 
     ///////////////////////////////////////////////////////
     ////////// base.tendermint
@@ -301,7 +301,7 @@ public interface RestService {
      * @return The current node info
      */
     @GET("/cosmos/base/tendermint/v1beta1/node_info")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetNodeInfoResponse> baseTendermintGetNodeInfo();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetNodeInfoResponse> baseTendermintGetNodeInfo();
 
     /**
      * baseTendermintGetSyncing queries node syncing.
@@ -309,7 +309,7 @@ public interface RestService {
      * @return True if the node is syncing, false if already synced.
      */
     @GET("/cosmos/base/tendermint/v1beta1/syncing")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetSyncingResponse> baseTendermintGetSyncing();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetSyncingResponse> baseTendermintGetSyncing();
 
     /**
      * baseTendermintGetLatestBlock returns the latest block.
@@ -317,7 +317,7 @@ public interface RestService {
      * @return The latest block height.
      */
     @GET("/cosmos/base/tendermint/v1beta1/blocks/latest")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetLatestBlockResponse> baseTendermintGetLatestBlock();
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetLatestBlockResponse> baseTendermintGetLatestBlock();
 
     /**
      * baseTendermintGetBlockByHeight queries block for given height.
@@ -326,7 +326,7 @@ public interface RestService {
      * @return The block at requested height.
      */
     @GET("/cosmos/base/tendermint/v1beta1/blocks/{height}")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetBlockByHeightResponse> baseTendermintGetBlockByHeight(
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetBlockByHeightResponse> baseTendermintGetBlockByHeight(
             @Path(value = "height") BigInteger height
     );
 
@@ -341,7 +341,7 @@ public interface RestService {
      * @return The latest validator set.
      */
     @GET("/cosmos/base/tendermint/v1beta1/validatorsets/latest")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetLatestValidatorSetResponse> baseTendermintGetLatestValidatorSet(
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetLatestValidatorSetResponse> baseTendermintGetLatestValidatorSet(
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -357,7 +357,7 @@ public interface RestService {
      * @return The validator-set at that block height.
      */
     @GET("/cosmos/base/tendermint/v1beta1/validatorsets/{height}")
-    Call<eu.frenchxcore.cosmossdk.query.base.tendermint.GetValidatorSetByHeightResponse> baseTendermintGetValidatorSetByHeight(
+    Call<eu.frenchxcore.messages.cosmossdk.query.base.tendermint.GetValidatorSetByHeightResponse> baseTendermintGetValidatorSetByHeight(
             @Path(value = "height") BigInteger height,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -375,7 +375,7 @@ public interface RestService {
      * @return The distribution module parameters.
      */
     @GET("/cosmos/distribution/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryParamsResponse> distributionParams();
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryParamsResponse> distributionParams();
 
     /**
      * distributionValidatorOutstandingRewards queries rewards of a validator
@@ -385,7 +385,7 @@ public interface RestService {
      * @return All outstanding rewards to be delivered to all this validator's delegators.
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorOutstandingRewardsResponse> distributionValidatorOutstandingRewards(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryValidatorOutstandingRewardsResponse> distributionValidatorOutstandingRewards(
             @Path(value = "validator_address") String validatorAddress
     );
 
@@ -397,7 +397,7 @@ public interface RestService {
      * @return The accumulated commission for the given validator
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/commission")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorCommissionResponse> distributionValidatorCommission(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryValidatorCommissionResponse> distributionValidatorCommission(
             @Path(value = "validator_address") String validatorAddress
     );
 
@@ -415,7 +415,7 @@ public interface RestService {
      * @return The slashes applied to the given validator.
      */
     @GET("/cosmos/distribution/v1beta1/validators/{validator_address}/slashes")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryValidatorSlashesResponse> distributionValidatorSlashes(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryValidatorSlashesResponse> distributionValidatorSlashes(
             @Path(value = "validator_address") String validatorAddress,
             @Query(value = "starting_height") String startingHeight,
             @Query(value = "ending_height") String endingHeight,
@@ -435,7 +435,7 @@ public interface RestService {
      * @return The rewards accrued by the given delegator with the given validator.
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegationRewardsResponse> distributionDelegationRewards(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryDelegationRewardsResponse> distributionDelegationRewards(
             @Path(value = "delegator_address") String delegatorAddress,
             @Path(value = "validator_address") String validatorAddress
     );
@@ -447,7 +447,7 @@ public interface RestService {
      * @return The total rewards accrued by a delegator with all validators.
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegationTotalRewardsResponse> distributionDelegationTotalRewards(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryDelegationTotalRewardsResponse> distributionDelegationTotalRewards(
             @Path(value = "delegator_address") String delegatorAddress
     );
 
@@ -458,7 +458,7 @@ public interface RestService {
      * @return The validators of the given delegator
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/validators")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegatorValidatorsResponse> distributionDelegatorValidators(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryDelegatorValidatorsResponse> distributionDelegatorValidators(
             @Path(value = "delegator_address") String delegatorAddress
     );
 
@@ -470,7 +470,7 @@ public interface RestService {
      * @return The withdraw address of the given delegator
      */
     @GET("/cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryDelegatorWithdrawAddressResponse> distributionDelegatorWithdrawAddress(
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryDelegatorWithdrawAddressResponse> distributionDelegatorWithdrawAddress(
             @Path(value = "delegator_address") String delegatorAddress
     );
 
@@ -480,7 +480,7 @@ public interface RestService {
      * @return The community pool coins.
      */
     @GET("/cosmos/distribution/v1beta1/community_pool")
-    Call<eu.frenchxcore.cosmossdk.query.distribution.QueryCommunityPoolResponse> distributionCommunityPool();
+    Call<eu.frenchxcore.messages.cosmossdk.query.distribution.QueryCommunityPoolResponse> distributionCommunityPool();
 
     ///////////////////////////////////////////////////////
     ////////// evidence
@@ -492,7 +492,7 @@ public interface RestService {
      * @return evidence based on the given evidence hash.
      */
     @GET("/cosmos/evidence/v1beta1/evidence/{evidence_hash}")
-    Call<eu.frenchxcore.cosmossdk.query.evidence.QueryEvidenceResponse> evidenceEvidence(
+    Call<eu.frenchxcore.messages.cosmossdk.query.evidence.QueryEvidenceResponse> evidenceEvidence(
             @Path(value = "evidence_hash") String evidenceHash
     );
 
@@ -507,7 +507,7 @@ public interface RestService {
      * @return all evidence.
      */
     @GET("/cosmos/evidence/v1beta1/evidence")
-    Call<eu.frenchxcore.cosmossdk.query.evidence.QueryAllEvidenceResponse> evidenceAllEvidence(
+    Call<eu.frenchxcore.messages.cosmossdk.query.evidence.QueryAllEvidenceResponse> evidenceAllEvidence(
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -526,7 +526,7 @@ public interface RestService {
      * @return the fee granted to the grantee by the granter.
      */
     @GET("/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}")
-    Call<eu.frenchxcore.cosmossdk.query.feegrant.QueryAllowanceResponse> feegrantAllowance(
+    Call<eu.frenchxcore.messages.cosmossdk.query.feegrant.QueryAllowanceResponse> feegrantAllowance(
             @Path(value = "granter") String granter,
             @Path(value = "grantee") String grantee
     );
@@ -543,7 +543,7 @@ public interface RestService {
      * @return all the grants for address.
      */
     @GET("/cosmos/feegrant/v1beta1/allowances/{grantee}")
-    Call<eu.frenchxcore.cosmossdk.query.feegrant.QueryAllowancesResponse> feegrantAllowances(
+    Call<eu.frenchxcore.messages.cosmossdk.query.feegrant.QueryAllowancesResponse> feegrantAllowances(
             @Path(value = "grantee") String grantee,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -562,7 +562,7 @@ public interface RestService {
      * @return the proposal details based on the given proposal ID.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalResponse> govProposal(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryProposalResponse> govProposal(
             @Path(value = "proposal_id") BigInteger proposalId
     );
 
@@ -580,7 +580,7 @@ public interface RestService {
      * @return all proposals based on given status.
      */
     @GET("/cosmos/gov/v1beta1/proposals")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryProposalsResponse> govProposals(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryProposalsResponse> govProposals(
             @Query(value = "proposal_status") ProposalStatus proposalStatus,
             @Query(value = "voter") String voter,
             @Query(value = "depositor") String depositor,
@@ -599,7 +599,7 @@ public interface RestService {
      * @return vote information based on proposal ID and a voter address.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryVoteResponse> govVote(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryVoteResponse> govVote(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Path(value = "voter") String voter
     );
@@ -616,7 +616,7 @@ public interface RestService {
      * @return votes for the given proposal ID.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/votes")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryVotesResponse> govVotes(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryVotesResponse> govVotes(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -633,7 +633,7 @@ public interface RestService {
      * @return all parameters of the given gov module.
      */
     @GET("/cosmos/gov/v1beta1/params/{params_type}")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryParamsResponse> govParams(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryParamsResponse> govParams(
             @Path(value = "params_type") ParamsType paramsType
     );
 
@@ -646,7 +646,7 @@ public interface RestService {
      * @return single deposit information based on the given proposal ID and depositor address.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryDepositResponse> govDeposit(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryDepositResponse> govDeposit(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Path(value = "depositor") String depositor
     );
@@ -663,7 +663,7 @@ public interface RestService {
      * @return all deposits of the given proposal.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/deposits")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryDepositsResponse> govDeposits(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryDepositsResponse> govDeposits(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -679,7 +679,7 @@ public interface RestService {
      * @return the tally for the given proposal ID.
      */
     @GET("/cosmos/gov/v1beta1/proposals/{proposal_id}/tally")
-    Call<eu.frenchxcore.cosmossdk.query.gov.QueryTallyResultResponse> govTallyResult(
+    Call<eu.frenchxcore.messages.cosmossdk.query.gov.QueryTallyResultResponse> govTallyResult(
             @Path(value = "proposal_id") BigInteger proposalId
     );
 
@@ -693,7 +693,7 @@ public interface RestService {
      * @return  group info for the given group ID.
      */
     @GET("/cosmos/group/v1beta1/group_info/{group_id}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupInfoResponse> groupGroupInfo(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupInfoResponse> groupGroupInfo(
             @Path(value = "group_id") BigInteger groupId
     );
 
@@ -705,7 +705,7 @@ public interface RestService {
      * @return group account info for the given group account address.
      */
     @GET("/cosmos/group/v1beta1/group_account_info/{address}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountInfoResponse> groupGroupAccountInfo(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupAccountInfoResponse> groupGroupAccountInfo(
             @Path(value = "address") String address
     );
 
@@ -721,7 +721,7 @@ public interface RestService {
      * @return members of the given group ID.
      */
     @GET("/cosmos/group/v1beta1/group_members/{group_id}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupMembersResponse> groupGroupMembers(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupMembersResponse> groupGroupMembers(
             @Path(value = "group_id") BigInteger groupId,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -742,7 +742,7 @@ public interface RestService {
      * @return groups for a given admin address.
      */
     @GET("/cosmos/group/v1beta1/groups_by_admin/{admin}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupsByAdminResponse> groupGroupsByAdmin(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupsByAdminResponse> groupGroupsByAdmin(
             @Path(value = "admin") String admin,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -763,7 +763,7 @@ public interface RestService {
      * @return group accounts for the given group ID.
      */
     @GET("/cosmos/group/v1beta1/group_accounts_by_group/{group_id}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountsByGroupResponse> groupGroupAccountsByGroup(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupAccountsByGroupResponse> groupGroupAccountsByGroup(
             @Path(value = "group_id") BigInteger groupId,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -784,7 +784,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/group_accounts_by_admin/{admin}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupAccountsByAdminResponse> groupGroupAccountsByAdmin(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupAccountsByAdminResponse> groupGroupAccountsByAdmin(
             @Path(value = "admin") String admin,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -800,7 +800,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/proposal/{proposal_id}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryProposalResponse> groupProposal(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryProposalResponse> groupProposal(
             @Path(value = "proposal_id") BigInteger proposalId
     );
 
@@ -817,7 +817,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/proposals_by_group_account/{address}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryProposalsByGroupAccountResponse> groupProposalsByGroupAccount(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryProposalsByGroupAccountResponse> groupProposalsByGroupAccount(
             @Path(value = "address") String address,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -834,7 +834,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/vote_by_proposal_voter/{proposal_id}/{voter}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryVoteByProposalVoterResponse> groupVoteByProposalVoter(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryVoteByProposalVoterResponse> groupVoteByProposalVoter(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Path(value = "voter") String voter
     );
@@ -851,7 +851,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/votes_by_proposal/{proposal_id}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryVotesByProposalResponse> groupVotesByProposal(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryVotesByProposalResponse> groupVotesByProposal(
             @Path(value = "proposal_id") BigInteger proposalId,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -872,7 +872,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/votes_by_voter/{voter}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryVotesByVoterResponse> groupVotesByVoter(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryVotesByVoterResponse> groupVotesByVoter(
             @Path(value = "voter") String voter,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -893,7 +893,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/group/v1beta1/groups_by_member/{address}")
-    Call<eu.frenchxcore.cosmossdk.query.group.QueryGroupsByMemberResponse> groupGroupsByMember(
+    Call<eu.frenchxcore.messages.cosmossdk.query.group.QueryGroupsByMemberResponse> groupGroupsByMember(
             @Path(value = "address") String address,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -911,7 +911,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.query.mint.QueryParamsResponse> mintParams();
+    Call<eu.frenchxcore.messages.cosmossdk.query.mint.QueryParamsResponse> mintParams();
 
     /**
      * mintInflation returns the current minting inflation value.
@@ -919,7 +919,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/inflation")
-    Call<eu.frenchxcore.cosmossdk.query.mint.QueryInflationResponse> mintInflation();
+    Call<eu.frenchxcore.messages.cosmossdk.query.mint.QueryInflationResponse> mintInflation();
 
     /**
      * mintAnnualProvisions current minting annual provisions value.
@@ -927,7 +927,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/mint/v1beta1/annual_provisions")
-    Call<eu.frenchxcore.cosmossdk.query.mint.QueryAnnualProvisionsResponse> mintAnnualProvisions();
+    Call<eu.frenchxcore.messages.cosmossdk.query.mint.QueryAnnualProvisionsResponse> mintAnnualProvisions();
 
     ///////////////////////////////////////////////////////
     ////////// nft
@@ -941,7 +941,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/balance/{owner]/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryBalanceResponse> nftBalance(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryBalanceResponse> nftBalance(
             @Path(value = "owner") String owner,
             @Path(value = "class_id") String classId
     );
@@ -955,7 +955,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/owner/{class_id}/{id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryOwnerResponse> nftOwner(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryOwnerResponse> nftOwner(
             @Path(value = "class_id") String classId,
             @Path(value = "id") String id
     );
@@ -968,7 +968,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/supply/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QuerySupplyResponse> nftSupply(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QuerySupplyResponse> nftSupply(
             @Path(value = "class_id") String classId
     );
 
@@ -980,7 +980,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/nfts/{class_id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryNFTsOfClassResponse> nftNFTsOfClass(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryNFTsOfClassResponse> nftNFTsOfClass(
             @Path(value = "class_id") String classId
     );
 
@@ -992,7 +992,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/nfts/[class_id}/{id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryNFTResponse> nftNFT(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryNFTResponse> nftNFT(
             @Path(value = "class_id") String classId,
             @Path(value = "id") String id
     );
@@ -1004,7 +1004,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/classes/[class_id}")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryClassResponse> nftClass(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryClassResponse> nftClass(
             @Path(value = "class_id") String classId
     );
 
@@ -1019,7 +1019,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/nft/v1beta1/classes")
-    Call<eu.frenchxcore.cosmossdk.query.nft.QueryClassesResponse> nftClasses(
+    Call<eu.frenchxcore.messages.cosmossdk.query.nft.QueryClassesResponse> nftClasses(
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -1052,7 +1052,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/params/v1beta1/params/{subspace}/{key}")
-    Call<eu.frenchxcore.cosmossdk.query.params.QueryParamsResponse> paramsParams(
+    Call<eu.frenchxcore.messages.cosmossdk.query.params.QueryParamsResponse> paramsParams(
             @Path(value = "subspace") String subspace,
             @Path(value = "key") String key
     );
@@ -1064,7 +1064,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/params/v1beta1/subspaces")
-    Call<eu.frenchxcore.cosmossdk.query.params.QuerySubspacesResponse> paramsSubspaces();
+    Call<eu.frenchxcore.messages.cosmossdk.query.params.QuerySubspacesResponse> paramsSubspaces();
 
     ///////////////////////////////////////////////////////
     ////////// slashing
@@ -1075,7 +1075,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.query.slashing.QueryParamsResponse> slashingParams();
+    Call<eu.frenchxcore.messages.cosmossdk.query.slashing.QueryParamsResponse> slashingParams();
 
     /**
      * slashingSigningInfo queries the signing info of given cons address
@@ -1084,7 +1084,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/signing_infos/{cons_address}")
-    Call<eu.frenchxcore.cosmossdk.query.slashing.QuerySigningInfoResponse> slashingSigningInfo(
+    Call<eu.frenchxcore.messages.cosmossdk.query.slashing.QuerySigningInfoResponse> slashingSigningInfo(
             @Path(value = "cons_address") String consAddress
     );
 
@@ -1099,7 +1099,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/slashing/v1beta1/signing_infos")
-    Call<eu.frenchxcore.cosmossdk.query.slashing.QuerySigningInfosResponse> slashingSigningInfos(
+    Call<eu.frenchxcore.messages.cosmossdk.query.slashing.QuerySigningInfosResponse> slashingSigningInfos(
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -1123,8 +1123,8 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorsResponse> stakingValidators(
-            @Query(value = "status") eu.frenchxcore.cosmossdk.types.staking.BondStatus status,
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryValidatorsResponse> stakingValidators(
+            @Query(value = "status") eu.frenchxcore.messages.cosmossdk.types.staking.BondStatus status,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
             @Query(value = "pagination.limit") BigInteger paginationLimit,
@@ -1139,7 +1139,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_addr}")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorResponse> stakingValidator(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryValidatorResponse> stakingValidator(
             @Query(value = "validator_addr") String validatorAddress
     );
 
@@ -1155,7 +1155,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorDelegationsResponse> stakingValidatorDelegations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryValidatorDelegationsResponse> stakingValidatorDelegations(
             @Path(value = "validator_address") String validatorAddress,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1177,7 +1177,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/unbonding_delegations")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryValidatorUnbondingDelegationsResponse> stakingValidatorUnbondingDelegations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryValidatorUnbondingDelegationsResponse> stakingValidatorUnbondingDelegations(
             @Path(value = "validator_address") String validatorAddress,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1195,7 +1195,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations/{delegator_address}")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegationResponse> stakingDelegation(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryDelegationResponse> stakingDelegation(
             @Path(value = "validator_address") String validatorAddress,
             @Path(value = "delegator_address") String delegatorAddress
     );
@@ -1209,7 +1209,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/validators/{validator_address}/delegations/{delegator_address}/unbonding_delegation")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryUnbondingDelegationResponse> stakingUnbondingDelegation(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryUnbondingDelegationResponse> stakingUnbondingDelegation(
             @Path(value = "validator_address") String validatorAddress,
             @Path(value = "delegator_address") String delegatorAddress
     );
@@ -1227,7 +1227,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegations/{delegator_address}")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorDelegationsResponse> stakingDelegatorDelegations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryDelegatorDelegationsResponse> stakingDelegatorDelegations(
             @Path(value = "delegator_address") String delegatorAddress,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1249,7 +1249,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/unbonding_delegations")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorUnbondingDelegationsResponse> stakingDelegatorUnbondingDelegations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryDelegatorUnbondingDelegationsResponse> stakingDelegatorUnbondingDelegations(
             @Path(value = "delegator_address") String delegatorAddress,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1274,7 +1274,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/redelegations")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryRedelegationsResponse> stakingRedelegations(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryRedelegationsResponse> stakingRedelegations(
             @Path(value = "delegator_address") String delegatorAddress,
             @Query(value = "src_validator_address") String sourceValidatorAddress,
             @Query(value = "dst_validator_address") String destinationValidatorAddress,
@@ -1298,7 +1298,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/validators")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorValidatorsResponse> stakingDelegatorValidators(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryDelegatorValidatorsResponse> stakingDelegatorValidators(
             @Path(value = "delegator_address") String delegatorAddress,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1316,7 +1316,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/delegators/{delegator_address}/validators/{validator_address}")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryDelegatorValidatorResponse> stakingDelegatorValidator(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryDelegatorValidatorResponse> stakingDelegatorValidator(
             @Path(value = "delegator_address") String delegatorAddress,
             @Path(value = "validator_address") String validatorAddress
     );
@@ -1328,7 +1328,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/historical_info/{height}")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryHistoricalInfoResponse> stakingHistoricalInfo(
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryHistoricalInfoResponse> stakingHistoricalInfo(
             @Path(value = "height") BigInteger height
     );
 
@@ -1338,7 +1338,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/pool")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryPoolResponse> stakingPool();
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryPoolResponse> stakingPool();
 
     /**
      * stakingParameters queries the staking parameters.
@@ -1346,7 +1346,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/staking/v1beta1/params")
-    Call<eu.frenchxcore.cosmossdk.query.staking.QueryParamsResponse> stakingParams();
+    Call<eu.frenchxcore.messages.cosmossdk.query.staking.QueryParamsResponse> stakingParams();
 
     ///////////////////////////////////////////////////////
     ////////// tx
@@ -1360,7 +1360,7 @@ public interface RestService {
      * @return
      */
     @POST("/cosmos/tx/v1beta1/simulate")
-    Call<eu.frenchxcore.cosmossdk.query.tx.SimulateResponse> txSimulate(
+    Call<eu.frenchxcore.messages.cosmossdk.query.tx.SimulateResponse> txSimulate(
             @Query(value = "tx") Tx tx,
             @Query(value = "tx_bytes") String txBytes
     );
@@ -1372,7 +1372,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/tx/v1beta1/txs/{hash}")
-    Call<eu.frenchxcore.cosmossdk.query.tx.GetTxResponse> txGetTx(
+    Call<eu.frenchxcore.messages.cosmossdk.query.tx.GetTxResponse> txGetTx(
             @Path(value = "hash") String hash
     );
 
@@ -1384,7 +1384,7 @@ public interface RestService {
      * @return
      */
     @POST("/cosmos/tx/v1beta1/txs")
-    Call<eu.frenchxcore.cosmossdk.query.tx.BroadcastTxResponse> txBroadcastTx(
+    Call<eu.frenchxcore.messages.cosmossdk.query.tx.BroadcastTxResponse> txBroadcastTx(
             @Query(value = "tx_bytes") String txBytes,
             @Query(value = "mode") BroadcastMode mode
     );
@@ -1395,7 +1395,7 @@ public interface RestService {
      * @return
      */
     @GET("/cosmos/tx/v1beta1/txs")
-    Call<eu.frenchxcore.cosmossdk.query.tx.GetTxsEventResponse> txGetTxsEvent(
+    Call<eu.frenchxcore.messages.cosmossdk.query.tx.GetTxsEventResponse> txGetTxsEvent(
             @Query(value = "events") List<String> events,
             @Query(value = "pagination.key") String paginationKey,
             @Query(value = "pagination.offset") BigInteger paginationOffset,
@@ -1414,7 +1414,7 @@ public interface RestService {
      * @return the current upgrade plan.
      */
     @GET("/cosmos/upgrade/v1beta1/current_plan")
-    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryCurrentPlanResponse> upgradeCurrentPlan();
+    Call<eu.frenchxcore.messages.cosmossdk.query.upgrade.QueryCurrentPlanResponse> upgradeCurrentPlan();
 
     /**
      * upgradeAppliedPlan queries a previously applied upgrade plan by its name.
@@ -1423,7 +1423,7 @@ public interface RestService {
      * @return a previously applied upgrade plan with the given name.
      */
     @GET("/cosmos/upgrade/v1beta1/applied_plan/{name}")
-    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryAppliedPlanResponse> upgradeAppliedPlan(
+    Call<eu.frenchxcore.messages.cosmossdk.query.upgrade.QueryAppliedPlanResponse> upgradeAppliedPlan(
             @Path(value = "name") String name
     );
 
@@ -1439,7 +1439,7 @@ public interface RestService {
      * @return The consensus state that will serve as a trusted kernel for the next version of this chain.
      */
     @GET("/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}")
-    Call<eu.frenchxcore.cosmossdk.query.upgrade.QueryUpgradedConsensusStateResponse> upgradeUpgradedConsensusState(
+    Call<eu.frenchxcore.messages.cosmossdk.query.upgrade.QueryUpgradedConsensusStateResponse> upgradeUpgradedConsensusState(
             @Path(value = "last_height") BigInteger lastHeight
     );
 

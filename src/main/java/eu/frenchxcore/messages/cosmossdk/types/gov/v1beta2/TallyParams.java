@@ -1,9 +1,7 @@
-package eu.frenchxcore.cosmossdk.types.gov.v1beta2;
+package eu.frenchxcore.messages.cosmossdk.types.gov.v1beta2;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.math.BigDecimal;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TallyParams {

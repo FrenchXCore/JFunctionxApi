@@ -1,12 +1,15 @@
 package eu.frenchxcore;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import eu.frenchxcore.tools.rest.RestServiceManager;
+
+import java.util.concurrent.ExecutionException;
 
 public class Example {
     
     public static void main(String[] args) {
         try {
-            GrpcClient client = new GrpcClient("localhost", 9090);
+            GrpcClient client = GrpcClient.getInstance("localhost", 9090);
             cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse resp0 = client.stakingValidators().get();
             cosmos.auth.v1beta1.QueryAccountResponse resp1 = client.authAccount("fx1z67rkadwrp2nf4zwxpktpqnw969plely6rfzpt").get();
             if (resp1.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
@@ -17,14 +20,12 @@ public class Example {
                 cosmos.auth.v1beta1.BaseAccount account = resp2.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);
             }
             cosmos.auth.v1beta1.QueryParamsResponse resp3 = client.authParams().get();
-        } catch (InvalidProtocolBufferException | ExecutionException e) {
+        } catch (InterruptedException | InvalidProtocolBufferException | ExecutionException e) {
             e.printStackTrace();
-        } finally {
-            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
         }
 
-        FxCoreApi fxMonitor = FxCoreApi.getInstance("localhost", 1317);
-        eu.frenchxcore.cosmossdk.query.staking.QueryValidatorDelegationsResponse delegatorDelegations = 
+        RestClient fxMonitor = RestClient.getInstance("localhost", 1317);
+        eu.frenchxcore.messages.cosmossdk.query.staking.QueryValidatorDelegationsResponse delegatorDelegations =
                 RestServiceManager.executeSync(
                         fxMonitor.getService(), 
                         fxMonitor.getService().stakingValidatorDelegations(
@@ -36,7 +37,7 @@ public class Example {
                                 null
                         )
                 );
-        eu.frenchxcore.cosmossdk.query.bank.QuerySupplyOfResponse supplyOf = RestServiceManager.executeSync(fxMonitor.getService(), fxMonitor.getService().bankSupplyOf("fx"));
+        eu.frenchxcore.messages.cosmossdk.query.bank.QuerySupplyOfResponse supplyOf = RestServiceManager.executeSync(fxMonitor.getService(), fxMonitor.getService().bankSupplyOf("fx"));
         int j = 0;
     }
     

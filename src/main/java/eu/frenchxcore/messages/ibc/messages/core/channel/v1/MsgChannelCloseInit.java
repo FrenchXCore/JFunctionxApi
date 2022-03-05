@@ -16,11 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.channel.v1;
+package eu.frenchxcore.messages.ibc.messages.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.messages.BaseMessage;
 
 /**
  * MsgChannelCloseInit defines a msg sent by a Relayer to Chain A to close a

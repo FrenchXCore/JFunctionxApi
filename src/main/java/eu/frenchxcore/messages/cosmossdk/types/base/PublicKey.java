@@ -1,9 +1,9 @@
-package eu.frenchxcore.cosmossdk.types.base;
+package eu.frenchxcore.messages.cosmossdk.types.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import eu.frenchxcore.cosmossdk.types._customdeserializer.PublicKeyDeserializer;
+import eu.frenchxcore.messages.cosmossdk.types._customdeserializer.PublicKeyDeserializer;
 
 @JsonDeserialize(using = PublicKeyDeserializer.class)
 @JsonIgnoreProperties(ignoreUnknown = true)

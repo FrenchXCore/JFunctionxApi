@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.types.core.channel.v1;
+package eu.frenchxcore.messages.ibc.types.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -50,11 +50,11 @@ public enum State {
      */
     STATE_CLOSED(4, "CLOSED");
 
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
     
     @JsonValue
-    public String sName;
+    public final String sName;
     
     State(int iVal, String sVal) {
         this.iVal = iVal;

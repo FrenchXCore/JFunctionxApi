@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.group;
+package eu.frenchxcore.messages.cosmossdk.query.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.group.Vote;
+import eu.frenchxcore.messages.cosmossdk.types.group.Vote;
 
 /**
  * QueryVoteByProposalVoterResponse is the Query/VoteByProposalVoter response type.

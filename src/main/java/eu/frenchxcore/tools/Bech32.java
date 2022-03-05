@@ -2,20 +2,19 @@ package eu.frenchxcore.tools;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author FrenchXCore-1
  */
 public class Bech32 {
 
-    private static Base64.Decoder Base64Decoder = Base64.getDecoder();
-    private static MessageDigest SHA256;
+    private static final Base64.Decoder Base64Decoder = Base64.getDecoder();
+    private static final MessageDigest SHA256;
 
     private final static String CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
 

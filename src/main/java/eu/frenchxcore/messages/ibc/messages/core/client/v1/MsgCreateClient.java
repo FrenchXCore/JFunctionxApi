@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.client.v1;
+package eu.frenchxcore.messages.ibc.messages.core.client.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ClientState;
-import eu.frenchxcore.ibc.types.lightclients.tendermint.v1.ConsensusState;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1.ClientState;
+import eu.frenchxcore.messages.ibc.types.lightclients.tendermint.v1.ConsensusState;
 
 /**
  *

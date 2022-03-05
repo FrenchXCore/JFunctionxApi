@@ -1,4 +1,4 @@
-package eu.frenchxcore.ibc.types.applications.transfer.v1;
+package eu.frenchxcore.messages.ibc.types.applications.transfer.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

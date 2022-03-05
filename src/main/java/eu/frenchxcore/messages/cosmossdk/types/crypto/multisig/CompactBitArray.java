@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.crypto.multisig;
+package eu.frenchxcore.messages.cosmossdk.types.crypto.multisig;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

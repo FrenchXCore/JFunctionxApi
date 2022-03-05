@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore;
+package eu.frenchxcore.messages;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -26,9 +26,9 @@ import java.util.Map;
 /**
  * Default message is the default JSON message type to deserialize all unknown message types.
  */
-public class DefaultMessage extends BaseMessage { 
+public class DefaultMessage extends BaseMessage {
 
-    public Map<String, Object> properties = new LinkedHashMap<>();
+    public final Map<String, Object> properties = new LinkedHashMap<>();
     
     public DefaultMessage() {
     }

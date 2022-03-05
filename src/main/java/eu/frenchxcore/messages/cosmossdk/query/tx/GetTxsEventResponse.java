@@ -1,10 +1,10 @@
-package eu.frenchxcore.cosmossdk.query.tx;
+package eu.frenchxcore.messages.cosmossdk.query.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.query.PageResponse;
-import eu.frenchxcore.cosmossdk.types.tx.Tx;
-import eu.frenchxcore.cosmossdk.types.tx.TxResponse;
+import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+import eu.frenchxcore.messages.cosmossdk.types.tx.Tx;
+import eu.frenchxcore.messages.cosmossdk.types.tx.TxResponse;
 import java.util.List;
 
 /**

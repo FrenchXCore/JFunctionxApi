@@ -21,7 +21,7 @@ package eu.frenchxcore.fxcore.messages.gravity.v1;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigInteger;
-import eu.frenchxcore.BaseMessage;
+import eu.frenchxcore.messages.BaseMessage;
 
 /**
  *

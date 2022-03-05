@@ -1,13 +1,15 @@
-package eu.frenchxcore.tools.grpc;
+package eu.frenchxcore;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
-import io.grpc.Channel;
+import eu.frenchxcore.tools.XLogger;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-import java.util.concurrent.ExecutionException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -34,7 +36,7 @@ public class GrpcClient {
 
     private final static Map<String, GrpcClient> instances = new HashMap<>();
 
-    public static GrpcClient getInstance(String ip, int port, Executor executor) {
+    public static GrpcClient getInstance(String ip, int port) {
         return getInstance(ip, port, null);
     }
 
@@ -54,7 +56,7 @@ public class GrpcClient {
         return ret;
     }
 
-    private GrpcClient(String ip, int port, Executor executor) {
+    private GrpcClient(String ip, int port, Executor _executor) {
         this.channel =
                 ManagedChannelBuilder
                         .forAddress(ip, port)
@@ -82,6 +84,15 @@ public class GrpcClient {
         upgradeStub = cosmos.upgrade.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
     }
 
+    public void close() {
+        if (this.channel != null) {
+            try {
+                this.channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+            } catch (InterruptedException ex) {
+                XLogger.getMainLogger().error(ex);
+            }
+        }
+    }
 
     public ListenableFuture<cosmos.auth.v1beta1.QueryAccountsResponse> authAccounts() {
         return this.authAccounts(null);

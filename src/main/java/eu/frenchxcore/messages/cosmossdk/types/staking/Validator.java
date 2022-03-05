@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.types.staking;
+package eu.frenchxcore.messages.cosmossdk.types.staking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.PublicKey;
+import eu.frenchxcore.messages.cosmossdk.types.base.PublicKey;
 import java.math.BigInteger;
 import java.util.Date;
 

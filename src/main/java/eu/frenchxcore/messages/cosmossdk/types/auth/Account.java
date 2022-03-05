@@ -1,10 +1,6 @@
-package eu.frenchxcore.cosmossdk.types.auth;
+package eu.frenchxcore.messages.cosmossdk.types.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
-import java.util.Map;
 
 /**
  * Abstract class for account types.

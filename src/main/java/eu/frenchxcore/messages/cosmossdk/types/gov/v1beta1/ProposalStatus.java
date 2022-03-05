@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.gov.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -39,11 +39,11 @@ public enum ProposalStatus {
      */
     PROPOSAL_STATUS_FAILED              (5, "5-Failed");
     
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
     
     ProposalStatus(int iVal, String sVal) {
         this.iVal = iVal;

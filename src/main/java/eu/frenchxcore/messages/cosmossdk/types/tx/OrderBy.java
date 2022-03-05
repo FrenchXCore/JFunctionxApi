@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.tx;
+package eu.frenchxcore.messages.cosmossdk.types.tx;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -10,11 +10,11 @@ public enum OrderBy {
     ORDER_BY_ASC(1, "1-ORDER_BY_ASC defines ascending order."),
     ORDER_BY_DESC(2, "2-ORDER_BY_DESC defines descending order.");
 
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
 
     OrderBy(int iVal, String sVal) {
         this.iVal = iVal;

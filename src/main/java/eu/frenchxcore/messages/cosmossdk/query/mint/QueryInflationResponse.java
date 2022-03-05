@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.query.mint;
+package eu.frenchxcore.messages.cosmossdk.query.mint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

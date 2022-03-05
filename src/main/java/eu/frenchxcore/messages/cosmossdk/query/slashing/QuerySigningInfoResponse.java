@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.slashing;
+package eu.frenchxcore.messages.cosmossdk.query.slashing;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.slashing.ValidatorSigningInfo;
+import eu.frenchxcore.messages.cosmossdk.types.slashing.ValidatorSigningInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QuerySigningInfoResponse {

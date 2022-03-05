@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.ibc.messages.core.channel.v1;
+package eu.frenchxcore.messages.ibc.messages.core.channel.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import eu.frenchxcore.BaseMessage;
-import eu.frenchxcore.ibc.types.core.client.v1.Height;
+import eu.frenchxcore.messages.BaseMessage;
+import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
 
 /**
  * MsgChannelOpenAck defines a msg sent by a Relayer to Chain A to acknowledge

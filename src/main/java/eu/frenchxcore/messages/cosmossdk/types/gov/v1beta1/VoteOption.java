@@ -1,4 +1,4 @@
-package eu.frenchxcore.cosmossdk.types.gov.v1beta1;
+package eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -34,11 +34,11 @@ public enum VoteOption {
      */
     VOTE_OPTION_NO_WITH_VETO    (4, "4-No with veto");
     
-    public int iVal;
-    public String sVal;
+    public final int iVal;
+    public final String sVal;
 
     @JsonValue
-    public String name;
+    public final String name;
     
     VoteOption(int iVal, String sVal) {
         this.iVal = iVal;

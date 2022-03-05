@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.feegrant;
+package eu.frenchxcore.messages.cosmossdk.query.feegrant;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.feegrant.Grant;
+import eu.frenchxcore.messages.cosmossdk.types.feegrant.Grant;
 
 /**
  * QueryAllowanceResponse is the response type for the Query/Allowance RPC method.

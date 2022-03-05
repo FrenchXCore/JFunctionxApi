@@ -1,8 +1,8 @@
-package eu.frenchxcore.cosmossdk.query.slashing;
+package eu.frenchxcore.messages.cosmossdk.query.slashing;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.slashing.SlashingParams;
+import eu.frenchxcore.messages.cosmossdk.types.slashing.SlashingParams;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QueryParamsResponse {
