@@ -8,19 +8,19 @@ import eu.frenchxcore.tools.rest.RestService;
 import eu.frenchxcore.tools.rest.RestServiceManager;
 import eu.frenchxcore.tools.XLogger;
 
-public class FxCoreApi {
+public class RestClient {
     
     private final RestService service;
-    private final static Map<String, FxCoreApi> instances = new HashMap<>();
+    private final static Map<String, RestClient> instances = new HashMap<>();
     
-    public static FxCoreApi getInstance(String ip, int port) {
-        XLogger.getMainLogger().trace("Creating new FxCoreApi instance on " + ip + ":" + port);
-        FxCoreApi ret = null;
+    public static RestClient getInstance(String ip, int port) {
+        XLogger.getMainLogger().trace("Creating new RestClient instance on " + ip + ":" + port);
+        RestClient ret = null;
         try {
             InetAddress ia = InetAddress.getByName(ip);
             String key = ia.getHostAddress()+":"+port;
             if ((ret = (instances.get(key))) == null) {
-                ret = new FxCoreApi(ip, port);
+                ret = new RestClient(ip, port);
                 instances.put(key, ret);
             }
         } catch (UnknownHostException ex) {
@@ -29,7 +29,7 @@ public class FxCoreApi {
         return ret;
     }
     
-    private FxCoreApi(String ip, int port) {
+    private RestClient(String ip, int port) {
         this.service = RestServiceManager.createService(ip, port);
     }
 

@@ -2,9 +2,7 @@ package eu.frenchxcore.cosmossdk.types.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.cosmossdk.types.base.PublicKey;
 
-import java.math.BigInteger;
 import java.util.List;
 
 /**

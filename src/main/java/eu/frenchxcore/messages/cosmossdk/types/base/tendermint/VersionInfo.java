@@ -1,6 +1,5 @@
 package eu.frenchxcore.cosmossdk.types.base.tendermint;
 
-import eu.frenchxcore.cosmossdk.types.base.tendermint.Module;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;

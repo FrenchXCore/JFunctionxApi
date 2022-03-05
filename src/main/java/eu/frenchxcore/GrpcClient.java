@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class GrpcClient {
 
+    private ManagedChannel channel = null;
+
     private final cosmos.auth.v1beta1.QueryGrpc.QueryFutureStub authStub;
     private final cosmos.authz.v1beta1.QueryGrpc.QueryFutureStub authzStub;
     private final cosmos.bank.v1beta1.QueryGrpc.QueryFutureStub bankStub;
@@ -30,11 +32,38 @@ public class GrpcClient {
     private final cosmos.staking.v1beta1.QueryGrpc.QueryFutureStub stakingStub;
     private final cosmos.upgrade.v1beta1.QueryGrpc.QueryFutureStub upgradeStub;
 
-    public GrpcClient(Channel channel) {
-        this(channel, null);
+    private final static Map<String, GrpcClient> instances = new HashMap<>();
+
+    public static GrpcClient getInstance(String ip, int port, Executor executor) {
+        return getInstance(ip, port, null);
     }
 
-    public GrpcClient(Channel channel, Executor _executor) {
+    public static GrpcClient getInstance(String ip, int port, Executor executor) {
+        XLogger.getMainLogger().trace("Creating new GrpcClient instance on " + ip + ":" + port);
+        GrpcClient ret = null;
+        try {
+            InetAddress ia = InetAddress.getByName(ip);
+            String key = ia.getHostAddress()+":"+port;
+            if ((ret = (instances.get(key))) == null) {
+                ret = new GrpcClient(ip, port, executor);
+                instances.put(key, ret);
+            }
+        } catch (UnknownHostException ex) {
+            XLogger.getMainLogger().error(ex.getMessage());
+        }
+        return ret;
+    }
+
+    private GrpcClient(String ip, int port, Executor executor) {
+        this.channel =
+                ManagedChannelBuilder
+                        .forAddress(ip, port)
+                        .executor(Executors.newCachedThreadPool())
+                        .enableRetry()
+                        .maxRetryAttempts(10)
+                        .keepAliveWithoutCalls(true)
+                        .usePlaintext()
+                        .build();
         Executor executor = (_executor == null ? Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()) : _executor);
         authStub = cosmos.auth.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
         authzStub = cosmos.authz.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
@@ -53,38 +82,6 @@ public class GrpcClient {
         upgradeStub = cosmos.upgrade.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        ManagedChannel channel =
-                ManagedChannelBuilder
-                        .forAddress("192.168.0.200", 9090)
-                        .executor(Executors.newCachedThreadPool())
-                        .enableRetry()
-                        .maxRetryAttempts(10)
-                        .keepAliveWithoutCalls(true)
-                        .usePlaintext()
-                        .build();
-        try {
-            GrpcClient client = new GrpcClient(channel);
-            cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse resp0 = client.stakingValidators().get();
-            int j = 0;
-            cosmos.auth.v1beta1.QueryAccountResponse resp1 = client.authAccount("fx1z67rkadwrp2nf4zwxpktpqnw969plely6rfzpt").get();
-            if (resp1.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
-                cosmos.auth.v1beta1.BaseAccount account = resp1.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);
-                j = 0;
-            }
-            cosmos.auth.v1beta1.QueryAccountResponse resp2 = client.authAccount("fx1q2lnaudfxm9l06td642jae9kmhwsq6zpt905uj").get();
-            if (resp2.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
-                cosmos.auth.v1beta1.BaseAccount account = resp2.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);
-                j = 0;
-            }
-            cosmos.auth.v1beta1.QueryParamsResponse resp3 = client.authParams().get();
-            j = 0;
-        } catch (InvalidProtocolBufferException | ExecutionException e) {
-            e.printStackTrace();
-        } finally {
-            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-        }
-    }
 
     public ListenableFuture<cosmos.auth.v1beta1.QueryAccountsResponse> authAccounts() {
         return this.authAccounts(null);

@@ -1,9 +1,7 @@
 package eu.frenchxcore.ibc.types.lightclients.tendermint.v1;
 
-import eu.frenchxcore.tendermint.types.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.ibc.types.core.client.v1.Height;
 
 /**
  * Misbehaviour is a wrapper over two conflicting Headers
