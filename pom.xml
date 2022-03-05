@@ -128,7 +128,6 @@
                 <version>0.6.1</version>
                 <configuration>
                     <protocExecutable>protoc</protocExecutable>
-                    <protoSourceRoot>resources/proto</protoSourceRoot>
                     <!--protocArtifact>com.google.protobuf:protoc:3.19.2:exe:${os.detected.classifier}</protocArtifact-->
                     <protocArtifact>com.google.protobuf:protoc:3.19.2:exe:windows-x86_64</protocArtifact>
                     <pluginId>grpc-java</pluginId>

@@ -66,8 +66,7 @@ public class RestServiceManager {
      * @param <T>
      * @param service
      * @param call
-     * @param block
-     * @return 
+     * @return
      */
     public static <T> T execute(RestService service, Call<T> call) {
         T ret = null;
