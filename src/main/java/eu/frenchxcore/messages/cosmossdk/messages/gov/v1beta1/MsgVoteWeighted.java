@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
 import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.WeightedVoteOption;
+
 import java.math.BigInteger;
 import java.util.List;
 

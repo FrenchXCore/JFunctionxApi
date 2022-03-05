@@ -20,6 +20,7 @@ package eu.frenchxcore.messages;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 

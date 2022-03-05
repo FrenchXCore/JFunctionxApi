@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
 import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
+
 import java.nio.channels.Channel;
 
 /**

@@ -11,13 +11,13 @@ public class Header {
      * 
      */
     @JsonProperty("signed_header")
-    public eu.frenchxcore.tendermint.types.SignedHeader signedHeader;
+    public eu.frenchxcore.messages.tendermint.types.SignedHeader signedHeader;
     
     /**
      * 
      */
     @JsonProperty("validator_set")
-    public eu.frenchxcore.tendermint.types.ValidatorSet validatorSet;
+    public eu.frenchxcore.messages.tendermint.types.ValidatorSet validatorSet;
     
     /**
      * 
@@ -29,6 +29,6 @@ public class Header {
      * 
      */
     @JsonProperty("trusted_validators")
-    public eu.frenchxcore.tendermint.types.ValidatorSet trustedValidators;
+    public eu.frenchxcore.messages.tendermint.types.ValidatorSet trustedValidators;
     
 }

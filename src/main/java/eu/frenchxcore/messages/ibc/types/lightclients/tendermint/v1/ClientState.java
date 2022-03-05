@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
 import eu.frenchxcore.messages.ibc.types.thirdparty.proofs.ProofSpec;
+
 import java.util.List;
 
 /**

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GrpcClient {
 
-    private ManagedChannel channel = null;
+    private final ManagedChannel channel;
 
     private final cosmos.auth.v1beta1.QueryGrpc.QueryFutureStub authStub;
     private final cosmos.authz.v1beta1.QueryGrpc.QueryFutureStub authzStub;

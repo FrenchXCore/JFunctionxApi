@@ -2,8 +2,8 @@ package eu.frenchxcore.messages.cosmossdk.query.base.tendermint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.tendermint.types.Block;
-import eu.frenchxcore.tendermint.types.BlockID;
+import eu.frenchxcore.messages.tendermint.types.Block;
+import eu.frenchxcore.messages.tendermint.types.BlockID;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GetLatestBlockResponse {

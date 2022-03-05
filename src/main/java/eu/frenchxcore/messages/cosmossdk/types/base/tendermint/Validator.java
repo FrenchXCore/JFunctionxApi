@@ -2,7 +2,8 @@ package eu.frenchxcore.messages.cosmossdk.types.base.tendermint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.tendermint.types.crypto.PubKey;
+import eu.frenchxcore.messages.tendermint.types.crypto.PubKey;
+
 import java.math.BigInteger;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

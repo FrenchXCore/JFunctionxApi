@@ -1,7 +1,8 @@
-package eu.frenchxcore.tendermint.types;
+package eu.frenchxcore.messages.tendermint.types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

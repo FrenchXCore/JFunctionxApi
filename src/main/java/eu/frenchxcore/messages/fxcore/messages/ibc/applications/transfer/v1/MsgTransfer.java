@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.fxcore.messages.ibc.applications.transfer.v1;
+package eu.frenchxcore.messages.fxcore.messages.ibc.applications.transfer.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
 import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 import eu.frenchxcore.messages.ibc.types.core.client.v1.Height;
+
 import java.math.BigInteger;
 
 /**

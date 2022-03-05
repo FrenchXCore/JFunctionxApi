@@ -2,6 +2,7 @@ package eu.frenchxcore.messages.cosmossdk.types.authz;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 import java.util.Map;
 

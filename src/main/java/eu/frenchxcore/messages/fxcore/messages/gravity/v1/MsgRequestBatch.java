@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.frenchxcore.fxcore.messages.gravity.v1;
+package eu.frenchxcore.messages.fxcore.messages.gravity.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;

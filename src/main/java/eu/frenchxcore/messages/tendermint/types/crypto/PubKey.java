@@ -1,6 +1,5 @@
-package eu.frenchxcore.tendermint.types.crypto;
+package eu.frenchxcore.messages.tendermint.types.crypto;
 
-import eu.frenchxcore.tendermint.types.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

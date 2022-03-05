@@ -3,6 +3,7 @@ package eu.frenchxcore.messages.ibc.types.core.channel.v1;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.ibc.types.core.connection.v1.Counterparty;
+
 import java.util.List;
 
 /**

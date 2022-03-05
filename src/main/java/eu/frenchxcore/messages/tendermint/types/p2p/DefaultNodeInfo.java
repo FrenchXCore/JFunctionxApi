@@ -1,9 +1,9 @@
-package eu.frenchxcore.tendermint.types.p2p;
+package eu.frenchxcore.messages.tendermint.types.p2p;
 
-import eu.frenchxcore.tendermint.types.NodeInfoOther;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.frenchxcore.tendermint.types.ProtocolVersion;
+import eu.frenchxcore.messages.tendermint.types.NodeInfoOther;
+import eu.frenchxcore.messages.tendermint.types.ProtocolVersion;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DefaultNodeInfo {

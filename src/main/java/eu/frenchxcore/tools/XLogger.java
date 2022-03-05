@@ -3,7 +3,7 @@ package eu.frenchxcore.tools;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.*;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.appender.ConsoleAppender;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.apache.logging.log4j.core.config.builder.api.AppenderComponentBuilder;
@@ -16,7 +16,7 @@ public final class XLogger {
 
     private final static XLogger INSTANCE;
 
-    private Logger _logger = null;
+    private final Logger _logger;
     private final static Level LEVEL = Level.ALL;
 
     static {

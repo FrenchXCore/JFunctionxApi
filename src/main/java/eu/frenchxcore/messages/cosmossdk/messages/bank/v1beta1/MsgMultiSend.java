@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
 import eu.frenchxcore.messages.cosmossdk.types.bank.Input;
 import eu.frenchxcore.messages.cosmossdk.types.bank.Output;
+
 import java.util.List;
 
 /**

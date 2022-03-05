@@ -2,6 +2,7 @@ package eu.frenchxcore.messages.ibc.types.core.commitment.v1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 /**

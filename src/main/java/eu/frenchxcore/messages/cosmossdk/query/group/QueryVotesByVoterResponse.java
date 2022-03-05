@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.cosmossdk.types.group.Vote;
 import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+
 import java.util.List;
 
 /**

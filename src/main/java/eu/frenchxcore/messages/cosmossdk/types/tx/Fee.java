@@ -3,6 +3,7 @@ package eu.frenchxcore.messages.cosmossdk.types.tx;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
+
 import java.math.BigInteger;
 import java.util.List;
 

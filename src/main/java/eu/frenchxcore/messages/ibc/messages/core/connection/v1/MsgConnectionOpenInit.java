@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
 import eu.frenchxcore.messages.ibc.types.core.connection.v1.Counterparty;
 import eu.frenchxcore.messages.ibc.types.core.connection.v1.Version;
+
 import java.math.BigInteger;
 
 /**

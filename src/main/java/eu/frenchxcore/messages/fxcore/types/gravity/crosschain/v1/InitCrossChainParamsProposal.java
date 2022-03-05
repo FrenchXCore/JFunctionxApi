@@ -1,4 +1,4 @@
-package eu.frenchxcore.fxcore.types.gravity.crosschain.v1;
+package eu.frenchxcore.messages.fxcore.types.gravity.crosschain.v1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ProposalContent;

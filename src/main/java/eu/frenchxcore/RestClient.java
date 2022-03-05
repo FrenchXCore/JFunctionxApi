@@ -1,12 +1,13 @@
 package eu.frenchxcore;
 
+import eu.frenchxcore.tools.XLogger;
+import eu.frenchxcore.tools.rest.RestService;
+import eu.frenchxcore.tools.rest.RestServiceManager;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
-import eu.frenchxcore.tools.rest.RestService;
-import eu.frenchxcore.tools.rest.RestServiceManager;
-import eu.frenchxcore.tools.XLogger;
 
 public class RestClient {
     

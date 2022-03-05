@@ -5,13 +5,14 @@ import eu.frenchxcore.messages.cosmossdk.types.gov.v1beta1.ProposalStatus;
 import eu.frenchxcore.messages.cosmossdk.types.tx.BroadcastMode;
 import eu.frenchxcore.messages.cosmossdk.types.tx.OrderBy;
 import eu.frenchxcore.messages.cosmossdk.types.tx.Tx;
-import java.math.BigInteger;
-import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+
+import java.math.BigInteger;
+import java.util.List;
 
 public interface RestService {
 
@@ -1037,7 +1038,7 @@ public interface RestService {
      * @return node's gas price.
      */
     @GET("/other/v1/gas_price")
-    Call<eu.frenchxcore.fxcore.query.QueryGasPriceResponse> otherGasPrice();
+    Call<eu.frenchxcore.messages.fxcore.query.QueryGasPriceResponse> otherGasPrice();
 
     ///////////////////////////////////////////////////////
     ////////// params

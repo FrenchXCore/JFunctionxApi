@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
 import eu.frenchxcore.messages.cosmossdk.types.tx.Tx;
 import eu.frenchxcore.messages.cosmossdk.types.tx.TxResponse;
+
 import java.util.List;
 
 /**

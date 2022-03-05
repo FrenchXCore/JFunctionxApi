@@ -18,8 +18,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = eu.frenchxcore.messages.cosmossdk.types.params.v1beta1.ParameterChangeProposal.class, name = "/cosmos.params.v1beta1.ParameterChangeProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.messages.cosmossdk.types.upgrade.v1beta1.SoftwareUpgradeProposal.class, name = "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal"),
         @JsonSubTypes.Type(value = eu.frenchxcore.messages.cosmossdk.types.upgrade.v1beta1.CancelSoftwareUpgradeProposal.class, name = "/cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal"),
-        @JsonSubTypes.Type(value = eu.frenchxcore.fxcore.types.gravity.crosschain.v1.InitCrossChainParamsProposal.class, name = "/fx.gravity.crosschain.v1.InitCrossChainParamsProposal"),
-        @JsonSubTypes.Type(value = eu.frenchxcore.fxcore.types.gravity.crosschain.v1.UpdateChainOraclesProposal.class, name = "/fx.gravity.crosschain.v1.UpdateChainOraclesProposal")
+        @JsonSubTypes.Type(value = eu.frenchxcore.messages.fxcore.types.gravity.crosschain.v1.InitCrossChainParamsProposal.class, name = "/fx.gravity.crosschain.v1.InitCrossChainParamsProposal"),
+        @JsonSubTypes.Type(value = eu.frenchxcore.messages.fxcore.types.gravity.crosschain.v1.UpdateChainOraclesProposal.class, name = "/fx.gravity.crosschain.v1.UpdateChainOraclesProposal")
 })
 public class ProposalContent {
 

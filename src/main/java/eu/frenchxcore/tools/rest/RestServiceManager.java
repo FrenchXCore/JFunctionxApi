@@ -1,19 +1,20 @@
 package eu.frenchxcore.tools.rest;
 
+import eu.frenchxcore.tools.LocalExecutor;
+import eu.frenchxcore.tools.XLogger;
+import eu.frenchxcore.tools.httpclient.CommonHttpClient;
+import net.jodah.failsafe.Failsafe;
+import net.jodah.failsafe.RetryPolicy;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
+
 import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.CompletableFuture;
-import net.jodah.failsafe.Failsafe;
-import net.jodah.failsafe.RetryPolicy;
-import eu.frenchxcore.tools.LocalExecutor;
-import eu.frenchxcore.tools.XLogger;
-import eu.frenchxcore.tools.httpclient.CommonHttpClient;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RestServiceManager {
     

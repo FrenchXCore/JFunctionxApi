@@ -3,8 +3,9 @@ package eu.frenchxcore.messages.cosmossdk.query.group;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eu.frenchxcore.messages.cosmossdk.types.group.Proposal;
-import java.util.List;
 import eu.frenchxcore.messages.cosmossdk.types.query.PageResponse;
+
+import java.util.List;
 
 /**
  * QueryProposalsByGroupAccountResponse is the Query/ProposalByGroupAccount response type.

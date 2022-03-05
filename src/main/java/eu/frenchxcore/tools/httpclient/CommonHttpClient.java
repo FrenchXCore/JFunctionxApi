@@ -1,10 +1,11 @@
 package eu.frenchxcore.tools.httpclient;
 
-import java.util.concurrent.TimeUnit;
+import eu.frenchxcore.tools.LocalExecutor;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
-import eu.frenchxcore.tools.LocalExecutor;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  *

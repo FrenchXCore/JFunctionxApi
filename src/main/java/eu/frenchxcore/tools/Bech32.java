@@ -90,7 +90,7 @@ public class Bech32 {
      * @throws java.lang.Exception
      */
     public static Bech DecodeAndConvert(String sBech) throws Exception {
-        Bech bech = null;
+        Bech bech;
         try {
             bech = Decode(sBech, 1023);
         } catch (Exception ex) {
@@ -157,13 +157,14 @@ public class Bech32 {
         byte[] decoded = toBytes(data);
 
         if (!VerifyChecksum(prefix, decoded)) {
+            String checksum = "";
+            String expected = "";
             String moreInfo = "";
-            String checksum = bech.substring(bech.length() - 6);
             try {
-                String expected = toChars(Checksum(prefix, data.substring(0, decoded.length - 6).getBytes()));
-                moreInfo = "Expected " + expected + ", got " + checksum + ".";
+                checksum = bech.substring(bech.length() - 6);
+                expected = toChars(Checksum(prefix, data.substring(0, decoded.length - 6).getBytes()));
             } catch (Exception ex) {
-                throw new Exception("checksum failed. " + moreInfo);
+                throw new Exception("checksum failed. " + "Expected " + expected + ", got " + checksum + ".");
             }
         }
         ret.prefix = prefix;

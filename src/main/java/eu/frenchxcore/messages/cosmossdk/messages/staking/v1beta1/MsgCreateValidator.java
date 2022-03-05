@@ -21,10 +21,11 @@ package eu.frenchxcore.messages.cosmossdk.messages.staking.v1beta1;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import eu.frenchxcore.messages.BaseMessage;
-import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 import eu.frenchxcore.messages.cosmossdk.types.base.PublicKey;
+import eu.frenchxcore.messages.cosmossdk.types.base.v1beta1.Coin;
 import eu.frenchxcore.messages.cosmossdk.types.staking.CommissionRates;
 import eu.frenchxcore.messages.cosmossdk.types.staking.Description;
+
 import java.math.BigInteger;
 
 /**
