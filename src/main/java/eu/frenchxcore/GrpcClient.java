@@ -32,6 +32,7 @@ public class GrpcClient {
     private final cosmos.params.v1beta1.QueryGrpc.QueryFutureStub paramsStub;
     private final cosmos.slashing.v1beta1.QueryGrpc.QueryFutureStub slashingStub;
     private final cosmos.staking.v1beta1.QueryGrpc.QueryFutureStub stakingStub;
+    private final cosmos.tx.v1beta1.ServiceGrpc.ServiceFutureStub txStub;
     private final cosmos.upgrade.v1beta1.QueryGrpc.QueryFutureStub upgradeStub;
 
     private final static Map<String, GrpcClient> instances = new HashMap<>();
@@ -81,6 +82,7 @@ public class GrpcClient {
         paramsStub = cosmos.params.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
         slashingStub = cosmos.slashing.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
         stakingStub = cosmos.staking.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
+        txStub = cosmos.tx.v1beta1.ServiceGrpc.newFutureStub(channel).withExecutor(executor);
         upgradeStub = cosmos.upgrade.v1beta1.QueryGrpc.newFutureStub(channel).withExecutor(executor);
     }
 
