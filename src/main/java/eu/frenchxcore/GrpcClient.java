@@ -800,7 +800,7 @@ public class GrpcClient {
         return txStub.getTxsEvent(_builder.addAllEvents(events).build());
     }
 
-    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.SimulateResponse> txGetTx(byte[] txBytes) {
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.SimulateResponse> txSimulate(byte[] txBytes) {
         cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.newBuilder();
         return txStub.simulate(_builder.setTxBytes(ByteString.copyFrom(txBytes)).build());
     }
