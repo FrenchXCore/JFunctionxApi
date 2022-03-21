@@ -774,6 +774,37 @@ public class GrpcClient {
         return stakingStub.validatorUnbondingDelegations(builder.setValidatorAddr(validatorAddress).build());
     }
 
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.BroadcastTxResponse> txBroadcastTx(cosmos.tx.v1beta1.ServiceOuterClass.BroadcastMode mode, byte[] txBytes) {
+        cosmos.tx.v1beta1.ServiceOuterClass.BroadcastTxRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.BroadcastTxRequest.newBuilder();
+        return txStub.broadcastTx(_builder.setMode(mode).setTxBytes(ByteString.copyFrom(txBytes)).build());
+    }
+
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.GetTxResponse> txGetTx(String txHash) {
+        cosmos.tx.v1beta1.ServiceOuterClass.GetTxRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.GetTxRequest.newBuilder();
+        return txStub.getTx(_builder.setHash(txHash).build());
+    }
+
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventResponse> txGetTxsEvent(String events, cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest) {
+        cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventRequest.newBuilder();
+        if (pageRequest != null) {
+            _builder.setPagination(pageRequest);
+        }
+        return txStub.getTxsEvent(_builder.addEvents(events).build());
+    }
+
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventResponse> txGetTxsEvent(Iterable<String> events, cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest) {
+        cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.GetTxsEventRequest.newBuilder();
+        if (pageRequest != null) {
+            _builder.setPagination(pageRequest);
+        }
+        return txStub.getTxsEvent(_builder.addAllEvents(events).build());
+    }
+
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.SimulateResponse> txGetTx(byte[] txBytes) {
+        cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.newBuilder();
+        return txStub.simulate(_builder.setTxBytes(ByteString.copyFrom(txBytes)).build());
+    }
+
     public ListenableFuture<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAppliedPlanResponse> upgradeAppliedPlan(String name) {
         return upgradeStub.appliedPlan(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAppliedPlanRequest.newBuilder().setName(name).build());
     }
