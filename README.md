@@ -21,10 +21,9 @@ This Java API allows you to interface to a FunctionX mainnet/testnet node in ord
 ## Quick start
 
 <p>First, you need to make sure the node's API (REST and/or gRPC) is enabled.</p>
-<p>In order to do that, go into the node's configuration directory (usually ~/.fxcore/config), and modify the 'app.toml' file in the [app] section so that enable=true, and restart your node (`sudo systemctl restart fxcored`).</p>
+<p>In order to do that, go into the node's configuration directory (usually ~/.fxcore/config), and modify the 'app.toml' and 'config.toml' files so that enable=true, and restart your node (`sudo systemctl restart fxcored`).</p>
 <br/>
 <p>Have a look at the 'Example.java' class to understand how to use it.</p>
-<p>The eu.frenchxcore.tools.rest.RestService and eu.frenchxcore.GrpcClient classes includes all available methods to query on any Cosmos-based RPC and gRPC interface.</p>
 
 ## Useful to know
 
@@ -39,32 +38,6 @@ Implementation of error messages.
 
 This library is not yet fully tested. So please be indulgent.
 
-### Implemented modules (gRPC and/or REST)
-- auth
-- authz
-- bank
-- base
-- capability
-- crisis
-- crypto
-- crosschain
-- distribution
-- evidence
-- feegrant
-- gov
-- gravity
-- group
-- ibc
-- mint
-- nft
-- params
-- query
-- slashing
-- staking
-- tx
-- upgrade
-- vesting
-
 ## Updates
 - v0.1.0 : initial draft version
 - v0.2.0 : refactoring of the packages - addition of the tendermint module - fix : dates
@@ -75,5 +48,7 @@ This library is not yet fully tested. So please be indulgent.
 - v0.6.0 : added gRPC proto interface.
 - v0.6.1-2 : fixed : eu.frenchxcore.cosmossdk.types.gov.v1beta1.Proposal and eu.frenchxcore.cosmossdk.types.gov.v1beta2.Proposal (votingEndTime)
 - v0.6.3 : refactoring
+- v0.7.0 : Cosmos and Tendermint RPC APIs are fully integrated (from OpenAPI) in api.cosmossdk and api.tendermint packages. Code was refactored (model and api packages).
+- v0.7.0 : Previous APIs were tested further : CosmosGrpcApi, CosmosRestApi.
 
-Have fun !
+- Have fun !

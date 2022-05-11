@@ -46,21 +46,13 @@ public class Bech32 {
 
     public static String getTransactionHashToAscii(String b64Tx) {
         byte[] hash = getTransactionHash(b64Tx);
-        return toHexAscii(hash);
+        return XString.toHexAscii(hash);
     }
 
     public static byte[] getTransactionHash(String b64Tx) {
         SHA256.reset();
         SHA256.update(Base64Decoder.decode(b64Tx));
         return SHA256.digest();
-    }
-
-    public static String toHexAscii(byte[] ba) {
-        StringBuilder ret = new StringBuilder();
-        for (byte i : ba) {
-            ret.append(String.format("%02X", i));
-        }
-        return ret.toString();
     }
 
     /**
