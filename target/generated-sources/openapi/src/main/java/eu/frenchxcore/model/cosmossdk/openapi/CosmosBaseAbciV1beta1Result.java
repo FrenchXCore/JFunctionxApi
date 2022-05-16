@@ -31,7 +31,7 @@ import java.util.List;
  * Result is the union of ResponseFormat and ResponseCheckTx.
  */
 @ApiModel(description = "Result is the union of ResponseFormat and ResponseCheckTx.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosBaseAbciV1beta1Result {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Params defines the set of params for the distribution module.
  */
 @ApiModel(description = "Params defines the set of params for the distribution module.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1Params {
   public static final String SERIALIZED_NAME_COMMUNITY_TAX = "community_tax";
   @SerializedName(SERIALIZED_NAME_COMMUNITY_TAX)

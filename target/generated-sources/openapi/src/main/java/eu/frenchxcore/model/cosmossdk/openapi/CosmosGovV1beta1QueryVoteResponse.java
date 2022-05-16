@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryVoteResponse is the response type for the Query/Vote RPC method.
  */
 @ApiModel(description = "QueryVoteResponse is the response type for the Query/Vote RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosGovV1beta1QueryVoteResponse {
   public static final String SERIALIZED_NAME_VOTE = "vote";
   @SerializedName(SERIALIZED_NAME_VOTE)

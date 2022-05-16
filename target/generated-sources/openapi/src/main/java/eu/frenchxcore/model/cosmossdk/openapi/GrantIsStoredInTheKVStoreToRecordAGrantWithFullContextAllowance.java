@@ -28,7 +28,7 @@ import java.io.IOException;
  * allowance can be any of basic and filtered fee allowance.
  */
 @ApiModel(description = "allowance can be any of basic and filtered fee allowance.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class GrantIsStoredInTheKVStoreToRecordAGrantWithFullContextAllowance {
   public static final String SERIALIZED_NAME_TYPE_URL = "type_url";
   @SerializedName(SERIALIZED_NAME_TYPE_URL)

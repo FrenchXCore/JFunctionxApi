@@ -32,7 +32,7 @@ import java.util.List;
  * QueryRedelegationsResponse is response type for the Query/Redelegations RPC method.
  */
 @ApiModel(description = "QueryRedelegationsResponse is response type for the Query/Redelegations RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class InlineResponse20039 {
   public static final String SERIALIZED_NAME_REDELEGATION_RESPONSES = "redelegation_responses";
   @SerializedName(SERIALIZED_NAME_REDELEGATION_RESPONSES)

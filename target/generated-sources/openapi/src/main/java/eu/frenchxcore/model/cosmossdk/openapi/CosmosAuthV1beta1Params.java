@@ -28,7 +28,7 @@ import java.io.IOException;
  * Params defines the parameters for the auth module.
  */
 @ApiModel(description = "Params defines the parameters for the auth module.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosAuthV1beta1Params {
   public static final String SERIALIZED_NAME_MAX_MEMO_CHARACTERS = "max_memo_characters";
   @SerializedName(SERIALIZED_NAME_MAX_MEMO_CHARACTERS)

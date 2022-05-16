@@ -31,7 +31,7 @@ import java.util.List;
  * StringEvent defines en Event object wrapper where all the attributes contain key/value pairs that are strings instead of raw bytes.
  */
 @ApiModel(description = "StringEvent defines en Event object wrapper where all the attributes contain key/value pairs that are strings instead of raw bytes.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosBaseAbciV1beta1StringEvent {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)

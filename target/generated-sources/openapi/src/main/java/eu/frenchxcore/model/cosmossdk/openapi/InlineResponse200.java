@@ -32,7 +32,7 @@ import java.util.List;
  * QueryAccountsResponse is the response type for the Query/Accounts RPC method.
  */
 @ApiModel(description = "QueryAccountsResponse is the response type for the Query/Accounts RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class InlineResponse200 {
   public static final String SERIALIZED_NAME_ACCOUNTS = "accounts";
   @SerializedName(SERIALIZED_NAME_ACCOUNTS)

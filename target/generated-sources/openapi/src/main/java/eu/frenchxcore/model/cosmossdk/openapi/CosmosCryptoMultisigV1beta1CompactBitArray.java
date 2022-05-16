@@ -28,7 +28,7 @@ import java.io.IOException;
  * CompactBitArray is an implementation of a space efficient bit array. This is used to ensure that the encoded data takes up a minimal amount of space after proto encoding. This is not thread safe, and is not intended for concurrent usage.
  */
 @ApiModel(description = "CompactBitArray is an implementation of a space efficient bit array. This is used to ensure that the encoded data takes up a minimal amount of space after proto encoding. This is not thread safe, and is not intended for concurrent usage.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class CosmosCryptoMultisigV1beta1CompactBitArray {
   public static final String SERIALIZED_NAME_EXTRA_BITS_STORED = "extra_bits_stored";
   @SerializedName(SERIALIZED_NAME_EXTRA_BITS_STORED)

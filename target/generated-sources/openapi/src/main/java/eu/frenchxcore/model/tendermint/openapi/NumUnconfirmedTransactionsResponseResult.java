@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NumUnconfirmedTransactionsResponseResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:21.538516500+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:27.992268300+02:00[Europe/Paris]")
 public class NumUnconfirmedTransactionsResponseResult {
   public static final String SERIALIZED_NAME_N_TXS = "n_txs";
   @SerializedName(SERIALIZED_NAME_N_TXS)

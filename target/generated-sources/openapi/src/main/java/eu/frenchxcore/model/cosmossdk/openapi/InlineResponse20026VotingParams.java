@@ -28,7 +28,7 @@ import java.io.IOException;
  * voting_params defines the parameters related to voting.
  */
 @ApiModel(description = "voting_params defines the parameters related to voting.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class InlineResponse20026VotingParams {
   public static final String SERIALIZED_NAME_VOTING_PERIOD = "voting_period";
   @SerializedName(SERIALIZED_NAME_VOTING_PERIOD)

@@ -32,7 +32,7 @@ import java.util.List;
  * QueryValidatorUnbondingDelegationsResponse is response type for the Query/ValidatorUnbondingDelegations RPC method.
  */
 @ApiModel(description = "QueryValidatorUnbondingDelegationsResponse is response type for the Query/ValidatorUnbondingDelegations RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:53:29.765516100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
 public class InlineResponse20048 {
   public static final String SERIALIZED_NAME_UNBONDING_RESPONSES = "unbonding_responses";
   @SerializedName(SERIALIZED_NAME_UNBONDING_RESPONSES)
