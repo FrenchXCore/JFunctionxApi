@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryDelegatorValidatorResponse response type for the Query/DelegatorValidator RPC method.
  */
 @ApiModel(description = "QueryDelegatorValidatorResponse response type for the Query/DelegatorValidator RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1QueryDelegatorValidatorResponse {
   public static final String SERIALIZED_NAME_VALIDATOR = "validator";
   @SerializedName(SERIALIZED_NAME_VALIDATOR)

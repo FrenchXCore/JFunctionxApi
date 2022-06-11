@@ -32,7 +32,7 @@ import java.util.List;
  * GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
  */
 @ApiModel(description = "GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class InlineResponse20014 {
   public static final String SERIALIZED_NAME_BLOCK_HEIGHT = "block_height";
   @SerializedName(SERIALIZED_NAME_BLOCK_HEIGHT)

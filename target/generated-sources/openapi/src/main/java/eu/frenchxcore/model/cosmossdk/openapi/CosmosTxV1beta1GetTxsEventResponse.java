@@ -33,7 +33,7 @@ import java.util.List;
  * GetTxsEventResponse is the response type for the Service.TxsByEvents RPC method.
  */
 @ApiModel(description = "GetTxsEventResponse is the response type for the Service.TxsByEvents RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosTxV1beta1GetTxsEventResponse {
   public static final String SERIALIZED_NAME_TXS = "txs";
   @SerializedName(SERIALIZED_NAME_TXS)

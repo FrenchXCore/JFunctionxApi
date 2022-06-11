@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.frenchxcore</groupId>
     <artifactId>jfunctionxapi</artifactId>
-    <version>0.7.2</version>
+    <version>0.8.0</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -225,6 +225,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.1</version>
                 <configuration>
+                    <classifier>${os.detected.classifier}</classifier>
                     <!-- DO NOT include log4j.properties file in your Jar -->
                     <excludes>
                         <exclude>**/log4j.properties</exclude>

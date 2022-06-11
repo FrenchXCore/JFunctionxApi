@@ -28,7 +28,7 @@ import java.io.IOException;
  * ValidatorSlashEvent represents a validator slash event. Height is implicit within the store key. This is needed to calculate appropriate amount of staking tokens for delegations which are withdrawn after a slash has occurred.
  */
 @ApiModel(description = "ValidatorSlashEvent represents a validator slash event. Height is implicit within the store key. This is needed to calculate appropriate amount of staking tokens for delegations which are withdrawn after a slash has occurred.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1ValidatorSlashEvent {
   public static final String SERIALIZED_NAME_VALIDATOR_PERIOD = "validator_period";
   @SerializedName(SERIALIZED_NAME_VALIDATOR_PERIOD)

@@ -51,5 +51,6 @@ This library is not yet fully tested. So please be indulgent.
 - v0.7.0 : Cosmos and Tendermint RPC APIs are fully integrated (from OpenAPI) in api.cosmossdk and api.tendermint packages. Code was refactored (model and api packages).
 - v0.7.0 : Previous APIs were tested further : CosmosGrpcApi, CosmosRestApi.
 - v0.7.2 : Bugs corrected. Added 'height' parameter to CosmosGrpcApi.
+- v0.7.3-v0.8.0 : Bugs corrected. Completed CosmosGrpcApi with tendermint base features, service and transaction methods.
 
 - Have fun !

@@ -44,6 +44,12 @@ public class Bech32 {
         return Arrays.copyOfRange(SHA256.digest(), 0, 20);
     }
 
+    public static byte[] convertPublicKey(byte[] b64DecodedPubKey) {
+        SHA256.reset();
+        SHA256.update(b64DecodedPubKey);
+        return Arrays.copyOfRange(SHA256.digest(), 0, 20);
+    }
+
     public static String getTransactionHashToAscii(String b64Tx) {
         byte[] hash = getTransactionHash(b64Tx);
         return XString.toHexAscii(hash);

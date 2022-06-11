@@ -30,7 +30,7 @@ import java.io.IOException;
  * SimulateResponse is the response type for the Service.SimulateRPC method.
  */
 @ApiModel(description = "SimulateResponse is the response type for the Service.SimulateRPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosTxV1beta1SimulateResponse {
   public static final String SERIALIZED_NAME_GAS_INFO = "gas_info";
   @SerializedName(SERIALIZED_NAME_GAS_INFO)

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TendermintP2pDefaultNodeInfoOther
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class TendermintP2pDefaultNodeInfoOther {
   public static final String SERIALIZED_NAME_TX_INDEX = "tx_index";
   @SerializedName(SERIALIZED_NAME_TX_INDEX)

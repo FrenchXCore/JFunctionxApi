@@ -28,7 +28,7 @@ import java.io.IOException;
  * Attribute defines an attribute wrapper where the key and value are strings instead of raw bytes.
  */
 @ApiModel(description = "Attribute defines an attribute wrapper where the key and value are strings instead of raw bytes.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosBaseAbciV1beta1Attribute {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

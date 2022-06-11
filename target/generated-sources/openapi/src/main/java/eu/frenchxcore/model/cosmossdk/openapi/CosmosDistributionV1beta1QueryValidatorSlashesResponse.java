@@ -32,7 +32,7 @@ import java.util.List;
  * QueryValidatorSlashesResponse is the response type for the Query/ValidatorSlashes RPC method.
  */
 @ApiModel(description = "QueryValidatorSlashesResponse is the response type for the Query/ValidatorSlashes RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1QueryValidatorSlashesResponse {
   public static final String SERIALIZED_NAME_SLASHES = "slashes";
   @SerializedName(SERIALIZED_NAME_SLASHES)

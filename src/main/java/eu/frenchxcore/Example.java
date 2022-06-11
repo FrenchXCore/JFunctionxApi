@@ -7,7 +7,6 @@ import cosmos.tx.v1beta1.TxOuterClass.Tx;
 import eu.frenchxcore.api.CosmosGrpcApi;
 import eu.frenchxcore.api.CosmosRestApi;
 import eu.frenchxcore.api.CosmosRestServiceManager;
-import eu.frenchxcore.model.cosmossdk.openapi.InlineResponse2001;
 import eu.frenchxcore.model.cosmossdk.openapi.InlineResponse20011;
 import eu.frenchxcore.model.cosmossdk.openapi.InlineResponse2002;
 
@@ -41,7 +40,7 @@ public class Example {
                     .add(cosmos.tx.v1beta1.TxOuterClass.getDescriptor().getMessageTypes())
                     .build();
 
-            cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse resp0 = client.stakingValidators().get();
+            cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse resp0 = client.stakingQueryValidators().get();
             cosmos.auth.v1beta1.QueryAccountResponse resp1 = client.authAccount("fx1z67rkadwrp2nf4zwxpktpqnw969plely6rfzpt").get();
             if (resp1.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
                 cosmos.auth.v1beta1.BaseAccount account = resp1.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);

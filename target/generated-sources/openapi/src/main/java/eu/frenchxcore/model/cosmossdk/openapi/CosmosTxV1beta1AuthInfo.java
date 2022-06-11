@@ -32,7 +32,7 @@ import java.util.List;
  * AuthInfo describes the fee and signer modes that are used to sign a transaction.
  */
 @ApiModel(description = "AuthInfo describes the fee and signer modes that are used to sign a transaction.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class CosmosTxV1beta1AuthInfo {
   public static final String SERIALIZED_NAME_SIGNER_INFOS = "signer_infos";
   @SerializedName(SERIALIZED_NAME_SIGNER_INFOS)

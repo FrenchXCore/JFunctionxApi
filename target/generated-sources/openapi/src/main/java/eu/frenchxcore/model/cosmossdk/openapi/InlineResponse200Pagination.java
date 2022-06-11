@@ -28,7 +28,7 @@ import java.io.IOException;
  * pagination defines the pagination in the response.
  */
 @ApiModel(description = "pagination defines the pagination in the response.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-16T07:33:41.243799100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
 public class InlineResponse200Pagination {
   public static final String SERIALIZED_NAME_NEXT_KEY = "next_key";
   @SerializedName(SERIALIZED_NAME_NEXT_KEY)
