@@ -30,7 +30,7 @@ import java.io.IOException;
  * GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.
  */
 @ApiModel(description = "GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class CosmosBaseTendermintV1beta1GetNodeInfoResponse {
   public static final String SERIALIZED_NAME_DEFAULT_NODE_INFO = "default_node_info";
   @SerializedName(SERIALIZED_NAME_DEFAULT_NODE_INFO)

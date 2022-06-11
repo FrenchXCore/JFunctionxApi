@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * BlockMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:16.768078100+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:08.597986700+02:00[Europe/Paris]")
 public class BlockMeta {
   public static final String SERIALIZED_NAME_BLOCK_ID = "block_id";
   @SerializedName(SERIALIZED_NAME_BLOCK_ID)

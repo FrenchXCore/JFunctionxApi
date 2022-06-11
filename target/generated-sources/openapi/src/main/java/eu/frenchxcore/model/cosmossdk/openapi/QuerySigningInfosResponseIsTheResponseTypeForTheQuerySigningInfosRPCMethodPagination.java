@@ -28,7 +28,7 @@ import java.io.IOException;
  * PageResponse is to be embedded in gRPC response messages where the corresponding request message has used PageRequest.   message SomeResponse {          repeated Bar results &#x3D; 1;          PageResponse page &#x3D; 2;  }
  */
 @ApiModel(description = "PageResponse is to be embedded in gRPC response messages where the corresponding request message has used PageRequest.   message SomeResponse {          repeated Bar results = 1;          PageResponse page = 2;  }")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class QuerySigningInfosResponseIsTheResponseTypeForTheQuerySigningInfosRPCMethodPagination {
   public static final String SERIALIZED_NAME_NEXT_KEY = "next_key";
   @SerializedName(SERIALIZED_NAME_NEXT_KEY)

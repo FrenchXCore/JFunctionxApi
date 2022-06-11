@@ -30,7 +30,7 @@ import java.io.IOException;
  * ModeInfo describes the signing mode of a single or nested multisig signer.
  */
 @ApiModel(description = "ModeInfo describes the signing mode of a single or nested multisig signer.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class CosmosTxV1beta1ModeInfo {
   public static final String SERIALIZED_NAME_SINGLE = "single";
   @SerializedName(SERIALIZED_NAME_SINGLE)

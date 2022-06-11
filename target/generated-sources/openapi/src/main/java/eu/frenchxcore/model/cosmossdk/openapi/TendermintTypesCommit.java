@@ -32,7 +32,7 @@ import java.util.List;
  * Commit contains the evidence that a block was committed by a set of validators.
  */
 @ApiModel(description = "Commit contains the evidence that a block was committed by a set of validators.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class TendermintTypesCommit {
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)

@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Grant gives permissions to execute the provide method with expiration time.
  */
 @ApiModel(description = "Grant gives permissions to execute the provide method with expiration time.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class InlineResponse20055Grants {
   public static final String SERIALIZED_NAME_AUTHORIZATION = "authorization";
   @SerializedName(SERIALIZED_NAME_AUTHORIZATION)

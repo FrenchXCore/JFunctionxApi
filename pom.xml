@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.frenchxcore</groupId>
     <artifactId>jfunctionxapi</artifactId>
-    <version>0.8.0</version>
+    <version>0.8.2</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>

@@ -52,5 +52,7 @@ This library is not yet fully tested. So please be indulgent.
 - v0.7.0 : Previous APIs were tested further : CosmosGrpcApi, CosmosRestApi.
 - v0.7.2 : Bugs corrected. Added 'height' parameter to CosmosGrpcApi.
 - v0.7.3-v0.8.0 : Bugs corrected. Completed CosmosGrpcApi with tendermint base features, service and transaction methods.
+- v0.8.1 : normalization of CosmosGrpcApi method names.
+- v0.8.2 : addition of gravity, crosschain and ibc module query and message methods.
 
-- Have fun !
+Have fun !

@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryTallyResultResponse is the response type for the Query/Tally RPC method.
  */
 @ApiModel(description = "QueryTallyResultResponse is the response type for the Query/Tally RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class InlineResponse20031 {
   public static final String SERIALIZED_NAME_TALLY = "tally";
   @SerializedName(SERIALIZED_NAME_TALLY)

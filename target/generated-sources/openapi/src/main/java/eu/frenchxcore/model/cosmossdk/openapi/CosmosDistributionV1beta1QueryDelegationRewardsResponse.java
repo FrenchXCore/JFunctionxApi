@@ -31,7 +31,7 @@ import java.util.List;
  * QueryDelegationRewardsResponse is the response type for the Query/DelegationRewards RPC method.
  */
 @ApiModel(description = "QueryDelegationRewardsResponse is the response type for the Query/DelegationRewards RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1QueryDelegationRewardsResponse {
   public static final String SERIALIZED_NAME_REWARDS = "rewards";
   @SerializedName(SERIALIZED_NAME_REWARDS)

@@ -31,7 +31,7 @@ import java.util.List;
  * DelegationDelegatorReward represents the properties of a delegator&#39;s delegation reward.
  */
 @ApiModel(description = "DelegationDelegatorReward represents the properties of a delegator's delegation reward.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1DelegationDelegatorReward {
   public static final String SERIALIZED_NAME_VALIDATOR_ADDRESS = "validator_address";
   @SerializedName(SERIALIZED_NAME_VALIDATOR_ADDRESS)

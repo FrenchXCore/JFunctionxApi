@@ -28,7 +28,7 @@ import java.io.IOException;
  * QueryUpgradedConsensusStateResponse is the response type for the Query/UpgradedConsensusState RPC method.
  */
 @ApiModel(description = "QueryUpgradedConsensusStateResponse is the response type for the Query/UpgradedConsensusState RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class InlineResponse20054 {
   public static final String SERIALIZED_NAME_UPGRADED_CONSENSUS_STATE = "upgraded_consensus_state";
   @SerializedName(SERIALIZED_NAME_UPGRADED_CONSENSUS_STATE)

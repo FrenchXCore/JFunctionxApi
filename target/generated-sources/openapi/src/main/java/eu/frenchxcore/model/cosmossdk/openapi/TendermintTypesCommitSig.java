@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * CommitSig is a part of the Vote included in a Commit.
  */
 @ApiModel(description = "CommitSig is a part of the Vote included in a Commit.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class TendermintTypesCommitSig {
   /**
    * Gets or Sets blockIdFlag

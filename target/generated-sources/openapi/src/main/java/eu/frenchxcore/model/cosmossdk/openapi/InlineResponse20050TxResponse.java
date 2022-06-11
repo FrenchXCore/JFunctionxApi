@@ -32,7 +32,7 @@ import java.util.List;
  * TxResponse defines a structure containing relevant tx data and metadata. The tags are stringified and the log is JSON decoded.
  */
 @ApiModel(description = "TxResponse defines a structure containing relevant tx data and metadata. The tags are stringified and the log is JSON decoded.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T08:16:25.027082+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
 public class InlineResponse20050TxResponse {
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)
