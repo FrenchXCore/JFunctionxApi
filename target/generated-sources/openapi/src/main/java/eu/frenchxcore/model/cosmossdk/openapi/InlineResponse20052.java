@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryCurrentPlanResponse is the response type for the Query/CurrentPlan RPC method.
  */
 @ApiModel(description = "QueryCurrentPlanResponse is the response type for the Query/CurrentPlan RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20052 {
   public static final String SERIALIZED_NAME_PLAN = "plan";
   @SerializedName(SERIALIZED_NAME_PLAN)

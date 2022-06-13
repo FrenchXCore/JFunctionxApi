@@ -32,7 +32,7 @@ import java.util.List;
  * Tx is the standard type used for broadcasting transactions.
  */
 @ApiModel(description = "Tx is the standard type used for broadcasting transactions.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosTxV1beta1Tx {
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)

@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * UnbondingDelegationEntry defines an unbonding object with relevant metadata.
  */
 @ApiModel(description = "UnbondingDelegationEntry defines an unbonding object with relevant metadata.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20040Entries {
   public static final String SERIALIZED_NAME_CREATION_HEIGHT = "creation_height";
   @SerializedName(SERIALIZED_NAME_CREATION_HEIGHT)

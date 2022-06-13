@@ -32,7 +32,7 @@ import java.util.List;
  * QueryDenomOwnersResponse defines the RPC response of a DenomOwners RPC query.
  */
 @ApiModel(description = "QueryDenomOwnersResponse defines the RPC response of a DenomOwners RPC query.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosBankV1beta1QueryDenomOwnersResponse {
   public static final String SERIALIZED_NAME_DENOM_OWNERS = "denom_owners";
   @SerializedName(SERIALIZED_NAME_DENOM_OWNERS)

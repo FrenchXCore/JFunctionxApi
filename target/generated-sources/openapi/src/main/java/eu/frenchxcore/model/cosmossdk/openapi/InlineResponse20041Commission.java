@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * commission defines the commission parameters.
  */
 @ApiModel(description = "commission defines the commission parameters.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20041Commission {
   public static final String SERIALIZED_NAME_COMMISSION_RATES = "commission_rates";
   @SerializedName(SERIALIZED_NAME_COMMISSION_RATES)

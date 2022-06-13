@@ -29,7 +29,7 @@ import java.io.IOException;
  * DenomOwner defines structure representing an account that owns or holds a particular denominated token. It contains the account address and account balance of the denominated token.
  */
 @ApiModel(description = "DenomOwner defines structure representing an account that owns or holds a particular denominated token. It contains the account address and account balance of the denominated token.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosBankV1beta1DenomOwner {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)

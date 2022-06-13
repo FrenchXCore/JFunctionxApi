@@ -28,7 +28,7 @@ import java.io.IOException;
  * Consensus captures the consensus rules for processing a block in the blockchain, including all blockchain data structures and the rules of the application&#39;s state transition machine.
  */
 @ApiModel(description = "Consensus captures the consensus rules for processing a block in the blockchain, including all blockchain data structures and the rules of the application's state transition machine.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class BasicBlockInfo {
   public static final String SERIALIZED_NAME_BLOCK = "block";
   @SerializedName(SERIALIZED_NAME_BLOCK)

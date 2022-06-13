@@ -32,7 +32,7 @@ import java.util.List;
  * QueryGrantsResponse is the response type for the Query/Authorizations RPC method.
  */
 @ApiModel(description = "QueryGrantsResponse is the response type for the Query/Authorizations RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosAuthzV1beta1QueryGrantsResponse {
   public static final String SERIALIZED_NAME_GRANTS = "grants";
   @SerializedName(SERIALIZED_NAME_GRANTS)

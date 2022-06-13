@@ -33,7 +33,7 @@ import java.util.Map;
  * Empty Response
  */
 @ApiModel(description = "Empty Response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:08.597986700+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:17:53.421768900+02:00[Europe/Paris]")
 public class EmptyResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

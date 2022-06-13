@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Vote represents a prevote, precommit, or commit vote from validators for consensus.
  */
 @ApiModel(description = "Vote represents a prevote, precommit, or commit vote from validators for consensus.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceDuplicateVoteEvidenceVoteA {
   /**
    * SignedMsgType is a type of signed message in the consensus.   - SIGNED_MSG_TYPE_PREVOTE: Votes  - SIGNED_MSG_TYPE_PROPOSAL: Proposals

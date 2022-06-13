@@ -32,7 +32,7 @@ import java.util.List;
  * RedelegationResponse is equivalent to a Redelegation except that its entries contain a balance in addition to shares which is more suitable for client responses.
  */
 @ApiModel(description = "RedelegationResponse is equivalent to a Redelegation except that its entries contain a balance in addition to shares which is more suitable for client responses.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20039RedelegationResponses {
   public static final String SERIALIZED_NAME_REDELEGATION = "redelegation";
   @SerializedName(SERIALIZED_NAME_REDELEGATION)

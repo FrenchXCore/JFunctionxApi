@@ -28,7 +28,7 @@ import java.io.IOException;
  * ParamChange defines an individual parameter change, for use in ParameterChangeProposal.
  */
 @ApiModel(description = "ParamChange defines an individual parameter change, for use in ParameterChangeProposal.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosParamsV1beta1ParamChange {
   public static final String SERIALIZED_NAME_SUBSPACE = "subspace";
   @SerializedName(SERIALIZED_NAME_SUBSPACE)

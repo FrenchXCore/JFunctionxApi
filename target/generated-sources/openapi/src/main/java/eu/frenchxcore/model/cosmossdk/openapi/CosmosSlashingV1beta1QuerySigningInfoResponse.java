@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * CosmosSlashingV1beta1QuerySigningInfoResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class CosmosSlashingV1beta1QuerySigningInfoResponse {
   public static final String SERIALIZED_NAME_VAL_SIGNING_INFO = "val_signing_info";
   @SerializedName(SERIALIZED_NAME_VAL_SIGNING_INFO)

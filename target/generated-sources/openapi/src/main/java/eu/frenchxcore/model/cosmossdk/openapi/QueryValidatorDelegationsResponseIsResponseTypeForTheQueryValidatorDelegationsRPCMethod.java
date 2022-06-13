@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * QueryValidatorDelegationsResponseIsResponseTypeForTheQueryValidatorDelegationsRPCMethod
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class QueryValidatorDelegationsResponseIsResponseTypeForTheQueryValidatorDelegationsRPCMethod {
   public static final String SERIALIZED_NAME_DELEGATION_RESPONSES = "delegation_responses";
   @SerializedName(SERIALIZED_NAME_DELEGATION_RESPONSES)

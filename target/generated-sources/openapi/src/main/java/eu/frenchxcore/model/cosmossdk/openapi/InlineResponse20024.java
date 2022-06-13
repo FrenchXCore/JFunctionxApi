@@ -32,7 +32,7 @@ import java.util.List;
  * QueryAllEvidenceResponse is the response type for the Query/AllEvidence RPC method.
  */
 @ApiModel(description = "QueryAllEvidenceResponse is the response type for the Query/AllEvidence RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-11T23:37:17.045990200+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
 public class InlineResponse20024 {
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)
