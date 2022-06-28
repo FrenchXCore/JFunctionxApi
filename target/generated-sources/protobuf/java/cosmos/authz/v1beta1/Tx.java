@@ -19,24 +19,24 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     java.lang.String getGranter();
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
         getGranterBytes();
 
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -169,7 +169,7 @@ public final class Tx {
     public static final int GRANTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object granter_;
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -186,7 +186,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -207,7 +207,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 2;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -224,7 +224,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -624,7 +624,7 @@ public final class Tx {
 
       private java.lang.Object granter_ = "";
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -640,7 +640,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -657,7 +657,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -672,7 +672,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -682,7 +682,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -700,7 +700,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -716,7 +716,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -733,7 +733,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -748,7 +748,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -758,7 +758,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -1555,12 +1555,12 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 1;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 1;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -1727,7 +1727,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 1;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 1;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -1744,7 +1744,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 1;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -2199,7 +2199,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 1;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -2215,7 +2215,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 1;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -2232,7 +2232,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 1;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -2247,7 +2247,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -2257,7 +2257,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 1;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -3104,24 +3104,24 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     java.lang.String getGranter();
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
         getGranterBytes();
 
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -3245,7 +3245,7 @@ public final class Tx {
     public static final int GRANTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object granter_;
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -3262,7 +3262,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -3283,7 +3283,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 2;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -3300,7 +3300,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -3699,7 +3699,7 @@ public final class Tx {
 
       private java.lang.Object granter_ = "";
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -3715,7 +3715,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -3732,7 +3732,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -3747,7 +3747,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -3757,7 +3757,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -3775,7 +3775,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -3791,7 +3791,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -3808,7 +3808,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -3823,7 +3823,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -3833,7 +3833,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -4444,35 +4444,35 @@ public final class Tx {
     java.lang.String[] descriptorData = {
       "\n\035cosmos/authz/v1beta1/tx.proto\022\024cosmos." +
       "authz.v1beta1\032\031cosmos_proto/cosmos.proto" +
-      "\032\024gogoproto/gogo.proto\032\031google/protobuf/" +
-      "any.proto\032 cosmos/authz/v1beta1/authz.pr" +
-      "oto\"\222\001\n\010MsgGrant\022)\n\007granter\030\001 \001(\tB\030\322\264-\024c" +
-      "osmos.AddressString\022)\n\007grantee\030\002 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\0220\n\005grant\030\003 \001(\0132\033." +
-      "cosmos.authz.v1beta1.GrantB\004\310\336\037\000\"\"\n\017MsgE" +
-      "xecResponse\022\017\n\007results\030\001 \003(\014\"z\n\007MsgExec\022" +
-      ")\n\007grantee\030\001 \001(\tB\030\322\264-\024cosmos.AddressStri" +
-      "ng\022D\n\004msgs\030\002 \003(\0132\024.google.protobuf.AnyB " +
-      "\312\264-\034sdk.Msg, authz.Authorization\"\022\n\020MsgG" +
-      "rantResponse\"w\n\tMsgRevoke\022)\n\007granter\030\001 \001" +
-      "(\tB\030\322\264-\024cosmos.AddressString\022)\n\007grantee\030" +
-      "\002 \001(\tB\030\322\264-\024cosmos.AddressString\022\024\n\014msg_t" +
-      "ype_url\030\003 \001(\t\"\023\n\021MsgRevokeResponse2\370\001\n\003M" +
-      "sg\022O\n\005Grant\022\036.cosmos.authz.v1beta1.MsgGr" +
-      "ant\032&.cosmos.authz.v1beta1.MsgGrantRespo" +
-      "nse\022L\n\004Exec\022\035.cosmos.authz.v1beta1.MsgEx" +
-      "ec\032%.cosmos.authz.v1beta1.MsgExecRespons" +
-      "e\022R\n\006Revoke\022\037.cosmos.authz.v1beta1.MsgRe" +
-      "voke\032\'.cosmos.authz.v1beta1.MsgRevokeRes" +
-      "ponseB*Z$github.com/cosmos/cosmos-sdk/x/" +
-      "authz\310\341\036\000b\006proto3"
+      "\032\024gogoproto/gogo.proto\032\037google/protobuf/" +
+      "timestamp.proto\032\031google/protobuf/any.pro" +
+      "to\032#cosmos/base/abci/v1beta1/abci.proto\032" +
+      " cosmos/authz/v1beta1/authz.proto\"^\n\010Msg" +
+      "Grant\022\017\n\007granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022" +
+      "0\n\005grant\030\003 \001(\0132\033.cosmos.authz.v1beta1.Gr" +
+      "antB\004\310\336\037\000\"\"\n\017MsgExecResponse\022\017\n\007results\030" +
+      "\001 \003(\014\"`\n\007MsgExec\022\017\n\007grantee\030\001 \001(\t\022D\n\004msg" +
+      "s\030\002 \003(\0132\024.google.protobuf.AnyB \312\264-\034sdk.M" +
+      "sg, authz.Authorization\"\022\n\020MsgGrantRespo" +
+      "nse\"C\n\tMsgRevoke\022\017\n\007granter\030\001 \001(\t\022\017\n\007gra" +
+      "ntee\030\002 \001(\t\022\024\n\014msg_type_url\030\003 \001(\t\"\023\n\021MsgR" +
+      "evokeResponse2\370\001\n\003Msg\022O\n\005Grant\022\036.cosmos." +
+      "authz.v1beta1.MsgGrant\032&.cosmos.authz.v1" +
+      "beta1.MsgGrantResponse\022L\n\004Exec\022\035.cosmos." +
+      "authz.v1beta1.MsgExec\032%.cosmos.authz.v1b" +
+      "eta1.MsgExecResponse\022R\n\006Revoke\022\037.cosmos." +
+      "authz.v1beta1.MsgRevoke\032\'.cosmos.authz.v" +
+      "1beta1.MsgRevokeResponseB*Z$github.com/c" +
+      "osmos/cosmos-sdk/x/authz\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos_proto.Cosmos.getDescriptor(),
           com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
+          cosmos.base.abci.v1beta1.Abci.getDescriptor(),
           cosmos.authz.v1beta1.Authz.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_MsgGrant_descriptor =
@@ -4514,14 +4514,15 @@ public final class Tx {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos_proto.Cosmos.getDescriptor();
     com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
+    cosmos.base.abci.v1beta1.Abci.getDescriptor();
     cosmos.authz.v1beta1.Authz.getDescriptor();
   }
 

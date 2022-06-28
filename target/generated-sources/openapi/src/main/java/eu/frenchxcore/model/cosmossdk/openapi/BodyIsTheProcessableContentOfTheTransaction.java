@@ -31,7 +31,7 @@ import java.util.List;
  * TxBody is the body of a transaction that all signers sign over.
  */
 @ApiModel(description = "TxBody is the body of a transaction that all signers sign over.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class BodyIsTheProcessableContentOfTheTransaction {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)

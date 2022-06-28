@@ -18,29 +18,29 @@ public final class MsgGrpc {
   public static final String SERVICE_NAME = "cosmos.gov.v1beta1.Msg";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgSubmitProposal,
-      cosmos.gov.v1beta1.MsgSubmitProposalResponse> getSubmitProposalMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgSubmitProposal,
+      cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> getSubmitProposalMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SubmitProposal",
-      requestType = cosmos.gov.v1beta1.MsgSubmitProposal.class,
-      responseType = cosmos.gov.v1beta1.MsgSubmitProposalResponse.class,
+      requestType = cosmos.gov.v1beta1.Tx.MsgSubmitProposal.class,
+      responseType = cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgSubmitProposal,
-      cosmos.gov.v1beta1.MsgSubmitProposalResponse> getSubmitProposalMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgSubmitProposal, cosmos.gov.v1beta1.MsgSubmitProposalResponse> getSubmitProposalMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgSubmitProposal,
+      cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> getSubmitProposalMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgSubmitProposal, cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> getSubmitProposalMethod;
     if ((getSubmitProposalMethod = MsgGrpc.getSubmitProposalMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getSubmitProposalMethod = MsgGrpc.getSubmitProposalMethod) == null) {
           MsgGrpc.getSubmitProposalMethod = getSubmitProposalMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.MsgSubmitProposal, cosmos.gov.v1beta1.MsgSubmitProposalResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.Tx.MsgSubmitProposal, cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitProposal"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgSubmitProposal.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgSubmitProposal.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgSubmitProposalResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("SubmitProposal"))
               .build();
         }
@@ -49,29 +49,29 @@ public final class MsgGrpc {
     return getSubmitProposalMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVote,
-      cosmos.gov.v1beta1.MsgVoteResponse> getVoteMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVote,
+      cosmos.gov.v1beta1.Tx.MsgVoteResponse> getVoteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Vote",
-      requestType = cosmos.gov.v1beta1.MsgVote.class,
-      responseType = cosmos.gov.v1beta1.MsgVoteResponse.class,
+      requestType = cosmos.gov.v1beta1.Tx.MsgVote.class,
+      responseType = cosmos.gov.v1beta1.Tx.MsgVoteResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVote,
-      cosmos.gov.v1beta1.MsgVoteResponse> getVoteMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVote, cosmos.gov.v1beta1.MsgVoteResponse> getVoteMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVote,
+      cosmos.gov.v1beta1.Tx.MsgVoteResponse> getVoteMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVote, cosmos.gov.v1beta1.Tx.MsgVoteResponse> getVoteMethod;
     if ((getVoteMethod = MsgGrpc.getVoteMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getVoteMethod = MsgGrpc.getVoteMethod) == null) {
           MsgGrpc.getVoteMethod = getVoteMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.MsgVote, cosmos.gov.v1beta1.MsgVoteResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.Tx.MsgVote, cosmos.gov.v1beta1.Tx.MsgVoteResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Vote"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgVote.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgVote.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgVoteResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgVoteResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("Vote"))
               .build();
         }
@@ -80,29 +80,29 @@ public final class MsgGrpc {
     return getVoteMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVoteWeighted,
-      cosmos.gov.v1beta1.MsgVoteWeightedResponse> getVoteWeightedMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVoteWeighted,
+      cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> getVoteWeightedMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "VoteWeighted",
-      requestType = cosmos.gov.v1beta1.MsgVoteWeighted.class,
-      responseType = cosmos.gov.v1beta1.MsgVoteWeightedResponse.class,
+      requestType = cosmos.gov.v1beta1.Tx.MsgVoteWeighted.class,
+      responseType = cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVoteWeighted,
-      cosmos.gov.v1beta1.MsgVoteWeightedResponse> getVoteWeightedMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgVoteWeighted, cosmos.gov.v1beta1.MsgVoteWeightedResponse> getVoteWeightedMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVoteWeighted,
+      cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> getVoteWeightedMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgVoteWeighted, cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> getVoteWeightedMethod;
     if ((getVoteWeightedMethod = MsgGrpc.getVoteWeightedMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getVoteWeightedMethod = MsgGrpc.getVoteWeightedMethod) == null) {
           MsgGrpc.getVoteWeightedMethod = getVoteWeightedMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.MsgVoteWeighted, cosmos.gov.v1beta1.MsgVoteWeightedResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.Tx.MsgVoteWeighted, cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VoteWeighted"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgVoteWeighted.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgVoteWeighted.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgVoteWeightedResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("VoteWeighted"))
               .build();
         }
@@ -111,29 +111,29 @@ public final class MsgGrpc {
     return getVoteWeightedMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgDeposit,
-      cosmos.gov.v1beta1.MsgDepositResponse> getDepositMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgDeposit,
+      cosmos.gov.v1beta1.Tx.MsgDepositResponse> getDepositMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Deposit",
-      requestType = cosmos.gov.v1beta1.MsgDeposit.class,
-      responseType = cosmos.gov.v1beta1.MsgDepositResponse.class,
+      requestType = cosmos.gov.v1beta1.Tx.MsgDeposit.class,
+      responseType = cosmos.gov.v1beta1.Tx.MsgDepositResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgDeposit,
-      cosmos.gov.v1beta1.MsgDepositResponse> getDepositMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.MsgDeposit, cosmos.gov.v1beta1.MsgDepositResponse> getDepositMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgDeposit,
+      cosmos.gov.v1beta1.Tx.MsgDepositResponse> getDepositMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.Tx.MsgDeposit, cosmos.gov.v1beta1.Tx.MsgDepositResponse> getDepositMethod;
     if ((getDepositMethod = MsgGrpc.getDepositMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getDepositMethod = MsgGrpc.getDepositMethod) == null) {
           MsgGrpc.getDepositMethod = getDepositMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.MsgDeposit, cosmos.gov.v1beta1.MsgDepositResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.Tx.MsgDeposit, cosmos.gov.v1beta1.Tx.MsgDepositResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Deposit"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgDeposit.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgDeposit.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.MsgDepositResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.Tx.MsgDepositResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("Deposit"))
               .build();
         }
@@ -198,8 +198,8 @@ public final class MsgGrpc {
      * SubmitProposal defines a method to create new proposal given a content.
      * </pre>
      */
-    public void submitProposal(cosmos.gov.v1beta1.MsgSubmitProposal request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgSubmitProposalResponse> responseObserver) {
+    public void submitProposal(cosmos.gov.v1beta1.Tx.MsgSubmitProposal request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitProposalMethod(), responseObserver);
     }
 
@@ -208,8 +208,8 @@ public final class MsgGrpc {
      * Vote defines a method to add a vote on a specific proposal.
      * </pre>
      */
-    public void vote(cosmos.gov.v1beta1.MsgVote request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteResponse> responseObserver) {
+    public void vote(cosmos.gov.v1beta1.Tx.MsgVote request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVoteMethod(), responseObserver);
     }
 
@@ -219,8 +219,8 @@ public final class MsgGrpc {
      * Since: cosmos-sdk 0.43
      * </pre>
      */
-    public void voteWeighted(cosmos.gov.v1beta1.MsgVoteWeighted request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteWeightedResponse> responseObserver) {
+    public void voteWeighted(cosmos.gov.v1beta1.Tx.MsgVoteWeighted request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVoteWeightedMethod(), responseObserver);
     }
 
@@ -229,8 +229,8 @@ public final class MsgGrpc {
      * Deposit defines a method to add deposit on a specific proposal.
      * </pre>
      */
-    public void deposit(cosmos.gov.v1beta1.MsgDeposit request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgDepositResponse> responseObserver) {
+    public void deposit(cosmos.gov.v1beta1.Tx.MsgDeposit request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgDepositResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDepositMethod(), responseObserver);
     }
 
@@ -240,29 +240,29 @@ public final class MsgGrpc {
             getSubmitProposalMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.MsgSubmitProposal,
-                cosmos.gov.v1beta1.MsgSubmitProposalResponse>(
+                cosmos.gov.v1beta1.Tx.MsgSubmitProposal,
+                cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse>(
                   this, METHODID_SUBMIT_PROPOSAL)))
           .addMethod(
             getVoteMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.MsgVote,
-                cosmos.gov.v1beta1.MsgVoteResponse>(
+                cosmos.gov.v1beta1.Tx.MsgVote,
+                cosmos.gov.v1beta1.Tx.MsgVoteResponse>(
                   this, METHODID_VOTE)))
           .addMethod(
             getVoteWeightedMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.MsgVoteWeighted,
-                cosmos.gov.v1beta1.MsgVoteWeightedResponse>(
+                cosmos.gov.v1beta1.Tx.MsgVoteWeighted,
+                cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse>(
                   this, METHODID_VOTE_WEIGHTED)))
           .addMethod(
             getDepositMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.MsgDeposit,
-                cosmos.gov.v1beta1.MsgDepositResponse>(
+                cosmos.gov.v1beta1.Tx.MsgDeposit,
+                cosmos.gov.v1beta1.Tx.MsgDepositResponse>(
                   this, METHODID_DEPOSIT)))
           .build();
     }
@@ -290,8 +290,8 @@ public final class MsgGrpc {
      * SubmitProposal defines a method to create new proposal given a content.
      * </pre>
      */
-    public void submitProposal(cosmos.gov.v1beta1.MsgSubmitProposal request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgSubmitProposalResponse> responseObserver) {
+    public void submitProposal(cosmos.gov.v1beta1.Tx.MsgSubmitProposal request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitProposalMethod(), getCallOptions()), request, responseObserver);
     }
@@ -301,8 +301,8 @@ public final class MsgGrpc {
      * Vote defines a method to add a vote on a specific proposal.
      * </pre>
      */
-    public void vote(cosmos.gov.v1beta1.MsgVote request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteResponse> responseObserver) {
+    public void vote(cosmos.gov.v1beta1.Tx.MsgVote request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVoteMethod(), getCallOptions()), request, responseObserver);
     }
@@ -313,8 +313,8 @@ public final class MsgGrpc {
      * Since: cosmos-sdk 0.43
      * </pre>
      */
-    public void voteWeighted(cosmos.gov.v1beta1.MsgVoteWeighted request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteWeightedResponse> responseObserver) {
+    public void voteWeighted(cosmos.gov.v1beta1.Tx.MsgVoteWeighted request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVoteWeightedMethod(), getCallOptions()), request, responseObserver);
     }
@@ -324,8 +324,8 @@ public final class MsgGrpc {
      * Deposit defines a method to add deposit on a specific proposal.
      * </pre>
      */
-    public void deposit(cosmos.gov.v1beta1.MsgDeposit request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgDepositResponse> responseObserver) {
+    public void deposit(cosmos.gov.v1beta1.Tx.MsgDeposit request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgDepositResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDepositMethod(), getCallOptions()), request, responseObserver);
     }
@@ -353,7 +353,7 @@ public final class MsgGrpc {
      * SubmitProposal defines a method to create new proposal given a content.
      * </pre>
      */
-    public cosmos.gov.v1beta1.MsgSubmitProposalResponse submitProposal(cosmos.gov.v1beta1.MsgSubmitProposal request) {
+    public cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse submitProposal(cosmos.gov.v1beta1.Tx.MsgSubmitProposal request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitProposalMethod(), getCallOptions(), request);
     }
@@ -363,7 +363,7 @@ public final class MsgGrpc {
      * Vote defines a method to add a vote on a specific proposal.
      * </pre>
      */
-    public cosmos.gov.v1beta1.MsgVoteResponse vote(cosmos.gov.v1beta1.MsgVote request) {
+    public cosmos.gov.v1beta1.Tx.MsgVoteResponse vote(cosmos.gov.v1beta1.Tx.MsgVote request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVoteMethod(), getCallOptions(), request);
     }
@@ -374,7 +374,7 @@ public final class MsgGrpc {
      * Since: cosmos-sdk 0.43
      * </pre>
      */
-    public cosmos.gov.v1beta1.MsgVoteWeightedResponse voteWeighted(cosmos.gov.v1beta1.MsgVoteWeighted request) {
+    public cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse voteWeighted(cosmos.gov.v1beta1.Tx.MsgVoteWeighted request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVoteWeightedMethod(), getCallOptions(), request);
     }
@@ -384,7 +384,7 @@ public final class MsgGrpc {
      * Deposit defines a method to add deposit on a specific proposal.
      * </pre>
      */
-    public cosmos.gov.v1beta1.MsgDepositResponse deposit(cosmos.gov.v1beta1.MsgDeposit request) {
+    public cosmos.gov.v1beta1.Tx.MsgDepositResponse deposit(cosmos.gov.v1beta1.Tx.MsgDeposit request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDepositMethod(), getCallOptions(), request);
     }
@@ -412,8 +412,8 @@ public final class MsgGrpc {
      * SubmitProposal defines a method to create new proposal given a content.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.MsgSubmitProposalResponse> submitProposal(
-        cosmos.gov.v1beta1.MsgSubmitProposal request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse> submitProposal(
+        cosmos.gov.v1beta1.Tx.MsgSubmitProposal request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitProposalMethod(), getCallOptions()), request);
     }
@@ -423,8 +423,8 @@ public final class MsgGrpc {
      * Vote defines a method to add a vote on a specific proposal.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.MsgVoteResponse> vote(
-        cosmos.gov.v1beta1.MsgVote request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.Tx.MsgVoteResponse> vote(
+        cosmos.gov.v1beta1.Tx.MsgVote request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVoteMethod(), getCallOptions()), request);
     }
@@ -435,8 +435,8 @@ public final class MsgGrpc {
      * Since: cosmos-sdk 0.43
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.MsgVoteWeightedResponse> voteWeighted(
-        cosmos.gov.v1beta1.MsgVoteWeighted request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse> voteWeighted(
+        cosmos.gov.v1beta1.Tx.MsgVoteWeighted request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVoteWeightedMethod(), getCallOptions()), request);
     }
@@ -446,8 +446,8 @@ public final class MsgGrpc {
      * Deposit defines a method to add deposit on a specific proposal.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.MsgDepositResponse> deposit(
-        cosmos.gov.v1beta1.MsgDeposit request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.Tx.MsgDepositResponse> deposit(
+        cosmos.gov.v1beta1.Tx.MsgDeposit request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDepositMethod(), getCallOptions()), request);
     }
@@ -476,20 +476,20 @@ public final class MsgGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SUBMIT_PROPOSAL:
-          serviceImpl.submitProposal((cosmos.gov.v1beta1.MsgSubmitProposal) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgSubmitProposalResponse>) responseObserver);
+          serviceImpl.submitProposal((cosmos.gov.v1beta1.Tx.MsgSubmitProposal) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgSubmitProposalResponse>) responseObserver);
           break;
         case METHODID_VOTE:
-          serviceImpl.vote((cosmos.gov.v1beta1.MsgVote) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteResponse>) responseObserver);
+          serviceImpl.vote((cosmos.gov.v1beta1.Tx.MsgVote) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteResponse>) responseObserver);
           break;
         case METHODID_VOTE_WEIGHTED:
-          serviceImpl.voteWeighted((cosmos.gov.v1beta1.MsgVoteWeighted) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgVoteWeightedResponse>) responseObserver);
+          serviceImpl.voteWeighted((cosmos.gov.v1beta1.Tx.MsgVoteWeighted) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgVoteWeightedResponse>) responseObserver);
           break;
         case METHODID_DEPOSIT:
-          serviceImpl.deposit((cosmos.gov.v1beta1.MsgDeposit) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.MsgDepositResponse>) responseObserver);
+          serviceImpl.deposit((cosmos.gov.v1beta1.Tx.MsgDeposit) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.Tx.MsgDepositResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -513,7 +513,7 @@ public final class MsgGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return cosmos.gov.v1beta1.CosmosGovTxProto.getDescriptor();
+      return cosmos.gov.v1beta1.Tx.getDescriptor();
     }
 
     @java.lang.Override

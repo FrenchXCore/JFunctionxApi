@@ -25,7 +25,7 @@ import eu.frenchxcore.model.BaseMessage;
 /**
  *
  */
-@JsonTypeName("/fx.gravity.v1.MsgSetOrchestratorAddress")
+@JsonTypeName("/fx.gravity.v1.TxetOrchestratorAddress")
 public class MsgSetOrchestratorAddress extends BaseMessage {
 
     @JsonProperty("validator")

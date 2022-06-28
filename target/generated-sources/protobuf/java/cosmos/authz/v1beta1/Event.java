@@ -43,7 +43,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -52,7 +52,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -63,7 +63,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -72,7 +72,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -233,7 +233,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -254,7 +254,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -279,7 +279,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -300,7 +300,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -760,7 +760,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -780,7 +780,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -801,7 +801,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -820,7 +820,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -834,7 +834,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -856,7 +856,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -876,7 +876,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -897,7 +897,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -916,7 +916,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -930,7 +930,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -1027,7 +1027,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -1036,7 +1036,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -1047,7 +1047,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -1056,7 +1056,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -1217,7 +1217,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -1238,7 +1238,7 @@ public final class Event {
      * Granter account address
      * </pre>
      *
-     * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 3;</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -1263,7 +1263,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -1284,7 +1284,7 @@ public final class Event {
      * Grantee account address
      * </pre>
      *
-     * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 4;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -1744,7 +1744,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -1764,7 +1764,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -1785,7 +1785,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -1804,7 +1804,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -1818,7 +1818,7 @@ public final class Event {
        * Granter account address
        * </pre>
        *
-       * <code>string granter = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 3;</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -1840,7 +1840,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -1860,7 +1860,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -1881,7 +1881,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -1900,7 +1900,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -1914,7 +1914,7 @@ public final class Event {
        * Grantee account address
        * </pre>
        *
-       * <code>string grantee = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 4;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -2002,20 +2002,16 @@ public final class Event {
   static {
     java.lang.String[] descriptorData = {
       "\n cosmos/authz/v1beta1/event.proto\022\024cosm" +
-      "os.authz.v1beta1\032\031cosmos_proto/cosmos.pr" +
-      "oto\"x\n\nEventGrant\022\024\n\014msg_type_url\030\002 \001(\t\022" +
-      ")\n\007granter\030\003 \001(\tB\030\322\264-\024cosmos.AddressStri" +
-      "ng\022)\n\007grantee\030\004 \001(\tB\030\322\264-\024cosmos.AddressS" +
-      "tring\"y\n\013EventRevoke\022\024\n\014msg_type_url\030\002 \001" +
-      "(\t\022)\n\007granter\030\003 \001(\tB\030\322\264-\024cosmos.AddressS" +
-      "tring\022)\n\007grantee\030\004 \001(\tB\030\322\264-\024cosmos.Addre" +
-      "ssStringB&Z$github.com/cosmos/cosmos-sdk" +
-      "/x/authzb\006proto3"
+      "os.authz.v1beta1\"D\n\nEventGrant\022\024\n\014msg_ty" +
+      "pe_url\030\002 \001(\t\022\017\n\007granter\030\003 \001(\t\022\017\n\007grantee" +
+      "\030\004 \001(\t\"E\n\013EventRevoke\022\024\n\014msg_type_url\030\002 " +
+      "\001(\t\022\017\n\007granter\030\003 \001(\t\022\017\n\007grantee\030\004 \001(\tB&Z" +
+      "$github.com/cosmos/cosmos-sdk/x/authzb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_EventGrant_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2029,12 +2025,6 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_authz_v1beta1_EventRevoke_descriptor,
         new java.lang.String[] { "MsgTypeUrl", "Granter", "Grantee", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(cosmos_proto.Cosmos.scalar);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
-    cosmos_proto.Cosmos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

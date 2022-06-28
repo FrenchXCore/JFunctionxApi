@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * CosmosStakingV1beta1QueryValidatorsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1QueryValidatorsResponse {
   public static final String SERIALIZED_NAME_VALIDATORS = "validators";
   @SerializedName(SERIALIZED_NAME_VALIDATORS)

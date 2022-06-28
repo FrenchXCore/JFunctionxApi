@@ -27217,24 +27217,44 @@ public final class Types {
     long getGasUsed();
 
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     java.util.List<tendermint.abci.Types.Event> 
         getEventsList();
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     tendermint.abci.Types.Event getEvents(int index);
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     int getEventsCount();
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
         getEventsOrBuilderList();
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
@@ -27524,6 +27544,10 @@ public final class Types {
     public static final int EVENTS_FIELD_NUMBER = 7;
     private java.util.List<tendermint.abci.Types.Event> events_;
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     @java.lang.Override
@@ -27531,6 +27555,10 @@ public final class Types {
       return events_;
     }
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     @java.lang.Override
@@ -27539,6 +27567,10 @@ public final class Types {
       return events_;
     }
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     @java.lang.Override
@@ -27546,6 +27578,10 @@ public final class Types {
       return events_.size();
     }
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     @java.lang.Override
@@ -27553,6 +27589,10 @@ public final class Types {
       return events_.get(index);
     }
     /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
      * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
      */
     @java.lang.Override
@@ -28394,6 +28434,10 @@ public final class Types {
           tendermint.abci.Types.Event, tendermint.abci.Types.Event.Builder, tendermint.abci.Types.EventOrBuilder> eventsBuilder_;
 
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public java.util.List<tendermint.abci.Types.Event> getEventsList() {
@@ -28404,6 +28448,10 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public int getEventsCount() {
@@ -28414,6 +28462,10 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public tendermint.abci.Types.Event getEvents(int index) {
@@ -28424,6 +28476,10 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder setEvents(
@@ -28441,6 +28497,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder setEvents(
@@ -28455,6 +28515,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder addEvents(tendermint.abci.Types.Event value) {
@@ -28471,6 +28535,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder addEvents(
@@ -28488,6 +28556,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder addEvents(
@@ -28502,6 +28574,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder addEvents(
@@ -28516,6 +28592,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder addAllEvents(
@@ -28531,6 +28611,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder clearEvents() {
@@ -28544,6 +28628,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public Builder removeEvents(int index) {
@@ -28557,6 +28645,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public tendermint.abci.Types.Event.Builder getEventsBuilder(
@@ -28564,6 +28656,10 @@ public final class Types {
         return getEventsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
@@ -28574,6 +28670,10 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
@@ -28585,6 +28685,10 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public tendermint.abci.Types.Event.Builder addEventsBuilder() {
@@ -28592,6 +28696,10 @@ public final class Types {
             tendermint.abci.Types.Event.getDefaultInstance());
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public tendermint.abci.Types.Event.Builder addEventsBuilder(
@@ -28600,6 +28708,10 @@ public final class Types {
             index, tendermint.abci.Types.Event.getDefaultInstance());
       }
       /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
        * <code>repeated .tendermint.abci.Event events = 7 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "events,omitempty"];</code>
        */
       public java.util.List<tendermint.abci.Types.Event.Builder> 

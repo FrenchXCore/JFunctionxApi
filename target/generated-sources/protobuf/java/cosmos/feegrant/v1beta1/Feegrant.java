@@ -4495,7 +4495,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -4504,7 +4504,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -4515,7 +4515,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -4524,7 +4524,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -4672,7 +4672,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -4693,7 +4693,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string granter = 1;</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -4718,7 +4718,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -4739,7 +4739,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string grantee = 2;</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -5154,7 +5154,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -5174,7 +5174,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -5195,7 +5195,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -5214,7 +5214,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -5228,7 +5228,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string granter = 1;</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -5250,7 +5250,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -5270,7 +5270,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -5291,7 +5291,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -5310,7 +5310,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -5324,7 +5324,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string grantee = 2;</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -5600,12 +5600,11 @@ public final class Feegrant {
       "eeAllowanceI\"\202\001\n\023AllowedMsgAllowance\022:\n\t" +
       "allowance\030\001 \001(\0132\024.google.protobuf.AnyB\021\312" +
       "\264-\rFeeAllowanceI\022\030\n\020allowed_messages\030\002 \003" +
-      "(\t:\025\210\240\037\000\312\264-\rFeeAllowanceI\"\231\001\n\005Grant\022)\n\007g" +
-      "ranter\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022)" +
-      "\n\007grantee\030\002 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
-      "g\022:\n\tallowance\030\003 \001(\0132\024.google.protobuf.A" +
-      "nyB\021\312\264-\rFeeAllowanceIB)Z\'github.com/cosm" +
-      "os/cosmos-sdk/x/feegrantb\006proto3"
+      "(\t:\025\210\240\037\000\312\264-\rFeeAllowanceI\"e\n\005Grant\022\017\n\007gr" +
+      "anter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022:\n\tallowanc" +
+      "e\030\003 \001(\0132\024.google.protobuf.AnyB\021\312\264-\rFeeAl" +
+      "lowanceIB)Z\'github.com/cosmos/cosmos-sdk" +
+      "/x/feegrantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5645,7 +5644,6 @@ public final class Feegrant {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
     registry.add(com.google.protobuf.GoGoProtos.nullable);

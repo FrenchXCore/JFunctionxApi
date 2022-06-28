@@ -28,7 +28,7 @@ import java.io.IOException;
  * QueryDelegatorWithdrawAddressResponse is the response type for the Query/DelegatorWithdrawAddress RPC method.
  */
 @ApiModel(description = "QueryDelegatorWithdrawAddressResponse is the response type for the Query/DelegatorWithdrawAddress RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse20020 {
   public static final String SERIALIZED_NAME_WITHDRAW_ADDRESS = "withdraw_address";
   @SerializedName(SERIALIZED_NAME_WITHDRAW_ADDRESS)

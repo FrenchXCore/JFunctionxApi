@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * DumpConsensusResponseResultRoundStateVotes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:17:53.421768900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:27.236230800+02:00[Europe/Paris]")
 public class DumpConsensusResponseResultRoundStateVotes {
   public static final String SERIALIZED_NAME_ROUND = "round";
   @SerializedName(SERIALIZED_NAME_ROUND)

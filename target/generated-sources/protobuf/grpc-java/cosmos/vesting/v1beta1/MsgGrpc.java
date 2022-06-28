@@ -49,37 +49,6 @@ public final class MsgGrpc {
     return getCreateVestingAccountMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount,
-      cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> getCreatePeriodicVestingAccountMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreatePeriodicVestingAccount",
-      requestType = cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount.class,
-      responseType = cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount,
-      cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> getCreatePeriodicVestingAccountMethod() {
-    io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount, cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> getCreatePeriodicVestingAccountMethod;
-    if ((getCreatePeriodicVestingAccountMethod = MsgGrpc.getCreatePeriodicVestingAccountMethod) == null) {
-      synchronized (MsgGrpc.class) {
-        if ((getCreatePeriodicVestingAccountMethod = MsgGrpc.getCreatePeriodicVestingAccountMethod) == null) {
-          MsgGrpc.getCreatePeriodicVestingAccountMethod = getCreatePeriodicVestingAccountMethod =
-              io.grpc.MethodDescriptor.<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount, cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePeriodicVestingAccount"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("CreatePeriodicVestingAccount"))
-              .build();
-        }
-      }
-    }
-    return getCreatePeriodicVestingAccountMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -142,17 +111,6 @@ public final class MsgGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVestingAccountMethod(), responseObserver);
     }
 
-    /**
-     * <pre>
-     * CreatePeriodicVestingAccount defines a method that enables creating a
-     * periodic vesting account.
-     * </pre>
-     */
-    public void createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request,
-        io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePeriodicVestingAccountMethod(), responseObserver);
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -162,13 +120,6 @@ public final class MsgGrpc {
                 cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccount,
                 cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccountResponse>(
                   this, METHODID_CREATE_VESTING_ACCOUNT)))
-          .addMethod(
-            getCreatePeriodicVestingAccountMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount,
-                cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse>(
-                  this, METHODID_CREATE_PERIODIC_VESTING_ACCOUNT)))
           .build();
     }
   }
@@ -201,18 +152,6 @@ public final class MsgGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateVestingAccountMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     * <pre>
-     * CreatePeriodicVestingAccount defines a method that enables creating a
-     * periodic vesting account.
-     * </pre>
-     */
-    public void createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request,
-        io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreatePeriodicVestingAccountMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -241,17 +180,6 @@ public final class MsgGrpc {
     public cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccountResponse createVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccount request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateVestingAccountMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * CreatePeriodicVestingAccount defines a method that enables creating a
-     * periodic vesting account.
-     * </pre>
-     */
-    public cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreatePeriodicVestingAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -283,22 +211,9 @@ public final class MsgGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateVestingAccountMethod(), getCallOptions()), request);
     }
-
-    /**
-     * <pre>
-     * CreatePeriodicVestingAccount defines a method that enables creating a
-     * periodic vesting account.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> createPeriodicVestingAccount(
-        cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreatePeriodicVestingAccountMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_VESTING_ACCOUNT = 0;
-  private static final int METHODID_CREATE_PERIODIC_VESTING_ACCOUNT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -320,10 +235,6 @@ public final class MsgGrpc {
         case METHODID_CREATE_VESTING_ACCOUNT:
           serviceImpl.createVestingAccount((cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccount) request,
               (io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccountResponse>) responseObserver);
-          break;
-        case METHODID_CREATE_PERIODIC_VESTING_ACCOUNT:
-          serviceImpl.createPeriodicVestingAccount((cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount) request,
-              (io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -387,7 +298,6 @@ public final class MsgGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MsgFileDescriptorSupplier())
               .addMethod(getCreateVestingAccountMethod())
-              .addMethod(getCreatePeriodicVestingAccountMethod())
               .build();
         }
       }

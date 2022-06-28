@@ -424,24 +424,24 @@ public final class Authz {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @return A list containing the address.
        */
       java.util.List<java.lang.String>
           getAddressList();
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @return The count of address.
        */
       int getAddressCount();
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @param index The index of the element to return.
        * @return The address at the given index.
        */
       java.lang.String getAddress(int index);
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @param index The index of the value to return.
        * @return The bytes of the address at the given index.
        */
@@ -546,7 +546,7 @@ public final class Authz {
       public static final int ADDRESS_FIELD_NUMBER = 1;
       private com.google.protobuf.LazyStringList address_;
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @return A list containing the address.
        */
       public com.google.protobuf.ProtocolStringList
@@ -554,14 +554,14 @@ public final class Authz {
         return address_;
       }
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @return The count of address.
        */
       public int getAddressCount() {
         return address_.size();
       }
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @param index The index of the element to return.
        * @return The address at the given index.
        */
@@ -569,7 +569,7 @@ public final class Authz {
         return address_.get(index);
       }
       /**
-       * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string address = 1;</code>
        * @param index The index of the value to return.
        * @return The bytes of the address at the given index.
        */
@@ -911,7 +911,7 @@ public final class Authz {
            }
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @return A list containing the address.
          */
         public com.google.protobuf.ProtocolStringList
@@ -919,14 +919,14 @@ public final class Authz {
           return address_.getUnmodifiableView();
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @return The count of address.
          */
         public int getAddressCount() {
           return address_.size();
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param index The index of the element to return.
          * @return The address at the given index.
          */
@@ -934,7 +934,7 @@ public final class Authz {
           return address_.get(index);
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param index The index of the value to return.
          * @return The bytes of the address at the given index.
          */
@@ -943,7 +943,7 @@ public final class Authz {
           return address_.getByteString(index);
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param index The index to set the value at.
          * @param value The address to set.
          * @return This builder for chaining.
@@ -959,7 +959,7 @@ public final class Authz {
           return this;
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param value The address to add.
          * @return This builder for chaining.
          */
@@ -974,7 +974,7 @@ public final class Authz {
           return this;
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param values The address to add.
          * @return This builder for chaining.
          */
@@ -987,7 +987,7 @@ public final class Authz {
           return this;
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @return This builder for chaining.
          */
         public Builder clearAddress() {
@@ -997,7 +997,7 @@ public final class Authz {
           return this;
         }
         /**
-         * <code>repeated string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+         * <code>repeated string address = 1;</code>
          * @param value The bytes of the address to add.
          * @return This builder for chaining.
          */
@@ -2358,7 +2358,7 @@ public final class Authz {
       "\n\"cosmos/staking/v1beta1/authz.proto\022\026co" +
       "smos.staking.v1beta1\032\024gogoproto/gogo.pro" +
       "to\032\031cosmos_proto/cosmos.proto\032\036cosmos/ba" +
-      "se/v1beta1/coin.proto\"\252\003\n\022StakeAuthoriza" +
+      "se/v1beta1/coin.proto\"\220\003\n\022StakeAuthoriza" +
       "tion\022Z\n\nmax_tokens\030\001 \001(\0132\031.cosmos.base.v" +
       "1beta1.CoinB+\252\337\037\'github.com/cosmos/cosmo" +
       "s-sdk/types.Coin\022K\n\nallow_list\030\002 \001(\01325.c" +
@@ -2367,14 +2367,14 @@ public final class Authz {
       "s.staking.v1beta1.StakeAuthorization.Val" +
       "idatorsH\000\022E\n\022authorization_type\030\004 \001(\0162)." +
       "cosmos.staking.v1beta1.AuthorizationType" +
-      "\0327\n\nValidators\022)\n\007address\030\001 \003(\tB\030\322\264-\024cos" +
-      "mos.AddressString:\021\312\264-\rAuthorizationB\014\n\n" +
-      "validators*\236\001\n\021AuthorizationType\022\"\n\036AUTH" +
-      "ORIZATION_TYPE_UNSPECIFIED\020\000\022\037\n\033AUTHORIZ" +
-      "ATION_TYPE_DELEGATE\020\001\022!\n\035AUTHORIZATION_T" +
-      "YPE_UNDELEGATE\020\002\022!\n\035AUTHORIZATION_TYPE_R" +
-      "EDELEGATE\020\003B.Z,github.com/cosmos/cosmos-" +
-      "sdk/x/staking/typesb\006proto3"
+      "\032\035\n\nValidators\022\017\n\007address\030\001 \003(\t:\021\312\264-\rAut" +
+      "horizationB\014\n\nvalidators*\236\001\n\021Authorizati" +
+      "onType\022\"\n\036AUTHORIZATION_TYPE_UNSPECIFIED" +
+      "\020\000\022\037\n\033AUTHORIZATION_TYPE_DELEGATE\020\001\022!\n\035A" +
+      "UTHORIZATION_TYPE_UNDELEGATE\020\002\022!\n\035AUTHOR" +
+      "IZATION_TYPE_REDELEGATE\020\003B.Z,github.com/" +
+      "cosmos/cosmos-sdk/x/staking/typesb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2398,7 +2398,6 @@ public final class Authz {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.castrepeated);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

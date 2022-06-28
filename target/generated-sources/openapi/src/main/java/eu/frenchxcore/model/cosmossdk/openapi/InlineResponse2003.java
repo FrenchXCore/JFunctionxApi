@@ -32,7 +32,7 @@ import java.util.List;
  * QueryAllBalancesResponse is the response type for the Query/AllBalances RPC method.
  */
 @ApiModel(description = "QueryAllBalancesResponse is the response type for the Query/AllBalances RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse2003 {
   public static final String SERIALIZED_NAME_BALANCES = "balances";
   @SerializedName(SERIALIZED_NAME_BALANCES)

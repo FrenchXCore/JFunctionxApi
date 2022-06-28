@@ -31,7 +31,7 @@ import java.util.List;
  * ABCIMessageLog defines a structure containing an indexed tx ABCI message log.
  */
 @ApiModel(description = "ABCIMessageLog defines a structure containing an indexed tx ABCI message log.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class CosmosBaseAbciV1beta1ABCIMessageLog {
   public static final String SERIALIZED_NAME_MSG_INDEX = "msg_index";
   @SerializedName(SERIALIZED_NAME_MSG_INDEX)

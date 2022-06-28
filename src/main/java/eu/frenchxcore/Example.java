@@ -9,6 +9,7 @@ import eu.frenchxcore.api.CosmosRestApi;
 import eu.frenchxcore.api.CosmosRestServiceManager;
 import eu.frenchxcore.model.cosmossdk.openapi.InlineResponse20011;
 import eu.frenchxcore.model.cosmossdk.openapi.InlineResponse2002;
+import eu.frenchxcore.tools.LocalExecutor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class Example {
         int port = 26657;
         try {
             // Creating the GRPC client
-            CosmosGrpcApi client = CosmosGrpcApi.getInstance(ip, 9090, 26658);
+            CosmosGrpcApi client = CosmosGrpcApi.getInstance(ip, 9090, LocalExecutor.getInstance().get());
 
             // Creating the TypeRegistry, in order to decode messages to JSON format
             JsonFormat.TypeRegistry r = JsonFormat.TypeRegistry.newBuilder()

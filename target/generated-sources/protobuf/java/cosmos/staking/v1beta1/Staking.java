@@ -1195,7 +1195,7 @@ public final class Staking {
      * rate is the commission rate charged to delegators, as a fraction.
      * </pre>
      *
-     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The rate.
      */
     java.lang.String getRate();
@@ -1204,7 +1204,7 @@ public final class Staking {
      * rate is the commission rate charged to delegators, as a fraction.
      * </pre>
      *
-     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for rate.
      */
     com.google.protobuf.ByteString
@@ -1215,7 +1215,7 @@ public final class Staking {
      * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
      * </pre>
      *
-     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
      * @return The maxRate.
      */
     java.lang.String getMaxRate();
@@ -1224,7 +1224,7 @@ public final class Staking {
      * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
      * </pre>
      *
-     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
      * @return The bytes for maxRate.
      */
     com.google.protobuf.ByteString
@@ -1235,7 +1235,7 @@ public final class Staking {
      * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
      * </pre>
      *
-     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
      * @return The maxChangeRate.
      */
     java.lang.String getMaxChangeRate();
@@ -1244,7 +1244,7 @@ public final class Staking {
      * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
      * </pre>
      *
-     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
      * @return The bytes for maxChangeRate.
      */
     com.google.protobuf.ByteString
@@ -1360,7 +1360,7 @@ public final class Staking {
      * rate is the commission rate charged to delegators, as a fraction.
      * </pre>
      *
-     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The rate.
      */
     @java.lang.Override
@@ -1381,7 +1381,7 @@ public final class Staking {
      * rate is the commission rate charged to delegators, as a fraction.
      * </pre>
      *
-     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for rate.
      */
     @java.lang.Override
@@ -1406,7 +1406,7 @@ public final class Staking {
      * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
      * </pre>
      *
-     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
      * @return The maxRate.
      */
     @java.lang.Override
@@ -1427,7 +1427,7 @@ public final class Staking {
      * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
      * </pre>
      *
-     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
      * @return The bytes for maxRate.
      */
     @java.lang.Override
@@ -1452,7 +1452,7 @@ public final class Staking {
      * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
      * </pre>
      *
-     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
      * @return The maxChangeRate.
      */
     @java.lang.Override
@@ -1473,7 +1473,7 @@ public final class Staking {
      * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
      * </pre>
      *
-     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
      * @return The bytes for maxChangeRate.
      */
     @java.lang.Override
@@ -1838,7 +1838,7 @@ public final class Staking {
        * rate is the commission rate charged to delegators, as a fraction.
        * </pre>
        *
-       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The rate.
        */
       public java.lang.String getRate() {
@@ -1858,7 +1858,7 @@ public final class Staking {
        * rate is the commission rate charged to delegators, as a fraction.
        * </pre>
        *
-       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The bytes for rate.
        */
       public com.google.protobuf.ByteString
@@ -1879,7 +1879,7 @@ public final class Staking {
        * rate is the commission rate charged to delegators, as a fraction.
        * </pre>
        *
-       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The rate to set.
        * @return This builder for chaining.
        */
@@ -1898,7 +1898,7 @@ public final class Staking {
        * rate is the commission rate charged to delegators, as a fraction.
        * </pre>
        *
-       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRate() {
@@ -1912,7 +1912,7 @@ public final class Staking {
        * rate is the commission rate charged to delegators, as a fraction.
        * </pre>
        *
-       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string rate = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The bytes for rate to set.
        * @return This builder for chaining.
        */
@@ -1934,7 +1934,7 @@ public final class Staking {
        * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
        * </pre>
        *
-       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
        * @return The maxRate.
        */
       public java.lang.String getMaxRate() {
@@ -1954,7 +1954,7 @@ public final class Staking {
        * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
        * </pre>
        *
-       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
        * @return The bytes for maxRate.
        */
       public com.google.protobuf.ByteString
@@ -1975,7 +1975,7 @@ public final class Staking {
        * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
        * </pre>
        *
-       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
        * @param value The maxRate to set.
        * @return This builder for chaining.
        */
@@ -1994,7 +1994,7 @@ public final class Staking {
        * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
        * </pre>
        *
-       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxRate() {
@@ -2008,7 +2008,7 @@ public final class Staking {
        * max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
        * </pre>
        *
-       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_rate = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_rate&#92;""];</code>
        * @param value The bytes for maxRate to set.
        * @return This builder for chaining.
        */
@@ -2030,7 +2030,7 @@ public final class Staking {
        * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
        * </pre>
        *
-       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
        * @return The maxChangeRate.
        */
       public java.lang.String getMaxChangeRate() {
@@ -2050,7 +2050,7 @@ public final class Staking {
        * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
        * </pre>
        *
-       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
        * @return The bytes for maxChangeRate.
        */
       public com.google.protobuf.ByteString
@@ -2071,7 +2071,7 @@ public final class Staking {
        * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
        * </pre>
        *
-       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
        * @param value The maxChangeRate to set.
        * @return This builder for chaining.
        */
@@ -2090,7 +2090,7 @@ public final class Staking {
        * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
        * </pre>
        *
-       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxChangeRate() {
@@ -2104,7 +2104,7 @@ public final class Staking {
        * max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
        * </pre>
        *
-       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string max_change_rate = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"max_change_rate&#92;""];</code>
        * @param value The bytes for maxChangeRate to set.
        * @return This builder for chaining.
        */
@@ -2208,7 +2208,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
@@ -2217,7 +2217,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
@@ -2226,7 +2226,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
@@ -2382,7 +2382,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the updateTime field is set.
      */
     @java.lang.Override
@@ -2394,7 +2394,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The updateTime.
      */
     @java.lang.Override
@@ -2406,7 +2406,7 @@ public final class Staking {
      * update_time is the last time the commission rate was changed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -2925,7 +2925,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the updateTime field is set.
        */
       public boolean hasUpdateTime() {
@@ -2936,7 +2936,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The updateTime.
        */
       public com.google.protobuf.Timestamp getUpdateTime() {
@@ -2951,7 +2951,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
         if (updateTimeBuilder_ == null) {
@@ -2971,7 +2971,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUpdateTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2989,7 +2989,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
         if (updateTimeBuilder_ == null) {
@@ -3011,7 +3011,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearUpdateTime() {
         if (updateTimeBuilder_ == null) {
@@ -3029,7 +3029,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
         
@@ -3041,7 +3041,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
         if (updateTimeBuilder_ != null) {
@@ -3056,7 +3056,7 @@ public final class Staking {
        * update_time is the last time the commission rate was changed.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3193,7 +3193,7 @@ public final class Staking {
      * security_contact defines an optional email for security contact.
      * </pre>
      *
-     * <code>string security_contact = 4;</code>
+     * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
      * @return The securityContact.
      */
     java.lang.String getSecurityContact();
@@ -3202,7 +3202,7 @@ public final class Staking {
      * security_contact defines an optional email for security contact.
      * </pre>
      *
-     * <code>string security_contact = 4;</code>
+     * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
      * @return The bytes for securityContact.
      */
     com.google.protobuf.ByteString
@@ -3489,7 +3489,7 @@ public final class Staking {
      * security_contact defines an optional email for security contact.
      * </pre>
      *
-     * <code>string security_contact = 4;</code>
+     * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
      * @return The securityContact.
      */
     @java.lang.Override
@@ -3510,7 +3510,7 @@ public final class Staking {
      * security_contact defines an optional email for security contact.
      * </pre>
      *
-     * <code>string security_contact = 4;</code>
+     * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
      * @return The bytes for securityContact.
      */
     @java.lang.Override
@@ -4242,7 +4242,7 @@ public final class Staking {
        * security_contact defines an optional email for security contact.
        * </pre>
        *
-       * <code>string security_contact = 4;</code>
+       * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
        * @return The securityContact.
        */
       public java.lang.String getSecurityContact() {
@@ -4262,7 +4262,7 @@ public final class Staking {
        * security_contact defines an optional email for security contact.
        * </pre>
        *
-       * <code>string security_contact = 4;</code>
+       * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
        * @return The bytes for securityContact.
        */
       public com.google.protobuf.ByteString
@@ -4283,7 +4283,7 @@ public final class Staking {
        * security_contact defines an optional email for security contact.
        * </pre>
        *
-       * <code>string security_contact = 4;</code>
+       * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
        * @param value The securityContact to set.
        * @return This builder for chaining.
        */
@@ -4302,7 +4302,7 @@ public final class Staking {
        * security_contact defines an optional email for security contact.
        * </pre>
        *
-       * <code>string security_contact = 4;</code>
+       * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearSecurityContact() {
@@ -4316,7 +4316,7 @@ public final class Staking {
        * security_contact defines an optional email for security contact.
        * </pre>
        *
-       * <code>string security_contact = 4;</code>
+       * <code>string security_contact = 4 [(.gogoproto.moretags) = "yaml:&#92;"security_contact&#92;""];</code>
        * @param value The bytes for securityContact to set.
        * @return This builder for chaining.
        */
@@ -4489,7 +4489,7 @@ public final class Staking {
      * operator_address defines the address of the validator's operator; bech encoded in JSON.
      * </pre>
      *
-     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
      * @return The operatorAddress.
      */
     java.lang.String getOperatorAddress();
@@ -4498,7 +4498,7 @@ public final class Staking {
      * operator_address defines the address of the validator's operator; bech encoded in JSON.
      * </pre>
      *
-     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
      * @return The bytes for operatorAddress.
      */
     com.google.protobuf.ByteString
@@ -4509,7 +4509,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return Whether the consensusPubkey field is set.
      */
     boolean hasConsensusPubkey();
@@ -4518,7 +4518,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return The consensusPubkey.
      */
     com.google.protobuf.Any getConsensusPubkey();
@@ -4527,7 +4527,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
     com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder();
 
@@ -4565,7 +4565,7 @@ public final class Staking {
      * tokens define the delegated tokens (incl. self-delegation).
      * </pre>
      *
-     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The tokens.
      */
     java.lang.String getTokens();
@@ -4574,7 +4574,7 @@ public final class Staking {
      * tokens define the delegated tokens (incl. self-delegation).
      * </pre>
      *
-     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for tokens.
      */
     com.google.protobuf.ByteString
@@ -4585,7 +4585,7 @@ public final class Staking {
      * delegator_shares defines total shares issued to a validator's delegators.
      * </pre>
      *
-     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
      * @return The delegatorShares.
      */
     java.lang.String getDelegatorShares();
@@ -4594,7 +4594,7 @@ public final class Staking {
      * delegator_shares defines total shares issued to a validator's delegators.
      * </pre>
      *
-     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
      * @return The bytes for delegatorShares.
      */
     com.google.protobuf.ByteString
@@ -4632,7 +4632,7 @@ public final class Staking {
      * unbonding_height defines, if unbonding, the height at which this validator has begun unbonding.
      * </pre>
      *
-     * <code>int64 unbonding_height = 8;</code>
+     * <code>int64 unbonding_height = 8 [(.gogoproto.moretags) = "yaml:&#92;"unbonding_height&#92;""];</code>
      * @return The unbondingHeight.
      */
     long getUnbondingHeight();
@@ -4642,7 +4642,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the unbondingTime field is set.
      */
     boolean hasUnbondingTime();
@@ -4651,7 +4651,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The unbondingTime.
      */
     com.google.protobuf.Timestamp getUnbondingTime();
@@ -4660,7 +4660,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder();
 
@@ -4696,7 +4696,7 @@ public final class Staking {
      * min_self_delegation is the validator's self declared minimum self delegation.
      * </pre>
      *
-     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
      * @return The minSelfDelegation.
      */
     java.lang.String getMinSelfDelegation();
@@ -4705,7 +4705,7 @@ public final class Staking {
      * min_self_delegation is the validator's self declared minimum self delegation.
      * </pre>
      *
-     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
      * @return The bytes for minSelfDelegation.
      */
     com.google.protobuf.ByteString
@@ -4903,7 +4903,7 @@ public final class Staking {
      * operator_address defines the address of the validator's operator; bech encoded in JSON.
      * </pre>
      *
-     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
      * @return The operatorAddress.
      */
     @java.lang.Override
@@ -4924,7 +4924,7 @@ public final class Staking {
      * operator_address defines the address of the validator's operator; bech encoded in JSON.
      * </pre>
      *
-     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
      * @return The bytes for operatorAddress.
      */
     @java.lang.Override
@@ -4949,7 +4949,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return Whether the consensusPubkey field is set.
      */
     @java.lang.Override
@@ -4961,7 +4961,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return The consensusPubkey.
      */
     @java.lang.Override
@@ -4973,7 +4973,7 @@ public final class Staking {
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
      * </pre>
      *
-     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+     * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
     @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder() {
@@ -5029,7 +5029,7 @@ public final class Staking {
      * tokens define the delegated tokens (incl. self-delegation).
      * </pre>
      *
-     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The tokens.
      */
     @java.lang.Override
@@ -5050,7 +5050,7 @@ public final class Staking {
      * tokens define the delegated tokens (incl. self-delegation).
      * </pre>
      *
-     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for tokens.
      */
     @java.lang.Override
@@ -5075,7 +5075,7 @@ public final class Staking {
      * delegator_shares defines total shares issued to a validator's delegators.
      * </pre>
      *
-     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
      * @return The delegatorShares.
      */
     @java.lang.Override
@@ -5096,7 +5096,7 @@ public final class Staking {
      * delegator_shares defines total shares issued to a validator's delegators.
      * </pre>
      *
-     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
      * @return The bytes for delegatorShares.
      */
     @java.lang.Override
@@ -5159,7 +5159,7 @@ public final class Staking {
      * unbonding_height defines, if unbonding, the height at which this validator has begun unbonding.
      * </pre>
      *
-     * <code>int64 unbonding_height = 8;</code>
+     * <code>int64 unbonding_height = 8 [(.gogoproto.moretags) = "yaml:&#92;"unbonding_height&#92;""];</code>
      * @return The unbondingHeight.
      */
     @java.lang.Override
@@ -5174,7 +5174,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the unbondingTime field is set.
      */
     @java.lang.Override
@@ -5186,7 +5186,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The unbondingTime.
      */
     @java.lang.Override
@@ -5198,7 +5198,7 @@ public final class Staking {
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder() {
@@ -5250,7 +5250,7 @@ public final class Staking {
      * min_self_delegation is the validator's self declared minimum self delegation.
      * </pre>
      *
-     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
      * @return The minSelfDelegation.
      */
     @java.lang.Override
@@ -5271,7 +5271,7 @@ public final class Staking {
      * min_self_delegation is the validator's self declared minimum self delegation.
      * </pre>
      *
-     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
      * @return The bytes for minSelfDelegation.
      */
     @java.lang.Override
@@ -5831,7 +5831,7 @@ public final class Staking {
        * operator_address defines the address of the validator's operator; bech encoded in JSON.
        * </pre>
        *
-       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
        * @return The operatorAddress.
        */
       public java.lang.String getOperatorAddress() {
@@ -5851,7 +5851,7 @@ public final class Staking {
        * operator_address defines the address of the validator's operator; bech encoded in JSON.
        * </pre>
        *
-       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
        * @return The bytes for operatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -5872,7 +5872,7 @@ public final class Staking {
        * operator_address defines the address of the validator's operator; bech encoded in JSON.
        * </pre>
        *
-       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
        * @param value The operatorAddress to set.
        * @return This builder for chaining.
        */
@@ -5891,7 +5891,7 @@ public final class Staking {
        * operator_address defines the address of the validator's operator; bech encoded in JSON.
        * </pre>
        *
-       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearOperatorAddress() {
@@ -5905,7 +5905,7 @@ public final class Staking {
        * operator_address defines the address of the validator's operator; bech encoded in JSON.
        * </pre>
        *
-       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string operator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"operator_address&#92;""];</code>
        * @param value The bytes for operatorAddress to set.
        * @return This builder for chaining.
        */
@@ -5929,7 +5929,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        * @return Whether the consensusPubkey field is set.
        */
       public boolean hasConsensusPubkey() {
@@ -5940,7 +5940,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        * @return The consensusPubkey.
        */
       public com.google.protobuf.Any getConsensusPubkey() {
@@ -5955,7 +5955,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder setConsensusPubkey(com.google.protobuf.Any value) {
         if (consensusPubkeyBuilder_ == null) {
@@ -5975,7 +5975,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder setConsensusPubkey(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -5993,7 +5993,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder mergeConsensusPubkey(com.google.protobuf.Any value) {
         if (consensusPubkeyBuilder_ == null) {
@@ -6015,7 +6015,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder clearConsensusPubkey() {
         if (consensusPubkeyBuilder_ == null) {
@@ -6033,7 +6033,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public com.google.protobuf.Any.Builder getConsensusPubkeyBuilder() {
         
@@ -6045,7 +6045,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder() {
         if (consensusPubkeyBuilder_ != null) {
@@ -6060,7 +6060,7 @@ public final class Staking {
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
        * </pre>
        *
-       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
+       * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -6199,7 +6199,7 @@ public final class Staking {
        * tokens define the delegated tokens (incl. self-delegation).
        * </pre>
        *
-       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The tokens.
        */
       public java.lang.String getTokens() {
@@ -6219,7 +6219,7 @@ public final class Staking {
        * tokens define the delegated tokens (incl. self-delegation).
        * </pre>
        *
-       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The bytes for tokens.
        */
       public com.google.protobuf.ByteString
@@ -6240,7 +6240,7 @@ public final class Staking {
        * tokens define the delegated tokens (incl. self-delegation).
        * </pre>
        *
-       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The tokens to set.
        * @return This builder for chaining.
        */
@@ -6259,7 +6259,7 @@ public final class Staking {
        * tokens define the delegated tokens (incl. self-delegation).
        * </pre>
        *
-       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTokens() {
@@ -6273,7 +6273,7 @@ public final class Staking {
        * tokens define the delegated tokens (incl. self-delegation).
        * </pre>
        *
-       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string tokens = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The bytes for tokens to set.
        * @return This builder for chaining.
        */
@@ -6295,7 +6295,7 @@ public final class Staking {
        * delegator_shares defines total shares issued to a validator's delegators.
        * </pre>
        *
-       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
        * @return The delegatorShares.
        */
       public java.lang.String getDelegatorShares() {
@@ -6315,7 +6315,7 @@ public final class Staking {
        * delegator_shares defines total shares issued to a validator's delegators.
        * </pre>
        *
-       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
        * @return The bytes for delegatorShares.
        */
       public com.google.protobuf.ByteString
@@ -6336,7 +6336,7 @@ public final class Staking {
        * delegator_shares defines total shares issued to a validator's delegators.
        * </pre>
        *
-       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
        * @param value The delegatorShares to set.
        * @return This builder for chaining.
        */
@@ -6355,7 +6355,7 @@ public final class Staking {
        * delegator_shares defines total shares issued to a validator's delegators.
        * </pre>
        *
-       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorShares() {
@@ -6369,7 +6369,7 @@ public final class Staking {
        * delegator_shares defines total shares issued to a validator's delegators.
        * </pre>
        *
-       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string delegator_shares = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"delegator_shares&#92;""];</code>
        * @param value The bytes for delegatorShares to set.
        * @return This builder for chaining.
        */
@@ -6546,7 +6546,7 @@ public final class Staking {
        * unbonding_height defines, if unbonding, the height at which this validator has begun unbonding.
        * </pre>
        *
-       * <code>int64 unbonding_height = 8;</code>
+       * <code>int64 unbonding_height = 8 [(.gogoproto.moretags) = "yaml:&#92;"unbonding_height&#92;""];</code>
        * @return The unbondingHeight.
        */
       @java.lang.Override
@@ -6558,7 +6558,7 @@ public final class Staking {
        * unbonding_height defines, if unbonding, the height at which this validator has begun unbonding.
        * </pre>
        *
-       * <code>int64 unbonding_height = 8;</code>
+       * <code>int64 unbonding_height = 8 [(.gogoproto.moretags) = "yaml:&#92;"unbonding_height&#92;""];</code>
        * @param value The unbondingHeight to set.
        * @return This builder for chaining.
        */
@@ -6573,7 +6573,7 @@ public final class Staking {
        * unbonding_height defines, if unbonding, the height at which this validator has begun unbonding.
        * </pre>
        *
-       * <code>int64 unbonding_height = 8;</code>
+       * <code>int64 unbonding_height = 8 [(.gogoproto.moretags) = "yaml:&#92;"unbonding_height&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearUnbondingHeight() {
@@ -6591,7 +6591,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the unbondingTime field is set.
        */
       public boolean hasUnbondingTime() {
@@ -6602,7 +6602,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The unbondingTime.
        */
       public com.google.protobuf.Timestamp getUnbondingTime() {
@@ -6617,7 +6617,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUnbondingTime(com.google.protobuf.Timestamp value) {
         if (unbondingTimeBuilder_ == null) {
@@ -6637,7 +6637,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUnbondingTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -6655,7 +6655,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeUnbondingTime(com.google.protobuf.Timestamp value) {
         if (unbondingTimeBuilder_ == null) {
@@ -6677,7 +6677,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearUnbondingTime() {
         if (unbondingTimeBuilder_ == null) {
@@ -6695,7 +6695,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getUnbondingTimeBuilder() {
         
@@ -6707,7 +6707,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder() {
         if (unbondingTimeBuilder_ != null) {
@@ -6722,7 +6722,7 @@ public final class Staking {
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -6899,7 +6899,7 @@ public final class Staking {
        * min_self_delegation is the validator's self declared minimum self delegation.
        * </pre>
        *
-       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
        * @return The minSelfDelegation.
        */
       public java.lang.String getMinSelfDelegation() {
@@ -6919,7 +6919,7 @@ public final class Staking {
        * min_self_delegation is the validator's self declared minimum self delegation.
        * </pre>
        *
-       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
        * @return The bytes for minSelfDelegation.
        */
       public com.google.protobuf.ByteString
@@ -6940,7 +6940,7 @@ public final class Staking {
        * min_self_delegation is the validator's self declared minimum self delegation.
        * </pre>
        *
-       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
        * @param value The minSelfDelegation to set.
        * @return This builder for chaining.
        */
@@ -6959,7 +6959,7 @@ public final class Staking {
        * min_self_delegation is the validator's self declared minimum self delegation.
        * </pre>
        *
-       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinSelfDelegation() {
@@ -6973,7 +6973,7 @@ public final class Staking {
        * min_self_delegation is the validator's self declared minimum self delegation.
        * </pre>
        *
-       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
        * @param value The bytes for minSelfDelegation to set.
        * @return This builder for chaining.
        */
@@ -7046,24 +7046,24 @@ public final class Staking {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @return A list containing the addresses.
      */
     java.util.List<java.lang.String>
         getAddressesList();
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @return The count of addresses.
      */
     int getAddressesCount();
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @param index The index of the element to return.
      * @return The addresses at the given index.
      */
     java.lang.String getAddresses(int index);
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @param index The index of the value to return.
      * @return The bytes of the addresses at the given index.
      */
@@ -7168,7 +7168,7 @@ public final class Staking {
     public static final int ADDRESSES_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList addresses_;
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @return A list containing the addresses.
      */
     public com.google.protobuf.ProtocolStringList
@@ -7176,14 +7176,14 @@ public final class Staking {
       return addresses_;
     }
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @return The count of addresses.
      */
     public int getAddressesCount() {
       return addresses_.size();
     }
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @param index The index of the element to return.
      * @return The addresses at the given index.
      */
@@ -7191,7 +7191,7 @@ public final class Staking {
       return addresses_.get(index);
     }
     /**
-     * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>repeated string addresses = 1;</code>
      * @param index The index of the value to return.
      * @return The bytes of the addresses at the given index.
      */
@@ -7533,7 +7533,7 @@ public final class Staking {
          }
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @return A list containing the addresses.
        */
       public com.google.protobuf.ProtocolStringList
@@ -7541,14 +7541,14 @@ public final class Staking {
         return addresses_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @return The count of addresses.
        */
       public int getAddressesCount() {
         return addresses_.size();
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param index The index of the element to return.
        * @return The addresses at the given index.
        */
@@ -7556,7 +7556,7 @@ public final class Staking {
         return addresses_.get(index);
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param index The index of the value to return.
        * @return The bytes of the addresses at the given index.
        */
@@ -7565,7 +7565,7 @@ public final class Staking {
         return addresses_.getByteString(index);
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param index The index to set the value at.
        * @param value The addresses to set.
        * @return This builder for chaining.
@@ -7581,7 +7581,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param value The addresses to add.
        * @return This builder for chaining.
        */
@@ -7596,7 +7596,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param values The addresses to add.
        * @return This builder for chaining.
        */
@@ -7609,7 +7609,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddresses() {
@@ -7619,7 +7619,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>repeated string addresses = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>repeated string addresses = 1;</code>
        * @param value The bytes of the addresses to add.
        * @return This builder for chaining.
        */
@@ -7692,24 +7692,24 @@ public final class Staking {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -7815,7 +7815,7 @@ public final class Staking {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -7832,7 +7832,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -7853,7 +7853,7 @@ public final class Staking {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -7870,7 +7870,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -8215,7 +8215,7 @@ public final class Staking {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -8231,7 +8231,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -8248,7 +8248,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -8263,7 +8263,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -8273,7 +8273,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -8291,7 +8291,7 @@ public final class Staking {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -8307,7 +8307,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -8324,7 +8324,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -8339,7 +8339,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -8349,7 +8349,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9223,36 +9223,36 @@ public final class Staking {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     java.lang.String getValidatorSrcAddress();
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     com.google.protobuf.ByteString
         getValidatorSrcAddressBytes();
 
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     java.lang.String getValidatorDstAddress();
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     com.google.protobuf.ByteString
@@ -9366,7 +9366,7 @@ public final class Staking {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -9383,7 +9383,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -9404,7 +9404,7 @@ public final class Staking {
     public static final int VALIDATOR_SRC_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorSrcAddress_;
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     @java.lang.Override
@@ -9421,7 +9421,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     @java.lang.Override
@@ -9442,7 +9442,7 @@ public final class Staking {
     public static final int VALIDATOR_DST_ADDRESS_FIELD_NUMBER = 3;
     private volatile java.lang.Object validatorDstAddress_;
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     @java.lang.Override
@@ -9459,7 +9459,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     @java.lang.Override
@@ -9822,7 +9822,7 @@ public final class Staking {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -9838,7 +9838,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -9855,7 +9855,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9870,7 +9870,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -9880,7 +9880,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9898,7 +9898,7 @@ public final class Staking {
 
       private java.lang.Object validatorSrcAddress_ = "";
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The validatorSrcAddress.
        */
       public java.lang.String getValidatorSrcAddress() {
@@ -9914,7 +9914,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The bytes for validatorSrcAddress.
        */
       public com.google.protobuf.ByteString
@@ -9931,7 +9931,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -9946,7 +9946,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorSrcAddress() {
@@ -9956,7 +9956,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The bytes for validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -9974,7 +9974,7 @@ public final class Staking {
 
       private java.lang.Object validatorDstAddress_ = "";
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The validatorDstAddress.
        */
       public java.lang.String getValidatorDstAddress() {
@@ -9990,7 +9990,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The bytes for validatorDstAddress.
        */
       public com.google.protobuf.ByteString
@@ -10007,7 +10007,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -10022,7 +10022,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorDstAddress() {
@@ -10032,7 +10032,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The bytes for validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -10910,7 +10910,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
@@ -10919,7 +10919,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
@@ -10930,7 +10930,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
@@ -10939,7 +10939,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -10950,7 +10950,7 @@ public final class Staking {
      * shares define the delegation shares received.
      * </pre>
      *
-     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The shares.
      */
     java.lang.String getShares();
@@ -10959,7 +10959,7 @@ public final class Staking {
      * shares define the delegation shares received.
      * </pre>
      *
-     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for shares.
      */
     com.google.protobuf.ByteString
@@ -11076,7 +11076,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -11097,7 +11097,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -11122,7 +11122,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -11143,7 +11143,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -11168,7 +11168,7 @@ public final class Staking {
      * shares define the delegation shares received.
      * </pre>
      *
-     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The shares.
      */
     @java.lang.Override
@@ -11189,7 +11189,7 @@ public final class Staking {
      * shares define the delegation shares received.
      * </pre>
      *
-     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for shares.
      */
     @java.lang.Override
@@ -11555,7 +11555,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -11575,7 +11575,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -11596,7 +11596,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -11615,7 +11615,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -11629,7 +11629,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -11651,7 +11651,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -11671,7 +11671,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -11692,7 +11692,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -11711,7 +11711,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -11725,7 +11725,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -11747,7 +11747,7 @@ public final class Staking {
        * shares define the delegation shares received.
        * </pre>
        *
-       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The shares.
        */
       public java.lang.String getShares() {
@@ -11767,7 +11767,7 @@ public final class Staking {
        * shares define the delegation shares received.
        * </pre>
        *
-       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The bytes for shares.
        */
       public com.google.protobuf.ByteString
@@ -11788,7 +11788,7 @@ public final class Staking {
        * shares define the delegation shares received.
        * </pre>
        *
-       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The shares to set.
        * @return This builder for chaining.
        */
@@ -11807,7 +11807,7 @@ public final class Staking {
        * shares define the delegation shares received.
        * </pre>
        *
-       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return This builder for chaining.
        */
       public Builder clearShares() {
@@ -11821,7 +11821,7 @@ public final class Staking {
        * shares define the delegation shares received.
        * </pre>
        *
-       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The bytes for shares to set.
        * @return This builder for chaining.
        */
@@ -11898,7 +11898,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
@@ -11907,7 +11907,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
@@ -11918,7 +11918,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
@@ -11927,7 +11927,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -12094,7 +12094,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -12115,7 +12115,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -12140,7 +12140,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -12161,7 +12161,7 @@ public final class Staking {
      * validator_address is the bech32-encoded address of the validator.
      * </pre>
      *
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -12626,7 +12626,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -12646,7 +12646,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -12667,7 +12667,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -12686,7 +12686,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -12700,7 +12700,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -12722,7 +12722,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -12742,7 +12742,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -12763,7 +12763,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -12782,7 +12782,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -12796,7 +12796,7 @@ public final class Staking {
        * validator_address is the bech32-encoded address of the validator.
        * </pre>
        *
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -13185,7 +13185,7 @@ public final class Staking {
      * creation_height is the height which the unbonding took place.
      * </pre>
      *
-     * <code>int64 creation_height = 1;</code>
+     * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
      * @return The creationHeight.
      */
     long getCreationHeight();
@@ -13195,7 +13195,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     boolean hasCompletionTime();
@@ -13204,7 +13204,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     com.google.protobuf.Timestamp getCompletionTime();
@@ -13213,7 +13213,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
 
@@ -13222,7 +13222,7 @@ public final class Staking {
      * initial_balance defines the tokens initially scheduled to receive at completion.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The initialBalance.
      */
     java.lang.String getInitialBalance();
@@ -13231,7 +13231,7 @@ public final class Staking {
      * initial_balance defines the tokens initially scheduled to receive at completion.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The bytes for initialBalance.
      */
     com.google.protobuf.ByteString
@@ -13242,7 +13242,7 @@ public final class Staking {
      * balance defines the tokens to receive at completion.
      * </pre>
      *
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The balance.
      */
     java.lang.String getBalance();
@@ -13251,7 +13251,7 @@ public final class Staking {
      * balance defines the tokens to receive at completion.
      * </pre>
      *
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for balance.
      */
     com.google.protobuf.ByteString
@@ -13377,7 +13377,7 @@ public final class Staking {
      * creation_height is the height which the unbonding took place.
      * </pre>
      *
-     * <code>int64 creation_height = 1;</code>
+     * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
      * @return The creationHeight.
      */
     @java.lang.Override
@@ -13392,7 +13392,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     @java.lang.Override
@@ -13404,7 +13404,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     @java.lang.Override
@@ -13416,7 +13416,7 @@ public final class Staking {
      * completion_time is the unix time for unbonding completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
@@ -13430,7 +13430,7 @@ public final class Staking {
      * initial_balance defines the tokens initially scheduled to receive at completion.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The initialBalance.
      */
     @java.lang.Override
@@ -13451,7 +13451,7 @@ public final class Staking {
      * initial_balance defines the tokens initially scheduled to receive at completion.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The bytes for initialBalance.
      */
     @java.lang.Override
@@ -13476,7 +13476,7 @@ public final class Staking {
      * balance defines the tokens to receive at completion.
      * </pre>
      *
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The balance.
      */
     @java.lang.Override
@@ -13497,7 +13497,7 @@ public final class Staking {
      * balance defines the tokens to receive at completion.
      * </pre>
      *
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for balance.
      */
     @java.lang.Override
@@ -13892,7 +13892,7 @@ public final class Staking {
        * creation_height is the height which the unbonding took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @return The creationHeight.
        */
       @java.lang.Override
@@ -13904,7 +13904,7 @@ public final class Staking {
        * creation_height is the height which the unbonding took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @param value The creationHeight to set.
        * @return This builder for chaining.
        */
@@ -13919,7 +13919,7 @@ public final class Staking {
        * creation_height is the height which the unbonding took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreationHeight() {
@@ -13937,7 +13937,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
        */
       public boolean hasCompletionTime() {
@@ -13948,7 +13948,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
       public com.google.protobuf.Timestamp getCompletionTime() {
@@ -13963,7 +13963,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -13983,7 +13983,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -14001,7 +14001,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -14023,7 +14023,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearCompletionTime() {
         if (completionTimeBuilder_ == null) {
@@ -14041,7 +14041,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
         
@@ -14053,7 +14053,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
@@ -14068,7 +14068,7 @@ public final class Staking {
        * completion_time is the unix time for unbonding completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -14090,7 +14090,7 @@ public final class Staking {
        * initial_balance defines the tokens initially scheduled to receive at completion.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return The initialBalance.
        */
       public java.lang.String getInitialBalance() {
@@ -14110,7 +14110,7 @@ public final class Staking {
        * initial_balance defines the tokens initially scheduled to receive at completion.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return The bytes for initialBalance.
        */
       public com.google.protobuf.ByteString
@@ -14131,7 +14131,7 @@ public final class Staking {
        * initial_balance defines the tokens initially scheduled to receive at completion.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @param value The initialBalance to set.
        * @return This builder for chaining.
        */
@@ -14150,7 +14150,7 @@ public final class Staking {
        * initial_balance defines the tokens initially scheduled to receive at completion.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialBalance() {
@@ -14164,7 +14164,7 @@ public final class Staking {
        * initial_balance defines the tokens initially scheduled to receive at completion.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @param value The bytes for initialBalance to set.
        * @return This builder for chaining.
        */
@@ -14186,7 +14186,7 @@ public final class Staking {
        * balance defines the tokens to receive at completion.
        * </pre>
        *
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The balance.
        */
       public java.lang.String getBalance() {
@@ -14206,7 +14206,7 @@ public final class Staking {
        * balance defines the tokens to receive at completion.
        * </pre>
        *
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The bytes for balance.
        */
       public com.google.protobuf.ByteString
@@ -14227,7 +14227,7 @@ public final class Staking {
        * balance defines the tokens to receive at completion.
        * </pre>
        *
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The balance to set.
        * @return This builder for chaining.
        */
@@ -14246,7 +14246,7 @@ public final class Staking {
        * balance defines the tokens to receive at completion.
        * </pre>
        *
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBalance() {
@@ -14260,7 +14260,7 @@ public final class Staking {
        * balance defines the tokens to receive at completion.
        * </pre>
        *
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The bytes for balance to set.
        * @return This builder for chaining.
        */
@@ -14337,7 +14337,7 @@ public final class Staking {
      * creation_height  defines the height which the redelegation took place.
      * </pre>
      *
-     * <code>int64 creation_height = 1;</code>
+     * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
      * @return The creationHeight.
      */
     long getCreationHeight();
@@ -14347,7 +14347,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     boolean hasCompletionTime();
@@ -14356,7 +14356,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     com.google.protobuf.Timestamp getCompletionTime();
@@ -14365,7 +14365,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
 
@@ -14374,7 +14374,7 @@ public final class Staking {
      * initial_balance defines the initial balance when redelegation started.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The initialBalance.
      */
     java.lang.String getInitialBalance();
@@ -14383,7 +14383,7 @@ public final class Staking {
      * initial_balance defines the initial balance when redelegation started.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The bytes for initialBalance.
      */
     com.google.protobuf.ByteString
@@ -14394,7 +14394,7 @@ public final class Staking {
      * shares_dst is the amount of destination-validator shares created by redelegation.
      * </pre>
      *
-     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The sharesDst.
      */
     java.lang.String getSharesDst();
@@ -14403,7 +14403,7 @@ public final class Staking {
      * shares_dst is the amount of destination-validator shares created by redelegation.
      * </pre>
      *
-     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for sharesDst.
      */
     com.google.protobuf.ByteString
@@ -14529,7 +14529,7 @@ public final class Staking {
      * creation_height  defines the height which the redelegation took place.
      * </pre>
      *
-     * <code>int64 creation_height = 1;</code>
+     * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
      * @return The creationHeight.
      */
     @java.lang.Override
@@ -14544,7 +14544,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     @java.lang.Override
@@ -14556,7 +14556,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     @java.lang.Override
@@ -14568,7 +14568,7 @@ public final class Staking {
      * completion_time defines the unix time for redelegation completion.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
@@ -14582,7 +14582,7 @@ public final class Staking {
      * initial_balance defines the initial balance when redelegation started.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The initialBalance.
      */
     @java.lang.Override
@@ -14603,7 +14603,7 @@ public final class Staking {
      * initial_balance defines the initial balance when redelegation started.
      * </pre>
      *
-     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
      * @return The bytes for initialBalance.
      */
     @java.lang.Override
@@ -14628,7 +14628,7 @@ public final class Staking {
      * shares_dst is the amount of destination-validator shares created by redelegation.
      * </pre>
      *
-     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The sharesDst.
      */
     @java.lang.Override
@@ -14649,7 +14649,7 @@ public final class Staking {
      * shares_dst is the amount of destination-validator shares created by redelegation.
      * </pre>
      *
-     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
      * @return The bytes for sharesDst.
      */
     @java.lang.Override
@@ -15044,7 +15044,7 @@ public final class Staking {
        * creation_height  defines the height which the redelegation took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @return The creationHeight.
        */
       @java.lang.Override
@@ -15056,7 +15056,7 @@ public final class Staking {
        * creation_height  defines the height which the redelegation took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @param value The creationHeight to set.
        * @return This builder for chaining.
        */
@@ -15071,7 +15071,7 @@ public final class Staking {
        * creation_height  defines the height which the redelegation took place.
        * </pre>
        *
-       * <code>int64 creation_height = 1;</code>
+       * <code>int64 creation_height = 1 [(.gogoproto.moretags) = "yaml:&#92;"creation_height&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreationHeight() {
@@ -15089,7 +15089,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
        */
       public boolean hasCompletionTime() {
@@ -15100,7 +15100,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
       public com.google.protobuf.Timestamp getCompletionTime() {
@@ -15115,7 +15115,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -15135,7 +15135,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -15153,7 +15153,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -15175,7 +15175,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearCompletionTime() {
         if (completionTimeBuilder_ == null) {
@@ -15193,7 +15193,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
         
@@ -15205,7 +15205,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
@@ -15220,7 +15220,7 @@ public final class Staking {
        * completion_time defines the unix time for redelegation completion.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -15242,7 +15242,7 @@ public final class Staking {
        * initial_balance defines the initial balance when redelegation started.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return The initialBalance.
        */
       public java.lang.String getInitialBalance() {
@@ -15262,7 +15262,7 @@ public final class Staking {
        * initial_balance defines the initial balance when redelegation started.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return The bytes for initialBalance.
        */
       public com.google.protobuf.ByteString
@@ -15283,7 +15283,7 @@ public final class Staking {
        * initial_balance defines the initial balance when redelegation started.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @param value The initialBalance to set.
        * @return This builder for chaining.
        */
@@ -15302,7 +15302,7 @@ public final class Staking {
        * initial_balance defines the initial balance when redelegation started.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialBalance() {
@@ -15316,7 +15316,7 @@ public final class Staking {
        * initial_balance defines the initial balance when redelegation started.
        * </pre>
        *
-       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string initial_balance = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"initial_balance&#92;""];</code>
        * @param value The bytes for initialBalance to set.
        * @return This builder for chaining.
        */
@@ -15338,7 +15338,7 @@ public final class Staking {
        * shares_dst is the amount of destination-validator shares created by redelegation.
        * </pre>
        *
-       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The sharesDst.
        */
       public java.lang.String getSharesDst() {
@@ -15358,7 +15358,7 @@ public final class Staking {
        * shares_dst is the amount of destination-validator shares created by redelegation.
        * </pre>
        *
-       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return The bytes for sharesDst.
        */
       public com.google.protobuf.ByteString
@@ -15379,7 +15379,7 @@ public final class Staking {
        * shares_dst is the amount of destination-validator shares created by redelegation.
        * </pre>
        *
-       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The sharesDst to set.
        * @return This builder for chaining.
        */
@@ -15398,7 +15398,7 @@ public final class Staking {
        * shares_dst is the amount of destination-validator shares created by redelegation.
        * </pre>
        *
-       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSharesDst() {
@@ -15412,7 +15412,7 @@ public final class Staking {
        * shares_dst is the amount of destination-validator shares created by redelegation.
        * </pre>
        *
-       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string shares_dst = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
        * @param value The bytes for sharesDst to set.
        * @return This builder for chaining.
        */
@@ -15489,7 +15489,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
@@ -15498,7 +15498,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
@@ -15509,7 +15509,7 @@ public final class Staking {
      * validator_src_address is the validator redelegation source operator address.
      * </pre>
      *
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     java.lang.String getValidatorSrcAddress();
@@ -15518,7 +15518,7 @@ public final class Staking {
      * validator_src_address is the validator redelegation source operator address.
      * </pre>
      *
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     com.google.protobuf.ByteString
@@ -15529,7 +15529,7 @@ public final class Staking {
      * validator_dst_address is the validator redelegation destination operator address.
      * </pre>
      *
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     java.lang.String getValidatorDstAddress();
@@ -15538,7 +15538,7 @@ public final class Staking {
      * validator_dst_address is the validator redelegation destination operator address.
      * </pre>
      *
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     com.google.protobuf.ByteString
@@ -15712,7 +15712,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -15733,7 +15733,7 @@ public final class Staking {
      * delegator_address is the bech32-encoded address of the delegator.
      * </pre>
      *
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -15758,7 +15758,7 @@ public final class Staking {
      * validator_src_address is the validator redelegation source operator address.
      * </pre>
      *
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     @java.lang.Override
@@ -15779,7 +15779,7 @@ public final class Staking {
      * validator_src_address is the validator redelegation source operator address.
      * </pre>
      *
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     @java.lang.Override
@@ -15804,7 +15804,7 @@ public final class Staking {
      * validator_dst_address is the validator redelegation destination operator address.
      * </pre>
      *
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     @java.lang.Override
@@ -15825,7 +15825,7 @@ public final class Staking {
      * validator_dst_address is the validator redelegation destination operator address.
      * </pre>
      *
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     @java.lang.Override
@@ -16307,7 +16307,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -16327,7 +16327,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -16348,7 +16348,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -16367,7 +16367,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -16381,7 +16381,7 @@ public final class Staking {
        * delegator_address is the bech32-encoded address of the delegator.
        * </pre>
        *
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -16403,7 +16403,7 @@ public final class Staking {
        * validator_src_address is the validator redelegation source operator address.
        * </pre>
        *
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The validatorSrcAddress.
        */
       public java.lang.String getValidatorSrcAddress() {
@@ -16423,7 +16423,7 @@ public final class Staking {
        * validator_src_address is the validator redelegation source operator address.
        * </pre>
        *
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The bytes for validatorSrcAddress.
        */
       public com.google.protobuf.ByteString
@@ -16444,7 +16444,7 @@ public final class Staking {
        * validator_src_address is the validator redelegation source operator address.
        * </pre>
        *
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -16463,7 +16463,7 @@ public final class Staking {
        * validator_src_address is the validator redelegation source operator address.
        * </pre>
        *
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorSrcAddress() {
@@ -16477,7 +16477,7 @@ public final class Staking {
        * validator_src_address is the validator redelegation source operator address.
        * </pre>
        *
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The bytes for validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -16499,7 +16499,7 @@ public final class Staking {
        * validator_dst_address is the validator redelegation destination operator address.
        * </pre>
        *
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The validatorDstAddress.
        */
       public java.lang.String getValidatorDstAddress() {
@@ -16519,7 +16519,7 @@ public final class Staking {
        * validator_dst_address is the validator redelegation destination operator address.
        * </pre>
        *
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The bytes for validatorDstAddress.
        */
       public com.google.protobuf.ByteString
@@ -16540,7 +16540,7 @@ public final class Staking {
        * validator_dst_address is the validator redelegation destination operator address.
        * </pre>
        *
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -16559,7 +16559,7 @@ public final class Staking {
        * validator_dst_address is the validator redelegation destination operator address.
        * </pre>
        *
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorDstAddress() {
@@ -16573,7 +16573,7 @@ public final class Staking {
        * validator_dst_address is the validator redelegation destination operator address.
        * </pre>
        *
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The bytes for validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -16962,7 +16962,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the unbondingTime field is set.
      */
     boolean hasUnbondingTime();
@@ -16971,7 +16971,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The unbondingTime.
      */
     com.google.protobuf.Duration getUnbondingTime();
@@ -16980,7 +16980,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder();
 
@@ -16989,7 +16989,7 @@ public final class Staking {
      * max_validators is the maximum number of validators.
      * </pre>
      *
-     * <code>uint32 max_validators = 2;</code>
+     * <code>uint32 max_validators = 2 [(.gogoproto.moretags) = "yaml:&#92;"max_validators&#92;""];</code>
      * @return The maxValidators.
      */
     int getMaxValidators();
@@ -16999,7 +16999,7 @@ public final class Staking {
      * max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio).
      * </pre>
      *
-     * <code>uint32 max_entries = 3;</code>
+     * <code>uint32 max_entries = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_entries&#92;""];</code>
      * @return The maxEntries.
      */
     int getMaxEntries();
@@ -17009,7 +17009,7 @@ public final class Staking {
      * historical_entries is the number of historical entries to persist.
      * </pre>
      *
-     * <code>uint32 historical_entries = 4;</code>
+     * <code>uint32 historical_entries = 4 [(.gogoproto.moretags) = "yaml:&#92;"historical_entries&#92;""];</code>
      * @return The historicalEntries.
      */
     int getHistoricalEntries();
@@ -17019,7 +17019,7 @@ public final class Staking {
      * bond_denom defines the bondable coin denomination.
      * </pre>
      *
-     * <code>string bond_denom = 5;</code>
+     * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
      * @return The bondDenom.
      */
     java.lang.String getBondDenom();
@@ -17028,31 +17028,11 @@ public final class Staking {
      * bond_denom defines the bondable coin denomination.
      * </pre>
      *
-     * <code>string bond_denom = 5;</code>
+     * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
      * @return The bytes for bondDenom.
      */
     com.google.protobuf.ByteString
         getBondDenomBytes();
-
-    /**
-     * <pre>
-     * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-     * </pre>
-     *
-     * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-     * @return The minCommissionRate.
-     */
-    java.lang.String getMinCommissionRate();
-    /**
-     * <pre>
-     * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-     * </pre>
-     *
-     * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-     * @return The bytes for minCommissionRate.
-     */
-    com.google.protobuf.ByteString
-        getMinCommissionRateBytes();
   }
   /**
    * <pre>
@@ -17072,7 +17052,6 @@ public final class Staking {
     }
     private Params() {
       bondDenom_ = "";
-      minCommissionRate_ = "";
     }
 
     @java.lang.Override
@@ -17139,12 +17118,6 @@ public final class Staking {
               bondDenom_ = s;
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minCommissionRate_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -17184,7 +17157,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the unbondingTime field is set.
      */
     @java.lang.Override
@@ -17196,7 +17169,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The unbondingTime.
      */
     @java.lang.Override
@@ -17208,7 +17181,7 @@ public final class Staking {
      * unbonding_time is the time duration of unbonding.
      * </pre>
      *
-     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder() {
@@ -17222,7 +17195,7 @@ public final class Staking {
      * max_validators is the maximum number of validators.
      * </pre>
      *
-     * <code>uint32 max_validators = 2;</code>
+     * <code>uint32 max_validators = 2 [(.gogoproto.moretags) = "yaml:&#92;"max_validators&#92;""];</code>
      * @return The maxValidators.
      */
     @java.lang.Override
@@ -17237,7 +17210,7 @@ public final class Staking {
      * max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio).
      * </pre>
      *
-     * <code>uint32 max_entries = 3;</code>
+     * <code>uint32 max_entries = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_entries&#92;""];</code>
      * @return The maxEntries.
      */
     @java.lang.Override
@@ -17252,7 +17225,7 @@ public final class Staking {
      * historical_entries is the number of historical entries to persist.
      * </pre>
      *
-     * <code>uint32 historical_entries = 4;</code>
+     * <code>uint32 historical_entries = 4 [(.gogoproto.moretags) = "yaml:&#92;"historical_entries&#92;""];</code>
      * @return The historicalEntries.
      */
     @java.lang.Override
@@ -17267,7 +17240,7 @@ public final class Staking {
      * bond_denom defines the bondable coin denomination.
      * </pre>
      *
-     * <code>string bond_denom = 5;</code>
+     * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
      * @return The bondDenom.
      */
     @java.lang.Override
@@ -17288,7 +17261,7 @@ public final class Staking {
      * bond_denom defines the bondable coin denomination.
      * </pre>
      *
-     * <code>string bond_denom = 5;</code>
+     * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
      * @return The bytes for bondDenom.
      */
     @java.lang.Override
@@ -17300,52 +17273,6 @@ public final class Staking {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         bondDenom_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MIN_COMMISSION_RATE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object minCommissionRate_;
-    /**
-     * <pre>
-     * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-     * </pre>
-     *
-     * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-     * @return The minCommissionRate.
-     */
-    @java.lang.Override
-    public java.lang.String getMinCommissionRate() {
-      java.lang.Object ref = minCommissionRate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        minCommissionRate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-     * </pre>
-     *
-     * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-     * @return The bytes for minCommissionRate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMinCommissionRateBytes() {
-      java.lang.Object ref = minCommissionRate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        minCommissionRate_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -17381,9 +17308,6 @@ public final class Staking {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDenom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, bondDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCommissionRate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, minCommissionRate_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -17411,9 +17335,6 @@ public final class Staking {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDenom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, bondDenom_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCommissionRate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, minCommissionRate_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17443,8 +17364,6 @@ public final class Staking {
           != other.getHistoricalEntries()) return false;
       if (!getBondDenom()
           .equals(other.getBondDenom())) return false;
-      if (!getMinCommissionRate()
-          .equals(other.getMinCommissionRate())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17468,8 +17387,6 @@ public final class Staking {
       hash = (53 * hash) + getHistoricalEntries();
       hash = (37 * hash) + BOND_DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getBondDenom().hashCode();
-      hash = (37 * hash) + MIN_COMMISSION_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getMinCommissionRate().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17621,8 +17538,6 @@ public final class Staking {
 
         bondDenom_ = "";
 
-        minCommissionRate_ = "";
-
         return this;
       }
 
@@ -17658,7 +17573,6 @@ public final class Staking {
         result.maxEntries_ = maxEntries_;
         result.historicalEntries_ = historicalEntries_;
         result.bondDenom_ = bondDenom_;
-        result.minCommissionRate_ = minCommissionRate_;
         onBuilt();
         return result;
       }
@@ -17723,10 +17637,6 @@ public final class Staking {
           bondDenom_ = other.bondDenom_;
           onChanged();
         }
-        if (!other.getMinCommissionRate().isEmpty()) {
-          minCommissionRate_ = other.minCommissionRate_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -17764,7 +17674,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return Whether the unbondingTime field is set.
        */
       public boolean hasUnbondingTime() {
@@ -17775,7 +17685,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The unbondingTime.
        */
       public com.google.protobuf.Duration getUnbondingTime() {
@@ -17790,7 +17700,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setUnbondingTime(com.google.protobuf.Duration value) {
         if (unbondingTimeBuilder_ == null) {
@@ -17810,7 +17720,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setUnbondingTime(
           com.google.protobuf.Duration.Builder builderForValue) {
@@ -17828,7 +17738,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder mergeUnbondingTime(com.google.protobuf.Duration value) {
         if (unbondingTimeBuilder_ == null) {
@@ -17850,7 +17760,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearUnbondingTime() {
         if (unbondingTimeBuilder_ == null) {
@@ -17868,7 +17778,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getUnbondingTimeBuilder() {
         
@@ -17880,7 +17790,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder() {
         if (unbondingTimeBuilder_ != null) {
@@ -17895,7 +17805,7 @@ public final class Staking {
        * unbonding_time is the time duration of unbonding.
        * </pre>
        *
-       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -17917,7 +17827,7 @@ public final class Staking {
        * max_validators is the maximum number of validators.
        * </pre>
        *
-       * <code>uint32 max_validators = 2;</code>
+       * <code>uint32 max_validators = 2 [(.gogoproto.moretags) = "yaml:&#92;"max_validators&#92;""];</code>
        * @return The maxValidators.
        */
       @java.lang.Override
@@ -17929,7 +17839,7 @@ public final class Staking {
        * max_validators is the maximum number of validators.
        * </pre>
        *
-       * <code>uint32 max_validators = 2;</code>
+       * <code>uint32 max_validators = 2 [(.gogoproto.moretags) = "yaml:&#92;"max_validators&#92;""];</code>
        * @param value The maxValidators to set.
        * @return This builder for chaining.
        */
@@ -17944,7 +17854,7 @@ public final class Staking {
        * max_validators is the maximum number of validators.
        * </pre>
        *
-       * <code>uint32 max_validators = 2;</code>
+       * <code>uint32 max_validators = 2 [(.gogoproto.moretags) = "yaml:&#92;"max_validators&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxValidators() {
@@ -17960,7 +17870,7 @@ public final class Staking {
        * max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio).
        * </pre>
        *
-       * <code>uint32 max_entries = 3;</code>
+       * <code>uint32 max_entries = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_entries&#92;""];</code>
        * @return The maxEntries.
        */
       @java.lang.Override
@@ -17972,7 +17882,7 @@ public final class Staking {
        * max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio).
        * </pre>
        *
-       * <code>uint32 max_entries = 3;</code>
+       * <code>uint32 max_entries = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_entries&#92;""];</code>
        * @param value The maxEntries to set.
        * @return This builder for chaining.
        */
@@ -17987,7 +17897,7 @@ public final class Staking {
        * max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio).
        * </pre>
        *
-       * <code>uint32 max_entries = 3;</code>
+       * <code>uint32 max_entries = 3 [(.gogoproto.moretags) = "yaml:&#92;"max_entries&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxEntries() {
@@ -18003,7 +17913,7 @@ public final class Staking {
        * historical_entries is the number of historical entries to persist.
        * </pre>
        *
-       * <code>uint32 historical_entries = 4;</code>
+       * <code>uint32 historical_entries = 4 [(.gogoproto.moretags) = "yaml:&#92;"historical_entries&#92;""];</code>
        * @return The historicalEntries.
        */
       @java.lang.Override
@@ -18015,7 +17925,7 @@ public final class Staking {
        * historical_entries is the number of historical entries to persist.
        * </pre>
        *
-       * <code>uint32 historical_entries = 4;</code>
+       * <code>uint32 historical_entries = 4 [(.gogoproto.moretags) = "yaml:&#92;"historical_entries&#92;""];</code>
        * @param value The historicalEntries to set.
        * @return This builder for chaining.
        */
@@ -18030,7 +17940,7 @@ public final class Staking {
        * historical_entries is the number of historical entries to persist.
        * </pre>
        *
-       * <code>uint32 historical_entries = 4;</code>
+       * <code>uint32 historical_entries = 4 [(.gogoproto.moretags) = "yaml:&#92;"historical_entries&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearHistoricalEntries() {
@@ -18046,7 +17956,7 @@ public final class Staking {
        * bond_denom defines the bondable coin denomination.
        * </pre>
        *
-       * <code>string bond_denom = 5;</code>
+       * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
        * @return The bondDenom.
        */
       public java.lang.String getBondDenom() {
@@ -18066,7 +17976,7 @@ public final class Staking {
        * bond_denom defines the bondable coin denomination.
        * </pre>
        *
-       * <code>string bond_denom = 5;</code>
+       * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
        * @return The bytes for bondDenom.
        */
       public com.google.protobuf.ByteString
@@ -18087,7 +17997,7 @@ public final class Staking {
        * bond_denom defines the bondable coin denomination.
        * </pre>
        *
-       * <code>string bond_denom = 5;</code>
+       * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
        * @param value The bondDenom to set.
        * @return This builder for chaining.
        */
@@ -18106,7 +18016,7 @@ public final class Staking {
        * bond_denom defines the bondable coin denomination.
        * </pre>
        *
-       * <code>string bond_denom = 5;</code>
+       * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearBondDenom() {
@@ -18120,7 +18030,7 @@ public final class Staking {
        * bond_denom defines the bondable coin denomination.
        * </pre>
        *
-       * <code>string bond_denom = 5;</code>
+       * <code>string bond_denom = 5 [(.gogoproto.moretags) = "yaml:&#92;"bond_denom&#92;""];</code>
        * @param value The bytes for bondDenom to set.
        * @return This builder for chaining.
        */
@@ -18132,102 +18042,6 @@ public final class Staking {
   checkByteStringIsUtf8(value);
         
         bondDenom_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object minCommissionRate_ = "";
-      /**
-       * <pre>
-       * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-       * </pre>
-       *
-       * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-       * @return The minCommissionRate.
-       */
-      public java.lang.String getMinCommissionRate() {
-        java.lang.Object ref = minCommissionRate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          minCommissionRate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-       * </pre>
-       *
-       * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-       * @return The bytes for minCommissionRate.
-       */
-      public com.google.protobuf.ByteString
-          getMinCommissionRateBytes() {
-        java.lang.Object ref = minCommissionRate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          minCommissionRate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-       * </pre>
-       *
-       * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-       * @param value The minCommissionRate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMinCommissionRate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        minCommissionRate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-       * </pre>
-       *
-       * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMinCommissionRate() {
-        
-        minCommissionRate_ = getDefaultInstance().getMinCommissionRate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators
-       * </pre>
-       *
-       * <code>string min_commission_rate = 6 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"min_commission_rate&#92;""];</code>
-       * @param value The bytes for minCommissionRate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMinCommissionRateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        minCommissionRate_ = value;
         onChanged();
         return this;
       }
@@ -19138,12 +18952,12 @@ public final class Staking {
     cosmos.staking.v1beta1.Staking.RedelegationEntryOrBuilder getRedelegationEntryOrBuilder();
 
     /**
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The balance.
      */
     java.lang.String getBalance();
     /**
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for balance.
      */
     com.google.protobuf.ByteString
@@ -19281,7 +19095,7 @@ public final class Staking {
     public static final int BALANCE_FIELD_NUMBER = 4;
     private volatile java.lang.Object balance_;
     /**
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The balance.
      */
     @java.lang.Override
@@ -19298,7 +19112,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
      * @return The bytes for balance.
      */
     @java.lang.Override
@@ -19775,7 +19589,7 @@ public final class Staking {
 
       private java.lang.Object balance_ = "";
       /**
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The balance.
        */
       public java.lang.String getBalance() {
@@ -19791,7 +19605,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return The bytes for balance.
        */
       public com.google.protobuf.ByteString
@@ -19808,7 +19622,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The balance to set.
        * @return This builder for chaining.
        */
@@ -19823,7 +19637,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBalance() {
@@ -19833,7 +19647,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string balance = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
        * @param value The bytes for balance to set.
        * @return This builder for chaining.
        */
@@ -20914,24 +20728,24 @@ public final class Staking {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
      * @return The notBondedTokens.
      */
     java.lang.String getNotBondedTokens();
     /**
-     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
      * @return The bytes for notBondedTokens.
      */
     com.google.protobuf.ByteString
         getNotBondedTokensBytes();
 
     /**
-     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
      * @return The bondedTokens.
      */
     java.lang.String getBondedTokens();
     /**
-     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
      * @return The bytes for bondedTokens.
      */
     com.google.protobuf.ByteString
@@ -21036,7 +20850,7 @@ public final class Staking {
     public static final int NOT_BONDED_TOKENS_FIELD_NUMBER = 1;
     private volatile java.lang.Object notBondedTokens_;
     /**
-     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
      * @return The notBondedTokens.
      */
     @java.lang.Override
@@ -21053,7 +20867,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
      * @return The bytes for notBondedTokens.
      */
     @java.lang.Override
@@ -21074,7 +20888,7 @@ public final class Staking {
     public static final int BONDED_TOKENS_FIELD_NUMBER = 2;
     private volatile java.lang.Object bondedTokens_;
     /**
-     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
      * @return The bondedTokens.
      */
     @java.lang.Override
@@ -21091,7 +20905,7 @@ public final class Staking {
       }
     }
     /**
-     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
      * @return The bytes for bondedTokens.
      */
     @java.lang.Override
@@ -21435,7 +21249,7 @@ public final class Staking {
 
       private java.lang.Object notBondedTokens_ = "";
       /**
-       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
        * @return The notBondedTokens.
        */
       public java.lang.String getNotBondedTokens() {
@@ -21451,7 +21265,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
        * @return The bytes for notBondedTokens.
        */
       public com.google.protobuf.ByteString
@@ -21468,7 +21282,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
        * @param value The notBondedTokens to set.
        * @return This builder for chaining.
        */
@@ -21483,7 +21297,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
        * @return This builder for chaining.
        */
       public Builder clearNotBondedTokens() {
@@ -21493,7 +21307,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string not_bonded_tokens = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "not_bonded_tokens"];</code>
        * @param value The bytes for notBondedTokens to set.
        * @return This builder for chaining.
        */
@@ -21511,7 +21325,7 @@ public final class Staking {
 
       private java.lang.Object bondedTokens_ = "";
       /**
-       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
        * @return The bondedTokens.
        */
       public java.lang.String getBondedTokens() {
@@ -21527,7 +21341,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
        * @return The bytes for bondedTokens.
        */
       public com.google.protobuf.ByteString
@@ -21544,7 +21358,7 @@ public final class Staking {
         }
       }
       /**
-       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
        * @param value The bondedTokens to set.
        * @return This builder for chaining.
        */
@@ -21559,7 +21373,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearBondedTokens() {
@@ -21569,7 +21383,7 @@ public final class Staking {
         return this;
       }
       /**
-       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string bonded_tokens = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.jsontag) = "bonded_tokens", (.gogoproto.moretags) = "yaml:&#92;"bonded_tokens&#92;""];</code>
        * @param value The bytes for bondedTokens to set.
        * @return This builder for chaining.
        */
@@ -21755,114 +21569,122 @@ public final class Staking {
       "dermint/types/types.proto\"y\n\016HistoricalI" +
       "nfo\022.\n\006header\030\001 \001(\0132\030.tendermint.types.H" +
       "eaderB\004\310\336\037\000\0227\n\006valset\030\002 \003(\0132!.cosmos.sta" +
-      "king.v1beta1.ValidatorB\004\310\336\037\000\"\216\002\n\017Commiss" +
-      "ionRates\022J\n\004rate\030\001 \001(\tB<\322\264-\ncosmos.Dec\332\336" +
-      "\037&github.com/cosmos/cosmos-sdk/types.Dec" +
-      "\310\336\037\000\022N\n\010max_rate\030\002 \001(\tB<\322\264-\ncosmos.Dec\332\336" +
-      "\037&github.com/cosmos/cosmos-sdk/types.Dec" +
-      "\310\336\037\000\022U\n\017max_change_rate\030\003 \001(\tB<\322\264-\ncosmo" +
-      "s.Dec\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Dec\310\336\037\000:\010\350\240\037\001\230\240\037\000\"\236\001\n\nCommission\022K\n\020" +
-      "commission_rates\030\001 \001(\0132\'.cosmos.staking." +
-      "v1beta1.CommissionRatesB\010\320\336\037\001\310\336\037\000\0229\n\013upd" +
-      "ate_time\030\002 \001(\0132\032.google.protobuf.Timesta" +
-      "mpB\010\310\336\037\000\220\337\037\001:\010\350\240\037\001\230\240\037\000\"v\n\013Description\022\017\n" +
-      "\007moniker\030\001 \001(\t\022\020\n\010identity\030\002 \001(\t\022\017\n\007webs" +
-      "ite\030\003 \001(\t\022\030\n\020security_contact\030\004 \001(\t\022\017\n\007d" +
-      "etails\030\005 \001(\t:\010\350\240\037\001\230\240\037\000\"\262\005\n\tValidator\0222\n\020" +
-      "operator_address\030\001 \001(\tB\030\322\264-\024cosmos.Addre" +
-      "ssString\022H\n\020consensus_pubkey\030\002 \001(\0132\024.goo" +
-      "gle.protobuf.AnyB\030\312\264-\024cosmos.crypto.PubK" +
-      "ey\022\016\n\006jailed\030\003 \001(\010\0222\n\006status\030\004 \001(\0162\".cos" +
-      "mos.staking.v1beta1.BondStatus\022L\n\006tokens" +
-      "\030\005 \001(\tB<\322\264-\ncosmos.Int\332\336\037&github.com/cos" +
-      "mos/cosmos-sdk/types.Int\310\336\037\000\022V\n\020delegato" +
-      "r_shares\030\006 \001(\tB<\322\264-\ncosmos.Dec\332\336\037&github" +
-      ".com/cosmos/cosmos-sdk/types.Dec\310\336\037\000\022>\n\013" +
-      "description\030\007 \001(\0132#.cosmos.staking.v1bet" +
-      "a1.DescriptionB\004\310\336\037\000\022\030\n\020unbonding_height" +
-      "\030\010 \001(\003\022<\n\016unbonding_time\030\t \001(\0132\032.google." +
-      "protobuf.TimestampB\010\310\336\037\000\220\337\037\001\022<\n\ncommissi" +
-      "on\030\n \001(\0132\".cosmos.staking.v1beta1.Commis" +
-      "sionB\004\310\336\037\000\022Y\n\023min_self_delegation\030\013 \001(\tB" +
-      "<\322\264-\ncosmos.Int\332\336\037&github.com/cosmos/cos" +
-      "mos-sdk/types.Int\310\336\037\000:\014\350\240\037\000\230\240\037\000\210\240\037\000\"E\n\014V" +
-      "alAddresses\022+\n\taddresses\030\001 \003(\tB\030\322\264-\024cosm" +
-      "os.AddressString:\010\230\240\037\000\200\334 \001\"\200\001\n\006DVPair\0223\n" +
-      "\021delegator_address\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
-      "ressString\0223\n\021validator_address\030\002 \001(\tB\030\322" +
-      "\264-\024cosmos.AddressString:\014\350\240\037\000\210\240\037\000\230\240\037\000\">\n" +
-      "\007DVPairs\0223\n\005pairs\030\001 \003(\0132\036.cosmos.staking" +
-      ".v1beta1.DVPairB\004\310\336\037\000\"\301\001\n\nDVVTriplet\0223\n\021" +
-      "delegator_address\030\001 \001(\tB\030\322\264-\024cosmos.Addr" +
-      "essString\0227\n\025validator_src_address\030\002 \001(\t" +
-      "B\030\322\264-\024cosmos.AddressString\0227\n\025validator_" +
-      "dst_address\030\003 \001(\tB\030\322\264-\024cosmos.AddressStr" +
-      "ing:\014\350\240\037\000\210\240\037\000\230\240\037\000\"I\n\013DVVTriplets\022:\n\010trip" +
-      "lets\030\001 \003(\0132\".cosmos.staking.v1beta1.DVVT" +
-      "ripletB\004\310\336\037\000\"\322\001\n\nDelegation\0223\n\021delegator" +
-      "_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
-      "\0223\n\021validator_address\030\002 \001(\tB\030\322\264-\024cosmos." +
-      "AddressString\022L\n\006shares\030\003 \001(\tB<\322\264-\ncosmo" +
-      "s.Dec\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Dec\310\336\037\000:\014\350\240\037\000\210\240\037\000\230\240\037\000\"\326\001\n\023UnbondingD" +
-      "elegation\0223\n\021delegator_address\030\001 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\0223\n\021validator_addr" +
-      "ess\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\022G\n\007e" +
-      "ntries\030\003 \003(\01320.cosmos.staking.v1beta1.Un" +
-      "bondingDelegationEntryB\004\310\336\037\000:\014\350\240\037\000\210\240\037\000\230\240" +
-      "\037\000\"\242\002\n\030UnbondingDelegationEntry\022\027\n\017creat" +
-      "ion_height\030\001 \001(\003\022=\n\017completion_time\030\002 \001(" +
-      "\0132\032.google.protobuf.TimestampB\010\310\336\037\000\220\337\037\001\022" +
-      "U\n\017initial_balance\030\003 \001(\tB<\322\264-\ncosmos.Int" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\310\336\037\000\022M\n\007balance\030\004 \001(\tB<\322\264-\ncosmos.Int\332" +
-      "\336\037&github.com/cosmos/cosmos-sdk/types.In" +
-      "t\310\336\037\000:\010\350\240\037\001\230\240\037\000\"\236\002\n\021RedelegationEntry\022\027\n" +
-      "\017creation_height\030\001 \001(\003\022=\n\017completion_tim" +
-      "e\030\002 \001(\0132\032.google.protobuf.TimestampB\010\310\336\037" +
-      "\000\220\337\037\001\022U\n\017initial_balance\030\003 \001(\tB<\322\264-\ncosm" +
-      "os.Int\332\336\037&github.com/cosmos/cosmos-sdk/t" +
-      "ypes.Int\310\336\037\000\022P\n\nshares_dst\030\004 \001(\tB<\322\264-\nco" +
-      "smos.Dec\332\336\037&github.com/cosmos/cosmos-sdk" +
-      "/types.Dec\310\336\037\000:\010\350\240\037\001\230\240\037\000\"\205\002\n\014Redelegatio" +
-      "n\0223\n\021delegator_address\030\001 \001(\tB\030\322\264-\024cosmos" +
-      ".AddressString\0227\n\025validator_src_address\030" +
-      "\002 \001(\tB\030\322\264-\024cosmos.AddressString\0227\n\025valid" +
-      "ator_dst_address\030\003 \001(\tB\030\322\264-\024cosmos.Addre" +
-      "ssString\022@\n\007entries\030\004 \003(\0132).cosmos.staki" +
-      "ng.v1beta1.RedelegationEntryB\004\310\336\037\000:\014\350\240\037\000" +
-      "\210\240\037\000\230\240\037\000\"\227\002\n\006Params\022;\n\016unbonding_time\030\001 " +
-      "\001(\0132\031.google.protobuf.DurationB\010\310\336\037\000\230\337\037\001" +
-      "\022\026\n\016max_validators\030\002 \001(\r\022\023\n\013max_entries\030" +
-      "\003 \001(\r\022\032\n\022historical_entries\030\004 \001(\r\022\022\n\nbon" +
-      "d_denom\030\005 \001(\t\022i\n\023min_commission_rate\030\006 \001" +
-      "(\tBL\362\336\037\032yaml:\"min_commission_rate\"\332\336\037&gi" +
+      "king.v1beta1.ValidatorB\004\310\336\037\000\"\221\002\n\017Commiss" +
+      "ionRates\022<\n\004rate\030\001 \001(\tB.\332\336\037&github.com/c" +
+      "osmos/cosmos-sdk/types.Dec\310\336\037\000\022S\n\010max_ra" +
+      "te\030\002 \001(\tBA\362\336\037\017yaml:\"max_rate\"\332\336\037&github." +
+      "com/cosmos/cosmos-sdk/types.Dec\310\336\037\000\022a\n\017m" +
+      "ax_change_rate\030\003 \001(\tBH\362\336\037\026yaml:\"max_chan" +
+      "ge_rate\"\332\336\037&github.com/cosmos/cosmos-sdk" +
+      "/types.Dec\310\336\037\000:\010\350\240\037\001\230\240\037\000\"\264\001\n\nCommission\022" +
+      "K\n\020commission_rates\030\001 \001(\0132\'.cosmos.staki" +
+      "ng.v1beta1.CommissionRatesB\010\320\336\037\001\310\336\037\000\022O\n\013" +
+      "update_time\030\002 \001(\0132\032.google.protobuf.Time" +
+      "stampB\036\310\336\037\000\220\337\037\001\362\336\037\022yaml:\"update_time\":\010\350" +
+      "\240\037\001\230\240\037\000\"\223\001\n\013Description\022\017\n\007moniker\030\001 \001(\t" +
+      "\022\020\n\010identity\030\002 \001(\t\022\017\n\007website\030\003 \001(\t\0225\n\020s" +
+      "ecurity_contact\030\004 \001(\tB\033\362\336\037\027yaml:\"securit" +
+      "y_contact\"\022\017\n\007details\030\005 \001(\t:\010\350\240\037\001\230\240\037\000\"\225\006" +
+      "\n\tValidator\0225\n\020operator_address\030\001 \001(\tB\033\362" +
+      "\336\037\027yaml:\"operator_address\"\022c\n\020consensus_" +
+      "pubkey\030\002 \001(\0132\024.google.protobuf.AnyB3\312\264-\024" +
+      "cosmos.crypto.PubKey\362\336\037\027yaml:\"consensus_" +
+      "pubkey\"\022\016\n\006jailed\030\003 \001(\010\0222\n\006status\030\004 \001(\0162" +
+      "\".cosmos.staking.v1beta1.BondStatus\022>\n\006t" +
+      "okens\030\005 \001(\tB.\332\336\037&github.com/cosmos/cosmo" +
+      "s-sdk/types.Int\310\336\037\000\022c\n\020delegator_shares\030" +
+      "\006 \001(\tBI\362\336\037\027yaml:\"delegator_shares\"\332\336\037&gi" +
       "thub.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000" +
-      ":\010\350\240\037\001\230\240\037\000\"\216\001\n\022DelegationResponse\022<\n\ndel" +
-      "egation\030\001 \001(\0132\".cosmos.staking.v1beta1.D" +
-      "elegationB\004\310\336\037\000\0220\n\007balance\030\002 \001(\0132\031.cosmo" +
-      "s.base.v1beta1.CoinB\004\310\336\037\000:\010\350\240\037\000\230\240\037\000\"\275\001\n\031" +
-      "RedelegationEntryResponse\022K\n\022redelegatio" +
-      "n_entry\030\001 \001(\0132).cosmos.staking.v1beta1.R" +
-      "edelegationEntryB\004\310\336\037\000\022M\n\007balance\030\004 \001(\tB" +
-      "<\322\264-\ncosmos.Int\332\336\037&github.com/cosmos/cos" +
-      "mos-sdk/types.Int\310\336\037\000:\004\350\240\037\001\"\250\001\n\024Redelega" +
-      "tionResponse\022@\n\014redelegation\030\001 \001(\0132$.cos" +
-      "mos.staking.v1beta1.RedelegationB\004\310\336\037\000\022H" +
-      "\n\007entries\030\002 \003(\01321.cosmos.staking.v1beta1" +
-      ".RedelegationEntryResponseB\004\310\336\037\000:\004\350\240\037\000\"\276" +
-      "\001\n\004Pool\022W\n\021not_bonded_tokens\030\001 \001(\tB<\322\264-\n" +
-      "cosmos.Int\332\336\037&github.com/cosmos/cosmos-s" +
-      "dk/types.Int\310\336\037\000\022S\n\rbonded_tokens\030\002 \001(\tB" +
-      "<\322\264-\ncosmos.Int\332\336\037&github.com/cosmos/cos" +
-      "mos-sdk/types.Int\310\336\037\000:\010\360\240\037\001\350\240\037\001*\266\001\n\nBond" +
-      "Status\022,\n\027BOND_STATUS_UNSPECIFIED\020\000\032\017\212\235 " +
-      "\013Unspecified\022&\n\024BOND_STATUS_UNBONDED\020\001\032\014" +
-      "\212\235 \010Unbonded\022(\n\025BOND_STATUS_UNBONDING\020\002\032" +
-      "\r\212\235 \tUnbonding\022\"\n\022BOND_STATUS_BONDED\020\003\032\n" +
-      "\212\235 \006Bonded\032\004\210\243\036\000B.Z,github.com/cosmos/co" +
-      "smos-sdk/x/staking/typesb\006proto3"
+      "\022>\n\013description\030\007 \001(\0132#.cosmos.staking.v" +
+      "1beta1.DescriptionB\004\310\336\037\000\0225\n\020unbonding_he" +
+      "ight\030\010 \001(\003B\033\362\336\037\027yaml:\"unbonding_height\"\022" +
+      "U\n\016unbonding_time\030\t \001(\0132\032.google.protobu" +
+      "f.TimestampB!\310\336\037\000\220\337\037\001\362\336\037\025yaml:\"unbonding" +
+      "_time\"\022<\n\ncommission\030\n \001(\0132\".cosmos.stak" +
+      "ing.v1beta1.CommissionB\004\310\336\037\000\022i\n\023min_self" +
+      "_delegation\030\013 \001(\tBL\362\336\037\032yaml:\"min_self_de" +
+      "legation\"\332\336\037&github.com/cosmos/cosmos-sd" +
+      "k/types.Int\310\336\037\000:\014\350\240\037\000\230\240\037\000\210\240\037\000\"+\n\014ValAddr" +
+      "esses\022\021\n\taddresses\030\001 \003(\t:\010\230\240\037\000\200\334 \001\"\210\001\n\006D" +
+      "VPair\0227\n\021delegator_address\030\001 \001(\tB\034\362\336\037\030ya" +
+      "ml:\"delegator_address\"\0227\n\021validator_addr" +
+      "ess\030\002 \001(\tB\034\362\336\037\030yaml:\"validator_address\":" +
+      "\014\350\240\037\000\210\240\037\000\230\240\037\000\">\n\007DVPairs\0223\n\005pairs\030\001 \003(\0132" +
+      "\036.cosmos.staking.v1beta1.DVPairB\004\310\336\037\000\"\325\001" +
+      "\n\nDVVTriplet\0227\n\021delegator_address\030\001 \001(\tB" +
+      "\034\362\336\037\030yaml:\"delegator_address\"\022?\n\025validat" +
+      "or_src_address\030\002 \001(\tB \362\336\037\034yaml:\"validato" +
+      "r_src_address\"\022?\n\025validator_dst_address\030" +
+      "\003 \001(\tB \362\336\037\034yaml:\"validator_dst_address\":" +
+      "\014\350\240\037\000\210\240\037\000\230\240\037\000\"I\n\013DVVTriplets\022:\n\010triplets" +
+      "\030\001 \003(\0132\".cosmos.staking.v1beta1.DVVTripl" +
+      "etB\004\310\336\037\000\"\314\001\n\nDelegation\0227\n\021delegator_add" +
+      "ress\030\001 \001(\tB\034\362\336\037\030yaml:\"delegator_address\"" +
+      "\0227\n\021validator_address\030\002 \001(\tB\034\362\336\037\030yaml:\"v" +
+      "alidator_address\"\022>\n\006shares\030\003 \001(\tB.\332\336\037&g" +
+      "ithub.com/cosmos/cosmos-sdk/types.Dec\310\336\037" +
+      "\000:\014\350\240\037\000\210\240\037\000\230\240\037\000\"\336\001\n\023UnbondingDelegation\022" +
+      "7\n\021delegator_address\030\001 \001(\tB\034\362\336\037\030yaml:\"de" +
+      "legator_address\"\0227\n\021validator_address\030\002 " +
+      "\001(\tB\034\362\336\037\030yaml:\"validator_address\"\022G\n\007ent" +
+      "ries\030\003 \003(\01320.cosmos.staking.v1beta1.Unbo" +
+      "ndingDelegationEntryB\004\310\336\037\000:\014\350\240\037\000\210\240\037\000\230\240\037\000" +
+      "\"\326\002\n\030UnbondingDelegationEntry\0223\n\017creatio" +
+      "n_height\030\001 \001(\003B\032\362\336\037\026yaml:\"creation_heigh" +
+      "t\"\022W\n\017completion_time\030\002 \001(\0132\032.google.pro" +
+      "tobuf.TimestampB\"\310\336\037\000\220\337\037\001\362\336\037\026yaml:\"compl" +
+      "etion_time\"\022a\n\017initial_balance\030\003 \001(\tBH\332\336" +
+      "\037&github.com/cosmos/cosmos-sdk/types.Int" +
+      "\310\336\037\000\362\336\037\026yaml:\"initial_balance\"\022?\n\007balanc" +
+      "e\030\004 \001(\tB.\332\336\037&github.com/cosmos/cosmos-sd" +
+      "k/types.Int\310\336\037\000:\010\350\240\037\001\230\240\037\000\"\322\002\n\021Redelegati" +
+      "onEntry\0223\n\017creation_height\030\001 \001(\003B\032\362\336\037\026ya" +
+      "ml:\"creation_height\"\022W\n\017completion_time\030" +
+      "\002 \001(\0132\032.google.protobuf.TimestampB\"\310\336\037\000\220" +
+      "\337\037\001\362\336\037\026yaml:\"completion_time\"\022a\n\017initial" +
+      "_balance\030\003 \001(\tBH\332\336\037&github.com/cosmos/co" +
+      "smos-sdk/types.Int\310\336\037\000\362\336\037\026yaml:\"initial_" +
+      "balance\"\022B\n\nshares_dst\030\004 \001(\tB.\332\336\037&github" +
+      ".com/cosmos/cosmos-sdk/types.Dec\310\336\037\000:\010\350\240" +
+      "\037\001\230\240\037\000\"\231\002\n\014Redelegation\0227\n\021delegator_add" +
+      "ress\030\001 \001(\tB\034\362\336\037\030yaml:\"delegator_address\"" +
+      "\022?\n\025validator_src_address\030\002 \001(\tB \362\336\037\034yam" +
+      "l:\"validator_src_address\"\022?\n\025validator_d" +
+      "st_address\030\003 \001(\tB \362\336\037\034yaml:\"validator_ds" +
+      "t_address\"\022@\n\007entries\030\004 \003(\0132).cosmos.sta" +
+      "king.v1beta1.RedelegationEntryB\004\310\336\037\000:\014\350\240" +
+      "\037\000\210\240\037\000\230\240\037\000\"\256\002\n\006Params\022T\n\016unbonding_time\030" +
+      "\001 \001(\0132\031.google.protobuf.DurationB!\310\336\037\000\230\337" +
+      "\037\001\362\336\037\025yaml:\"unbonding_time\"\0221\n\016max_valid" +
+      "ators\030\002 \001(\rB\031\362\336\037\025yaml:\"max_validators\"\022+" +
+      "\n\013max_entries\030\003 \001(\rB\026\362\336\037\022yaml:\"max_entri" +
+      "es\"\0229\n\022historical_entries\030\004 \001(\rB\035\362\336\037\031yam" +
+      "l:\"historical_entries\"\022)\n\nbond_denom\030\005 \001" +
+      "(\tB\025\362\336\037\021yaml:\"bond_denom\":\010\350\240\037\001\230\240\037\000\"\216\001\n\022" +
+      "DelegationResponse\022<\n\ndelegation\030\001 \001(\0132\"" +
+      ".cosmos.staking.v1beta1.DelegationB\004\310\336\037\000" +
+      "\0220\n\007balance\030\002 \001(\0132\031.cosmos.base.v1beta1." +
+      "CoinB\004\310\336\037\000:\010\350\240\037\000\230\240\037\000\"\257\001\n\031RedelegationEnt" +
+      "ryResponse\022K\n\022redelegation_entry\030\001 \001(\0132)" +
+      ".cosmos.staking.v1beta1.RedelegationEntr" +
+      "yB\004\310\336\037\000\022?\n\007balance\030\004 \001(\tB.\332\336\037&github.com" +
+      "/cosmos/cosmos-sdk/types.Int\310\336\037\000:\004\350\240\037\001\"\250" +
+      "\001\n\024RedelegationResponse\022@\n\014redelegation\030" +
+      "\001 \001(\0132$.cosmos.staking.v1beta1.Redelegat" +
+      "ionB\004\310\336\037\000\022H\n\007entries\030\002 \003(\01321.cosmos.stak" +
+      "ing.v1beta1.RedelegationEntryResponseB\004\310" +
+      "\336\037\000:\004\350\240\037\000\"\340\001\n\004Pool\022^\n\021not_bonded_tokens\030" +
+      "\001 \001(\tBC\332\336\037&github.com/cosmos/cosmos-sdk/" +
+      "types.Int\352\336\037\021not_bonded_tokens\310\336\037\000\022n\n\rbo" +
+      "nded_tokens\030\002 \001(\tBW\352\336\037\rbonded_tokens\332\336\037&" +
+      "github.com/cosmos/cosmos-sdk/types.Int\310\336" +
+      "\037\000\362\336\037\024yaml:\"bonded_tokens\":\010\360\240\037\001\350\240\037\001*\266\001\n" +
+      "\nBondStatus\022,\n\027BOND_STATUS_UNSPECIFIED\020\000" +
+      "\032\017\212\235 \013Unspecified\022&\n\024BOND_STATUS_UNBONDE" +
+      "D\020\001\032\014\212\235 \010Unbonded\022(\n\025BOND_STATUS_UNBONDI" +
+      "NG\020\002\032\r\212\235 \tUnbonding\022\"\n\022BOND_STATUS_BONDE" +
+      "D\020\003\032\n\212\235 \006Bonded\032\004\210\243\036\000B.Z,github.com/cosm" +
+      "os/cosmos-sdk/x/staking/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21970,7 +21792,7 @@ public final class Staking {
     internal_static_cosmos_staking_v1beta1_Params_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_staking_v1beta1_Params_descriptor,
-        new java.lang.String[] { "UnbondingTime", "MaxValidators", "MaxEntries", "HistoricalEntries", "BondDenom", "MinCommissionRate", });
+        new java.lang.String[] { "UnbondingTime", "MaxValidators", "MaxEntries", "HistoricalEntries", "BondDenom", });
     internal_static_cosmos_staking_v1beta1_DelegationResponse_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_cosmos_staking_v1beta1_DelegationResponse_fieldAccessorTable = new
@@ -21998,7 +21820,6 @@ public final class Staking {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.description);
     registry.add(com.google.protobuf.GoGoProtos.embed);
@@ -22007,6 +21828,7 @@ public final class Staking {
     registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
     registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.jsontag);
     registry.add(com.google.protobuf.GoGoProtos.moretags);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.protobuf.GoGoProtos.stdduration);

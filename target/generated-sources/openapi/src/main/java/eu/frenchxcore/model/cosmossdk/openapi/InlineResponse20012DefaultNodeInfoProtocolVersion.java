@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InlineResponse20012DefaultNodeInfoProtocolVersion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse20012DefaultNodeInfoProtocolVersion {
   public static final String SERIALIZED_NAME_P2P = "p2p";
   @SerializedName(SERIALIZED_NAME_P2P)

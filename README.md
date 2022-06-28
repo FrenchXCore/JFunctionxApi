@@ -55,5 +55,6 @@ This library is not yet fully tested. So please be indulgent.
 - v0.8.1 : normalization of CosmosGrpcApi method names.
 - v0.8.2 : addition of gravity, crosschain and ibc module query and message methods.
 - v0.8.3 : Splitting CosmosGrpcApi in 2 : CosmosGrpcApi and TendermintGrpcApi. Started full java-documenting CosmosGrpcApi. 
+- v0.8.4.x : Pursuing full java documentation of the API.
 
 Have fun !

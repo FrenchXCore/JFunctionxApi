@@ -18,29 +18,29 @@ public final class QueryGrpc {
   public static final String SERVICE_NAME = "cosmos.gov.v1beta1.Query";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalRequest,
-      cosmos.gov.v1beta1.QueryProposalResponse> getProposalMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> getProposalMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Proposal",
-      requestType = cosmos.gov.v1beta1.QueryProposalRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryProposalResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalRequest,
-      cosmos.gov.v1beta1.QueryProposalResponse> getProposalMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalRequest, cosmos.gov.v1beta1.QueryProposalResponse> getProposalMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> getProposalMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> getProposalMethod;
     if ((getProposalMethod = QueryGrpc.getProposalMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getProposalMethod = QueryGrpc.getProposalMethod) == null) {
           QueryGrpc.getProposalMethod = getProposalMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryProposalRequest, cosmos.gov.v1beta1.QueryProposalResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Proposal"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryProposalRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryProposalResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Proposal"))
               .build();
         }
@@ -49,29 +49,29 @@ public final class QueryGrpc {
     return getProposalMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalsRequest,
-      cosmos.gov.v1beta1.QueryProposalsResponse> getProposalsMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> getProposalsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Proposals",
-      requestType = cosmos.gov.v1beta1.QueryProposalsRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryProposalsResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalsRequest,
-      cosmos.gov.v1beta1.QueryProposalsResponse> getProposalsMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryProposalsRequest, cosmos.gov.v1beta1.QueryProposalsResponse> getProposalsMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> getProposalsMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> getProposalsMethod;
     if ((getProposalsMethod = QueryGrpc.getProposalsMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getProposalsMethod = QueryGrpc.getProposalsMethod) == null) {
           QueryGrpc.getProposalsMethod = getProposalsMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryProposalsRequest, cosmos.gov.v1beta1.QueryProposalsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Proposals"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryProposalsRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryProposalsResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Proposals"))
               .build();
         }
@@ -80,29 +80,29 @@ public final class QueryGrpc {
     return getProposalsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVoteRequest,
-      cosmos.gov.v1beta1.QueryVoteResponse> getVoteMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> getVoteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Vote",
-      requestType = cosmos.gov.v1beta1.QueryVoteRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryVoteResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVoteRequest,
-      cosmos.gov.v1beta1.QueryVoteResponse> getVoteMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVoteRequest, cosmos.gov.v1beta1.QueryVoteResponse> getVoteMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> getVoteMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> getVoteMethod;
     if ((getVoteMethod = QueryGrpc.getVoteMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getVoteMethod = QueryGrpc.getVoteMethod) == null) {
           QueryGrpc.getVoteMethod = getVoteMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryVoteRequest, cosmos.gov.v1beta1.QueryVoteResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Vote"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryVoteRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryVoteResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Vote"))
               .build();
         }
@@ -111,29 +111,29 @@ public final class QueryGrpc {
     return getVoteMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVotesRequest,
-      cosmos.gov.v1beta1.QueryVotesResponse> getVotesMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> getVotesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Votes",
-      requestType = cosmos.gov.v1beta1.QueryVotesRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryVotesResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVotesRequest,
-      cosmos.gov.v1beta1.QueryVotesResponse> getVotesMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryVotesRequest, cosmos.gov.v1beta1.QueryVotesResponse> getVotesMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> getVotesMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> getVotesMethod;
     if ((getVotesMethod = QueryGrpc.getVotesMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getVotesMethod = QueryGrpc.getVotesMethod) == null) {
           QueryGrpc.getVotesMethod = getVotesMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryVotesRequest, cosmos.gov.v1beta1.QueryVotesResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Votes"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryVotesRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryVotesResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Votes"))
               .build();
         }
@@ -142,29 +142,29 @@ public final class QueryGrpc {
     return getVotesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryParamsRequest,
-      cosmos.gov.v1beta1.QueryParamsResponse> getParamsMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Params",
-      requestType = cosmos.gov.v1beta1.QueryParamsRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryParamsResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryParamsRequest,
-      cosmos.gov.v1beta1.QueryParamsResponse> getParamsMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryParamsRequest, cosmos.gov.v1beta1.QueryParamsResponse> getParamsMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod;
     if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
           QueryGrpc.getParamsMethod = getParamsMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryParamsRequest, cosmos.gov.v1beta1.QueryParamsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Params"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryParamsRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryParamsResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Params"))
               .build();
         }
@@ -173,29 +173,29 @@ public final class QueryGrpc {
     return getParamsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositRequest,
-      cosmos.gov.v1beta1.QueryDepositResponse> getDepositMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> getDepositMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Deposit",
-      requestType = cosmos.gov.v1beta1.QueryDepositRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryDepositResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositRequest,
-      cosmos.gov.v1beta1.QueryDepositResponse> getDepositMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositRequest, cosmos.gov.v1beta1.QueryDepositResponse> getDepositMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> getDepositMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> getDepositMethod;
     if ((getDepositMethod = QueryGrpc.getDepositMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getDepositMethod = QueryGrpc.getDepositMethod) == null) {
           QueryGrpc.getDepositMethod = getDepositMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryDepositRequest, cosmos.gov.v1beta1.QueryDepositResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Deposit"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryDepositRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryDepositResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Deposit"))
               .build();
         }
@@ -204,29 +204,29 @@ public final class QueryGrpc {
     return getDepositMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositsRequest,
-      cosmos.gov.v1beta1.QueryDepositsResponse> getDepositsMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> getDepositsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Deposits",
-      requestType = cosmos.gov.v1beta1.QueryDepositsRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryDepositsResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositsRequest,
-      cosmos.gov.v1beta1.QueryDepositsResponse> getDepositsMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryDepositsRequest, cosmos.gov.v1beta1.QueryDepositsResponse> getDepositsMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> getDepositsMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> getDepositsMethod;
     if ((getDepositsMethod = QueryGrpc.getDepositsMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getDepositsMethod = QueryGrpc.getDepositsMethod) == null) {
           QueryGrpc.getDepositsMethod = getDepositsMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryDepositsRequest, cosmos.gov.v1beta1.QueryDepositsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Deposits"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryDepositsRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryDepositsResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Deposits"))
               .build();
         }
@@ -235,29 +235,29 @@ public final class QueryGrpc {
     return getDepositsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryTallyResultRequest,
-      cosmos.gov.v1beta1.QueryTallyResultResponse> getTallyResultMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> getTallyResultMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "TallyResult",
-      requestType = cosmos.gov.v1beta1.QueryTallyResultRequest.class,
-      responseType = cosmos.gov.v1beta1.QueryTallyResultResponse.class,
+      requestType = cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest.class,
+      responseType = cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryTallyResultRequest,
-      cosmos.gov.v1beta1.QueryTallyResultResponse> getTallyResultMethod() {
-    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryTallyResultRequest, cosmos.gov.v1beta1.QueryTallyResultResponse> getTallyResultMethod;
+  public static io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest,
+      cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> getTallyResultMethod() {
+    io.grpc.MethodDescriptor<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> getTallyResultMethod;
     if ((getTallyResultMethod = QueryGrpc.getTallyResultMethod) == null) {
       synchronized (QueryGrpc.class) {
         if ((getTallyResultMethod = QueryGrpc.getTallyResultMethod) == null) {
           QueryGrpc.getTallyResultMethod = getTallyResultMethod =
-              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryTallyResultRequest, cosmos.gov.v1beta1.QueryTallyResultResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest, cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TallyResult"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryTallyResultRequest.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.gov.v1beta1.QueryTallyResultResponse.getDefaultInstance()))
+                  cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse.getDefaultInstance()))
               .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TallyResult"))
               .build();
         }
@@ -322,8 +322,8 @@ public final class QueryGrpc {
      * Proposal queries proposal details based on ProposalID.
      * </pre>
      */
-    public void proposal(cosmos.gov.v1beta1.QueryProposalRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalResponse> responseObserver) {
+    public void proposal(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProposalMethod(), responseObserver);
     }
 
@@ -332,8 +332,8 @@ public final class QueryGrpc {
      * Proposals queries all proposals based on given status.
      * </pre>
      */
-    public void proposals(cosmos.gov.v1beta1.QueryProposalsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalsResponse> responseObserver) {
+    public void proposals(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProposalsMethod(), responseObserver);
     }
 
@@ -342,8 +342,8 @@ public final class QueryGrpc {
      * Vote queries voted information based on proposalID, voterAddr.
      * </pre>
      */
-    public void vote(cosmos.gov.v1beta1.QueryVoteRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVoteResponse> responseObserver) {
+    public void vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVoteMethod(), responseObserver);
     }
 
@@ -352,8 +352,8 @@ public final class QueryGrpc {
      * Votes queries votes of a given proposal.
      * </pre>
      */
-    public void votes(cosmos.gov.v1beta1.QueryVotesRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVotesResponse> responseObserver) {
+    public void votes(cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVotesMethod(), responseObserver);
     }
 
@@ -362,8 +362,8 @@ public final class QueryGrpc {
      * Params queries all parameters of the gov module.
      * </pre>
      */
-    public void params(cosmos.gov.v1beta1.QueryParamsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryParamsResponse> responseObserver) {
+    public void params(cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
     }
 
@@ -372,8 +372,8 @@ public final class QueryGrpc {
      * Deposit queries single deposit information based proposalID, depositAddr.
      * </pre>
      */
-    public void deposit(cosmos.gov.v1beta1.QueryDepositRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositResponse> responseObserver) {
+    public void deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDepositMethod(), responseObserver);
     }
 
@@ -382,8 +382,8 @@ public final class QueryGrpc {
      * Deposits queries all deposits of a single proposal.
      * </pre>
      */
-    public void deposits(cosmos.gov.v1beta1.QueryDepositsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositsResponse> responseObserver) {
+    public void deposits(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDepositsMethod(), responseObserver);
     }
 
@@ -392,8 +392,8 @@ public final class QueryGrpc {
      * TallyResult queries the tally of a proposal vote.
      * </pre>
      */
-    public void tallyResult(cosmos.gov.v1beta1.QueryTallyResultRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryTallyResultResponse> responseObserver) {
+    public void tallyResult(cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTallyResultMethod(), responseObserver);
     }
 
@@ -403,57 +403,57 @@ public final class QueryGrpc {
             getProposalMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryProposalRequest,
-                cosmos.gov.v1beta1.QueryProposalResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse>(
                   this, METHODID_PROPOSAL)))
           .addMethod(
             getProposalsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryProposalsRequest,
-                cosmos.gov.v1beta1.QueryProposalsResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse>(
                   this, METHODID_PROPOSALS)))
           .addMethod(
             getVoteMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryVoteRequest,
-                cosmos.gov.v1beta1.QueryVoteResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse>(
                   this, METHODID_VOTE)))
           .addMethod(
             getVotesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryVotesRequest,
-                cosmos.gov.v1beta1.QueryVotesResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse>(
                   this, METHODID_VOTES)))
           .addMethod(
             getParamsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryParamsRequest,
-                cosmos.gov.v1beta1.QueryParamsResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse>(
                   this, METHODID_PARAMS)))
           .addMethod(
             getDepositMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryDepositRequest,
-                cosmos.gov.v1beta1.QueryDepositResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse>(
                   this, METHODID_DEPOSIT)))
           .addMethod(
             getDepositsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryDepositsRequest,
-                cosmos.gov.v1beta1.QueryDepositsResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse>(
                   this, METHODID_DEPOSITS)))
           .addMethod(
             getTallyResultMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.gov.v1beta1.QueryTallyResultRequest,
-                cosmos.gov.v1beta1.QueryTallyResultResponse>(
+                cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest,
+                cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse>(
                   this, METHODID_TALLY_RESULT)))
           .build();
     }
@@ -481,8 +481,8 @@ public final class QueryGrpc {
      * Proposal queries proposal details based on ProposalID.
      * </pre>
      */
-    public void proposal(cosmos.gov.v1beta1.QueryProposalRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalResponse> responseObserver) {
+    public void proposal(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProposalMethod(), getCallOptions()), request, responseObserver);
     }
@@ -492,8 +492,8 @@ public final class QueryGrpc {
      * Proposals queries all proposals based on given status.
      * </pre>
      */
-    public void proposals(cosmos.gov.v1beta1.QueryProposalsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalsResponse> responseObserver) {
+    public void proposals(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProposalsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -503,8 +503,8 @@ public final class QueryGrpc {
      * Vote queries voted information based on proposalID, voterAddr.
      * </pre>
      */
-    public void vote(cosmos.gov.v1beta1.QueryVoteRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVoteResponse> responseObserver) {
+    public void vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVoteMethod(), getCallOptions()), request, responseObserver);
     }
@@ -514,8 +514,8 @@ public final class QueryGrpc {
      * Votes queries votes of a given proposal.
      * </pre>
      */
-    public void votes(cosmos.gov.v1beta1.QueryVotesRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVotesResponse> responseObserver) {
+    public void votes(cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVotesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -525,8 +525,8 @@ public final class QueryGrpc {
      * Params queries all parameters of the gov module.
      * </pre>
      */
-    public void params(cosmos.gov.v1beta1.QueryParamsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryParamsResponse> responseObserver) {
+    public void params(cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -536,8 +536,8 @@ public final class QueryGrpc {
      * Deposit queries single deposit information based proposalID, depositAddr.
      * </pre>
      */
-    public void deposit(cosmos.gov.v1beta1.QueryDepositRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositResponse> responseObserver) {
+    public void deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDepositMethod(), getCallOptions()), request, responseObserver);
     }
@@ -547,8 +547,8 @@ public final class QueryGrpc {
      * Deposits queries all deposits of a single proposal.
      * </pre>
      */
-    public void deposits(cosmos.gov.v1beta1.QueryDepositsRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositsResponse> responseObserver) {
+    public void deposits(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDepositsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -558,8 +558,8 @@ public final class QueryGrpc {
      * TallyResult queries the tally of a proposal vote.
      * </pre>
      */
-    public void tallyResult(cosmos.gov.v1beta1.QueryTallyResultRequest request,
-        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryTallyResultResponse> responseObserver) {
+    public void tallyResult(cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest request,
+        io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTallyResultMethod(), getCallOptions()), request, responseObserver);
     }
@@ -587,7 +587,7 @@ public final class QueryGrpc {
      * Proposal queries proposal details based on ProposalID.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryProposalResponse proposal(cosmos.gov.v1beta1.QueryProposalRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse proposal(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProposalMethod(), getCallOptions(), request);
     }
@@ -597,7 +597,7 @@ public final class QueryGrpc {
      * Proposals queries all proposals based on given status.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryProposalsResponse proposals(cosmos.gov.v1beta1.QueryProposalsRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse proposals(cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProposalsMethod(), getCallOptions(), request);
     }
@@ -607,7 +607,7 @@ public final class QueryGrpc {
      * Vote queries voted information based on proposalID, voterAddr.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryVoteResponse vote(cosmos.gov.v1beta1.QueryVoteRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVoteMethod(), getCallOptions(), request);
     }
@@ -617,7 +617,7 @@ public final class QueryGrpc {
      * Votes queries votes of a given proposal.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryVotesResponse votes(cosmos.gov.v1beta1.QueryVotesRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse votes(cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVotesMethod(), getCallOptions(), request);
     }
@@ -627,7 +627,7 @@ public final class QueryGrpc {
      * Params queries all parameters of the gov module.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryParamsResponse params(cosmos.gov.v1beta1.QueryParamsRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse params(cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getParamsMethod(), getCallOptions(), request);
     }
@@ -637,7 +637,7 @@ public final class QueryGrpc {
      * Deposit queries single deposit information based proposalID, depositAddr.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryDepositResponse deposit(cosmos.gov.v1beta1.QueryDepositRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDepositMethod(), getCallOptions(), request);
     }
@@ -647,7 +647,7 @@ public final class QueryGrpc {
      * Deposits queries all deposits of a single proposal.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryDepositsResponse deposits(cosmos.gov.v1beta1.QueryDepositsRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse deposits(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDepositsMethod(), getCallOptions(), request);
     }
@@ -657,7 +657,7 @@ public final class QueryGrpc {
      * TallyResult queries the tally of a proposal vote.
      * </pre>
      */
-    public cosmos.gov.v1beta1.QueryTallyResultResponse tallyResult(cosmos.gov.v1beta1.QueryTallyResultRequest request) {
+    public cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse tallyResult(cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTallyResultMethod(), getCallOptions(), request);
     }
@@ -685,8 +685,8 @@ public final class QueryGrpc {
      * Proposal queries proposal details based on ProposalID.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryProposalResponse> proposal(
-        cosmos.gov.v1beta1.QueryProposalRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse> proposal(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProposalMethod(), getCallOptions()), request);
     }
@@ -696,8 +696,8 @@ public final class QueryGrpc {
      * Proposals queries all proposals based on given status.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryProposalsResponse> proposals(
-        cosmos.gov.v1beta1.QueryProposalsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse> proposals(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProposalsMethod(), getCallOptions()), request);
     }
@@ -707,8 +707,8 @@ public final class QueryGrpc {
      * Vote queries voted information based on proposalID, voterAddr.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryVoteResponse> vote(
-        cosmos.gov.v1beta1.QueryVoteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> vote(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVoteMethod(), getCallOptions()), request);
     }
@@ -718,8 +718,8 @@ public final class QueryGrpc {
      * Votes queries votes of a given proposal.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryVotesResponse> votes(
-        cosmos.gov.v1beta1.QueryVotesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse> votes(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVotesMethod(), getCallOptions()), request);
     }
@@ -729,8 +729,8 @@ public final class QueryGrpc {
      * Params queries all parameters of the gov module.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryParamsResponse> params(
-        cosmos.gov.v1beta1.QueryParamsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse> params(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request);
     }
@@ -740,8 +740,8 @@ public final class QueryGrpc {
      * Deposit queries single deposit information based proposalID, depositAddr.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryDepositResponse> deposit(
-        cosmos.gov.v1beta1.QueryDepositRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> deposit(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDepositMethod(), getCallOptions()), request);
     }
@@ -751,8 +751,8 @@ public final class QueryGrpc {
      * Deposits queries all deposits of a single proposal.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryDepositsResponse> deposits(
-        cosmos.gov.v1beta1.QueryDepositsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse> deposits(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDepositsMethod(), getCallOptions()), request);
     }
@@ -762,8 +762,8 @@ public final class QueryGrpc {
      * TallyResult queries the tally of a proposal vote.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryTallyResultResponse> tallyResult(
-        cosmos.gov.v1beta1.QueryTallyResultRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse> tallyResult(
+        cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTallyResultMethod(), getCallOptions()), request);
     }
@@ -796,36 +796,36 @@ public final class QueryGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_PROPOSAL:
-          serviceImpl.proposal((cosmos.gov.v1beta1.QueryProposalRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalResponse>) responseObserver);
+          serviceImpl.proposal((cosmos.gov.v1beta1.QueryOuterClass.QueryProposalRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalResponse>) responseObserver);
           break;
         case METHODID_PROPOSALS:
-          serviceImpl.proposals((cosmos.gov.v1beta1.QueryProposalsRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryProposalsResponse>) responseObserver);
+          serviceImpl.proposals((cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryProposalsResponse>) responseObserver);
           break;
         case METHODID_VOTE:
-          serviceImpl.vote((cosmos.gov.v1beta1.QueryVoteRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVoteResponse>) responseObserver);
+          serviceImpl.vote((cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse>) responseObserver);
           break;
         case METHODID_VOTES:
-          serviceImpl.votes((cosmos.gov.v1beta1.QueryVotesRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryVotesResponse>) responseObserver);
+          serviceImpl.votes((cosmos.gov.v1beta1.QueryOuterClass.QueryVotesRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryVotesResponse>) responseObserver);
           break;
         case METHODID_PARAMS:
-          serviceImpl.params((cosmos.gov.v1beta1.QueryParamsRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryParamsResponse>) responseObserver);
+          serviceImpl.params((cosmos.gov.v1beta1.QueryOuterClass.QueryParamsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryParamsResponse>) responseObserver);
           break;
         case METHODID_DEPOSIT:
-          serviceImpl.deposit((cosmos.gov.v1beta1.QueryDepositRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositResponse>) responseObserver);
+          serviceImpl.deposit((cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse>) responseObserver);
           break;
         case METHODID_DEPOSITS:
-          serviceImpl.deposits((cosmos.gov.v1beta1.QueryDepositsRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryDepositsResponse>) responseObserver);
+          serviceImpl.deposits((cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositsResponse>) responseObserver);
           break;
         case METHODID_TALLY_RESULT:
-          serviceImpl.tallyResult((cosmos.gov.v1beta1.QueryTallyResultRequest) request,
-              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryTallyResultResponse>) responseObserver);
+          serviceImpl.tallyResult((cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.gov.v1beta1.QueryOuterClass.QueryTallyResultResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -849,7 +849,7 @@ public final class QueryGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return cosmos.gov.v1beta1.CosmosGovQueryProto.getDescriptor();
+      return cosmos.gov.v1beta1.QueryOuterClass.getDescriptor();
     }
 
     @java.lang.Override

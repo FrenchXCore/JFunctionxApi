@@ -26,7 +26,7 @@ import eu.frenchxcore.model.cosmossdk.types.base.v1beta1.Coin;
 /**
  *
  */
-@JsonTypeName("/fx.gravity.v1.MsgSendToEth")
+@JsonTypeName("/fx.gravity.v1.TxendToEth")
 public class MsgSendToEth extends BaseMessage {
     
     @JsonProperty("sender")

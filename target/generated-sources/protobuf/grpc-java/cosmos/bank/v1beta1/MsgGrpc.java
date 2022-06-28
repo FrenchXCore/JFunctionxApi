@@ -18,29 +18,29 @@ public final class MsgGrpc {
   public static final String SERVICE_NAME = "cosmos.bank.v1beta1.Msg";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgSend,
-      cosmos.bank.v1beta1.MsgSendResponse> getSendMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSend,
+      cosmos.bank.v1beta1.Tx.MsgSendResponse> getSendMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Send",
-      requestType = cosmos.bank.v1beta1.MsgSend.class,
-      responseType = cosmos.bank.v1beta1.MsgSendResponse.class,
+      requestType = cosmos.bank.v1beta1.Tx.MsgSend.class,
+      responseType = cosmos.bank.v1beta1.Tx.MsgSendResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgSend,
-      cosmos.bank.v1beta1.MsgSendResponse> getSendMethod() {
-    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgSend, cosmos.bank.v1beta1.MsgSendResponse> getSendMethod;
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSend,
+      cosmos.bank.v1beta1.Tx.MsgSendResponse> getSendMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSend, cosmos.bank.v1beta1.Tx.MsgSendResponse> getSendMethod;
     if ((getSendMethod = MsgGrpc.getSendMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getSendMethod = MsgGrpc.getSendMethod) == null) {
           MsgGrpc.getSendMethod = getSendMethod =
-              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.MsgSend, cosmos.bank.v1beta1.MsgSendResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.Tx.MsgSend, cosmos.bank.v1beta1.Tx.MsgSendResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Send"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.bank.v1beta1.MsgSend.getDefaultInstance()))
+                  cosmos.bank.v1beta1.Tx.MsgSend.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.bank.v1beta1.MsgSendResponse.getDefaultInstance()))
+                  cosmos.bank.v1beta1.Tx.MsgSendResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("Send"))
               .build();
         }
@@ -49,29 +49,29 @@ public final class MsgGrpc {
     return getSendMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgMultiSend,
-      cosmos.bank.v1beta1.MsgMultiSendResponse> getMultiSendMethod;
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgMultiSend,
+      cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> getMultiSendMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "MultiSend",
-      requestType = cosmos.bank.v1beta1.MsgMultiSend.class,
-      responseType = cosmos.bank.v1beta1.MsgMultiSendResponse.class,
+      requestType = cosmos.bank.v1beta1.Tx.MsgMultiSend.class,
+      responseType = cosmos.bank.v1beta1.Tx.MsgMultiSendResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgMultiSend,
-      cosmos.bank.v1beta1.MsgMultiSendResponse> getMultiSendMethod() {
-    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.MsgMultiSend, cosmos.bank.v1beta1.MsgMultiSendResponse> getMultiSendMethod;
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgMultiSend,
+      cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> getMultiSendMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgMultiSend, cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> getMultiSendMethod;
     if ((getMultiSendMethod = MsgGrpc.getMultiSendMethod) == null) {
       synchronized (MsgGrpc.class) {
         if ((getMultiSendMethod = MsgGrpc.getMultiSendMethod) == null) {
           MsgGrpc.getMultiSendMethod = getMultiSendMethod =
-              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.MsgMultiSend, cosmos.bank.v1beta1.MsgMultiSendResponse>newBuilder()
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.Tx.MsgMultiSend, cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MultiSend"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.bank.v1beta1.MsgMultiSend.getDefaultInstance()))
+                  cosmos.bank.v1beta1.Tx.MsgMultiSend.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  cosmos.bank.v1beta1.MsgMultiSendResponse.getDefaultInstance()))
+                  cosmos.bank.v1beta1.Tx.MsgMultiSendResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MsgMethodDescriptorSupplier("MultiSend"))
               .build();
         }
@@ -136,8 +136,8 @@ public final class MsgGrpc {
      * Send defines a method for sending coins from one account to another account.
      * </pre>
      */
-    public void send(cosmos.bank.v1beta1.MsgSend request,
-        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgSendResponse> responseObserver) {
+    public void send(cosmos.bank.v1beta1.Tx.MsgSend request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSendResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendMethod(), responseObserver);
     }
 
@@ -146,8 +146,8 @@ public final class MsgGrpc {
      * MultiSend defines a method for sending coins from some accounts to other accounts.
      * </pre>
      */
-    public void multiSend(cosmos.bank.v1beta1.MsgMultiSend request,
-        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgMultiSendResponse> responseObserver) {
+    public void multiSend(cosmos.bank.v1beta1.Tx.MsgMultiSend request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMultiSendMethod(), responseObserver);
     }
 
@@ -157,15 +157,15 @@ public final class MsgGrpc {
             getSendMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.bank.v1beta1.MsgSend,
-                cosmos.bank.v1beta1.MsgSendResponse>(
+                cosmos.bank.v1beta1.Tx.MsgSend,
+                cosmos.bank.v1beta1.Tx.MsgSendResponse>(
                   this, METHODID_SEND)))
           .addMethod(
             getMultiSendMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                cosmos.bank.v1beta1.MsgMultiSend,
-                cosmos.bank.v1beta1.MsgMultiSendResponse>(
+                cosmos.bank.v1beta1.Tx.MsgMultiSend,
+                cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>(
                   this, METHODID_MULTI_SEND)))
           .build();
     }
@@ -193,8 +193,8 @@ public final class MsgGrpc {
      * Send defines a method for sending coins from one account to another account.
      * </pre>
      */
-    public void send(cosmos.bank.v1beta1.MsgSend request,
-        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgSendResponse> responseObserver) {
+    public void send(cosmos.bank.v1beta1.Tx.MsgSend request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSendResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSendMethod(), getCallOptions()), request, responseObserver);
     }
@@ -204,8 +204,8 @@ public final class MsgGrpc {
      * MultiSend defines a method for sending coins from some accounts to other accounts.
      * </pre>
      */
-    public void multiSend(cosmos.bank.v1beta1.MsgMultiSend request,
-        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgMultiSendResponse> responseObserver) {
+    public void multiSend(cosmos.bank.v1beta1.Tx.MsgMultiSend request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMultiSendMethod(), getCallOptions()), request, responseObserver);
     }
@@ -233,7 +233,7 @@ public final class MsgGrpc {
      * Send defines a method for sending coins from one account to another account.
      * </pre>
      */
-    public cosmos.bank.v1beta1.MsgSendResponse send(cosmos.bank.v1beta1.MsgSend request) {
+    public cosmos.bank.v1beta1.Tx.MsgSendResponse send(cosmos.bank.v1beta1.Tx.MsgSend request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSendMethod(), getCallOptions(), request);
     }
@@ -243,7 +243,7 @@ public final class MsgGrpc {
      * MultiSend defines a method for sending coins from some accounts to other accounts.
      * </pre>
      */
-    public cosmos.bank.v1beta1.MsgMultiSendResponse multiSend(cosmos.bank.v1beta1.MsgMultiSend request) {
+    public cosmos.bank.v1beta1.Tx.MsgMultiSendResponse multiSend(cosmos.bank.v1beta1.Tx.MsgMultiSend request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMultiSendMethod(), getCallOptions(), request);
     }
@@ -271,8 +271,8 @@ public final class MsgGrpc {
      * Send defines a method for sending coins from one account to another account.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.MsgSendResponse> send(
-        cosmos.bank.v1beta1.MsgSend request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.Tx.MsgSendResponse> send(
+        cosmos.bank.v1beta1.Tx.MsgSend request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSendMethod(), getCallOptions()), request);
     }
@@ -282,8 +282,8 @@ public final class MsgGrpc {
      * MultiSend defines a method for sending coins from some accounts to other accounts.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.MsgMultiSendResponse> multiSend(
-        cosmos.bank.v1beta1.MsgMultiSend request) {
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> multiSend(
+        cosmos.bank.v1beta1.Tx.MsgMultiSend request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMultiSendMethod(), getCallOptions()), request);
     }
@@ -310,12 +310,12 @@ public final class MsgGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SEND:
-          serviceImpl.send((cosmos.bank.v1beta1.MsgSend) request,
-              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgSendResponse>) responseObserver);
+          serviceImpl.send((cosmos.bank.v1beta1.Tx.MsgSend) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSendResponse>) responseObserver);
           break;
         case METHODID_MULTI_SEND:
-          serviceImpl.multiSend((cosmos.bank.v1beta1.MsgMultiSend) request,
-              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.MsgMultiSendResponse>) responseObserver);
+          serviceImpl.multiSend((cosmos.bank.v1beta1.Tx.MsgMultiSend) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -339,7 +339,7 @@ public final class MsgGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return cosmos.bank.v1beta1.CosmosBankTxProto.getDescriptor();
+      return cosmos.bank.v1beta1.Tx.getDescriptor();
     }
 
     @java.lang.Override

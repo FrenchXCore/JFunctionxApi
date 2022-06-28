@@ -19,12 +19,12 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string submitter = 1;</code>
      * @return The submitter.
      */
     java.lang.String getSubmitter();
     /**
-     * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string submitter = 1;</code>
      * @return The bytes for submitter.
      */
     com.google.protobuf.ByteString
@@ -150,7 +150,7 @@ public final class Tx {
     public static final int SUBMITTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object submitter_;
     /**
-     * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string submitter = 1;</code>
      * @return The submitter.
      */
     @java.lang.Override
@@ -167,7 +167,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string submitter = 1;</code>
      * @return The bytes for submitter.
      */
     @java.lang.Override
@@ -550,7 +550,7 @@ public final class Tx {
 
       private java.lang.Object submitter_ = "";
       /**
-       * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string submitter = 1;</code>
        * @return The submitter.
        */
       public java.lang.String getSubmitter() {
@@ -566,7 +566,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string submitter = 1;</code>
        * @return The bytes for submitter.
        */
       public com.google.protobuf.ByteString
@@ -583,7 +583,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string submitter = 1;</code>
        * @param value The submitter to set.
        * @return This builder for chaining.
        */
@@ -598,7 +598,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string submitter = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubmitter() {
@@ -608,7 +608,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string submitter = 1;</code>
        * @param value The bytes for submitter to set.
        * @return This builder for chaining.
        */
@@ -1337,16 +1337,15 @@ public final class Tx {
       "\n cosmos/evidence/v1beta1/tx.proto\022\027cosm" +
       "os.evidence.v1beta1\032\024gogoproto/gogo.prot" +
       "o\032\031google/protobuf/any.proto\032\031cosmos_pro" +
-      "to/cosmos.proto\"\200\001\n\021MsgSubmitEvidence\022+\n" +
-      "\tsubmitter\030\001 \001(\tB\030\322\264-\024cosmos.AddressStri" +
-      "ng\0224\n\010evidence\030\002 \001(\0132\024.google.protobuf.A" +
-      "nyB\014\312\264-\010Evidence:\010\350\240\037\000\210\240\037\000\")\n\031MsgSubmitE" +
-      "videnceResponse\022\014\n\004hash\030\004 \001(\0142w\n\003Msg\022p\n\016" +
-      "SubmitEvidence\022*.cosmos.evidence.v1beta1" +
-      ".MsgSubmitEvidence\0322.cosmos.evidence.v1b" +
-      "eta1.MsgSubmitEvidenceResponseB3Z-github" +
-      ".com/cosmos/cosmos-sdk/x/evidence/types\250" +
-      "\342\036\001b\006proto3"
+      "to/cosmos.proto\"f\n\021MsgSubmitEvidence\022\021\n\t" +
+      "submitter\030\001 \001(\t\0224\n\010evidence\030\002 \001(\0132\024.goog" +
+      "le.protobuf.AnyB\014\312\264-\010Evidence:\010\350\240\037\000\210\240\037\000\"" +
+      ")\n\031MsgSubmitEvidenceResponse\022\014\n\004hash\030\004 \001" +
+      "(\0142w\n\003Msg\022p\n\016SubmitEvidence\022*.cosmos.evi" +
+      "dence.v1beta1.MsgSubmitEvidence\0322.cosmos" +
+      ".evidence.v1beta1.MsgSubmitEvidenceRespo" +
+      "nseB3Z-github.com/cosmos/cosmos-sdk/x/ev" +
+      "idence/types\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1370,7 +1369,6 @@ public final class Tx {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.equal);
     registry.add(com.google.protobuf.GoGoProtos.equalAll);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);

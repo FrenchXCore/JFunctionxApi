@@ -125,7 +125,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      * @deprecated
      * @return Whether the upgradedClientState field is set.
      */
@@ -137,7 +137,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      * @deprecated
      * @return The upgradedClientState.
      */
@@ -149,7 +149,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      */
     @java.lang.Deprecated com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder();
   }
@@ -456,7 +456,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      * @deprecated
      * @return Whether the upgradedClientState field is set.
      */
@@ -471,7 +471,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      * @deprecated
      * @return The upgradedClientState.
      */
@@ -486,7 +486,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+     * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      */
     @java.lang.Override
     @java.lang.Deprecated public com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder() {
@@ -1352,7 +1352,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        * @deprecated
        * @return Whether the upgradedClientState field is set.
        */
@@ -1366,7 +1366,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        * @deprecated
        * @return The upgradedClientState.
        */
@@ -1384,7 +1384,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public Builder setUpgradedClientState(com.google.protobuf.Any value) {
         if (upgradedClientStateBuilder_ == null) {
@@ -1406,7 +1406,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public Builder setUpgradedClientState(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -1426,7 +1426,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public Builder mergeUpgradedClientState(com.google.protobuf.Any value) {
         if (upgradedClientStateBuilder_ == null) {
@@ -1450,7 +1450,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public Builder clearUpgradedClientState() {
         if (upgradedClientStateBuilder_ == null) {
@@ -1470,7 +1470,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public com.google.protobuf.Any.Builder getUpgradedClientStateBuilder() {
         
@@ -1484,7 +1484,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder() {
         if (upgradedClientStateBuilder_ != null) {
@@ -1501,7 +1501,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true];</code>
+       * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -3965,19 +3965,20 @@ public final class Upgrade {
       "\n$cosmos/upgrade/v1beta1/upgrade.proto\022\026" +
       "cosmos.upgrade.v1beta1\032\031google/protobuf/" +
       "any.proto\032\024gogoproto/gogo.proto\032\037google/" +
-      "protobuf/timestamp.proto\"\253\001\n\004Plan\022\014\n\004nam" +
+      "protobuf/timestamp.proto\"\313\001\n\004Plan\022\014\n\004nam" +
       "e\030\001 \001(\t\0224\n\004time\030\002 \001(\0132\032.google.protobuf." +
       "TimestampB\n\030\001\220\337\037\001\310\336\037\000\022\016\n\006height\030\003 \001(\003\022\014\n" +
-      "\004info\030\004 \001(\t\0227\n\025upgraded_client_state\030\005 \001" +
-      "(\0132\024.google.protobuf.AnyB\002\030\001:\010\350\240\037\001\230\240\037\000\"y" +
-      "\n\027SoftwareUpgradeProposal\022\r\n\005title\030\001 \001(\t" +
-      "\022\023\n\013description\030\002 \001(\t\0220\n\004plan\030\003 \001(\0132\034.co" +
-      "smos.upgrade.v1beta1.PlanB\004\310\336\037\000:\010\350\240\037\001\230\240\037" +
-      "\000\"M\n\035CancelSoftwareUpgradeProposal\022\r\n\005ti" +
-      "tle\030\001 \001(\t\022\023\n\013description\030\002 \001(\t:\010\350\240\037\001\230\240\037\000" +
-      "\"8\n\rModuleVersion\022\014\n\004name\030\001 \001(\t\022\017\n\007versi" +
-      "on\030\002 \001(\004:\010\350\240\037\001\230\240\037\001B2Z,github.com/cosmos/" +
-      "cosmos-sdk/x/upgrade/types\310\341\036\000b\006proto3"
+      "\004info\030\004 \001(\t\022W\n\025upgraded_client_state\030\005 \001" +
+      "(\0132\024.google.protobuf.AnyB\"\030\001\362\336\037\034yaml:\"up" +
+      "graded_client_state\":\010\350\240\037\001\230\240\037\000\"y\n\027Softwa" +
+      "reUpgradeProposal\022\r\n\005title\030\001 \001(\t\022\023\n\013desc" +
+      "ription\030\002 \001(\t\0220\n\004plan\030\003 \001(\0132\034.cosmos.upg" +
+      "rade.v1beta1.PlanB\004\310\336\037\000:\010\350\240\037\001\230\240\037\000\"M\n\035Can" +
+      "celSoftwareUpgradeProposal\022\r\n\005title\030\001 \001(" +
+      "\t\022\023\n\013description\030\002 \001(\t:\010\350\240\037\001\230\240\037\000\"8\n\rModu" +
+      "leVersion\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\004" +
+      ":\010\350\240\037\001\230\240\037\001B2Z,github.com/cosmos/cosmos-s" +
+      "dk/x/upgrade/types\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4015,6 +4016,7 @@ public final class Upgrade {
     registry.add(com.google.protobuf.GoGoProtos.equal);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
     registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.protobuf.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor

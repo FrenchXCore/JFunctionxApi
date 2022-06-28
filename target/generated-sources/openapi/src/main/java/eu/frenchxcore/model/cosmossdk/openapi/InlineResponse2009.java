@@ -29,7 +29,7 @@ import java.io.IOException;
  * QuerySupplyOfResponse is the response type for the Query/SupplyOf RPC method.
  */
 @ApiModel(description = "QuerySupplyOfResponse is the response type for the Query/SupplyOf RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse2009 {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)

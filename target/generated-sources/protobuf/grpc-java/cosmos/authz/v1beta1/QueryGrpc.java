@@ -80,6 +80,37 @@ public final class QueryGrpc {
     return getGranterGrantsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest,
+      cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> getGranteeGrantsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GranteeGrants",
+      requestType = cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest.class,
+      responseType = cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest,
+      cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> getGranteeGrantsMethod() {
+    io.grpc.MethodDescriptor<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest, cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> getGranteeGrantsMethod;
+    if ((getGranteeGrantsMethod = QueryGrpc.getGranteeGrantsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getGranteeGrantsMethod = QueryGrpc.getGranteeGrantsMethod) == null) {
+          QueryGrpc.getGranteeGrantsMethod = getGranteeGrantsMethod =
+              io.grpc.MethodDescriptor.<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest, cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GranteeGrants"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("GranteeGrants"))
+              .build();
+        }
+      }
+    }
+    return getGranteeGrantsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -143,12 +174,24 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * GranterGrants returns list of `Authorization`, granted by granter.
+     * GranterGrants returns list of `GrantAuthorization`, granted by granter.
+     * Since: cosmos-sdk 0.45.2
      * </pre>
      */
     public void granterGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsRequest request,
         io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGranterGrantsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GranteeGrants returns a list of `GrantAuthorization` by grantee.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     */
+    public void granteeGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGranteeGrantsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -167,6 +210,13 @@ public final class QueryGrpc {
                 cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsRequest,
                 cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse>(
                   this, METHODID_GRANTER_GRANTS)))
+          .addMethod(
+            getGranteeGrantsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest,
+                cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse>(
+                  this, METHODID_GRANTEE_GRANTS)))
           .build();
     }
   }
@@ -201,13 +251,26 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * GranterGrants returns list of `Authorization`, granted by granter.
+     * GranterGrants returns list of `GrantAuthorization`, granted by granter.
+     * Since: cosmos-sdk 0.45.2
      * </pre>
      */
     public void granterGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsRequest request,
         io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGranterGrantsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GranteeGrants returns a list of `GrantAuthorization` by grantee.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     */
+    public void granteeGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGranteeGrantsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -240,12 +303,24 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * GranterGrants returns list of `Authorization`, granted by granter.
+     * GranterGrants returns list of `GrantAuthorization`, granted by granter.
+     * Since: cosmos-sdk 0.45.2
      * </pre>
      */
     public cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse granterGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGranterGrantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GranteeGrants returns a list of `GrantAuthorization` by grantee.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     */
+    public cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse granteeGrants(cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGranteeGrantsMethod(), getCallOptions(), request);
     }
   }
 
@@ -279,7 +354,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * GranterGrants returns list of `Authorization`, granted by granter.
+     * GranterGrants returns list of `GrantAuthorization`, granted by granter.
+     * Since: cosmos-sdk 0.45.2
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse> granterGrants(
@@ -287,10 +363,23 @@ public final class QueryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGranterGrantsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * GranteeGrants returns a list of `GrantAuthorization` by grantee.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> granteeGrants(
+        cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGranteeGrantsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GRANTS = 0;
   private static final int METHODID_GRANTER_GRANTS = 1;
+  private static final int METHODID_GRANTEE_GRANTS = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -316,6 +405,10 @@ public final class QueryGrpc {
         case METHODID_GRANTER_GRANTS:
           serviceImpl.granterGrants((cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranterGrantsResponse>) responseObserver);
+          break;
+        case METHODID_GRANTEE_GRANTS:
+          serviceImpl.granteeGrants((cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -380,6 +473,7 @@ public final class QueryGrpc {
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
               .addMethod(getGrantsMethod())
               .addMethod(getGranterGrantsMethod())
+              .addMethod(getGranteeGrantsMethod())
               .build();
         }
       }

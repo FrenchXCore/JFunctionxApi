@@ -26,7 +26,7 @@ public final class Signing {
     /**
      * <pre>
      * SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
-     * rejected.
+     * rejected
      * </pre>
      *
      * <code>SIGN_MODE_UNSPECIFIED = 0;</code>
@@ -35,7 +35,7 @@ public final class Signing {
     /**
      * <pre>
      * SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is
-     * verified with raw bytes from Tx.
+     * verified with raw bytes from Tx
      * </pre>
      *
      * <code>SIGN_MODE_DIRECT = 1;</code>
@@ -45,7 +45,7 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_TEXTUAL is a future signing mode that will verify some
      * human-readable textual representation on top of the binary representation
-     * from SIGN_MODE_DIRECT. It is currently not supported.
+     * from SIGN_MODE_DIRECT
      * </pre>
      *
      * <code>SIGN_MODE_TEXTUAL = 2;</code>
@@ -53,31 +53,35 @@ public final class Signing {
     SIGN_MODE_TEXTUAL(2),
     /**
      * <pre>
-     * SIGN_MODE_DIRECT_AUX specifies a signing mode which uses
-     * SignDocDirectAux. As opposed to SIGN_MODE_DIRECT, this sign mode does not
-     * require signers signing over other signers' `signer_info`. It also allows
-     * for adding Tips in transactions.
-     * </pre>
-     *
-     * <code>SIGN_MODE_DIRECT_AUX = 3;</code>
-     */
-    SIGN_MODE_DIRECT_AUX(3),
-    /**
-     * <pre>
      * SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
-     * Amino JSON and will be removed in the future.
+     * Amino JSON and will be removed in the future
      * </pre>
      *
      * <code>SIGN_MODE_LEGACY_AMINO_JSON = 127;</code>
      */
     SIGN_MODE_LEGACY_AMINO_JSON(127),
+    /**
+     * <pre>
+     * SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
+     * SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
+     * Currently, SIGN_MODE_EIP_191 is registered as a SignMode enum variant,
+     * but is not implemented on the SDK by default. To enable EIP-191, you need
+     * to pass a custom `TxConfig` that has an implementation of
+     * `SignModeHandler` for EIP-191. The SDK may decide to fully support
+     * EIP-191 in the future.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     *
+     * <code>SIGN_MODE_EIP_191 = 191;</code>
+     */
+    SIGN_MODE_EIP_191(191),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <pre>
      * SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
-     * rejected.
+     * rejected
      * </pre>
      *
      * <code>SIGN_MODE_UNSPECIFIED = 0;</code>
@@ -86,7 +90,7 @@ public final class Signing {
     /**
      * <pre>
      * SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is
-     * verified with raw bytes from Tx.
+     * verified with raw bytes from Tx
      * </pre>
      *
      * <code>SIGN_MODE_DIRECT = 1;</code>
@@ -96,7 +100,7 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_TEXTUAL is a future signing mode that will verify some
      * human-readable textual representation on top of the binary representation
-     * from SIGN_MODE_DIRECT. It is currently not supported.
+     * from SIGN_MODE_DIRECT
      * </pre>
      *
      * <code>SIGN_MODE_TEXTUAL = 2;</code>
@@ -104,24 +108,28 @@ public final class Signing {
     public static final int SIGN_MODE_TEXTUAL_VALUE = 2;
     /**
      * <pre>
-     * SIGN_MODE_DIRECT_AUX specifies a signing mode which uses
-     * SignDocDirectAux. As opposed to SIGN_MODE_DIRECT, this sign mode does not
-     * require signers signing over other signers' `signer_info`. It also allows
-     * for adding Tips in transactions.
-     * </pre>
-     *
-     * <code>SIGN_MODE_DIRECT_AUX = 3;</code>
-     */
-    public static final int SIGN_MODE_DIRECT_AUX_VALUE = 3;
-    /**
-     * <pre>
      * SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
-     * Amino JSON and will be removed in the future.
+     * Amino JSON and will be removed in the future
      * </pre>
      *
      * <code>SIGN_MODE_LEGACY_AMINO_JSON = 127;</code>
      */
     public static final int SIGN_MODE_LEGACY_AMINO_JSON_VALUE = 127;
+    /**
+     * <pre>
+     * SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
+     * SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
+     * Currently, SIGN_MODE_EIP_191 is registered as a SignMode enum variant,
+     * but is not implemented on the SDK by default. To enable EIP-191, you need
+     * to pass a custom `TxConfig` that has an implementation of
+     * `SignModeHandler` for EIP-191. The SDK may decide to fully support
+     * EIP-191 in the future.
+     * Since: cosmos-sdk 0.45.2
+     * </pre>
+     *
+     * <code>SIGN_MODE_EIP_191 = 191;</code>
+     */
+    public static final int SIGN_MODE_EIP_191_VALUE = 191;
 
 
     public final int getNumber() {
@@ -151,8 +159,8 @@ public final class Signing {
         case 0: return SIGN_MODE_UNSPECIFIED;
         case 1: return SIGN_MODE_DIRECT;
         case 2: return SIGN_MODE_TEXTUAL;
-        case 3: return SIGN_MODE_DIRECT_AUX;
         case 127: return SIGN_MODE_LEGACY_AMINO_JSON;
+        case 191: return SIGN_MODE_EIP_191;
         default: return null;
       }
     }
@@ -5088,12 +5096,12 @@ public final class Signing {
       "\n\010bitarray\030\001 \001(\0132/.cosmos.crypto.multisi" +
       "g.v1beta1.CompactBitArray\022G\n\nsignatures\030" +
       "\002 \003(\01323.cosmos.tx.signing.v1beta1.Signat" +
-      "ureDescriptor.DataB\005\n\003sum*\215\001\n\010SignMode\022\031" +
+      "ureDescriptor.DataB\005\n\003sum*\213\001\n\010SignMode\022\031" +
       "\n\025SIGN_MODE_UNSPECIFIED\020\000\022\024\n\020SIGN_MODE_D" +
-      "IRECT\020\001\022\025\n\021SIGN_MODE_TEXTUAL\020\002\022\030\n\024SIGN_M" +
-      "ODE_DIRECT_AUX\020\003\022\037\n\033SIGN_MODE_LEGACY_AMI" +
-      "NO_JSON\020\177B/Z-github.com/cosmos/cosmos-sd" +
-      "k/types/tx/signingb\006proto3"
+      "IRECT\020\001\022\025\n\021SIGN_MODE_TEXTUAL\020\002\022\037\n\033SIGN_M" +
+      "ODE_LEGACY_AMINO_JSON\020\177\022\026\n\021SIGN_MODE_EIP" +
+      "_191\020\277\001B/Z-github.com/cosmos/cosmos-sdk/" +
+      "types/tx/signingb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

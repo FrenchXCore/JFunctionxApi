@@ -3126,7 +3126,9 @@ public final class TxOuterClass {
 
     /**
      * <pre>
-     * memo is any arbitrary memo to be added to the transaction
+     * memo is any arbitrary note/comment to be added to the transaction.
+     * WARNING: in clients, any publicly exposed text should not be called memo,
+     * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
      * </pre>
      *
      * <code>string memo = 2;</code>
@@ -3135,7 +3137,9 @@ public final class TxOuterClass {
     java.lang.String getMemo();
     /**
      * <pre>
-     * memo is any arbitrary memo to be added to the transaction
+     * memo is any arbitrary note/comment to be added to the transaction.
+     * WARNING: in clients, any publicly exposed text should not be called memo,
+     * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
      * </pre>
      *
      * <code>string memo = 2;</code>
@@ -3490,7 +3494,9 @@ public final class TxOuterClass {
     private volatile java.lang.Object memo_;
     /**
      * <pre>
-     * memo is any arbitrary memo to be added to the transaction
+     * memo is any arbitrary note/comment to be added to the transaction.
+     * WARNING: in clients, any publicly exposed text should not be called memo,
+     * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
      * </pre>
      *
      * <code>string memo = 2;</code>
@@ -3511,7 +3517,9 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * memo is any arbitrary memo to be added to the transaction
+     * memo is any arbitrary note/comment to be added to the transaction.
+     * WARNING: in clients, any publicly exposed text should not be called memo,
+     * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
      * </pre>
      *
      * <code>string memo = 2;</code>
@@ -4602,7 +4610,9 @@ public final class TxOuterClass {
       private java.lang.Object memo_ = "";
       /**
        * <pre>
-       * memo is any arbitrary memo to be added to the transaction
+       * memo is any arbitrary note/comment to be added to the transaction.
+       * WARNING: in clients, any publicly exposed text should not be called memo,
+       * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
        * </pre>
        *
        * <code>string memo = 2;</code>
@@ -4622,7 +4632,9 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * memo is any arbitrary memo to be added to the transaction
+       * memo is any arbitrary note/comment to be added to the transaction.
+       * WARNING: in clients, any publicly exposed text should not be called memo,
+       * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
        * </pre>
        *
        * <code>string memo = 2;</code>
@@ -4643,7 +4655,9 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * memo is any arbitrary memo to be added to the transaction
+       * memo is any arbitrary note/comment to be added to the transaction.
+       * WARNING: in clients, any publicly exposed text should not be called memo,
+       * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
        * </pre>
        *
        * <code>string memo = 2;</code>
@@ -4662,7 +4676,9 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * memo is any arbitrary memo to be added to the transaction
+       * memo is any arbitrary note/comment to be added to the transaction.
+       * WARNING: in clients, any publicly exposed text should not be called memo,
+       * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
        * </pre>
        *
        * <code>string memo = 2;</code>
@@ -4676,7 +4692,9 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * memo is any arbitrary memo to be added to the transaction
+       * memo is any arbitrary note/comment to be added to the transaction.
+       * WARNING: in clients, any publicly exposed text should not be called memo,
+       * but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/issues/9122).
        * </pre>
        *
        * <code>string memo = 2;</code>

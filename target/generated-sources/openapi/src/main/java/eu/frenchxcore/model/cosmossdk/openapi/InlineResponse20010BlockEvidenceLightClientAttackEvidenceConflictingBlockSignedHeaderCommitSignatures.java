@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * CommitSig is a part of the Vote included in a Commit.
  */
 @ApiModel(description = "CommitSig is a part of the Vote included in a Commit.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceLightClientAttackEvidenceConflictingBlockSignedHeaderCommitSignatures {
   /**
    * Gets or Sets blockIdFlag

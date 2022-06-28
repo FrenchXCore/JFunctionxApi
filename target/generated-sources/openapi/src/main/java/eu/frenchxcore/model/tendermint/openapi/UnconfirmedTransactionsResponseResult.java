@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * UnconfirmedTransactionsResponseResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:17:53.421768900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:27.236230800+02:00[Europe/Paris]")
 public class UnconfirmedTransactionsResponseResult {
   public static final String SERIALIZED_NAME_N_TXS = "n_txs";
   @SerializedName(SERIALIZED_NAME_N_TXS)

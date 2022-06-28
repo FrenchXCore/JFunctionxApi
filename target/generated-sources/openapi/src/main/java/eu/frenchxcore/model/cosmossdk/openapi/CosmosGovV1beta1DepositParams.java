@@ -31,7 +31,7 @@ import java.util.List;
  * DepositParams defines the params for deposits on governance proposals.
  */
 @ApiModel(description = "DepositParams defines the params for deposits on governance proposals.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class CosmosGovV1beta1DepositParams {
   public static final String SERIALIZED_NAME_MIN_DEPOSIT = "min_deposit";
   @SerializedName(SERIALIZED_NAME_MIN_DEPOSIT)

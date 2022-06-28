@@ -31,7 +31,7 @@ import java.util.List;
  * QueryModuleVersionsResponse is the response type for the Query/ModuleVersions RPC method.
  */
 @ApiModel(description = "QueryModuleVersionsResponse is the response type for the Query/ModuleVersions RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class CosmosUpgradeV1beta1QueryModuleVersionsResponse {
   public static final String SERIALIZED_NAME_MODULE_VERSIONS = "module_versions";
   @SerializedName(SERIALIZED_NAME_MODULE_VERSIONS)

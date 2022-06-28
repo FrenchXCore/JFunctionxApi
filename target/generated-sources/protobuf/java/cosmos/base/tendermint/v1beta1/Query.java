@@ -3738,12 +3738,12 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1;</code>
      * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1;</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -3890,7 +3890,7 @@ public final class Query {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1;</code>
      * @return The address.
      */
     @java.lang.Override
@@ -3907,7 +3907,7 @@ public final class Query {
       }
     }
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1;</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -4347,7 +4347,7 @@ public final class Query {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1;</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -4363,7 +4363,7 @@ public final class Query {
         }
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1;</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -4380,7 +4380,7 @@ public final class Query {
         }
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1;</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -4395,7 +4395,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -4405,7 +4405,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1;</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -8595,19 +8595,19 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-     * @return Whether the nodeInfo field is set.
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return Whether the defaultNodeInfo field is set.
      */
-    boolean hasNodeInfo();
+    boolean hasDefaultNodeInfo();
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-     * @return The nodeInfo.
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return The defaultNodeInfo.
      */
-    tendermint.p2p.Types.NodeInfo getNodeInfo();
+    tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo();
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
      */
-    tendermint.p2p.Types.NodeInfoOrBuilder getNodeInfoOrBuilder();
+    tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder();
 
     /**
      * <code>.cosmos.base.tendermint.v1beta1.VersionInfo application_version = 2;</code>
@@ -8626,7 +8626,7 @@ public final class Query {
   }
   /**
    * <pre>
-   * GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
+   * GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.
    * </pre>
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoResponse}
@@ -8674,14 +8674,14 @@ public final class Query {
               done = true;
               break;
             case 10: {
-              tendermint.p2p.Types.NodeInfo.Builder subBuilder = null;
-              if (nodeInfo_ != null) {
-                subBuilder = nodeInfo_.toBuilder();
+              tendermint.p2p.Types.DefaultNodeInfo.Builder subBuilder = null;
+              if (defaultNodeInfo_ != null) {
+                subBuilder = defaultNodeInfo_.toBuilder();
               }
-              nodeInfo_ = input.readMessage(tendermint.p2p.Types.NodeInfo.parser(), extensionRegistry);
+              defaultNodeInfo_ = input.readMessage(tendermint.p2p.Types.DefaultNodeInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(nodeInfo_);
-                nodeInfo_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(defaultNodeInfo_);
+                defaultNodeInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -8731,30 +8731,30 @@ public final class Query {
               cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse.class, cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse.Builder.class);
     }
 
-    public static final int NODE_INFO_FIELD_NUMBER = 1;
-    private tendermint.p2p.Types.NodeInfo nodeInfo_;
+    public static final int DEFAULT_NODE_INFO_FIELD_NUMBER = 1;
+    private tendermint.p2p.Types.DefaultNodeInfo defaultNodeInfo_;
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-     * @return Whether the nodeInfo field is set.
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return Whether the defaultNodeInfo field is set.
      */
     @java.lang.Override
-    public boolean hasNodeInfo() {
-      return nodeInfo_ != null;
+    public boolean hasDefaultNodeInfo() {
+      return defaultNodeInfo_ != null;
     }
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-     * @return The nodeInfo.
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+     * @return The defaultNodeInfo.
      */
     @java.lang.Override
-    public tendermint.p2p.Types.NodeInfo getNodeInfo() {
-      return nodeInfo_ == null ? tendermint.p2p.Types.NodeInfo.getDefaultInstance() : nodeInfo_;
+    public tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo() {
+      return defaultNodeInfo_ == null ? tendermint.p2p.Types.DefaultNodeInfo.getDefaultInstance() : defaultNodeInfo_;
     }
     /**
-     * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+     * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
      */
     @java.lang.Override
-    public tendermint.p2p.Types.NodeInfoOrBuilder getNodeInfoOrBuilder() {
-      return getNodeInfo();
+    public tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder() {
+      return getDefaultNodeInfo();
     }
 
     public static final int APPLICATION_VERSION_FIELD_NUMBER = 2;
@@ -8797,8 +8797,8 @@ public final class Query {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (nodeInfo_ != null) {
-        output.writeMessage(1, getNodeInfo());
+      if (defaultNodeInfo_ != null) {
+        output.writeMessage(1, getDefaultNodeInfo());
       }
       if (applicationVersion_ != null) {
         output.writeMessage(2, getApplicationVersion());
@@ -8812,9 +8812,9 @@ public final class Query {
       if (size != -1) return size;
 
       size = 0;
-      if (nodeInfo_ != null) {
+      if (defaultNodeInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getNodeInfo());
+          .computeMessageSize(1, getDefaultNodeInfo());
       }
       if (applicationVersion_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -8835,10 +8835,10 @@ public final class Query {
       }
       cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse other = (cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse) obj;
 
-      if (hasNodeInfo() != other.hasNodeInfo()) return false;
-      if (hasNodeInfo()) {
-        if (!getNodeInfo()
-            .equals(other.getNodeInfo())) return false;
+      if (hasDefaultNodeInfo() != other.hasDefaultNodeInfo()) return false;
+      if (hasDefaultNodeInfo()) {
+        if (!getDefaultNodeInfo()
+            .equals(other.getDefaultNodeInfo())) return false;
       }
       if (hasApplicationVersion() != other.hasApplicationVersion()) return false;
       if (hasApplicationVersion()) {
@@ -8856,9 +8856,9 @@ public final class Query {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasNodeInfo()) {
-        hash = (37 * hash) + NODE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getNodeInfo().hashCode();
+      if (hasDefaultNodeInfo()) {
+        hash = (37 * hash) + DEFAULT_NODE_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultNodeInfo().hashCode();
       }
       if (hasApplicationVersion()) {
         hash = (37 * hash) + APPLICATION_VERSION_FIELD_NUMBER;
@@ -8961,7 +8961,7 @@ public final class Query {
     }
     /**
      * <pre>
-     * GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
+     * GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.
      * </pre>
      *
      * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoResponse}
@@ -9001,11 +9001,11 @@ public final class Query {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nodeInfoBuilder_ == null) {
-          nodeInfo_ = null;
+        if (defaultNodeInfoBuilder_ == null) {
+          defaultNodeInfo_ = null;
         } else {
-          nodeInfo_ = null;
-          nodeInfoBuilder_ = null;
+          defaultNodeInfo_ = null;
+          defaultNodeInfoBuilder_ = null;
         }
         if (applicationVersionBuilder_ == null) {
           applicationVersion_ = null;
@@ -9039,10 +9039,10 @@ public final class Query {
       @java.lang.Override
       public cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse buildPartial() {
         cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse result = new cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse(this);
-        if (nodeInfoBuilder_ == null) {
-          result.nodeInfo_ = nodeInfo_;
+        if (defaultNodeInfoBuilder_ == null) {
+          result.defaultNodeInfo_ = defaultNodeInfo_;
         } else {
-          result.nodeInfo_ = nodeInfoBuilder_.build();
+          result.defaultNodeInfo_ = defaultNodeInfoBuilder_.build();
         }
         if (applicationVersionBuilder_ == null) {
           result.applicationVersion_ = applicationVersion_;
@@ -9097,8 +9097,8 @@ public final class Query {
 
       public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse other) {
         if (other == cosmos.base.tendermint.v1beta1.Query.GetNodeInfoResponse.getDefaultInstance()) return this;
-        if (other.hasNodeInfo()) {
-          mergeNodeInfo(other.getNodeInfo());
+        if (other.hasDefaultNodeInfo()) {
+          mergeDefaultNodeInfo(other.getDefaultNodeInfo());
         }
         if (other.hasApplicationVersion()) {
           mergeApplicationVersion(other.getApplicationVersion());
@@ -9132,123 +9132,123 @@ public final class Query {
         return this;
       }
 
-      private tendermint.p2p.Types.NodeInfo nodeInfo_;
+      private tendermint.p2p.Types.DefaultNodeInfo defaultNodeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          tendermint.p2p.Types.NodeInfo, tendermint.p2p.Types.NodeInfo.Builder, tendermint.p2p.Types.NodeInfoOrBuilder> nodeInfoBuilder_;
+          tendermint.p2p.Types.DefaultNodeInfo, tendermint.p2p.Types.DefaultNodeInfo.Builder, tendermint.p2p.Types.DefaultNodeInfoOrBuilder> defaultNodeInfoBuilder_;
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-       * @return Whether the nodeInfo field is set.
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * @return Whether the defaultNodeInfo field is set.
        */
-      public boolean hasNodeInfo() {
-        return nodeInfoBuilder_ != null || nodeInfo_ != null;
+      public boolean hasDefaultNodeInfo() {
+        return defaultNodeInfoBuilder_ != null || defaultNodeInfo_ != null;
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
-       * @return The nodeInfo.
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
+       * @return The defaultNodeInfo.
        */
-      public tendermint.p2p.Types.NodeInfo getNodeInfo() {
-        if (nodeInfoBuilder_ == null) {
-          return nodeInfo_ == null ? tendermint.p2p.Types.NodeInfo.getDefaultInstance() : nodeInfo_;
+      public tendermint.p2p.Types.DefaultNodeInfo getDefaultNodeInfo() {
+        if (defaultNodeInfoBuilder_ == null) {
+          return defaultNodeInfo_ == null ? tendermint.p2p.Types.DefaultNodeInfo.getDefaultInstance() : defaultNodeInfo_;
         } else {
-          return nodeInfoBuilder_.getMessage();
+          return defaultNodeInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public Builder setNodeInfo(tendermint.p2p.Types.NodeInfo value) {
-        if (nodeInfoBuilder_ == null) {
+      public Builder setDefaultNodeInfo(tendermint.p2p.Types.DefaultNodeInfo value) {
+        if (defaultNodeInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          nodeInfo_ = value;
+          defaultNodeInfo_ = value;
           onChanged();
         } else {
-          nodeInfoBuilder_.setMessage(value);
+          defaultNodeInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public Builder setNodeInfo(
-          tendermint.p2p.Types.NodeInfo.Builder builderForValue) {
-        if (nodeInfoBuilder_ == null) {
-          nodeInfo_ = builderForValue.build();
+      public Builder setDefaultNodeInfo(
+          tendermint.p2p.Types.DefaultNodeInfo.Builder builderForValue) {
+        if (defaultNodeInfoBuilder_ == null) {
+          defaultNodeInfo_ = builderForValue.build();
           onChanged();
         } else {
-          nodeInfoBuilder_.setMessage(builderForValue.build());
+          defaultNodeInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public Builder mergeNodeInfo(tendermint.p2p.Types.NodeInfo value) {
-        if (nodeInfoBuilder_ == null) {
-          if (nodeInfo_ != null) {
-            nodeInfo_ =
-              tendermint.p2p.Types.NodeInfo.newBuilder(nodeInfo_).mergeFrom(value).buildPartial();
+      public Builder mergeDefaultNodeInfo(tendermint.p2p.Types.DefaultNodeInfo value) {
+        if (defaultNodeInfoBuilder_ == null) {
+          if (defaultNodeInfo_ != null) {
+            defaultNodeInfo_ =
+              tendermint.p2p.Types.DefaultNodeInfo.newBuilder(defaultNodeInfo_).mergeFrom(value).buildPartial();
           } else {
-            nodeInfo_ = value;
+            defaultNodeInfo_ = value;
           }
           onChanged();
         } else {
-          nodeInfoBuilder_.mergeFrom(value);
+          defaultNodeInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public Builder clearNodeInfo() {
-        if (nodeInfoBuilder_ == null) {
-          nodeInfo_ = null;
+      public Builder clearDefaultNodeInfo() {
+        if (defaultNodeInfoBuilder_ == null) {
+          defaultNodeInfo_ = null;
           onChanged();
         } else {
-          nodeInfo_ = null;
-          nodeInfoBuilder_ = null;
+          defaultNodeInfo_ = null;
+          defaultNodeInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public tendermint.p2p.Types.NodeInfo.Builder getNodeInfoBuilder() {
+      public tendermint.p2p.Types.DefaultNodeInfo.Builder getDefaultNodeInfoBuilder() {
         
         onChanged();
-        return getNodeInfoFieldBuilder().getBuilder();
+        return getDefaultNodeInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
-      public tendermint.p2p.Types.NodeInfoOrBuilder getNodeInfoOrBuilder() {
-        if (nodeInfoBuilder_ != null) {
-          return nodeInfoBuilder_.getMessageOrBuilder();
+      public tendermint.p2p.Types.DefaultNodeInfoOrBuilder getDefaultNodeInfoOrBuilder() {
+        if (defaultNodeInfoBuilder_ != null) {
+          return defaultNodeInfoBuilder_.getMessageOrBuilder();
         } else {
-          return nodeInfo_ == null ?
-              tendermint.p2p.Types.NodeInfo.getDefaultInstance() : nodeInfo_;
+          return defaultNodeInfo_ == null ?
+              tendermint.p2p.Types.DefaultNodeInfo.getDefaultInstance() : defaultNodeInfo_;
         }
       }
       /**
-       * <code>.tendermint.p2p.NodeInfo node_info = 1;</code>
+       * <code>.tendermint.p2p.DefaultNodeInfo default_node_info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          tendermint.p2p.Types.NodeInfo, tendermint.p2p.Types.NodeInfo.Builder, tendermint.p2p.Types.NodeInfoOrBuilder> 
-          getNodeInfoFieldBuilder() {
-        if (nodeInfoBuilder_ == null) {
-          nodeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              tendermint.p2p.Types.NodeInfo, tendermint.p2p.Types.NodeInfo.Builder, tendermint.p2p.Types.NodeInfoOrBuilder>(
-                  getNodeInfo(),
+          tendermint.p2p.Types.DefaultNodeInfo, tendermint.p2p.Types.DefaultNodeInfo.Builder, tendermint.p2p.Types.DefaultNodeInfoOrBuilder> 
+          getDefaultNodeInfoFieldBuilder() {
+        if (defaultNodeInfoBuilder_ == null) {
+          defaultNodeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              tendermint.p2p.Types.DefaultNodeInfo, tendermint.p2p.Types.DefaultNodeInfo.Builder, tendermint.p2p.Types.DefaultNodeInfoOrBuilder>(
+                  getDefaultNodeInfo(),
                   getParentForChildren(),
                   isClean());
-          nodeInfo_ = null;
+          defaultNodeInfo_ = null;
         }
-        return nodeInfoBuilder_;
+        return defaultNodeInfoBuilder_;
       }
 
       private cosmos.base.tendermint.v1beta1.Query.VersionInfo applicationVersion_;
@@ -12378,92 +12378,91 @@ public final class Query {
   static {
     java.lang.String[] descriptorData = {
       "\n*cosmos/base/tendermint/v1beta1/query.p" +
-      "roto\022\036cosmos.base.tendermint.v1beta1\032\031go" +
-      "ogle/protobuf/any.proto\032\034google/api/anno" +
-      "tations.proto\032\032tendermint/p2p/types.prot" +
-      "o\032\034tendermint/types/block.proto\032\034tenderm" +
-      "int/types/types.proto\032*cosmos/base/query" +
-      "/v1beta1/pagination.proto\032\031cosmos_proto/" +
-      "cosmos.proto\"l\n\036GetValidatorSetByHeightR" +
-      "equest\022\016\n\006height\030\001 \001(\003\022:\n\npagination\030\002 \001" +
-      "(\0132&.cosmos.base.query.v1beta1.PageReque" +
-      "st\"\263\001\n\037GetValidatorSetByHeightResponse\022\024" +
-      "\n\014block_height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\013" +
-      "2).cosmos.base.tendermint.v1beta1.Valida" +
-      "tor\022;\n\npagination\030\003 \001(\0132\'.cosmos.base.qu" +
-      "ery.v1beta1.PageResponse\"Z\n\034GetLatestVal" +
-      "idatorSetRequest\022:\n\npagination\030\001 \001(\0132&.c" +
-      "osmos.base.query.v1beta1.PageRequest\"\261\001\n" +
-      "\035GetLatestValidatorSetResponse\022\024\n\014block_" +
-      "height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).cosmo" +
-      "s.base.tendermint.v1beta1.Validator\022;\n\np" +
-      "agination\030\003 \001(\0132\'.cosmos.base.query.v1be" +
-      "ta1.PageResponse\"\216\001\n\tValidator\022)\n\007addres" +
-      "s\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022%\n\007pub" +
-      "_key\030\002 \001(\0132\024.google.protobuf.Any\022\024\n\014voti" +
-      "ng_power\030\003 \001(\003\022\031\n\021proposer_priority\030\004 \001(" +
-      "\003\")\n\027GetBlockByHeightRequest\022\016\n\006height\030\001" +
-      " \001(\003\"o\n\030GetBlockByHeightResponse\022+\n\010bloc" +
-      "k_id\030\001 \001(\0132\031.tendermint.types.BlockID\022&\n" +
-      "\005block\030\002 \001(\0132\027.tendermint.types.Block\"\027\n" +
-      "\025GetLatestBlockRequest\"m\n\026GetLatestBlock" +
-      "Response\022+\n\010block_id\030\001 \001(\0132\031.tendermint." +
-      "types.BlockID\022&\n\005block\030\002 \001(\0132\027.tendermin" +
-      "t.types.Block\"\023\n\021GetSyncingRequest\"%\n\022Ge" +
-      "tSyncingResponse\022\017\n\007syncing\030\001 \001(\010\"\024\n\022Get" +
-      "NodeInfoRequest\"\214\001\n\023GetNodeInfoResponse\022" +
-      "+\n\tnode_info\030\001 \001(\0132\030.tendermint.p2p.Node" +
-      "Info\022H\n\023application_version\030\002 \001(\0132+.cosm" +
-      "os.base.tendermint.v1beta1.VersionInfo\"\322" +
-      "\001\n\013VersionInfo\022\014\n\004name\030\001 \001(\t\022\020\n\010app_name" +
-      "\030\002 \001(\t\022\017\n\007version\030\003 \001(\t\022\022\n\ngit_commit\030\004 " +
-      "\001(\t\022\022\n\nbuild_tags\030\005 \001(\t\022\022\n\ngo_version\030\006 " +
-      "\001(\t\022:\n\nbuild_deps\030\007 \003(\0132&.cosmos.base.te" +
-      "ndermint.v1beta1.Module\022\032\n\022cosmos_sdk_ve" +
-      "rsion\030\010 \001(\t\"4\n\006Module\022\014\n\004path\030\001 \001(\t\022\017\n\007v" +
-      "ersion\030\002 \001(\t\022\013\n\003sum\030\003 \001(\t2\210\t\n\007Service\022\251\001" +
-      "\n\013GetNodeInfo\0222.cosmos.base.tendermint.v" +
-      "1beta1.GetNodeInfoRequest\0323.cosmos.base." +
-      "tendermint.v1beta1.GetNodeInfoResponse\"1" +
-      "\202\323\344\223\002+\022)/cosmos/base/tendermint/v1beta1/" +
-      "node_info\022\244\001\n\nGetSyncing\0221.cosmos.base.t" +
-      "endermint.v1beta1.GetSyncingRequest\0322.co" +
-      "smos.base.tendermint.v1beta1.GetSyncingR" +
-      "esponse\"/\202\323\344\223\002)\022\'/cosmos/base/tendermint" +
-      "/v1beta1/syncing\022\266\001\n\016GetLatestBlock\0225.co" +
-      "smos.base.tendermint.v1beta1.GetLatestBl" +
-      "ockRequest\0326.cosmos.base.tendermint.v1be" +
-      "ta1.GetLatestBlockResponse\"5\202\323\344\223\002/\022-/cos" +
-      "mos/base/tendermint/v1beta1/blocks/lates" +
-      "t\022\276\001\n\020GetBlockByHeight\0227.cosmos.base.ten" +
-      "dermint.v1beta1.GetBlockByHeightRequest\032" +
-      "8.cosmos.base.tendermint.v1beta1.GetBloc" +
-      "kByHeightResponse\"7\202\323\344\223\0021\022//cosmos/base/" +
-      "tendermint/v1beta1/blocks/{height}\022\322\001\n\025G" +
-      "etLatestValidatorSet\022<.cosmos.base.tende" +
-      "rmint.v1beta1.GetLatestValidatorSetReque" +
-      "st\032=.cosmos.base.tendermint.v1beta1.GetL" +
-      "atestValidatorSetResponse\"<\202\323\344\223\0026\0224/cosm" +
-      "os/base/tendermint/v1beta1/validatorsets" +
-      "/latest\022\332\001\n\027GetValidatorSetByHeight\022>.co" +
-      "smos.base.tendermint.v1beta1.GetValidato" +
-      "rSetByHeightRequest\032?.cosmos.base.tender" +
-      "mint.v1beta1.GetValidatorSetByHeightResp" +
-      "onse\">\202\323\344\223\0028\0226/cosmos/base/tendermint/v1" +
-      "beta1/validatorsets/{height}B4Z2github.c" +
-      "om/cosmos/cosmos-sdk/client/grpc/tmservi" +
-      "ceb\006proto3"
+      "roto\022\036cosmos.base.tendermint.v1beta1\032\024go" +
+      "goproto/gogo.proto\032\031google/protobuf/any." +
+      "proto\032\034google/api/annotations.proto\032\032ten" +
+      "dermint/p2p/types.proto\032\034tendermint/type" +
+      "s/block.proto\032\034tendermint/types/types.pr" +
+      "oto\032*cosmos/base/query/v1beta1/paginatio" +
+      "n.proto\"l\n\036GetValidatorSetByHeightReques" +
+      "t\022\016\n\006height\030\001 \001(\003\022:\n\npagination\030\002 \001(\0132&." +
+      "cosmos.base.query.v1beta1.PageRequest\"\263\001" +
+      "\n\037GetValidatorSetByHeightResponse\022\024\n\014blo" +
+      "ck_height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).co" +
+      "smos.base.tendermint.v1beta1.Validator\022;" +
+      "\n\npagination\030\003 \001(\0132\'.cosmos.base.query.v" +
+      "1beta1.PageResponse\"Z\n\034GetLatestValidato" +
+      "rSetRequest\022:\n\npagination\030\001 \001(\0132&.cosmos" +
+      ".base.query.v1beta1.PageRequest\"\261\001\n\035GetL" +
+      "atestValidatorSetResponse\022\024\n\014block_heigh" +
+      "t\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).cosmos.bas" +
+      "e.tendermint.v1beta1.Validator\022;\n\npagina" +
+      "tion\030\003 \001(\0132\'.cosmos.base.query.v1beta1.P" +
+      "ageResponse\"t\n\tValidator\022\017\n\007address\030\001 \001(" +
+      "\t\022%\n\007pub_key\030\002 \001(\0132\024.google.protobuf.Any" +
+      "\022\024\n\014voting_power\030\003 \001(\003\022\031\n\021proposer_prior" +
+      "ity\030\004 \001(\003\")\n\027GetBlockByHeightRequest\022\016\n\006" +
+      "height\030\001 \001(\003\"o\n\030GetBlockByHeightResponse" +
+      "\022+\n\010block_id\030\001 \001(\0132\031.tendermint.types.Bl" +
+      "ockID\022&\n\005block\030\002 \001(\0132\027.tendermint.types." +
+      "Block\"\027\n\025GetLatestBlockRequest\"m\n\026GetLat" +
+      "estBlockResponse\022+\n\010block_id\030\001 \001(\0132\031.ten" +
+      "dermint.types.BlockID\022&\n\005block\030\002 \001(\0132\027.t" +
+      "endermint.types.Block\"\023\n\021GetSyncingReque" +
+      "st\"%\n\022GetSyncingResponse\022\017\n\007syncing\030\001 \001(" +
+      "\010\"\024\n\022GetNodeInfoRequest\"\233\001\n\023GetNodeInfoR" +
+      "esponse\022:\n\021default_node_info\030\001 \001(\0132\037.ten" +
+      "dermint.p2p.DefaultNodeInfo\022H\n\023applicati" +
+      "on_version\030\002 \001(\0132+.cosmos.base.tendermin" +
+      "t.v1beta1.VersionInfo\"\322\001\n\013VersionInfo\022\014\n" +
+      "\004name\030\001 \001(\t\022\020\n\010app_name\030\002 \001(\t\022\017\n\007version" +
+      "\030\003 \001(\t\022\022\n\ngit_commit\030\004 \001(\t\022\022\n\nbuild_tags" +
+      "\030\005 \001(\t\022\022\n\ngo_version\030\006 \001(\t\022:\n\nbuild_deps" +
+      "\030\007 \003(\0132&.cosmos.base.tendermint.v1beta1." +
+      "Module\022\032\n\022cosmos_sdk_version\030\010 \001(\t\"4\n\006Mo" +
+      "dule\022\014\n\004path\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\013\n\003s" +
+      "um\030\003 \001(\t2\210\t\n\007Service\022\251\001\n\013GetNodeInfo\0222.c" +
+      "osmos.base.tendermint.v1beta1.GetNodeInf" +
+      "oRequest\0323.cosmos.base.tendermint.v1beta" +
+      "1.GetNodeInfoResponse\"1\202\323\344\223\002+\022)/cosmos/b" +
+      "ase/tendermint/v1beta1/node_info\022\244\001\n\nGet" +
+      "Syncing\0221.cosmos.base.tendermint.v1beta1" +
+      ".GetSyncingRequest\0322.cosmos.base.tenderm" +
+      "int.v1beta1.GetSyncingResponse\"/\202\323\344\223\002)\022\'" +
+      "/cosmos/base/tendermint/v1beta1/syncing\022" +
+      "\266\001\n\016GetLatestBlock\0225.cosmos.base.tenderm" +
+      "int.v1beta1.GetLatestBlockRequest\0326.cosm" +
+      "os.base.tendermint.v1beta1.GetLatestBloc" +
+      "kResponse\"5\202\323\344\223\002/\022-/cosmos/base/tendermi" +
+      "nt/v1beta1/blocks/latest\022\276\001\n\020GetBlockByH" +
+      "eight\0227.cosmos.base.tendermint.v1beta1.G" +
+      "etBlockByHeightRequest\0328.cosmos.base.ten" +
+      "dermint.v1beta1.GetBlockByHeightResponse" +
+      "\"7\202\323\344\223\0021\022//cosmos/base/tendermint/v1beta" +
+      "1/blocks/{height}\022\322\001\n\025GetLatestValidator" +
+      "Set\022<.cosmos.base.tendermint.v1beta1.Get" +
+      "LatestValidatorSetRequest\032=.cosmos.base." +
+      "tendermint.v1beta1.GetLatestValidatorSet" +
+      "Response\"<\202\323\344\223\0026\0224/cosmos/base/tendermin" +
+      "t/v1beta1/validatorsets/latest\022\332\001\n\027GetVa" +
+      "lidatorSetByHeight\022>.cosmos.base.tenderm" +
+      "int.v1beta1.GetValidatorSetByHeightReque" +
+      "st\032?.cosmos.base.tendermint.v1beta1.GetV" +
+      "alidatorSetByHeightResponse\">\202\323\344\223\0028\0226/co" +
+      "smos/base/tendermint/v1beta1/validatorse" +
+      "ts/{height}B4Z2github.com/cosmos/cosmos-" +
+      "sdk/client/grpc/tmserviceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           tendermint.p2p.Types.getDescriptor(),
           tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12542,7 +12541,7 @@ public final class Query {
     internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_tendermint_v1beta1_GetNodeInfoResponse_descriptor,
-        new java.lang.String[] { "NodeInfo", "ApplicationVersion", });
+        new java.lang.String[] { "DefaultNodeInfo", "ApplicationVersion", });
     internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_cosmos_base_tendermint_v1beta1_VersionInfo_fieldAccessorTable = new
@@ -12557,17 +12556,16 @@ public final class Query {
         new java.lang.String[] { "Path", "Version", "Sum", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.protobuf.GoGoProtos.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     tendermint.p2p.Types.getDescriptor();
     tendermint.types.BlockOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    cosmos_proto.Cosmos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

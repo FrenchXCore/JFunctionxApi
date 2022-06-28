@@ -6145,7 +6145,7 @@ public final class Abci {
      * GasWanted is the maximum units of work we allow this tx to perform.
      * </pre>
      *
-     * <code>uint64 gas_wanted = 1;</code>
+     * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
      * @return The gasWanted.
      */
     long getGasWanted();
@@ -6155,7 +6155,7 @@ public final class Abci {
      * GasUsed is the amount of gas actually consumed.
      * </pre>
      *
-     * <code>uint64 gas_used = 2;</code>
+     * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
      * @return The gasUsed.
      */
     long getGasUsed();
@@ -6258,7 +6258,7 @@ public final class Abci {
      * GasWanted is the maximum units of work we allow this tx to perform.
      * </pre>
      *
-     * <code>uint64 gas_wanted = 1;</code>
+     * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
      * @return The gasWanted.
      */
     @java.lang.Override
@@ -6273,7 +6273,7 @@ public final class Abci {
      * GasUsed is the amount of gas actually consumed.
      * </pre>
      *
-     * <code>uint64 gas_used = 2;</code>
+     * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
      * @return The gasUsed.
      */
     @java.lang.Override
@@ -6612,7 +6612,7 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
        * @return The gasWanted.
        */
       @java.lang.Override
@@ -6624,7 +6624,7 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
        * @param value The gasWanted to set.
        * @return This builder for chaining.
        */
@@ -6639,7 +6639,7 @@ public final class Abci {
        * GasWanted is the maximum units of work we allow this tx to perform.
        * </pre>
        *
-       * <code>uint64 gas_wanted = 1;</code>
+       * <code>uint64 gas_wanted = 1 [(.gogoproto.moretags) = "yaml:&#92;"gas_wanted&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearGasWanted() {
@@ -6655,7 +6655,7 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
        * @return The gasUsed.
        */
       @java.lang.Override
@@ -6667,7 +6667,7 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
        * @param value The gasUsed to set.
        * @return This builder for chaining.
        */
@@ -6682,7 +6682,7 @@ public final class Abci {
        * GasUsed is the amount of gas actually consumed.
        * </pre>
        *
-       * <code>uint64 gas_used = 2;</code>
+       * <code>uint64 gas_used = 2 [(.gogoproto.moretags) = "yaml:&#92;"gas_used&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearGasUsed() {
@@ -6752,15 +6752,12 @@ public final class Abci {
      * <pre>
      * Data is any data returned from message or handler execution. It MUST be
      * length prefixed in order to separate data from multiple message executions.
-     * Deprecated. This field is still populated, but prefer msg_response instead
-     * because it also contains the Msg response typeURL.
      * </pre>
      *
-     * <code>bytes data = 1 [deprecated = true];</code>
-     * @deprecated
+     * <code>bytes data = 1;</code>
      * @return The data.
      */
-    @java.lang.Deprecated com.google.protobuf.ByteString getData();
+    com.google.protobuf.ByteString getData();
 
     /**
      * <pre>
@@ -6830,55 +6827,6 @@ public final class Abci {
      */
     tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
         int index);
-
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    java.util.List<com.google.protobuf.Any> 
-        getMsgResponsesList();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    com.google.protobuf.Any getMsgResponses(int index);
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    int getMsgResponsesCount();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getMsgResponsesOrBuilderList();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
-        int index);
   }
   /**
    * <pre>
@@ -6900,7 +6848,6 @@ public final class Abci {
       data_ = com.google.protobuf.ByteString.EMPTY;
       log_ = "";
       events_ = java.util.Collections.emptyList();
-      msgResponses_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6954,15 +6901,6 @@ public final class Abci {
                   input.readMessage(tendermint.abci.Types.Event.parser(), extensionRegistry));
               break;
             }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                msgResponses_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              msgResponses_.add(
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6980,9 +6918,6 @@ public final class Abci {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7007,16 +6942,13 @@ public final class Abci {
      * <pre>
      * Data is any data returned from message or handler execution. It MUST be
      * length prefixed in order to separate data from multiple message executions.
-     * Deprecated. This field is still populated, but prefer msg_response instead
-     * because it also contains the Msg response typeURL.
      * </pre>
      *
-     * <code>bytes data = 1 [deprecated = true];</code>
-     * @deprecated
+     * <code>bytes data = 1;</code>
      * @return The data.
      */
     @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
+    public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
@@ -7131,71 +7063,6 @@ public final class Abci {
       return events_.get(index);
     }
 
-    public static final int MSG_RESPONSES_FIELD_NUMBER = 4;
-    private java.util.List<com.google.protobuf.Any> msgResponses_;
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.protobuf.Any> getMsgResponsesList() {
-      return msgResponses_;
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getMsgResponsesOrBuilderList() {
-      return msgResponses_;
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    @java.lang.Override
-    public int getMsgResponsesCount() {
-      return msgResponses_.size();
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.Any getMsgResponses(int index) {
-      return msgResponses_.get(index);
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses type packed in Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
-        int index) {
-      return msgResponses_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7219,9 +7086,6 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         output.writeMessage(3, events_.get(i));
       }
-      for (int i = 0; i < msgResponses_.size(); i++) {
-        output.writeMessage(4, msgResponses_.get(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7241,10 +7105,6 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, events_.get(i));
-      }
-      for (int i = 0; i < msgResponses_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, msgResponses_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7267,8 +7127,6 @@ public final class Abci {
           .equals(other.getLog())) return false;
       if (!getEventsList()
           .equals(other.getEventsList())) return false;
-      if (!getMsgResponsesList()
-          .equals(other.getMsgResponsesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7287,10 +7145,6 @@ public final class Abci {
       if (getEventsCount() > 0) {
         hash = (37 * hash) + EVENTS_FIELD_NUMBER;
         hash = (53 * hash) + getEventsList().hashCode();
-      }
-      if (getMsgResponsesCount() > 0) {
-        hash = (37 * hash) + MSG_RESPONSES_FIELD_NUMBER;
-        hash = (53 * hash) + getMsgResponsesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7425,7 +7279,6 @@ public final class Abci {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getEventsFieldBuilder();
-          getMsgResponsesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -7440,12 +7293,6 @@ public final class Abci {
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           eventsBuilder_.clear();
-        }
-        if (msgResponsesBuilder_ == null) {
-          msgResponses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          msgResponsesBuilder_.clear();
         }
         return this;
       }
@@ -7484,15 +7331,6 @@ public final class Abci {
           result.events_ = events_;
         } else {
           result.events_ = eventsBuilder_.build();
-        }
-        if (msgResponsesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.msgResponses_ = msgResponses_;
-        } else {
-          result.msgResponses_ = msgResponsesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7575,32 +7413,6 @@ public final class Abci {
             }
           }
         }
-        if (msgResponsesBuilder_ == null) {
-          if (!other.msgResponses_.isEmpty()) {
-            if (msgResponses_.isEmpty()) {
-              msgResponses_ = other.msgResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureMsgResponsesIsMutable();
-              msgResponses_.addAll(other.msgResponses_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.msgResponses_.isEmpty()) {
-            if (msgResponsesBuilder_.isEmpty()) {
-              msgResponsesBuilder_.dispose();
-              msgResponsesBuilder_ = null;
-              msgResponses_ = other.msgResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              msgResponsesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMsgResponsesFieldBuilder() : null;
-            } else {
-              msgResponsesBuilder_.addAllMessages(other.msgResponses_);
-            }
-          }
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7636,32 +7448,26 @@ public final class Abci {
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
-       * Deprecated. This field is still populated, but prefer msg_response instead
-       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1 [deprecated = true];</code>
-       * @deprecated
+       * <code>bytes data = 1;</code>
        * @return The data.
        */
       @java.lang.Override
-      @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
+      public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
-       * Deprecated. This field is still populated, but prefer msg_response instead
-       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1 [deprecated = true];</code>
-       * @deprecated
+       * <code>bytes data = 1;</code>
        * @param value The data to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder setData(com.google.protobuf.ByteString value) {
+      public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7674,15 +7480,12 @@ public final class Abci {
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
-       * Deprecated. This field is still populated, but prefer msg_response instead
-       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1 [deprecated = true];</code>
-       * @deprecated
+       * <code>bytes data = 1;</code>
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder clearData() {
+      public Builder clearData() {
         
         data_ = getDefaultInstance().getData();
         onChanged();
@@ -8113,336 +7916,6 @@ public final class Abci {
           events_ = null;
         }
         return eventsBuilder_;
-      }
-
-      private java.util.List<com.google.protobuf.Any> msgResponses_ =
-        java.util.Collections.emptyList();
-      private void ensureMsgResponsesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          msgResponses_ = new java.util.ArrayList<com.google.protobuf.Any>(msgResponses_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> msgResponsesBuilder_;
-
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public java.util.List<com.google.protobuf.Any> getMsgResponsesList() {
-        if (msgResponsesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(msgResponses_);
-        } else {
-          return msgResponsesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public int getMsgResponsesCount() {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.size();
-        } else {
-          return msgResponsesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public com.google.protobuf.Any getMsgResponses(int index) {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.get(index);
-        } else {
-          return msgResponsesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder setMsgResponses(
-          int index, com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.set(index, value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder setMsgResponses(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder addMsgResponses(com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder addMsgResponses(
-          int index, com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(index, value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder addMsgResponses(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder addMsgResponses(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder addAllMsgResponses(
-          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, msgResponses_);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder clearMsgResponses() {
-        if (msgResponsesBuilder_ == null) {
-          msgResponses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public Builder removeMsgResponses(int index) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.remove(index);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public com.google.protobuf.Any.Builder getMsgResponsesBuilder(
-          int index) {
-        return getMsgResponsesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
-          int index) {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.get(index);  } else {
-          return msgResponsesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-           getMsgResponsesOrBuilderList() {
-        if (msgResponsesBuilder_ != null) {
-          return msgResponsesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(msgResponses_);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public com.google.protobuf.Any.Builder addMsgResponsesBuilder() {
-        return getMsgResponsesFieldBuilder().addBuilder(
-            com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public com.google.protobuf.Any.Builder addMsgResponsesBuilder(
-          int index) {
-        return getMsgResponsesFieldBuilder().addBuilder(
-            index, com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses type packed in Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 4;</code>
-       */
-      public java.util.List<com.google.protobuf.Any.Builder> 
-           getMsgResponsesBuilderList() {
-        return getMsgResponsesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getMsgResponsesFieldBuilder() {
-        if (msgResponsesBuilder_ == null) {
-          msgResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  msgResponses_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          msgResponses_ = null;
-        }
-        return msgResponsesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9331,7 +8804,7 @@ public final class Abci {
 
   }
 
-  @java.lang.Deprecated public interface MsgDataOrBuilder extends
+  public interface MsgDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.base.abci.v1beta1.MsgData)
       com.google.protobuf.MessageOrBuilder {
 
@@ -9361,7 +8834,7 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.MsgData}
    */
-  @java.lang.Deprecated public static final class MsgData extends
+  public static final class MsgData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.MsgData)
       MsgDataOrBuilder {
@@ -9988,96 +9461,27 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
-    @java.lang.Deprecated java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> 
+    java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> 
         getDataList();
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
-    @java.lang.Deprecated cosmos.base.abci.v1beta1.Abci.MsgData getData(int index);
+    cosmos.base.abci.v1beta1.Abci.MsgData getData(int index);
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
-    @java.lang.Deprecated int getDataCount();
+    int getDataCount();
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
-    @java.lang.Deprecated java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+    java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
         getDataOrBuilderList();
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
-    @java.lang.Deprecated cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    java.util.List<com.google.protobuf.Any> 
-        getMsgResponsesList();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    com.google.protobuf.Any getMsgResponses(int index);
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    int getMsgResponsesCount();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getMsgResponsesOrBuilderList();
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
+    cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
         int index);
   }
   /**
@@ -10099,7 +9503,6 @@ public final class Abci {
     }
     private TxMsgData() {
       data_ = java.util.Collections.emptyList();
-      msgResponses_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -10142,15 +9545,6 @@ public final class Abci {
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.MsgData.parser(), extensionRegistry));
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                msgResponses_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              msgResponses_.add(
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -10168,9 +9562,6 @@ public final class Abci {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           data_ = java.util.Collections.unmodifiableList(data_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -10192,126 +9583,41 @@ public final class Abci {
     public static final int DATA_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> data_;
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
+    public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
       return data_;
     }
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+    public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
         getDataOrBuilderList() {
       return data_;
     }
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public int getDataCount() {
+    public int getDataCount() {
       return data_.size();
     }
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
+    public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
       return data_.get(index);
     }
     /**
-     * <pre>
-     * data field is deprecated and not populated.
-     * </pre>
-     *
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+    public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
         int index) {
       return data_.get(index);
-    }
-
-    public static final int MSG_RESPONSES_FIELD_NUMBER = 2;
-    private java.util.List<com.google.protobuf.Any> msgResponses_;
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.protobuf.Any> getMsgResponsesList() {
-      return msgResponses_;
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getMsgResponsesOrBuilderList() {
-      return msgResponses_;
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    @java.lang.Override
-    public int getMsgResponsesCount() {
-      return msgResponses_.size();
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.Any getMsgResponses(int index) {
-      return msgResponses_.get(index);
-    }
-    /**
-     * <pre>
-     * msg_responses contains the Msg handler responses packed into Anys.
-     * Since: cosmos-sdk 0.45
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
-        int index) {
-      return msgResponses_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10331,9 +9637,6 @@ public final class Abci {
       for (int i = 0; i < data_.size(); i++) {
         output.writeMessage(1, data_.get(i));
       }
-      for (int i = 0; i < msgResponses_.size(); i++) {
-        output.writeMessage(2, msgResponses_.get(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10346,10 +9649,6 @@ public final class Abci {
       for (int i = 0; i < data_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, data_.get(i));
-      }
-      for (int i = 0; i < msgResponses_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, msgResponses_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10368,8 +9667,6 @@ public final class Abci {
 
       if (!getDataList()
           .equals(other.getDataList())) return false;
-      if (!getMsgResponsesList()
-          .equals(other.getMsgResponsesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10384,10 +9681,6 @@ public final class Abci {
       if (getDataCount() > 0) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + getDataList().hashCode();
-      }
-      if (getMsgResponsesCount() > 0) {
-        hash = (37 * hash) + MSG_RESPONSES_FIELD_NUMBER;
-        hash = (53 * hash) + getMsgResponsesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10523,7 +9816,6 @@ public final class Abci {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getDataFieldBuilder();
-          getMsgResponsesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -10534,12 +9826,6 @@ public final class Abci {
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           dataBuilder_.clear();
-        }
-        if (msgResponsesBuilder_ == null) {
-          msgResponses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          msgResponsesBuilder_.clear();
         }
         return this;
       }
@@ -10576,15 +9862,6 @@ public final class Abci {
           result.data_ = data_;
         } else {
           result.data_ = dataBuilder_.build();
-        }
-        if (msgResponsesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.msgResponses_ = msgResponses_;
-        } else {
-          result.msgResponses_ = msgResponsesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10660,32 +9937,6 @@ public final class Abci {
             }
           }
         }
-        if (msgResponsesBuilder_ == null) {
-          if (!other.msgResponses_.isEmpty()) {
-            if (msgResponses_.isEmpty()) {
-              msgResponses_ = other.msgResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureMsgResponsesIsMutable();
-              msgResponses_.addAll(other.msgResponses_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.msgResponses_.isEmpty()) {
-            if (msgResponsesBuilder_.isEmpty()) {
-              msgResponsesBuilder_.dispose();
-              msgResponsesBuilder_ = null;
-              msgResponses_ = other.msgResponses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              msgResponsesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMsgResponsesFieldBuilder() : null;
-            } else {
-              msgResponsesBuilder_.addAllMessages(other.msgResponses_);
-            }
-          }
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -10729,13 +9980,9 @@ public final class Abci {
           cosmos.base.abci.v1beta1.Abci.MsgData, cosmos.base.abci.v1beta1.Abci.MsgData.Builder, cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> dataBuilder_;
 
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
+      public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
         if (dataBuilder_ == null) {
           return java.util.Collections.unmodifiableList(data_);
         } else {
@@ -10743,13 +9990,9 @@ public final class Abci {
         }
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public int getDataCount() {
+      public int getDataCount() {
         if (dataBuilder_ == null) {
           return data_.size();
         } else {
@@ -10757,13 +10000,9 @@ public final class Abci {
         }
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
+      public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);
         } else {
@@ -10771,13 +10010,9 @@ public final class Abci {
         }
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder setData(
+      public Builder setData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
@@ -10792,13 +10027,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder setData(
+      public Builder setData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -10810,13 +10041,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder addData(cosmos.base.abci.v1beta1.Abci.MsgData value) {
+      public Builder addData(cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10830,13 +10057,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder addData(
+      public Builder addData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
@@ -10851,13 +10074,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder addData(
+      public Builder addData(
           cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -10869,13 +10088,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder addData(
+      public Builder addData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -10887,13 +10102,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder addAllData(
+      public Builder addAllData(
           java.lang.Iterable<? extends cosmos.base.abci.v1beta1.Abci.MsgData> values) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -10906,13 +10117,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder clearData() {
+      public Builder clearData() {
         if (dataBuilder_ == null) {
           data_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -10923,13 +10130,9 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public Builder removeData(int index) {
+      public Builder removeData(int index) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           data_.remove(index);
@@ -10940,24 +10143,16 @@ public final class Abci {
         return this;
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder getDataBuilder(
+      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder getDataBuilder(
           int index) {
         return getDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+      public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
           int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);  } else {
@@ -10965,13 +10160,9 @@ public final class Abci {
         }
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+      public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
            getDataOrBuilderList() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilderList();
@@ -10980,36 +10171,24 @@ public final class Abci {
         }
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder() {
+      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder() {
         return getDataFieldBuilder().addBuilder(
             cosmos.base.abci.v1beta1.Abci.MsgData.getDefaultInstance());
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder(
+      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder(
           int index) {
         return getDataFieldBuilder().addBuilder(
             index, cosmos.base.abci.v1beta1.Abci.MsgData.getDefaultInstance());
       }
       /**
-       * <pre>
-       * data field is deprecated and not populated.
-       * </pre>
-       *
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
        */
-      @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData.Builder> 
+      public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData.Builder> 
            getDataBuilderList() {
         return getDataFieldBuilder().getBuilderList();
       }
@@ -11026,336 +10205,6 @@ public final class Abci {
           data_ = null;
         }
         return dataBuilder_;
-      }
-
-      private java.util.List<com.google.protobuf.Any> msgResponses_ =
-        java.util.Collections.emptyList();
-      private void ensureMsgResponsesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          msgResponses_ = new java.util.ArrayList<com.google.protobuf.Any>(msgResponses_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> msgResponsesBuilder_;
-
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public java.util.List<com.google.protobuf.Any> getMsgResponsesList() {
-        if (msgResponsesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(msgResponses_);
-        } else {
-          return msgResponsesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public int getMsgResponsesCount() {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.size();
-        } else {
-          return msgResponsesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public com.google.protobuf.Any getMsgResponses(int index) {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.get(index);
-        } else {
-          return msgResponsesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder setMsgResponses(
-          int index, com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.set(index, value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder setMsgResponses(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder addMsgResponses(com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder addMsgResponses(
-          int index, com.google.protobuf.Any value) {
-        if (msgResponsesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(index, value);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder addMsgResponses(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder addMsgResponses(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder addAllMsgResponses(
-          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, msgResponses_);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder clearMsgResponses() {
-        if (msgResponsesBuilder_ == null) {
-          msgResponses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public Builder removeMsgResponses(int index) {
-        if (msgResponsesBuilder_ == null) {
-          ensureMsgResponsesIsMutable();
-          msgResponses_.remove(index);
-          onChanged();
-        } else {
-          msgResponsesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public com.google.protobuf.Any.Builder getMsgResponsesBuilder(
-          int index) {
-        return getMsgResponsesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getMsgResponsesOrBuilder(
-          int index) {
-        if (msgResponsesBuilder_ == null) {
-          return msgResponses_.get(index);  } else {
-          return msgResponsesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-           getMsgResponsesOrBuilderList() {
-        if (msgResponsesBuilder_ != null) {
-          return msgResponsesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(msgResponses_);
-        }
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public com.google.protobuf.Any.Builder addMsgResponsesBuilder() {
-        return getMsgResponsesFieldBuilder().addBuilder(
-            com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public com.google.protobuf.Any.Builder addMsgResponsesBuilder(
-          int index) {
-        return getMsgResponsesFieldBuilder().addBuilder(
-            index, com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * msg_responses contains the Msg handler responses packed into Anys.
-       * Since: cosmos-sdk 0.45
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any msg_responses = 2;</code>
-       */
-      public java.util.List<com.google.protobuf.Any.Builder> 
-           getMsgResponsesBuilderList() {
-        return getMsgResponsesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getMsgResponsesFieldBuilder() {
-        if (msgResponsesBuilder_ == null) {
-          msgResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  msgResponses_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          msgResponses_ = null;
-        }
-        return msgResponsesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11419,7 +10268,7 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>uint64 total_count = 1;</code>
+     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
      * @return The totalCount.
      */
     long getTotalCount();
@@ -11439,7 +10288,7 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>uint64 page_number = 3;</code>
+     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
      * @return The pageNumber.
      */
     long getPageNumber();
@@ -11449,7 +10298,7 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>uint64 page_total = 4;</code>
+     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
      * @return The pageTotal.
      */
     long getPageTotal();
@@ -11635,7 +10484,7 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>uint64 total_count = 1;</code>
+     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
      * @return The totalCount.
      */
     @java.lang.Override
@@ -11665,7 +10514,7 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>uint64 page_number = 3;</code>
+     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
      * @return The pageNumber.
      */
     @java.lang.Override
@@ -11680,7 +10529,7 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>uint64 page_total = 4;</code>
+     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
      * @return The pageTotal.
      */
     @java.lang.Override
@@ -12205,7 +11054,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
        * @return The totalCount.
        */
       @java.lang.Override
@@ -12217,7 +11066,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
        * @param value The totalCount to set.
        * @return This builder for chaining.
        */
@@ -12232,7 +11081,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1;</code>
+       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count", (.gogoproto.moretags) = "yaml:&#92;"total_count&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalCount() {
@@ -12291,7 +11140,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
        * @return The pageNumber.
        */
       @java.lang.Override
@@ -12303,7 +11152,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
        * @param value The pageNumber to set.
        * @return This builder for chaining.
        */
@@ -12318,7 +11167,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3;</code>
+       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number", (.gogoproto.moretags) = "yaml:&#92;"page_number&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearPageNumber() {
@@ -12334,7 +11183,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
        * @return The pageTotal.
        */
       @java.lang.Override
@@ -12346,7 +11195,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
        * @param value The pageTotal to set.
        * @return This builder for chaining.
        */
@@ -12361,7 +11210,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4;</code>
+       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total", (.gogoproto.moretags) = "yaml:&#92;"page_total&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearPageTotal() {
@@ -12856,25 +11705,26 @@ public final class Abci {
       "StringEvent\022\014\n\004type\030\001 \001(\t\022=\n\nattributes\030" +
       "\002 \003(\0132#.cosmos.base.abci.v1beta1.Attribu" +
       "teB\004\310\336\037\000:\004\200\334 \001\"\'\n\tAttribute\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t\"/\n\007GasInfo\022\022\n\ngas_wanted" +
-      "\030\001 \001(\004\022\020\n\010gas_used\030\002 \001(\004\"\210\001\n\006Result\022\020\n\004d" +
-      "ata\030\001 \001(\014B\002\030\001\022\013\n\003log\030\002 \001(\t\022,\n\006events\030\003 \003" +
-      "(\0132\026.tendermint.abci.EventB\004\310\336\037\000\022+\n\rmsg_" +
-      "responses\030\004 \003(\0132\024.google.protobuf.Any:\004\210" +
-      "\240\037\000\"\205\001\n\022SimulationResponse\022=\n\010gas_info\030\001" +
-      " \001(\0132!.cosmos.base.abci.v1beta1.GasInfoB" +
-      "\010\320\336\037\001\310\336\037\000\0220\n\006result\030\002 \001(\0132 .cosmos.base." +
-      "abci.v1beta1.Result\"1\n\007MsgData\022\020\n\010msg_ty" +
-      "pe\030\001 \001(\t\022\014\n\004data\030\002 \001(\014:\006\030\001\200\334 \001\"s\n\tTxMsgD" +
-      "ata\0223\n\004data\030\001 \003(\0132!.cosmos.base.abci.v1b" +
-      "eta1.MsgDataB\002\030\001\022+\n\rmsg_responses\030\002 \003(\0132" +
-      "\024.google.protobuf.Any:\004\200\334 \001\"\246\001\n\017SearchTx" +
-      "sResult\022\023\n\013total_count\030\001 \001(\004\022\r\n\005count\030\002 " +
-      "\001(\004\022\023\n\013page_number\030\003 \001(\004\022\022\n\npage_total\030\004" +
-      " \001(\004\022\r\n\005limit\030\005 \001(\004\0221\n\003txs\030\006 \003(\0132$.cosmo" +
-      "s.base.abci.v1beta1.TxResponse:\004\200\334 \001B(Z\"" +
-      "github.com/cosmos/cosmos-sdk/types\330\341\036\000b\006" +
-      "proto3"
+      "\022\r\n\005value\030\002 \001(\t\"[\n\007GasInfo\022)\n\ngas_wanted" +
+      "\030\001 \001(\004B\025\362\336\037\021yaml:\"gas_wanted\"\022%\n\010gas_use" +
+      "d\030\002 \001(\004B\023\362\336\037\017yaml:\"gas_used\"\"W\n\006Result\022\014" +
+      "\n\004data\030\001 \001(\014\022\013\n\003log\030\002 \001(\t\022,\n\006events\030\003 \003(" +
+      "\0132\026.tendermint.abci.EventB\004\310\336\037\000:\004\210\240\037\000\"\205\001" +
+      "\n\022SimulationResponse\022=\n\010gas_info\030\001 \001(\0132!" +
+      ".cosmos.base.abci.v1beta1.GasInfoB\010\320\336\037\001\310" +
+      "\336\037\000\0220\n\006result\030\002 \001(\0132 .cosmos.base.abci.v" +
+      "1beta1.Result\"/\n\007MsgData\022\020\n\010msg_type\030\001 \001" +
+      "(\t\022\014\n\004data\030\002 \001(\014:\004\200\334 \001\"B\n\tTxMsgData\022/\n\004d" +
+      "ata\030\001 \003(\0132!.cosmos.base.abci.v1beta1.Msg" +
+      "Data:\004\200\334 \001\"\231\002\n\017SearchTxsResult\022:\n\013total_" +
+      "count\030\001 \001(\004B%\362\336\037\022yaml:\"total_count\"\352\336\037\013t" +
+      "otal_count\022\r\n\005count\030\002 \001(\004\022:\n\013page_number" +
+      "\030\003 \001(\004B%\362\336\037\022yaml:\"page_number\"\352\336\037\013page_n" +
+      "umber\0227\n\npage_total\030\004 \001(\004B#\362\336\037\021yaml:\"pag" +
+      "e_total\"\352\336\037\npage_total\022\r\n\005limit\030\005 \001(\004\0221\n" +
+      "\003txs\030\006 \003(\0132$.cosmos.base.abci.v1beta1.Tx" +
+      "Response:\004\200\334 \001B(Z\"github.com/cosmos/cosm" +
+      "os-sdk/types\330\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12918,7 +11768,7 @@ public final class Abci {
     internal_static_cosmos_base_abci_v1beta1_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_Result_descriptor,
-        new java.lang.String[] { "Data", "Log", "Events", "MsgResponses", });
+        new java.lang.String[] { "Data", "Log", "Events", });
     internal_static_cosmos_base_abci_v1beta1_SimulationResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_cosmos_base_abci_v1beta1_SimulationResponse_fieldAccessorTable = new
@@ -12936,7 +11786,7 @@ public final class Abci {
     internal_static_cosmos_base_abci_v1beta1_TxMsgData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_TxMsgData_descriptor,
-        new java.lang.String[] { "Data", "MsgResponses", });
+        new java.lang.String[] { "Data", });
     internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_fieldAccessorTable = new
@@ -12950,6 +11800,8 @@ public final class Abci {
     registry.add(com.google.protobuf.GoGoProtos.embed);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
     registry.add(com.google.protobuf.GoGoProtos.goprotoStringerAll);
+    registry.add(com.google.protobuf.GoGoProtos.jsontag);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.protobuf.GoGoProtos.stringer);
     com.google.protobuf.Descriptors.FileDescriptor

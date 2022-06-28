@@ -30,7 +30,7 @@ import java.util.List;
  * DenomUnit represents a struct that describes a given denomination unit of the basic token.
  */
 @ApiModel(description = "DenomUnit represents a struct that describes a given denomination unit of the basic token.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-12T09:18:01.385767300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
 public class InlineResponse2006DenomUnits {
   public static final String SERIALIZED_NAME_DENOM = "denom";
   @SerializedName(SERIALIZED_NAME_DENOM)
