@@ -51,7 +51,7 @@ public interface CosmosRestService {
      * @param msgTypeUrl (Optional) when set, will query only grants matching given msg type.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return Grants
@@ -74,7 +74,7 @@ public interface CosmosRestService {
      * @param granter granter
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return Grants
@@ -111,7 +111,7 @@ public interface CosmosRestService {
      * @param address is the address to query balances for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return AllBalances
@@ -166,7 +166,7 @@ public interface CosmosRestService {
      * @param denom is the coin denom to query the metadata for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return Denom coin metadata
@@ -198,7 +198,7 @@ public interface CosmosRestService {
      * for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return All denom coin owners
@@ -336,7 +336,7 @@ public interface CosmosRestService {
      *
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return The latest validator set.
@@ -410,7 +410,7 @@ public interface CosmosRestService {
      * @param endingHeight defines the optional ending height to query the slashes.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return The slashes applied to the given validator.
@@ -502,7 +502,7 @@ public interface CosmosRestService {
      *
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return all evidence.
@@ -538,7 +538,7 @@ public interface CosmosRestService {
      * @param grantee the address of the user being granted an allowance of another user's funds.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return all the grants for address.
@@ -575,7 +575,7 @@ public interface CosmosRestService {
      * @param depositor defines the deposit addresses from the proposals.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return all proposals based on given status.
@@ -611,7 +611,7 @@ public interface CosmosRestService {
      * @param proposalId defines the unique id of the proposal.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return votes for the given proposal ID.
@@ -658,7 +658,7 @@ public interface CosmosRestService {
      * @param proposalId defines the unique id of the proposal.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return all deposits of the given proposal.
@@ -716,7 +716,7 @@ public interface CosmosRestService {
      * @param groupId is the unique ID of the group.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return members of the given group ID.
@@ -737,7 +737,7 @@ public interface CosmosRestService {
      * @param admin is the account address of a group's admin.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return groups for a given admin address.
@@ -758,7 +758,7 @@ public interface CosmosRestService {
      * @param groupId is the unique ID of the group account's group.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return group accounts for the given group ID.
@@ -779,7 +779,7 @@ public interface CosmosRestService {
      * @param admin is the admin address of the group account.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -812,7 +812,7 @@ public interface CosmosRestService {
      * @param address is the group account address related to proposals.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -846,7 +846,7 @@ public interface CosmosRestService {
      * @param proposalId is the unique ID of a proposal.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -867,7 +867,7 @@ public interface CosmosRestService {
      * @param voter is a proposal voter account address.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -888,7 +888,7 @@ public interface CosmosRestService {
      * @param address is the group member address.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1014,7 +1014,7 @@ public interface CosmosRestService {
      *
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1094,7 +1094,7 @@ public interface CosmosRestService {
      *
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1118,7 +1118,7 @@ public interface CosmosRestService {
      * @param status enables to query for validators matching a given status.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1150,7 +1150,7 @@ public interface CosmosRestService {
      * @param validatorAddress defines the validator address to query for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1172,7 +1172,7 @@ public interface CosmosRestService {
      * @param validatorAddress defines the validator address to query for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1222,7 +1222,7 @@ public interface CosmosRestService {
      * @param delegatorAddress defines the delegator address to query for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1244,7 +1244,7 @@ public interface CosmosRestService {
      * @param delegatorAddress defines the delegator address to query for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1269,7 +1269,7 @@ public interface CosmosRestService {
      * redelegate to.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return
@@ -1293,7 +1293,7 @@ public interface CosmosRestService {
      * @param delegatorAddress defines the delegator address to query for.
      * @param paginationKey is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of paginationOffset or paginationKey should be set.
      * @param paginationOffset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.
-     * @param paginationLimit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     * @param paginationLimit is the total number of results to be returned to the result page. If left empty it will default to a value to be set by each app.
      * @param paginationCountTotal is set to true to indicate that the result set should include a count of the total number of items available for pagination in UIs. It is only respected when paginationOffset is used. It is ignored when paginationKey is set.
      * @param paginationReverse is set to true if results are to be returned in the descending order.
      * @return

@@ -28,7 +28,7 @@ import java.io.IOException;
  * CommissionRates defines the initial commission rates to be used for creating a validator.
  */
 @ApiModel(description = "CommissionRates defines the initial commission rates to be used for creating a validator.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1CommissionRates {
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)

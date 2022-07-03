@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Channel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:27.236230800+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:08.580695600+02:00[Europe/Paris]")
 public class Channel {
   public static final String SERIALIZED_NAME_I_D = "ID";
   @SerializedName(SERIALIZED_NAME_I_D)

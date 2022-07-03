@@ -29,7 +29,7 @@ import java.io.IOException;
  * Event item metadata
  */
 @ApiModel(description = "Event item metadata")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:27.236230800+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:08.580695600+02:00[Europe/Paris]")
 public class EventItem {
   public static final String SERIALIZED_NAME_CURSOR = "cursor";
   @SerializedName(SERIALIZED_NAME_CURSOR)

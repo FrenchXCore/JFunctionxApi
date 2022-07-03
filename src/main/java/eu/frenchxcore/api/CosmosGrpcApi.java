@@ -1,14 +1,22 @@
 package eu.frenchxcore.api;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
-import ethermint.evm.v1.QueryOuterClass;
-import ethermint.evm.v1.Tx;
+import cosmos.base.query.v1beta1.Pagination;
 import eu.frenchxcore.tools.LocalExecutor;
 import eu.frenchxcore.tools.XLogger;
+import fx.gravity.crosschain.v1.QueryGrpc;
+import fx.gravity.crosschain.v1.QueryOuterClass;
+import ibc.applications.fee.v1.FeeOuterClass;
+import ibc.core.channel.v1.ChannelOuterClass;
+import ibc.core.client.v1.Client;
+import ibc.core.connection.v1.Connection;
 import io.grpc.*;
+import io.grpc.stub.MetadataUtils;
 import org.jetbrains.annotations.NotNull;
+
 import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -55,12 +63,12 @@ public class CosmosGrpcApi {
 
     private final ethermint.evm.v1.QueryGrpc.QueryFutureStub ethermintEvmQueryStub;
     private final ethermint.evm.v1.MsgGrpc.MsgFutureStub ethermintEvmMsgStub;
-    private final ethermint.feemarket.v1.QueryGrpc.QueryFutureStub ethermintFeemarketQueryStub;
+    private final ethermint.feemarket.v1.QueryGrpc.QueryFutureStub evmosFeemarketQueryStub;
 
-    private final fx.gravity.v1.QueryGrpc.QueryFutureStub gravityQueryStub;
-    private final fx.gravity.v1.MsgGrpc.MsgFutureStub gravityMsgStub;
-    private final fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub crosschainQueryStub;
-    private final fx.gravity.crosschain.v1.MsgGrpc.MsgFutureStub crosschainMsgStub;
+    private final fx.gravity.v1.QueryGrpc.QueryFutureStub fxGravityQueryStub;
+    private final fx.gravity.v1.MsgGrpc.MsgFutureStub fxGravityMsgStub;
+    private final fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub fxCrosschainQueryStub;
+    private final fx.gravity.crosschain.v1.MsgGrpc.MsgFutureStub fxCrosschainMsgStub;
     private final fx.migrate.v1.QueryGrpc.QueryFutureStub fxMigrateQueryStub;
     private final fx.migrate.v1.MsgGrpc.MsgFutureStub fxMigrateMsgStub;
     private final fx.other.QueryGrpc.QueryFutureStub fxOtherQueryStub;
@@ -81,7 +89,7 @@ public class CosmosGrpcApi {
     private final tendermint.abci.ABCIApplicationGrpc.ABCIApplicationFutureStub tendermintAbciAppStub;
     private final tendermint.rpc.grpc.BroadcastAPIGrpc.BroadcastAPIFutureStub tendermintRpcBroadcastStub;
 
-    private final cosmos.base.reflection.v1beta1.ReflectionServiceGrpc.ReflectionServiceFutureStub cosmosBaseReflectionServiceStub;
+    private final cosmos.base.reflection.v1beta1.ReflectionServiceGrpc.ReflectionServiceFutureStub baseReflectionServiceStub;
     private final cosmos.base.tendermint.v1beta1.ServiceGrpc.ServiceFutureStub cosmosBaseTendermintServiceStub;
 
     private final static Map<String, CosmosGrpcApi> instances = new HashMap<>();
@@ -129,6 +137,7 @@ public class CosmosGrpcApi {
         authzMsgStub = cosmos.authz.v1beta1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         bankQueryStub = cosmos.bank.v1beta1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         bankMsgStub = cosmos.bank.v1beta1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        baseReflectionServiceStub = cosmos.base.reflection.v1beta1.ReflectionServiceGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         crisisMsgStub = cosmos.crisis.v1beta1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         distributionQueryStub = cosmos.distribution.v1beta1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         distributionMsgStub = cosmos.distribution.v1beta1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
@@ -149,17 +158,34 @@ public class CosmosGrpcApi {
 
         ethermintEvmQueryStub = ethermint.evm.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         ethermintEvmMsgStub = ethermint.evm.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
-        ethermintFeemarketQueryStub = ethermint.feemarket.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        evmosFeemarketQueryStub = ethermint.feemarket.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+
+        fxCrosschainMsgStub = fx.gravity.crosschain.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        fxCrosschainQueryStub = fx.gravity.crosschain.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        fxGravityMsgStub = fx.gravity.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        fxGravityQueryStub = fx.gravity.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        fxMigrateQueryStub = fx.migrate.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        fxMigrateMsgStub = fx.migrate.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
 
         txServiceStub = cosmos.tx.v1beta1.ServiceGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         cosmosBaseTendermintServiceStub = cosmos.base.tendermint.v1beta1.ServiceGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
 
-        gravityMsgStub = fx.gravity.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
-        gravityQueryStub = fx.gravity.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
-        crosschainMsgStub = fx.gravity.crosschain.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
-        crosschainQueryStub = fx.gravity.crosschain.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcApplicationsInterchainAccountsControllerQueryStub = ibc.applications.interchain_accounts.controller.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcApplicationsInterchainAccountsHostQueryStub = ibc.applications.interchain_accounts.host.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcApplicationsFeeQueryStub = ibc.applications.fee.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcApplicationsFeeMsgStub = ibc.applications.fee.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreChannelQueryStub = ibc.core.channel.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreChannelMsgStub = ibc.core.channel.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreClientQueryStub = ibc.core.client.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreClientMsgStub = ibc.core.client.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreConnectionQueryStub = ibc.core.connection.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        ibcCoreConnectionMsgStub = ibc.core.connection.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         ibcMsgStub = ibc.applications.transfer.v1.MsgGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
         ibcQueryStub = ibc.applications.transfer.v1.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+
+        tendermintAbciAppStub = tendermint.abci.ABCIApplicationGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+        tendermintRpcBroadcastStub = tendermint.rpc.grpc.BroadcastAPIGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
+
         fxOtherQueryStub = fx.other.QueryGrpc.newFutureStub(cosmosChannel).withExecutor(exec);
     }
 
@@ -173,10 +199,10 @@ public class CosmosGrpcApi {
         }
     }
 
-    /********************************************************
-     ***** Cosmos Module 'auth' : QUERY
-     ***** https://docs.cosmos.network/master/modules/auth/
-     *******************************************************/
+    /*
+     Cosmos Module 'auth' : QUERY
+     https://docs.cosmos.network/master/modules/auth/
+     */
 
     /**
      * 'authQueryAccounts' returns all the existing accounts until latest block height known.
@@ -191,7 +217,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all the existing accounts
@@ -218,7 +244,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -324,7 +350,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of all the granter's grants until latest block height known.
@@ -355,7 +381,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -401,7 +427,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of all grants authorized by granter to grantee until latest block height known.
@@ -436,7 +462,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -461,6 +487,84 @@ public class CosmosGrpcApi {
             stub = authzQueryStub;
         }
         return stub.grants(_builder.setGranter(granter).setGrantee(grantee).build());
+    }
+
+    /**
+     * 'authzQueryGranteeGrants' returns a list of `GrantAuthorization` by grantee, as known at the latest available block height.
+     * @since cosmos-sdk 0.45.2
+     * @param grantee The grantee
+     * @return The specified page of the list of `GrantAuthorization` by grantee, as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> authzQueryGranteeGrants(
+            @NotNull String grantee
+    ) {
+        return this.authzQueryGranteeGrants(grantee, null, null);
+    }
+
+    /**
+     * 'authzQueryGranteeGrants' returns a list of `GrantAuthorization` by grantee, as known at the latest available block height.
+     * @since cosmos-sdk 0.45.2
+     * @param grantee The grantee
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @return The specified page of the list of `GrantAuthorization` by grantee, as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> authzQueryGranteeGrants(
+            @NotNull String grantee,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest
+    ) {
+        return this.authzQueryGranteeGrants(grantee, pageRequest, null);
+    }
+
+    /**
+     * 'authzQueryGranteeGrants' returns a list of `GrantAuthorization` by grantee, as known at the specified block height.
+     * @since cosmos-sdk 0.45.2
+     * @param grantee The grantee
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The first page only of the list of `GrantAuthorization` by grantee, as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> authzQueryGranteeGrants(
+            @NotNull String grantee,
+            BigInteger height
+    ) {
+        return this.authzQueryGranteeGrants(grantee, null, height);
+    }
+
+    /**
+     * 'authzQueryGranteeGrants' returns a list of `GrantAuthorization` by grantee, as known at the specified block height.
+     * @since cosmos-sdk 0.45.2
+     * @param grantee The grantee
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The specified page of the list of `GrantAuthorization` by grantee, as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsResponse> authzQueryGranteeGrants(
+            @NotNull String grantee,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest,
+            BigInteger height
+    ) {
+        cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest.Builder _builder = cosmos.authz.v1beta1.QueryOuterClass.QueryGranteeGrantsRequest.newBuilder();
+        if (pageRequest != null) {
+            _builder.setPagination(pageRequest);
+        }
+        cosmos.authz.v1beta1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = authzQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = authzQueryStub;
+        }
+        return stub.granteeGrants(_builder.setGrantee(grantee).build());
     }
 
     /********************************************************
@@ -548,7 +652,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of all balances of the specified FX address until latest block height known.
@@ -579,7 +683,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -654,7 +758,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of coins' denominations metadata until latest block height known.
@@ -681,7 +785,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -766,6 +870,80 @@ public class CosmosGrpcApi {
     }
 
     /**
+     * 'bankQuerySpendableBalances' queries the spendable balance of all coins for a single account, as known at the latest available block height.
+     * @param address The FX account address.
+     * @return The first page only of the spendable balance of all coins for a single account, as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> bankQuerySpendableBalances(
+            @NotNull String address
+    ) {
+        return this.bankQuerySpendableBalances(address, null, null);
+    }
+
+    /**
+     * 'bankQuerySpendableBalances' queries the spendable balance of all coins for a single account, as known at the latest available block height.
+     * @param address The FX account address.
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @return The specified page of the spendable balance of all coins for a single account, as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> bankQuerySpendableBalances(
+            @NotNull String address,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest
+    ) {
+        return this.bankQuerySpendableBalances(address, pageRequest, null);
+    }
+
+    /**
+     * 'bankQuerySpendableBalances' queries the spendable balance of all coins for a single account, as known at the specified block height.
+     * @param address The FX account address.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The first page only of the spendable balance of all coins for a single account, as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> bankQuerySpendableBalances(
+            @NotNull String address,
+            BigInteger height
+    ) {
+        return this.bankQuerySpendableBalances(address, null, height);
+    }
+
+    /**
+     * 'bankQuerySpendableBalances' queries the spendable balance of all coins for a single account, as known at the specified block height.
+     * @param address The FX account address.
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The specified page of the spendable balance of all coins for a single account, as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> bankQuerySpendableBalances(
+            @NotNull String address,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest,
+            BigInteger height
+    ) {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.Builder _builder = cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.newBuilder();
+        if (pageRequest != null) {
+            _builder.setPagination(pageRequest);
+        }
+        cosmos.bank.v1beta1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = bankQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = bankQueryStub;
+        }
+        return stub.spendableBalances(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.newBuilder().setAddress(address).build());
+    }
+
+    /**
      * 'bankQuerySupplyOf' queries the supply of a coin denomination until latest block height known.
      * @param denom The coin denomination which supply is being queried.
      * @return All 'bank' module parameters until latest block height known.
@@ -810,7 +988,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of the total supply of all coin denominations until latest block height known.
@@ -837,7 +1015,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -927,6 +1105,18 @@ public class CosmosGrpcApi {
             @NotNull Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> amounts
     ) {
         return bankMsgStub.send(cosmos.bank.v1beta1.Tx.MsgSend.newBuilder().setFromAddress(from).setToAddress(to).addAllAmount(amounts).build());
+    }
+
+    /**********************************************************
+     ***** Cosmos Module 'base.reflection' : QUERY
+     *********************************************************/
+
+    public ListenableFuture<cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesResponse> baseReflectionListAllInterfaces() {
+        return baseReflectionServiceStub.listAllInterfaces(cosmos.base.reflection.v1beta1.Reflection.ListAllInterfacesRequest.newBuilder().build());
+    }
+
+    public ListenableFuture<cosmos.base.reflection.v1beta1.Reflection.ListImplementationsResponse> baseReflectionListImplementations() {
+        return baseReflectionServiceStub.listImplementations(cosmos.base.reflection.v1beta1.Reflection.ListImplementationsRequest.newBuilder().build());
     }
 
     /********************************************************
@@ -1219,7 +1409,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of slash events of a validator until latest block height known.
@@ -1250,7 +1440,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -1354,7 +1544,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return the specified page of all evidence result until latest block height known.
@@ -1381,7 +1571,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -1456,7 +1646,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return the specified page of all the grants for the grantee  until latest block height known.
@@ -1487,7 +1677,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -1547,6 +1737,84 @@ public class CosmosGrpcApi {
             stub = feeGrantQueryStub;
         }
         return stub.allowance(cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowanceRequest.newBuilder().setGrantee(grantee).setGranter(granter).build());
+    }
+
+    /**
+     * 'feegrantQueryAllowancesByGranter' returns all the grants given by an FX address (granter), as known at the latest available block height.
+     * @since Cosmos v0.46
+     * @param granter FX granter address for which grants are queried.
+     * @return The first page only of all the grants given by an FX address (granter), as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> feegrantQueryAllowancesByGranter(
+            @NotNull String granter
+    ) {
+        return this.feegrantQueryAllowancesByGranter(granter, null, null);
+    }
+
+    /**
+     * 'feegrantQueryAllowancesByGranter' returns all the grants given by an FX address (granter), as known at the latest available block height.
+     * @since Cosmos v0.46
+     * @param granter FX granter address for which grants are queried.
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @return The specified page of all the grants given by an FX address (granter), as known at the latest available block height.
+     */
+    public ListenableFuture<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> feegrantQueryAllowancesByGranter(
+            @NotNull String granter,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest
+    ) {
+        return this.feegrantQueryAllowancesByGranter(granter, pageRequest, null);
+    }
+
+    /**
+     * 'feegrantQueryAllowancesByGranter' returns all the grants given by an FX address (granter), as known at the specified block height.
+     * @since Cosmos v0.46
+     * @param granter FX granter address for which grants are queried.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The first page only of all the grants given by an FX address (granter), as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> feegrantQueryAllowancesByGranter(
+            @NotNull String granter,
+            BigInteger height
+    ) {
+        return this.feegrantQueryAllowancesByGranter(granter, null, height);
+    }
+
+    /**
+     * 'feegrantQueryAllowancesByGranter' returns all the grants given by an FX address (granter), as known at the specified block height.
+     * @since Cosmos v0.46
+     * @param granter FX granter address for which grants are queried.
+     * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
+     *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
+     *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
+     *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
+     *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The specified page of all the grants given by an FX address (granter), as known at the specified block height.
+     */
+    public ListenableFuture<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> feegrantQueryAllowancesByGranter(
+            @NotNull String granter,
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest,
+            BigInteger height
+    ) {
+        cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest.Builder _builder = cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest.newBuilder();
+        if (pageRequest != null) {
+            _builder.setPagination(pageRequest);
+        }
+        cosmos.feegrant.v1beta1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = feeGrantQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = feeGrantQueryStub;
+        }
+        return stub.allowancesByGranter(_builder.setGranter(granter).build());
     }
 
     /************************************************************
@@ -1639,7 +1907,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return specified page of all deposits of a single proposal until latest block height known.
@@ -1670,7 +1938,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -1773,7 +2041,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all proposals until latest known block height.
@@ -1803,7 +2071,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all proposals based on given status, FX voter address or FX depositor address, until latest known block height.
@@ -1842,7 +2110,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -1928,7 +2196,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of votes of a given proposal at the latest known block height.
@@ -1959,7 +2227,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2337,7 +2605,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of signing infos of all validators, as known at the latest available block height.
@@ -2364,7 +2632,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2464,7 +2732,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of all delegations of a given delegator address, as known at the latest available block height.
@@ -2495,7 +2763,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2538,7 +2806,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all unbonding delegations of a given delegator address, as known at the latest available block height.
@@ -2569,7 +2837,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2612,7 +2880,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all validators info for given delegator address, as known at the latest available block height.
@@ -2643,7 +2911,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2787,7 +3055,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of redelegations of a given delegator address, as known at the latest available block height.
@@ -2818,7 +3086,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2948,7 +3216,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of all validators that match the given status, as known at the latest available block height.
@@ -2978,7 +3246,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -2997,7 +3265,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -3043,7 +3311,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of delegate info for a given validator, as known at the latest available block height.
@@ -3074,7 +3342,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -3108,7 +3376,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return Specified page of unbonding delegations of a validator, as known at the latest available block height.
@@ -3139,7 +3407,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -3315,17 +3583,36 @@ public class CosmosGrpcApi {
 
     /**
      * 'tmGetLatestValidatorSet' queries the latest validator-set.
+     * @return The first page of the latest validator-set.
+     */
+    public ListenableFuture<cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse> tmGetLatestValidatorSet() {
+        cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest.Builder _builder = cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest.newBuilder();
+        return this.tmGetLatestValidatorSet(null, null);
+    }
+
+    /**
+     * 'tmGetLatestValidatorSet' queries the latest validator-set.
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
-     * @return The LatestValidatorSet response.
+     * @param height Block height used for the query
+     * @return The specified page of the latest validator-set.
      */
     public ListenableFuture<cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetResponse> tmGetLatestValidatorSet(
-            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest
+            cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest,
+            BigInteger height
     ) {
+        cosmos.base.tendermint.v1beta1.ServiceGrpc.ServiceFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = cosmosBaseTendermintServiceStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = cosmosBaseTendermintServiceStub;
+        }
         cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest.Builder _builder = cosmos.base.tendermint.v1beta1.Query.GetLatestValidatorSetRequest.newBuilder();
         if (pageRequest != null) {
             _builder.setPagination(pageRequest);
@@ -3389,9 +3676,6 @@ public class CosmosGrpcApi {
     }
 
     /**
-     */
-
-    /**
      * 'txGetTxsEvent' fetches txs by event.
      * Cosmos events are described here :
      *  Bank:            https://github.com/cosmos/cosmos-sdk/blob/main/x/bank/spec/04_events.md
@@ -3409,7 +3693,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of TxsEvent response.
@@ -3443,7 +3727,7 @@ public class CosmosGrpcApi {
      * @param pageRequest pageRequest.key is a value returned in PageResponse.next_key to begin querying the next page most efficiently.
      *                    Only one of offset or key should be set. pageRequest.offset is a numeric offset that can be used when key is unavailable.
      *                    It is less efficient than using key. Only one of offset or key should be set. pageRequest.limit is the total number of
-     *                    results to be returned in the result page. If left empty it will default to a value to be set by each app.
+     *                    results to be returned to the result page. If left empty it will default to a value to be set by each app.
      *                    pagerequest.count_total is set to true to indicate that the result set should include a count of the total number of items
      *                    available for pagination in UIs. count_total is only respected when offset is used. It is ignored when key is set.
      * @return The specified page of TxsEvent response.
@@ -3469,6 +3753,18 @@ public class CosmosGrpcApi {
     ) {
         cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.Builder _builder = cosmos.tx.v1beta1.ServiceOuterClass.SimulateRequest.newBuilder();
         return txServiceStub.simulate(_builder.setTx(tx).build());
+    }
+
+    /**
+     * 'txSimulate' GetBlockWithTxs fetches a block with decoded txs.
+     * @since cosmos-sdk 0.45.2
+     * @param height The block height.
+     * @return The block with decoded txs.
+     */
+    public ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsResponse> txGetBlockWithTxs(
+            @NotNull long height
+    ) {
+        return txServiceStub.getBlockWithTxs(cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsRequest.newBuilder().setHeight(height).build());
     }
 
     /************************************************************
@@ -3538,8 +3834,14 @@ public class CosmosGrpcApi {
 
     /*****************************************************************
      ***** Ethermint Module 'evm' : QUERY
+     * https://docs.ethermint.zone/modules/evm/
      *****************************************************************/
 
+    /**
+     * 'ethermintEvmQueryAccount' queries an EthAccount information.
+     * @param address The Ethereum 0x... account address.
+     * @return The Ethereum account information.
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryAccountResponse> ethermintEvmQueryAccount(
             @NotNull String address
     ) {
@@ -3548,6 +3850,11 @@ public class CosmosGrpcApi {
                 .build());
     }
 
+    /**
+     * 'ethermintEvmQueryBalance' queries the balance of the EVM denominations for a single EthAccount.
+     * @param address The Ethereum 0x... account address.
+     * @return The balance of the EVM denominations for a single EthAccount.
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryBalanceResponse> ethermintEvmQueryBalance(
             @NotNull String address
     ) {
@@ -3556,10 +3863,20 @@ public class CosmosGrpcApi {
                 .build());
     }
 
+    /**
+     * 'ethermintEvmQueryBaseFee' queries the base fee of the parent block of the current block.
+     * It's similar to feemarket module's method, but also checks london hardfork status.
+     * @return The base fee of the parent block of the current block.
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryBaseFeeResponse> ethermintEvmQueryBaseFee() {
         return ethermintEvmQueryStub.baseFee(ethermint.evm.v1.QueryOuterClass.QueryBaseFeeRequest.newBuilder().build());
     }
 
+    /**
+     * 'ethermintEvmQueryCode' queries the balance of all coins for a single account.
+     * @param address The Ethereum 0x... account address.
+     * @return The balance of all coins for a single account
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryCodeResponse> ethermintEvmQueryCode(
             @NotNull String address
     ) {
@@ -3568,6 +3885,11 @@ public class CosmosGrpcApi {
                 .build());
     }
 
+    /**
+     * 'ethermintEvmQueryCosmosAccount' queries an Ethereum account's Cosmos Address.
+     * @param address The Ethereum 0x... account address.
+     * @return The Ethereum account's Cosmos Address.
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryCosmosAccountResponse> ethermintEvmQueryCosmosAccount(
             @NotNull String address
     ) {
@@ -3576,7 +3898,13 @@ public class CosmosGrpcApi {
                 .build());
     }
 
-    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.EstimateGasResponse> ethermintEvmEstimateGas(
+    /**
+     * 'ethermintEvmQueryEstimateGas' implements the `eth_estimateGas` RPC API.
+     * @param args The EVM transaction bytes.
+     * @param gasCap The gas cap.
+     * @return The estimated gas for an EVM transaction.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.EstimateGasResponse> ethermintEvmQueryEstimateGas(
             @NotNull byte[] args,
             @NotNull Long gasCap
     ) {
@@ -3586,7 +3914,13 @@ public class CosmosGrpcApi {
                 .build());
     }
 
-    public ListenableFuture<ethermint.evm.v1.Tx.MsgEthereumTxResponse> ethermintEvmEthCall(
+    /**
+     * 'ethermintEvmQueryEthCall' implements the `eth_call` RPC API.
+     * @param args The EVM transaction bytes.
+     * @param gasCap The gas cap.
+     * @return The ETH transaction execution response.
+     */
+    public ListenableFuture<ethermint.evm.v1.Tx.MsgEthereumTxResponse> ethermintEvmQueryEthCall(
             @NotNull byte[] args,
             @NotNull Long gasCap
     ) {
@@ -3596,6 +3930,10 @@ public class CosmosGrpcApi {
                 .build());
     }
 
+    /**
+     * 'ethermintEvmQueryParams' queries the parameters of 'x/evm' module.
+     * @return The parameters of the 'x/evm' module.
+     */
     public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryParamsResponse> ethermintEvmQueryParams() {
         return ethermintEvmQueryStub.params(ethermint.evm.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
     }
@@ -3610,10 +3948,20 @@ public class CosmosGrpcApi {
                 .build());
     }
 
-    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryTraceBlockResponse> ethermintEvmQueryQueryTraceBlock(
+    /**
+     * 'ethermintEvmQueryTraceBlock' implements the `debug_traceBlockByNumber` and `debug_traceBlockByHash` RPC API.
+     * @param blockHash The block hash.
+     * @param blockTime The block time.
+     * @param traceConfig The trace configuration.
+     * @param txs The EVM transactions.
+     * @return The TraceBlock response.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryTraceBlockResponse> ethermintEvmQueryTraceBlock(
             @NotNull String blockHash,
-            @NotNull Timestamp blockTime
-    ) {
+            @NotNull Timestamp blockTime,
+            @NotNull ethermint.evm.v1.Evm.TraceConfig traceConfig,
+            @NotNull Iterable<? extends ethermint.evm.v1.Tx.MsgEthereumTx> txs
+            ) {
         return ethermintEvmQueryStub.traceBlock(ethermint.evm.v1.QueryOuterClass.QueryTraceBlockRequest.newBuilder()
                 .setBlockHash(blockHash)
                 .setBlockTime(blockTime)
@@ -3622,6 +3970,135 @@ public class CosmosGrpcApi {
                 .build());
     }
 
+    /**
+     * 'ethermintEvmQueryTraceBlock' implements the `debug_traceBlockByNumber` and `debug_traceBlockByHash` RPC API.
+     * @param blockHash The block hash.
+     * @param blockTime The block time.
+     * @param traceConfig The trace configuration.
+     * @param tx The EVM transaction.
+     * @return The TraceBlock response.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryTraceBlockResponse> ethermintEvmQueryTraceBlock(
+            @NotNull String blockHash,
+            @NotNull Timestamp blockTime,
+            @NotNull ethermint.evm.v1.Evm.TraceConfig traceConfig,
+            @NotNull ethermint.evm.v1.Tx.MsgEthereumTx tx
+    ) {
+        return ethermintEvmQueryStub.traceBlock(ethermint.evm.v1.QueryOuterClass.QueryTraceBlockRequest.newBuilder()
+                .setBlockHash(blockHash)
+                .setBlockTime(blockTime)
+                .setTraceConfig(traceConfig)
+                .addTxs(tx)
+                .build());
+    }
+
+    /**
+     * 'ethermintEvmQueryTraceTx' implements the `debug_traceTransaction` RPC API.
+     * @param blockHash The block hash.
+     * @param blockTime The block time.
+     * @param msg The EVM message.
+     * @param predecessors The previous messages.
+     * @param traceConfig The trace configuration.
+     * @return The TraceTx response.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryTraceTxResponse> ethermintEvmQueryTraceTx(
+            @NotNull String blockHash,
+            @NotNull Timestamp blockTime,
+            @NotNull ethermint.evm.v1.Tx.MsgEthereumTx msg,
+            @NotNull Iterable<? extends ethermint.evm.v1.Tx.MsgEthereumTx> predecessors,
+            @NotNull ethermint.evm.v1.Evm.TraceConfig traceConfig
+    ) {
+        return ethermintEvmQueryStub.traceTx(ethermint.evm.v1.QueryOuterClass.QueryTraceTxRequest.newBuilder()
+                .setBlockHash(blockHash)
+                .setBlockTime(blockTime)
+                .setMsg(msg)
+                .addAllPredecessors(predecessors)
+                .setTraceConfig(traceConfig)
+                .build());
+    }
+
+    /**
+     * 'ethermintEvmQueryTraceTx' implements the `debug_traceTransaction` RPC API.
+     * @param blockHash The block hash.
+     * @param blockTime The block time.
+     * @param msg The EVM message.
+     * @param predecessor The previous message.
+     * @param traceConfig The trace configuration.
+     * @return The TraceTx response.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryTraceTxResponse> ethermintEvmQueryTraceTx(
+            @NotNull String blockHash,
+            @NotNull Timestamp blockTime,
+            @NotNull ethermint.evm.v1.Tx.MsgEthereumTx msg,
+            @NotNull ethermint.evm.v1.Tx.MsgEthereumTx predecessor,
+            @NotNull ethermint.evm.v1.Evm.TraceConfig traceConfig
+    ) {
+        return ethermintEvmQueryStub.traceTx(ethermint.evm.v1.QueryOuterClass.QueryTraceTxRequest.newBuilder()
+                .setBlockHash(blockHash)
+                .setBlockTime(blockTime)
+                .setMsg(msg)
+                .addPredecessors(predecessor)
+                .setTraceConfig(traceConfig)
+                .build());
+    }
+
+    /**
+     * 'ethermintEvmQueryValidatorAccount' queries an Ethereum account's from a validator consensus Address.
+     * @param consAddress The validator FX consensus address.
+     * @return The Ethereum account's from a validator consensus Address.
+     */
+    public ListenableFuture<ethermint.evm.v1.QueryOuterClass.QueryValidatorAccountResponse> ethermintEvmQueryValidatorAccount(
+            @NotNull String consAddress
+    ) {
+        return ethermintEvmQueryStub.validatorAccount(ethermint.evm.v1.QueryOuterClass.QueryValidatorAccountRequest.newBuilder()
+                .setConsAddress(consAddress)
+                .build());
+    }
+
+    /*****************************************************************
+     ***** Ethermint Module 'evm' : MESSAGE
+     * https://docs.ethermint.zone/modules/evm/
+     *****************************************************************/
+
+    /**
+     * 'ethermintEvmMsgEthereumTx' defines a method to submit Ethereum transactions.
+     * @param request The message to submit to the EVM.
+     * @return The transaction submission response.
+     */
+    public ListenableFuture<ethermint.evm.v1.Tx.MsgEthereumTxResponse> ethermintEvmMsgEthereumTx(
+            @NotNull ethermint.evm.v1.Tx.MsgEthereumTx request
+    ) {
+        return ethermintEvmMsgStub.ethereumTx(request);
+    }
+
+    /*****************************************************************
+     ***** EVMOS Module 'feemarket' : QUERY
+     * https://docs.evmos.org/modules/feemarket/
+     *****************************************************************/
+
+    /**
+     * 'evmosFeemarketQueryBaseFee' queries the base fee of the parent block of the current block.
+     * @return The base fee of the parent block of the current block.
+     */
+    public ListenableFuture<ethermint.feemarket.v1.QueryOuterClass.QueryBaseFeeResponse> evmosFeemarketQueryBaseFee() {
+        return evmosFeemarketQueryStub.baseFee(ethermint.feemarket.v1.QueryOuterClass.QueryBaseFeeRequest.newBuilder().build());
+    }
+
+    /**
+     * 'evmosFeemarketQueryBlockGas' queries the gas used at a given block height.
+     * @return The gas used at a given block height.
+     */
+    public ListenableFuture<ethermint.feemarket.v1.QueryOuterClass.QueryBlockGasResponse> evmosFeemarketQueryBlockGas() {
+        return evmosFeemarketQueryStub.blockGas(ethermint.feemarket.v1.QueryOuterClass.QueryBlockGasRequest.newBuilder().build());
+    }
+
+    /**
+     * 'evmosFeemarketQueryParams' queries the parameters of x/feemarket module.
+     * @return The parameters of x/feemarket module.
+     */
+    public ListenableFuture<ethermint.feemarket.v1.QueryOuterClass.QueryParamsResponse> evmosFeemarketQueryParams() {
+        return evmosFeemarketQueryStub.params(ethermint.feemarket.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
+    }
 
 
     /*****************************************************************
@@ -3630,25 +4107,25 @@ public class CosmosGrpcApi {
      *****************************************************************/
 
     /**
-     * 'gravityQueryBatchConfirm', as known at the latest available block height.
-     * @param address
-     * @param contractAddress
-     * @param nonce
+     * 'gravityQueryBatchConfirm' queries a batch confirm for a given address, token contract address and nonce, as known at the latest available block height.
+     * @param address The orchestrator address.
+     * @param tokenContract The token contract address.
+     * @param nonce The nonce.
      * @return The BatchConfirm response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryBatchConfirmResponse> gravityQueryBatchConfirm(
             @NotNull String address,
-            @NotNull String contractAddress,
+            @NotNull String tokenContract,
             @NotNull Long nonce
     ) {
-        return this.gravityQueryBatchConfirm(address, contractAddress, nonce, null);
+        return this.gravityQueryBatchConfirm(address, tokenContract, nonce, null);
     }
 
     /**
-     * 'gravityQueryBatchConfirm', as known at the specified block height.
-     * @param address
-     * @param tokenContract
-     * @param nonce
+     * 'gravityQueryBatchConfirm' queries a batch confirm for a given address, token contract address and nonce, as known at the specified block height.
+     * @param address The orchestrator address.
+     * @param tokenContract The token contract address.
+     * @param nonce The nonce.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The BatchConfirm response, as known at the specified block height.
      */
@@ -3662,30 +4139,30 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.batchConfirm(fx.gravity.v1.QueryOuterClass.QueryBatchConfirmRequest.newBuilder().setAddress(address).setTokenContract(tokenContract).setNonce(nonce).build());
     }
 
     /**
-     * 'gravityQueryBatchConfirms', as known at the latest available block height.
-     * @param contractAddress
-     * @param nonce
+     * 'gravityQueryBatchConfirms' queries batch confirms for a given token contract address and nonce, as known at the latest available block height.
+     * @param tokenContract The token contract address.
+     * @param nonce The nonce.
      * @return The BatchConfirms response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryBatchConfirmsResponse> gravityQueryBatchConfirms(
-            @NotNull String contractAddress,
+            @NotNull String tokenContract,
             @NotNull Long nonce
     ) {
-        return this.gravityQueryBatchConfirms(contractAddress, nonce, null);
+        return this.gravityQueryBatchConfirms(tokenContract, nonce, null);
     }
 
     /**
-     * 'gravityQueryBatchConfirms', as known at the specified block height.
-     * @param tokenContract
-     * @param nonce
+     * 'gravityQueryBatchConfirms' queries batch confirms for a given token contract address and nonce, as known at the specified block height.
+     * @param tokenContract The token contract address.
+     * @param nonce The nonce.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The BatchConfirms response, as known at the specified block height.
      */
@@ -3698,15 +4175,15 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.batchConfirms(fx.gravity.v1.QueryOuterClass.QueryBatchConfirmsRequest.newBuilder().setTokenContract(tokenContract).setNonce(nonce).build());
     }
 
     /**
-     * 'gravityQueryBatchFees', as known at the latest available block height.
+     * 'gravityQueryBatchFees' queries batch fees, as known at the latest available block height.
      * @return The BatchFee response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryBatchFeeResponse> gravityQueryBatchFees() {
@@ -3714,7 +4191,7 @@ public class CosmosGrpcApi {
     }
 
     /**
-     * 'gravityQueryBatchFees', as known at the specified block height.
+     * 'gravityQueryBatchFees' queries batch fees, as known at the specified block height.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The BatchFee response, as known at the specified block height.
      */
@@ -3725,9 +4202,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.batchFees(fx.gravity.v1.QueryOuterClass.QueryBatchFeeRequest.newBuilder().build());
     }
@@ -3752,15 +4229,15 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.params(fx.gravity.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
     }
 
     /**
-     * 'gravityQueryBatchRequestByNonce', as known at the latest available block height.
+     * 'gravityQueryBatchRequestByNonce' queries a batch request for a given token contract address and nonce, as known at the latest available block height.
      * @param contractAddress The contract address.
      * @param nonce The nonce.
      * @return The BatchRequestByNonce response, as known at the latest available block height.
@@ -3773,7 +4250,7 @@ public class CosmosGrpcApi {
     }
 
     /**
-     * 'gravityQueryBatchRequestByNonce', as known at the specified block height.
+     * 'gravityQueryBatchRequestByNonce' queries a batch request for a given token contract address and nonce, as known at the specified block height.
      * @param tokenContract The contract address.
      * @param nonce The nonce.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -3788,9 +4265,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.batchRequestByNonce(fx.gravity.v1.QueryOuterClass.QueryBatchRequestByNonceRequest.newBuilder().setTokenContract(tokenContract).setNonce(nonce).build());
     }
@@ -3815,9 +4292,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.currentValset(fx.gravity.v1.QueryOuterClass.QueryCurrentValsetRequest.newBuilder().build());
     }
@@ -3847,9 +4324,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.denomToERC20(fx.gravity.v1.QueryOuterClass.QueryDenomToERC20Request.newBuilder().setDenom(denom).build());
     }
@@ -3879,9 +4356,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.eRC20ToDenom(fx.gravity.v1.QueryOuterClass.QueryERC20ToDenomRequest.newBuilder().setErc20(erc20).build());
     }
@@ -3911,9 +4388,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.getDelegateKeyByEth(fx.gravity.v1.QueryOuterClass.QueryDelegateKeyByEthRequest.newBuilder().setEthAddress(ethAddress).build());
     }
@@ -3943,9 +4420,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.getDelegateKeyByOrchestrator(fx.gravity.v1.QueryOuterClass.QueryDelegateKeyByOrchestratorRequest.newBuilder().setOrchestratorAddress(orchestratorAddress).build());
     }
@@ -3975,9 +4452,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.getDelegateKeyByValidator(fx.gravity.v1.QueryOuterClass.QueryDelegateKeyByValidatorRequest.newBuilder().setValidatorAddress(validatorAddress).build());
     }
@@ -4015,9 +4492,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.getIbcSequenceHeightByChannel(fx.gravity.v1.QueryOuterClass.QueryIbcSequenceHeightRequest.newBuilder().setSourceChannel(sourceChannel).setSourcePort(sourcePort).setSequence(sequence).build());
     }
@@ -4047,9 +4524,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.getPendingSendToEth(fx.gravity.v1.QueryOuterClass.QueryPendingSendToEthRequest.newBuilder().setSenderAddress(senderAddress).build());
     }
@@ -4079,9 +4556,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.lastEventBlockHeightByAddr(fx.gravity.v1.QueryOuterClass.QueryLastEventBlockHeightByAddrRequest.newBuilder().setAddress(orchestratorAddress).build());
     }
@@ -4111,44 +4588,44 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.lastEventNonceByAddr(fx.gravity.v1.QueryOuterClass.QueryLastEventNonceByAddrRequest.newBuilder().setAddress(address).build());
     }
 
     /**
-     * 'gravityQueryLastObservedEthBlockHeight' queries the last observed Ethereum block height, as known at the latest available block height.
+     * 'gravityQueryLastObservedBlockHeight' queries the last observed Ethereum block height, as known at the latest available block height.
      * LastObservedEthereumBlockHeight stores the last observed Ethereum block height along with the Cosmos block height that it was observed at.
      * These two numbers can be used to project outward and always produce batches with timeouts in the future even if no Ethereum block height
      * has been relayed for a long time.
      * @return The QueryLastObservedEthBlockHeight response, as known at the latest available block height.
      */
-    public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryLastObservedEthBlockHeightResponse> gravityQueryLastObservedEthBlockHeight() {
-        return this.gravityQueryLastObservedEthBlockHeight(null);
+    public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryLastObservedBlockHeightResponse> gravityQueryLastObservedEthBlockHeight() {
+        return this.gravityQueryLastObservedBlockHeight(null);
     }
 
     /**
-     * 'gravityQueryLastObservedEthBlockHeight' queries the last observed Ethereum block height, as known at the specified block height.
+     * 'gravityQueryLastObservedBlockHeight' queries the last observed Ethereum block height, as known at the specified block height.
      * LastObservedEthereumBlockHeight stores the last observed Ethereum block height along with the Cosmos block height that it was observed at.
      * These two numbers can be used to project outward and always produce batches with timeouts in the future even if no Ethereum block height
      * has been relayed for a long time.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryLastObservedEthBlockHeight response, as known at the specified block height.
      */
-    public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryLastObservedEthBlockHeightResponse> gravityQueryLastObservedEthBlockHeight(
+    public ListenableFuture<fx.gravity.v1.QueryOuterClass.QueryLastObservedBlockHeightResponse> gravityQueryLastObservedBlockHeight(
             BigInteger height
     ) {
         fx.gravity.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
-        return stub.lastObservedEthBlockHeight(fx.gravity.v1.QueryOuterClass.QueryLastObservedEthBlockHeightRequest.newBuilder().build());
+        return stub.lastObservedBlockHeight(fx.gravity.v1.QueryOuterClass.QueryLastObservedBlockHeightRequest.newBuilder().build());
     }
 
     /**
@@ -4176,9 +4653,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.lastPendingBatchRequestByAddr(fx.gravity.v1.QueryOuterClass.QueryLastPendingBatchRequestByAddrRequest.newBuilder().setAddress(address).build());
     }
@@ -4208,9 +4685,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.lastPendingValsetRequestByAddr(fx.gravity.v1.QueryOuterClass.QueryLastPendingValsetRequestByAddrRequest.newBuilder().setAddress(address).build());
     }
@@ -4235,9 +4712,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.lastValsetRequests(fx.gravity.v1.QueryOuterClass.QueryLastValsetRequestsRequest.newBuilder().build());
     }
@@ -4262,9 +4739,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.outgoingTxBatches(fx.gravity.v1.QueryOuterClass.QueryOutgoingTxBatchesRequest.newBuilder().build());
     }
@@ -4298,9 +4775,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.valsetConfirm(fx.gravity.v1.QueryOuterClass.QueryValsetConfirmRequest.newBuilder().setAddress(address).setNonce(nonce).build());
     }
@@ -4330,9 +4807,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.valsetConfirmsByNonce(fx.gravity.v1.QueryOuterClass.QueryValsetConfirmsByNonceRequest.newBuilder().setNonce(nonce).build());
     }
@@ -4362,9 +4839,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = gravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxGravityQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = gravityQueryStub;
+            stub = fxGravityQueryStub;
         }
         return stub.valsetRequest(fx.gravity.v1.QueryOuterClass.QueryValsetRequestRequest.newBuilder().setNonce(nonce).build());
     }
@@ -4393,7 +4870,7 @@ public class CosmosGrpcApi {
             @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin amount,
             @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin bridgeFee
     ) {
-        return gravityMsgStub.sendToEth(fx.gravity.v1.Tx.MsgSendToEth.newBuilder().setSender(sender).setEthDest(ethDest).setAmount(amount).setBridgeFee(bridgeFee).build());
+        return fxGravityMsgStub.sendToEth(fx.gravity.v1.Tx.MsgSendToEth.newBuilder().setSender(sender).setEthDest(ethDest).setAmount(amount).setBridgeFee(bridgeFee).build());
     }
 
     /**
@@ -4411,7 +4888,7 @@ public class CosmosGrpcApi {
             @NotNull String sender,
             @NotNull Long transactionId
     ) {
-        return gravityMsgStub.cancelSendToEth(fx.gravity.v1.Tx.MsgCancelSendToEth.newBuilder().setSender(sender).setTransactionId(transactionId).build());
+        return fxGravityMsgStub.cancelSendToEth(fx.gravity.v1.Tx.MsgCancelSendToEth.newBuilder().setSender(sender).setTransactionId(transactionId).build());
     }
 
     /**
@@ -4434,7 +4911,7 @@ public class CosmosGrpcApi {
             @NotNull String minimumFee,
             @NotNull String sender
     ) {
-        return gravityMsgStub.requestBatch(fx.gravity.v1.Tx.MsgRequestBatch.newBuilder().setDenom(denom).setFeeReceive(feeReceive).setMinimumFee(minimumFee).setSender(sender).build());
+        return fxGravityMsgStub.requestBatch(fx.gravity.v1.Tx.MsgRequestBatch.newBuilder().setDenom(denom).setFeeReceive(feeReceive).setMinimumFee(minimumFee).setSender(sender).build());
     }
 
     /**
@@ -4466,7 +4943,7 @@ public class CosmosGrpcApi {
             @NotNull String amount,
             @NotNull String targetIbc
     ) {
-        return gravityMsgStub.depositClaim(fx.gravity.v1.Tx.MsgDepositClaim.newBuilder().setAmount(amount).setTokenContract(tokenContract).setBlockHeight(blockHeight).setEthSender(ethSender).setEventNonce(eventNonce).setFxReceiver(fxReceiver).setOrchestrator(orchestrator).setTargetIbc(targetIbc).build());
+        return fxGravityMsgStub.depositClaim(fx.gravity.v1.Tx.MsgDepositClaim.newBuilder().setAmount(amount).setTokenContract(tokenContract).setBlockHeight(blockHeight).setEthSender(ethSender).setEventNonce(eventNonce).setFxReceiver(fxReceiver).setOrchestrator(orchestrator).setTargetIbc(targetIbc).build());
     }
 
     /**
@@ -4493,7 +4970,7 @@ public class CosmosGrpcApi {
             @NotNull Long batchNonce,
             @NotNull String tokenContract
     ) {
-        return gravityMsgStub.withdrawClaim(fx.gravity.v1.Tx.MsgWithdrawClaim.newBuilder().setOrchestrator(orchestrator).setBatchNonce(batchNonce).setBlockHeight(blockHeight).setEventNonce(eventNonce).setTokenContract(tokenContract).build());
+        return fxGravityMsgStub.withdrawClaim(fx.gravity.v1.Tx.MsgWithdrawClaim.newBuilder().setOrchestrator(orchestrator).setBatchNonce(batchNonce).setBlockHeight(blockHeight).setEventNonce(eventNonce).setTokenContract(tokenContract).build());
     }
 
     /**
@@ -4520,7 +4997,7 @@ public class CosmosGrpcApi {
             @NotNull Long valsetNonce,
             @NotNull Iterable<? extends fx.gravity.v1.Types.BridgeValidator> members
     ) {
-        return gravityMsgStub.valsetUpdateClaim(fx.gravity.v1.Tx.MsgValsetUpdatedClaim.newBuilder().setOrchestrator(orchestrator).setBlockHeight(blockHeight).setEventNonce(eventNonce).setValsetNonce(valsetNonce).addAllMembers(members).build());
+        return fxGravityMsgStub.valsetUpdateClaim(fx.gravity.v1.Tx.MsgValsetUpdatedClaim.newBuilder().setOrchestrator(orchestrator).setBlockHeight(blockHeight).setEventNonce(eventNonce).setValsetNonce(valsetNonce).addAllMembers(members).build());
     }
 
     /**
@@ -4551,7 +5028,7 @@ public class CosmosGrpcApi {
             @NotNull String symbol,
             @NotNull String tokenContract
     ) {
-        return gravityMsgStub.fxOriginatedTokenClaim(fx.gravity.v1.Tx.MsgFxOriginatedTokenClaim.newBuilder().setBlockHeight(blockHeight).setDecimals(decimals).setEventNonce(eventNonce).setName(name).setOrchestrator(orchestrator).setSymbol(symbol).setTokenContract(tokenContract).build());
+        return fxGravityMsgStub.fxOriginatedTokenClaim(fx.gravity.v1.Tx.MsgFxOriginatedTokenClaim.newBuilder().setBlockHeight(blockHeight).setDecimals(decimals).setEventNonce(eventNonce).setName(name).setOrchestrator(orchestrator).setSymbol(symbol).setTokenContract(tokenContract).build());
     }
 
     /**
@@ -4579,7 +5056,7 @@ public class CosmosGrpcApi {
             @NotNull String signature,
             @NotNull String tokenContract
     ) {
-        return gravityMsgStub.confirmBatch(fx.gravity.v1.Tx.MsgConfirmBatch.newBuilder().setEthSigner(ethSigner).setNonce(nonce).setOrchestrator(orchestrator).setSignature(signature).setTokenContract(tokenContract).build());
+        return fxGravityMsgStub.confirmBatch(fx.gravity.v1.Tx.MsgConfirmBatch.newBuilder().setEthSigner(ethSigner).setNonce(nonce).setOrchestrator(orchestrator).setSignature(signature).setTokenContract(tokenContract).build());
     }
 
     /**
@@ -4605,7 +5082,7 @@ public class CosmosGrpcApi {
             @NotNull Long nonce,
             @NotNull String signature
     ) {
-        return gravityMsgStub.valsetConfirm(fx.gravity.v1.Tx.MsgValsetConfirm.newBuilder().setEthAddress(ethAddress).setOrchestrator(orchestrator).setNonce(nonce).setSignature(signature).build());
+        return fxGravityMsgStub.valsetConfirm(fx.gravity.v1.Tx.MsgValsetConfirm.newBuilder().setEthAddress(ethAddress).setOrchestrator(orchestrator).setNonce(nonce).setSignature(signature).build());
     }
 
     /**
@@ -4621,13 +5098,13 @@ public class CosmosGrpcApi {
             @NotNull String orchestrator,
             @NotNull String validator
     ) {
-        return gravityMsgStub.setOrchestratorAddress(fx.gravity.v1.Tx.MsgSetOrchestratorAddress.newBuilder().setEthAddress(ethAddress).setOrchestrator(orchestrator).setValidator(validator).build());
+        return fxGravityMsgStub.setOrchestratorAddress(fx.gravity.v1.Tx.MsgSetOrchestratorAddress.newBuilder().setEthAddress(ethAddress).setOrchestrator(orchestrator).setValidator(validator).build());
     }
 
     /***********************************************************************************************************
      ***** Module 'crosschain' : QUERY
-     ***** Main difference between 'gravity' and 'crosschain' modules is that 'crosschain' is intended for
-     *****   exchanges between interconnected Cosmos-based blockchains (FunctionX, PundiX, MarginX, ...) while
+     ***** The main difference between 'gravity' and 'crosschain' modules is that 'crosschain' is intended for
+     *****   exchanges between bridged Cosmos-based blockchains (FunctionX, PundiX, MarginX, ...) while
      *****   'gravity' is intended for external blockchains (Ethereum, ...)
      ***********************************************************************************************************/
 
@@ -4651,7 +5128,7 @@ public class CosmosGrpcApi {
     /**
      * 'crosschainQueryBatchConfirm' queries the batch confirm for a given chain, orchestrator, token contract and nonce, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator field is a fx1... string  (i.e. sdk.AccAddress) that references the key that is being delegated to.
+     * @param bridgerAddress The orchestrator field is a fx1... string  (i.e. sdk.AccAddress) that references the key that is being delegated to.
      * @param tokenContract The token contract address.
      * @param nonce The nonce.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
@@ -4659,7 +5136,7 @@ public class CosmosGrpcApi {
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchConfirmResponse> crosschainQueryBatchConfirm(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             @NotNull String tokenContract,
             @NotNull Long nonce,
             BigInteger height
@@ -4668,11 +5145,11 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.batchConfirm(fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchConfirmRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).setTokenContract(tokenContract).setNonce(nonce).build());
+        return stub.batchConfirm(fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchConfirmRequest.newBuilder().setChainName(chainName).setBridgerAddress(bridgerAddress).setTokenContract(tokenContract).setNonce(nonce).build());
     }
 
     /**
@@ -4708,9 +5185,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.batchConfirms(fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchConfirmsRequest.newBuilder().setChainName(chainName).setTokenContract(tokenContract).setNonce(nonce).build());
     }
@@ -4740,9 +5217,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.batchFees(fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchFeeRequest.newBuilder().setChainName(chainName).build());
     }
@@ -4780,9 +5257,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.batchRequestByNonce(fx.gravity.crosschain.v1.QueryOuterClass.QueryBatchRequestByNonceRequest.newBuilder().setChainName(chainName).setNonce(nonce).setTokenContract(tokenContract).build());
     }
@@ -4812,11 +5289,47 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.currentOracleSet(fx.gravity.crosschain.v1.QueryOuterClass.QueryCurrentOracleSetRequest.newBuilder().setChainName(chainName).build());
+    }
+
+    /**
+     * 'crosschainQueryTokenToDenom' queries the denomination for a given token and chain, as known at the latest available block height.
+     * @param chainName The chain name.
+     * @param token The token to look for.
+     * @return The DenomToToken response, as known at the latest available block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryTokenToDenomResponse> crosschainQueryTokenToDenom(
+            @NotNull String chainName,
+            @NotNull String token
+    ) {
+        return this.crosschainQueryTokenToDenom(chainName, token, null);
+    }
+
+    /**
+     * 'crosschainQueryTokenToDenom' queries the denomination for a given token and chain, as known at the specified block height.
+     * @param chainName The chain name.
+     * @param token The token to look for.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The DenomToToken response, as known at the specified block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryTokenToDenomResponse> crosschainQueryTokenToDenom(
+            @NotNull String chainName,
+            @NotNull String token,
+            BigInteger height
+    ) {
+        fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = fxCrosschainQueryStub;
+        }
+        return stub.tokenToDenom(fx.gravity.crosschain.v1.QueryOuterClass.QueryTokenToDenomRequest.newBuilder().setChainName(chainName).setToken(token).build());
     }
 
     /**
@@ -4848,55 +5361,11 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.denomToToken(fx.gravity.crosschain.v1.QueryOuterClass.QueryDenomToTokenRequest.newBuilder().setDenom(denom).setChainName(chainName).build());
-    }
-
-    /**
-     * 'crosschainQueryGetIbcSequenceHeightByChannel' queries the IBC height for a given chain, channel and sequence number, as known at the latest available block height.
-     * @param chainName The chain name.
-     * @param sourceChannel The source channel.
-     * @param sourcePort The source port.
-     * @param sequence The sequence number.
-     * @return The IbcSequenceHeight response, as known at the latest available block height.
-     */
-    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryIbcSequenceHeightResponse> crosschainQueryGetIbcSequenceHeightByChannel(
-            @NotNull String chainName,
-            @NotNull String sourceChannel,
-            @NotNull String sourcePort,
-            @NotNull Long sequence
-    ) {
-        return this.crosschainQueryGetIbcSequenceHeightByChannel(chainName, sourceChannel, sourcePort, sequence, null);
-    }
-
-    /**
-     * 'crosschainQueryGetIbcSequenceHeightByChannel' queries the IBC height for a given chain, channel and sequence number, as known at the specified block height.
-     * @param chainName The chain name.
-     * @param sourceChannel The source channel.
-     * @param sourcePort The source port.
-     * @param sequence The sequence number.
-     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
-     * @return The IbcSequenceHeight response, as known at the specified block height.
-     */
-    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryIbcSequenceHeightResponse> crosschainQueryGetIbcSequenceHeightByChannel(
-            @NotNull String chainName,
-            @NotNull String sourceChannel,
-            @NotNull String sourcePort,
-            @NotNull Long sequence,
-            BigInteger height
-    ) {
-        fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
-        if (height != null) {
-            Metadata header = new Metadata();
-            header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
-        } else {
-            stub = crosschainQueryStub;
-        }
-        return stub.getIbcSequenceHeightByChannel(fx.gravity.crosschain.v1.QueryOuterClass.QueryIbcSequenceHeightRequest.newBuilder().setChainName(chainName).setSequence(sequence).setSourceChannel(sourceChannel).setSourcePort(sourcePort).build());
     }
 
     /**
@@ -4928,9 +5397,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.getOracleByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleByAddrRequest.newBuilder().setChainName(chainName).setOracleAddress(oracleAddress).build());
     }
@@ -4964,47 +5433,47 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.getOracleByExternalAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleByExternalAddrRequest.newBuilder().setChainName(chainName).setExternalAddress(oracleExternalAddress).build());
     }
 
     /**
-     * 'crosschainQueryGetOracleByOrchestrator' queries the oracle for a given orchestrator address and chain, as known at the latest available block height.
+     * 'crosschainQueryGetOracleByOrchestrator' queries the oracle for a given bridger address and chain, as known at the latest available block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The bridger address.
      * @return The Oracle response, as known at the latest available block height.
      */
-    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleResponse> crosschainQueryGetOracleByOrchestrator(
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleResponse> crosschainQueryGetOracleByBridger(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress
+            @NotNull String bridgerAddress
     ) {
-        return this.crosschainQueryGetOracleByOrchestrator(chainName, orchestratorAddress, null);
+        return this.crosschainQueryGetOracleByBridger(chainName, bridgerAddress, null);
     }
 
     /**
-     * 'crosschainQueryGetOracleByOrchestrator' queries the oracle for a given orchestrator address and chain, as known at the specified block height.
+     * 'crosschainQueryGetOracleByOrchestrator' queries the oracle for a given bridger address and chain, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The bridger address.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The Oracle response, as known at the specified block height.
      */
-    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleResponse> crosschainQueryGetOracleByOrchestrator(
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleResponse> crosschainQueryGetOracleByBridger(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             BigInteger height
     ) {
         fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.getOracleByOrchestrator(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleByOrchestratorRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).build());
+        return stub.getOracleByBridgerAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleByBridgerAddrRequest.newBuilder().setChainName(chainName).setBridgerAddress(bridgerAddress).build());
     }
 
     /**
@@ -5036,83 +5505,89 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.getPendingSendToExternal(fx.gravity.crosschain.v1.QueryOuterClass.QueryPendingSendToExternalRequest.newBuilder().setChainName(chainName).setSenderAddress(senderAddress).build());
     }
 
     /**
-     * 'crosschainQueryLastEventBlockHeightByAddr' queries the last event block height for given orchestrator address and chain, as known at the latest available block height.
+     * 'crosschainQueryLastEventBlockHeightByAddr' queries the last event block height for a given bridger address and chain, as known at the latest available block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The orchestrator address.
      * @return The QueryLastEventBlockHeightByAddr response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventBlockHeightByAddrResponse> crosschainQueryLastEventBlockHeightByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress
+            @NotNull String bridgerAddress
     ) {
-        return this.crosschainQueryLastEventBlockHeightByAddr(chainName, orchestratorAddress, null);
+        return this.crosschainQueryLastEventBlockHeightByAddr(chainName, bridgerAddress, null);
     }
 
     /**
-     * 'crosschainQueryLastEventBlockHeightByAddr' queries the last event block height for given orchestrator address and chain, as known at the specified block height.
+     * 'crosschainQueryLastEventBlockHeightByAddr' queries the last event block height for given bridger address and chain, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The bridger address.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryLastEventBlockHeightByAddr response, as known at the specified block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventBlockHeightByAddrResponse> crosschainQueryLastEventBlockHeightByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             BigInteger height
     ) {
         fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.lastEventBlockHeightByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventBlockHeightByAddrRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).build());
+        return stub.lastEventBlockHeightByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventBlockHeightByAddrRequest.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .build());
     }
 
     /**
-     * 'crosschainQueryLastEventNonceByAddr' queries the last event nonce for a given orchestrator address and chain, as known at the latest available block height.
+     * 'crosschainQueryLastEventNonceByAddr' queries the last event nonce for a given bridger address and chain, as known at the latest available block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The orchestrator address.
      * @return The QueryLastEventNonceByAddr response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventNonceByAddrResponse> crosschainQueryLastEventNonceByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress
+            @NotNull String bridgerAddress
     ) {
-        return this.crosschainQueryLastEventNonceByAddr(chainName, orchestratorAddress, null);
+        return this.crosschainQueryLastEventNonceByAddr(chainName, bridgerAddress, null);
     }
 
     /**
-     * 'crosschainQueryLastEventNonceByAddr' queries the last event nonce for a given orchestrator address and chain, as known at the specified block height.
+     * 'crosschainQueryLastEventNonceByAddr' queries the last event nonce for a given bridger address and chain, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The orchestrator address.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryLastEventNonceByAddr response, as known at the specified block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventNonceByAddrResponse> crosschainQueryLastEventNonceByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             BigInteger height
     ) {
         fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.lastEventNonceByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventNonceByAddrRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).build());
+        return stub.lastEventNonceByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastEventNonceByAddrRequest.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .build());
     }
 
     /**
@@ -5140,9 +5615,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.lastObservedBlockHeight(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastObservedBlockHeightRequest.newBuilder().setChainName(chainName).build());
     }
@@ -5172,83 +5647,89 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.lastOracleSetRequests(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastOracleSetRequestsRequest.newBuilder().setChainName(chainName).build());
     }
 
     /**
-     * 'crosschainQueryLastPendingBatchRequestByAddr' queries the last pending batch request for a given orchestrator address and chain, as known at the latest available block height.
+     * 'crosschainQueryLastPendingBatchRequestByAddr' queries the last pending batch request for a given bridger address and chain, as known at the latest available block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The FX orchestrator address.
+     * @param bridgerAddress The FX orchestrator address.
      * @return The QueryLastPendingBatchRequestByAddr response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingBatchRequestByAddrResponse> crosschainQueryLastPendingBatchRequestByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress
+            @NotNull String bridgerAddress
     ) {
-        return this.crosschainQueryLastPendingBatchRequestByAddr(chainName, orchestratorAddress, null);
+        return this.crosschainQueryLastPendingBatchRequestByAddr(chainName, bridgerAddress, null);
     }
 
     /**
-     * 'crosschainQueryLastPendingBatchRequestByAddr' queries the last pending batch request for a given orchestrator address and chain, as known at the specified block height.
+     * 'crosschainQueryLastPendingBatchRequestByAddr' queries the last pending batch request for a given bridger address and chain, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The FX orchestrator address.
+     * @param bridgerAddress The FX bridger address.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryLastPendingBatchRequestByAddr response, as known at the specified block height.
      */
-    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingBatchRequestByAddrResponse> crosschainQueryLastPendingBatchRequestByAddr(
+    public ListenableFuture<QueryOuterClass.QueryLastPendingBatchRequestByAddrResponse> crosschainQueryLastPendingBatchRequestByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             BigInteger height
     ) {
-        fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
+        QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.lastPendingBatchRequestByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingBatchRequestByAddrRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).build());
+        return stub.lastPendingBatchRequestByAddr(QueryOuterClass.QueryLastPendingBatchRequestByAddrRequest.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .build());
     }
 
     /**
-     * 'crosschainQueryLastPendingOracleSetRequestByAddr' queries the last pending Oracle-set request for a given orchestrator address and chain, as known at the latest available block height.
+     * 'crosschainQueryLastPendingOracleSetRequestByAddr' queries the last pending Oracle-set request for a given bridger address and chain, as known at the latest available block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The FX orchestrator address.
+     * @param bridgerAddress The FX orchestrator address.
      * @return The QueryLastPendingOracleSetRequestByAddr response, as known at the latest available block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingOracleSetRequestByAddrResponse> crosschainQueryLastPendingOracleSetRequestByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress
+            @NotNull String bridgerAddress
     ) {
-        return this.crosschainQueryLastPendingOracleSetRequestByAddr(chainName, orchestratorAddress, null);
+        return this.crosschainQueryLastPendingOracleSetRequestByAddr(chainName, bridgerAddress, null);
     }
 
     /**
-     * 'crosschainQueryLastPendingOracleSetRequestByAddr' queries the last pending Oracle-set request for a given orchestrator address and chain, as known at the specified block height.
+     * 'crosschainQueryLastPendingOracleSetRequestByAddr' queries the last pending Oracle-set request for a given bridger address and chain, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The FX orchestrator address.
+     * @param bridgerAddress The FX orchestrator address.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryLastPendingOracleSetRequestByAddr response, as known at the specified block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingOracleSetRequestByAddrResponse> crosschainQueryLastPendingOracleSetRequestByAddr(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             BigInteger height
     ) {
         fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.lastPendingOracleSetRequestByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingOracleSetRequestByAddrRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).build());
+        return stub.lastPendingOracleSetRequestByAddr(fx.gravity.crosschain.v1.QueryOuterClass.QueryLastPendingOracleSetRequestByAddrRequest.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .build());
     }
 
     /**
@@ -5276,15 +5757,15 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.oracles(fx.gravity.crosschain.v1.QueryOuterClass.QueryOraclesRequest.newBuilder().setChainName(chainName).build());
     }
 
     /**
-     * 'crosschainQueryOracleSetConfirm' queries the Oracle-set confirm for a given chain, orchestrator and nonce, as known at the latest available block height.
+     * 'crosschainQueryOracleSetConfirm' queries the Oracle-set confirm for a given chain, bridger address and nonce, as known at the latest available block height.
      * @param chainName The chain name.
      * @param orchestratorAddress The orchestrator address.
      * @param nonce The nonce.
@@ -5299,27 +5780,31 @@ public class CosmosGrpcApi {
     }
 
     /**
-     * 'crosschainQueryOracleSetConfirm' queries the Oracle-set confirm for a given chain, orchestrator and nonce, as known at the specified block height.
+     * 'crosschainQueryOracleSetConfirm' queries the Oracle-set confirm for a given chain, bridger address and nonce, as known at the specified block height.
      * @param chainName The chain name.
-     * @param orchestratorAddress The orchestrator address.
+     * @param bridgerAddress The orchestrator address.
      * @param nonce The nonce.
      * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
      * @return The QueryOracleSetConfirm response, as known at the specified block height.
      */
     public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleSetConfirmResponse> crosschainQueryOracleSetConfirm(
             @NotNull String chainName,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             @NotNull Long nonce,
             BigInteger height) {
         fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
-        return stub.oracleSetConfirm(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleSetConfirmRequest.newBuilder().setChainName(chainName).setOrchestratorAddress(orchestratorAddress).setNonce(nonce).build());
+        return stub.oracleSetConfirm(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleSetConfirmRequest.newBuilder()
+                .setChainName(chainName)
+                        .setBridgerAddress(bridgerAddress)
+                .setNonce(nonce)
+                .build());
     }
 
     /**
@@ -5351,9 +5836,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.oracleSetConfirmsByNonce(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleSetConfirmsByNonceRequest.newBuilder().setChainName(chainName).setNonce(nonce).build());
     }
@@ -5387,9 +5872,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.oracleSetRequest(fx.gravity.crosschain.v1.QueryOuterClass.QueryOracleSetRequestRequest.newBuilder().setChainName(chainName).setNonce(nonce).build());
     }
@@ -5419,9 +5904,9 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.outgoingTxBatches(fx.gravity.crosschain.v1.QueryOuterClass.QueryOutgoingTxBatchesRequest.newBuilder().setChainName(chainName).build());
     }
@@ -5451,37 +5936,188 @@ public class CosmosGrpcApi {
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
-            stub = crosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
         } else {
-            stub = crosschainQueryStub;
+            stub = fxCrosschainQueryStub;
         }
         return stub.params(fx.gravity.crosschain.v1.QueryOuterClass.QueryParamsRequest.newBuilder().setChainName(chainName).build());
+    }
+
+    /**
+     * 'crosschainQueryBridgeTokens' queries bridge tokens for a given chain, as known at the latest available block height.
+     * @param chainName The chain name.
+     * @return The QueryBridgeTokens response, as known at the latest available block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryBridgeTokensResponse> crosschainQueryBridgeTokens(
+            @NotNull String chainName
+    ) {
+        return this.crosschainQueryBridgeTokens(chainName, null);
+    }
+
+    /**
+     * 'crosschainQueryBridgeTokens' queries bridge tokens for a given chain, as known at the specified block height.
+     * @param chainName The chain name.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The QueryBridgeTokens response, as known at the specified block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryBridgeTokensResponse> crosschainQueryBridgeTokens(
+            @NotNull String chainName,
+            BigInteger height
+    ) {
+        fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = fxCrosschainQueryStub;
+        }
+        return stub.bridgeTokens(fx.gravity.crosschain.v1.QueryOuterClass.QueryBridgeTokensRequest.newBuilder().setChainName(chainName).build());
+    }
+
+    /**
+     * 'crosschainQueryProjectedBatchTimeoutHeight' queries the projected batch timeout height for a given chain, as known at the latest available block height.
+     * @param chainName The chain name.
+     * @return The QueryProjectedBatchTimeoutHeight response, as known at the latest available block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryProjectedBatchTimeoutHeightResponse> crosschainQueryProjectedBatchTimeoutHeight(
+            @NotNull String chainName
+    ) {
+        return this.crosschainQueryProjectedBatchTimeoutHeight(chainName, null);
+    }
+
+    /**
+     * 'crosschainQueryProjectedBatchTimeoutHeight' queries the projected batch timeout height for a given chain, as known at the specified block height.
+     * @param chainName The chain name.
+     * @param height Block height used for the query (Notice: depends on your node pruning configuration {@see app.toml configuration file}
+     * @return The QueryProjectedBatchTimeoutHeight response, as known at the specified block height.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.QueryOuterClass.QueryProjectedBatchTimeoutHeightResponse> crosschainQueryProjectedBatchTimeoutHeight(
+            @NotNull String chainName,
+            BigInteger height
+    ) {
+        fx.gravity.crosschain.v1.QueryGrpc.QueryFutureStub stub;
+        if (height != null) {
+            Metadata header = new Metadata();
+            header.put(BLOCK_HEIGHT_KEY, height.toString());
+            stub = fxCrosschainQueryStub.withInterceptors(io.grpc.stub.MetadataUtils.newAttachHeadersInterceptor(header));
+        } else {
+            stub = fxCrosschainQueryStub;
+        }
+        return stub.projectedBatchTimeoutHeight(fx.gravity.crosschain.v1.QueryOuterClass.QueryProjectedBatchTimeoutHeightRequest.newBuilder().setChainName(chainName).build());
     }
 
     /********************************************************
      ***** Module 'crosschain' : MESSAGE
      *******************************************************/
 
-    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgAddOracleDepositResponse> crosschainMsgAddOracleDeposit(
+    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgUnbondedOracleResponse> crosschainMsgUnbondedOracle(
             @NotNull String chainName,
-            @NotNull String oracle,
-            @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin amount
+            @NotNull String oracleAddress
     ) {
-        return crosschainMsgStub.addOracleDeposit(fx.gravity.crosschain.v1.Tx.MsgAddOracleDeposit.newBuilder().setChainName(chainName).setOracle(oracle).setAmount(amount).build());
+        return fxCrosschainMsgStub.unbondedOracle(fx.gravity.crosschain.v1.Tx.MsgUnbondedOracle.newBuilder()
+                .setChainName(chainName)
+                .setOracleAddress(oracleAddress)
+                .build());
     }
 
+    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgWithdrawRewardResponse> crosschainMsgWithdrawReward(
+            @NotNull String chainName,
+            @NotNull String oracleAddress
+    ) {
+        return fxCrosschainMsgStub.withdrawReward(fx.gravity.crosschain.v1.Tx.MsgWithdrawReward.newBuilder()
+                .setChainName(chainName)
+                .setOracleAddress(oracleAddress)
+                .build());
+    }
+
+    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgEditOracleResponse> crosschainMsgEditOracle(
+            @NotNull String chainName,
+            @NotNull String oracleAddress,
+            @NotNull String validatorAddress
+    ) {
+        return fxCrosschainMsgStub.editOracle(fx.gravity.crosschain.v1.Tx.MsgEditOracle.newBuilder()
+                .setChainName(chainName)
+                .setOracleAddress(oracleAddress)
+                .setValidatorAddress(validatorAddress)
+                .build());
+    }
+
+    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgAddDelegateResponse> crosschainMsgAddDelegate(
+            @NotNull String chainName,
+            @NotNull String oracleAddress,
+            @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin amount
+    ) {
+        return fxCrosschainMsgStub.addDelegate(fx.gravity.crosschain.v1.Tx.MsgAddDelegate.newBuilder()
+                .setChainName(chainName)
+                .setOracleAddress(oracleAddress)
+                .setAmount(amount)
+                .build());
+    }
+
+    /**
+     * 'crosschainMsgBondedOracle' allows to bond an oracle to a bridger
+     * @param chainName The chain name.
+     * @param bridgerAddress The bridger address.
+     * @param oracleAddress The oracle address.
+     * @param externalAddress The external address.
+     * @param validatorAddress The validator address.
+     * @param delegateAmount The delegated amount.
+     * @return The MsgBondedOracle response.
+     */
+    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgBondedOracleResponse> crosschainMsgBondedOracle(
+            @NotNull String chainName,
+            @NotNull String bridgerAddress,
+            @NotNull String oracleAddress,
+            @NotNull String externalAddress,
+            @NotNull String validatorAddress,
+            @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin delegateAmount
+    ) {
+        return fxCrosschainMsgStub.bondedOracle(fx.gravity.crosschain.v1.Tx.MsgBondedOracle.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .setOracleAddress(oracleAddress)
+                .setExternalAddress(externalAddress)
+                .setValidatorAddress(validatorAddress)
+                .setDelegateAmount(delegateAmount)
+                .build());
+    }
+
+    /**
+     *
+     * @param chainName
+     * @param bridgerAddress
+     * @param tokenContract
+     * @param name
+     * @param symbol
+     * @param decimals
+     * @param blockHeight
+     * @param eventNonce
+     * @param channelIBC
+     * @return
+     */
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgBridgeTokenClaimResponse> crosschainMsgBridgeTokenClaim(
             @NotNull String chainName,
-            @NotNull String name,
+            @NotNull String bridgerAddress,
             @NotNull String tokenContract,
-            @NotNull String orchestrator,
+            @NotNull String name,
             @NotNull String symbol,
             @NotNull Long decimals,
-            @NotNull Long eventNonce,
             @NotNull Long blockHeight,
+            @NotNull Long eventNonce,
             @NotNull String channelIBC
     ) {
-        return crosschainMsgStub.bridgeTokenClaim(fx.gravity.crosschain.v1.Tx.MsgBridgeTokenClaim.newBuilder().setChainName(chainName).setName(name).setTokenContract(tokenContract).setBlockHeight(blockHeight).setSymbol(symbol).setDecimals(decimals).setChannelIbc(channelIBC).setEventNonce(eventNonce).setOrchestrator(orchestrator).build());
+        return fxCrosschainMsgStub.bridgeTokenClaim(fx.gravity.crosschain.v1.Tx.MsgBridgeTokenClaim.newBuilder()
+                .setChainName(chainName)
+                .setBridgerAddress(bridgerAddress)
+                .setTokenContract(tokenContract)
+                .setName(name)
+                .setSymbol(symbol)
+                .setDecimals(decimals)
+                .setBlockHeight(blockHeight)
+                .setEventNonce(eventNonce)
+                .setChannelIbc(channelIBC)
+                .build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgCancelSendToExternalResponse> crosschainMsgCancelSendToExternal(
@@ -5489,39 +6125,59 @@ public class CosmosGrpcApi {
             @NotNull String sender,
             @NotNull Long transactionId
     ) {
-        return crosschainMsgStub.cancelSendToExternal(fx.gravity.crosschain.v1.Tx.MsgCancelSendToExternal.newBuilder().setChainName(chainName).setSender(sender).setTransactionId(transactionId).build());
+        return fxCrosschainMsgStub.cancelSendToExternal(fx.gravity.crosschain.v1.Tx.MsgCancelSendToExternal.newBuilder().setChainName(chainName).setSender(sender).setTransactionId(transactionId).build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgConfirmBatchResponse> crosschainMsgConfirmBatch(
             @NotNull String chainName,
             @NotNull String externalAddress,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             @NotNull String tokenContract,
             @NotNull Long nonce,
             @NotNull String signature
     ) {
-        return crosschainMsgStub.confirmBatch(fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.newBuilder().setChainName(chainName).setExternalAddress(externalAddress).setNonce(nonce).setOrchestratorAddress(orchestratorAddress).setSignature(signature).setTokenContract(tokenContract).build());
+        return fxCrosschainMsgStub.confirmBatch(fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.newBuilder()
+                .setChainName(chainName)
+                .setExternalAddress(externalAddress)
+                .setNonce(nonce)
+                        .setBridgerAddress(bridgerAddress)
+                .setSignature(signature)
+                .setTokenContract(tokenContract)
+                .build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmResponse> crosschainMsgOracleSetConfirm(
             @NotNull String chainName,
             @NotNull String externalAddress,
-            @NotNull String orchestratorAddress,
+            @NotNull String bridgerAddress,
             @NotNull Long nonce,
             @NotNull String signature
     ) {
-        return crosschainMsgStub.oracleSetConfirm(fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.newBuilder().setChainName(chainName).setExternalAddress(externalAddress).setNonce(nonce).setOrchestratorAddress(orchestratorAddress).setSignature(signature).build());
+        return fxCrosschainMsgStub.oracleSetConfirm(fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.newBuilder()
+                .setChainName(chainName)
+                .setExternalAddress(externalAddress)
+                .setNonce(nonce)
+                        .setBridgerAddress(bridgerAddress)
+                .setSignature(signature)
+                .build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgOracleSetUpdatedClaimResponse> crosschainMsgOracleSetUpdateClaim(
             @NotNull String chainName,
-            @NotNull String orchestrator,
+            @NotNull String bridgerAddress,
             @NotNull Long oracleSetNonce,
             @NotNull Long eventNonce,
             @NotNull Long blockHeight,
-            @NotNull Iterable<? extends fx.gravity.crosschain.v1.Crosschain.BridgeValidator> members
+            @NotNull Iterable<? extends fx.gravity.crosschain.v1.Types.BridgeValidator> members
     ) {
-        return crosschainMsgStub.oracleSetUpdateClaim(fx.gravity.crosschain.v1.Tx.MsgOracleSetUpdatedClaim.newBuilder().setChainName(chainName).setBlockHeight(blockHeight).setOracleSetNonce(oracleSetNonce).setEventNonce(eventNonce).setOrchestrator(orchestrator).addAllMembers(members).build());
+        return fxCrosschainMsgStub.oracleSetUpdateClaim(fx.gravity.crosschain.v1.Tx.MsgOracleSetUpdatedClaim.newBuilder()
+                .setChainName(chainName)
+                .setBlockHeight(blockHeight)
+                .setOracleSetNonce(oracleSetNonce)
+                .setEventNonce(eventNonce)
+                        .setBridgerAddress(bridgerAddress)
+                .addAllMembers(members)
+                .build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgRequestBatchResponse> crosschainMsgRequestBatch(
@@ -5531,7 +6187,7 @@ public class CosmosGrpcApi {
             @NotNull String feeReceive,
             @NotNull String minimumFee
     ) {
-        return crosschainMsgStub.requestBatch(fx.gravity.crosschain.v1.Tx.MsgRequestBatch.newBuilder().setChainName(chainName).setSender(sender).setDenom(denom).setFeeReceive(feeReceive).setMinimumFee(minimumFee).build());
+        return fxCrosschainMsgStub.requestBatch(fx.gravity.crosschain.v1.Tx.MsgRequestBatch.newBuilder().setChainName(chainName).setSender(sender).setDenom(denom).setFeeReceive(feeReceive).setMinimumFee(minimumFee).build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgSendToExternalResponse> crosschainMsgSendToExternal(
@@ -5541,59 +6197,822 @@ public class CosmosGrpcApi {
             @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin amount,
             @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin bridgeFee
     ) {
-        return crosschainMsgStub.sendToExternal(fx.gravity.crosschain.v1.Tx.MsgSendToExternal.newBuilder().setChainName(chainName).setSender(sender).setDest(dest).setAmount(amount).setBridgeFee(bridgeFee).build());
+        return fxCrosschainMsgStub.sendToExternal(fx.gravity.crosschain.v1.Tx.MsgSendToExternal.newBuilder().setChainName(chainName).setSender(sender).setDest(dest).setAmount(amount).setBridgeFee(bridgeFee).build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgSendToExternalClaimResponse> crosschainMsgSendToExternalClaim(
             @NotNull String chainName,
-            @NotNull String orchestrator,
+            @NotNull String bridgerAddress,
             @NotNull String tokenContract,
             @NotNull Long batchNonce,
             @NotNull Long eventNonce,
             @NotNull Long blockHeight
     ) {
-        return crosschainMsgStub.sendToExternalClaim(fx.gravity.crosschain.v1.Tx.MsgSendToExternalClaim.newBuilder().setChainName(chainName).setBatchNonce(batchNonce).setEventNonce(eventNonce).setOrchestrator(orchestrator).setBlockHeight(blockHeight).setTokenContract(tokenContract).build());
+        return fxCrosschainMsgStub.sendToExternalClaim(fx.gravity.crosschain.v1.Tx.MsgSendToExternalClaim.newBuilder()
+                .setChainName(chainName)
+                .setBatchNonce(batchNonce)
+                .setEventNonce(eventNonce)
+                .setBridgerAddress(bridgerAddress)
+                .setBlockHeight(blockHeight)
+                .setTokenContract(tokenContract)
+                .build());
     }
 
     public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgSendToFxClaimResponse> crosschainMsgSendToExternalClaim(
             @NotNull String chainName,
             @NotNull String sender,
             @NotNull String receiver,
-            @NotNull String orchestrator,
+            @NotNull String bridgerAddress,
             @NotNull String tokenContract,
             @NotNull String amount,
             @NotNull Long eventNonce,
             @NotNull Long blockHeight,
             @NotNull String targetIBC
     ) {
-        return crosschainMsgStub.sendToFxClaim(fx.gravity.crosschain.v1.Tx.MsgSendToFxClaim.newBuilder().setChainName(chainName).setSender(sender).setReceiver(receiver).setOrchestrator(orchestrator).setEventNonce(eventNonce).setAmount(amount).setBlockHeight(blockHeight).setTokenContract(tokenContract).setTargetIbc(targetIBC).build());
+        return fxCrosschainMsgStub.sendToFxClaim(fx.gravity.crosschain.v1.Tx.MsgSendToFxClaim.newBuilder()
+                .setChainName(chainName)
+                .setSender(sender)
+                .setReceiver(receiver)
+                .setBridgerAddress(bridgerAddress)
+                .setEventNonce(eventNonce)
+                .setAmount(amount)
+                .setBlockHeight(blockHeight)
+                .setTokenContract(tokenContract)
+                .setTargetIbc(targetIBC)
+                .build());
     }
 
-    public ListenableFuture<fx.gravity.crosschain.v1.Tx.MsgSetOrchestratorAddressResponse> crosschainMsgSetOrchestratorAddress(
-            @NotNull String chainName,
-            @NotNull String orchestrator,
-            @NotNull String oracle,
-            @NotNull String externalAddress,
-            @NotNull cosmos.base.v1beta1.CoinOuterClass.Coin deposit
+    /***********************************************************************
+     ***** Module 'ibc.applications.interchain_accounts.controller' : QUERY
+     ***********************************************************************/
+
+    public ListenableFuture<ibc.applications.interchain_accounts.controller.v1.QueryOuterClass.QueryParamsResponse> ibcAppInterchainAccountsControllerQueryParams() {
+        return ibcApplicationsInterchainAccountsControllerQueryStub.params(ibc.applications.interchain_accounts.controller.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
+    }
+
+    /*****************************************************************
+     ***** Module 'ibc.applications.interchain_accounts.host' : QUERY
+     *****************************************************************/
+
+    public ListenableFuture<ibc.applications.interchain_accounts.host.v1.QueryOuterClass.QueryParamsResponse> ibcAppInterchainAccountsHostQueryParams() {
+        return ibcApplicationsInterchainAccountsHostQueryStub.params(ibc.applications.interchain_accounts.host.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
+    }
+
+    /*****************************************************************
+     ***** Module 'ibc.applications.fee' : QUERY
+     *****************************************************************/
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryCounterpartyPayeeResponse> ibcAppFeeQueryCounterpartyPayee(
+            @NotNull String channelID,
+            @NotNull String relayer
     ) {
-        return crosschainMsgStub.setOrchestratorAddress(fx.gravity.crosschain.v1.Tx.MsgSetOrchestratorAddress.newBuilder().setChainName(chainName).setOrchestrator(orchestrator).setOracle(oracle).setExternalAddress(externalAddress).setDeposit(deposit).build());
+        return ibcApplicationsFeeQueryStub.counterpartyPayee(ibc.applications.fee.v1.QueryOuterClass.QueryCounterpartyPayeeRequest.newBuilder()
+                .setChannelId(channelID)
+                .setRelayer(relayer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryFeeEnabledChannelResponse> ibcAppFeeQueryFeeEnabledChannel(
+            @NotNull String channelID,
+            @NotNull String portID
+    ) {
+        return ibcApplicationsFeeQueryStub.feeEnabledChannel(ibc.applications.fee.v1.QueryOuterClass.QueryFeeEnabledChannelRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryFeeEnabledChannelsResponse> ibcAppFeeQueryFeeEnabledChannels(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull Long queryHeight
+    ) {
+        return ibcApplicationsFeeQueryStub.feeEnabledChannels(ibc.applications.fee.v1.QueryOuterClass.QueryFeeEnabledChannelsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setQueryHeight(queryHeight)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketResponse> ibcAppFeeQueryIncentivizedPacket(
+            @NotNull ChannelOuterClass.PacketId packetID,
+            @NotNull Long queryHeight
+    ) {
+        return ibcApplicationsFeeQueryStub.incentivizedPacket(ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketRequest.newBuilder()
+                .setPacketId(packetID)
+                .setQueryHeight(queryHeight)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketsResponse> ibcAppFeeQueryIncentivizedPackets(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull Long queryHeight
+    ) {
+        return ibcApplicationsFeeQueryStub.incentivizedPackets(ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setQueryHeight(queryHeight)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketsForChannelResponse> ibcAppFeeQueryIncentivizedPackets(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull Long queryHeight
+    ) {
+        return ibcApplicationsFeeQueryStub.incentivizedPacketsForChannel(ibc.applications.fee.v1.QueryOuterClass.QueryIncentivizedPacketsForChannelRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setQueryHeight(queryHeight)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryPayeeResponse> ibcAppFeeQueryPayee(
+            @NotNull String channelID,
+            @NotNull String relayer
+    ) {
+        return ibcApplicationsFeeQueryStub.payee(ibc.applications.fee.v1.QueryOuterClass.QueryPayeeRequest.newBuilder()
+                .setChannelId(channelID)
+                .setRelayer(relayer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryTotalAckFeesResponse> ibcAppFeeQueryTotalAckFees(
+            @NotNull ChannelOuterClass.PacketId packetID
+    ) {
+        return ibcApplicationsFeeQueryStub.totalAckFees(ibc.applications.fee.v1.QueryOuterClass.QueryTotalAckFeesRequest.newBuilder()
+                .setPacketId(packetID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryTotalRecvFeesResponse> ibcAppFeeQueryTotalRecvFees(
+            @NotNull ChannelOuterClass.PacketId packetID
+    ) {
+        return ibcApplicationsFeeQueryStub.totalRecvFees(ibc.applications.fee.v1.QueryOuterClass.QueryTotalRecvFeesRequest.newBuilder()
+                .setPacketId(packetID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.QueryOuterClass.QueryTotalTimeoutFeesResponse> ibcAppFeeQueryTotalTimeoutFees(
+            @NotNull ChannelOuterClass.PacketId packetID
+    ) {
+        return ibcApplicationsFeeQueryStub.totalTimeoutFees(ibc.applications.fee.v1.QueryOuterClass.QueryTotalTimeoutFeesRequest.newBuilder()
+                .setPacketId(packetID)
+                .build());
+    }
+
+    /*****************************************************************
+     ***** Module 'ibc.applications.fee' : MESSAGE
+     *****************************************************************/
+
+    public ListenableFuture<ibc.applications.fee.v1.Tx.MsgPayPacketFeeResponse> ibcAppFeeMsgPayPacketFee(
+            @NotNull String sourceChannelID,
+            @NotNull String sourcePortID,
+            @NotNull Iterable<String> relayers,
+            @NotNull FeeOuterClass.Fee fee,
+            @NotNull String signer
+    ) {
+        return ibcApplicationsFeeMsgStub.payPacketFee(ibc.applications.fee.v1.Tx.MsgPayPacketFee.newBuilder()
+                .setSourceChannelId(sourceChannelID)
+                .setSourcePortId(sourcePortID)
+                .addAllRelayers(relayers)
+                .setFee(fee)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.Tx.MsgPayPacketFeeAsyncResponse> ibcAppFeeMsgPayPacketFeeAsync(
+            @NotNull ChannelOuterClass.PacketId packetID,
+            @NotNull FeeOuterClass.PacketFee packetFee
+    ) {
+        return ibcApplicationsFeeMsgStub.payPacketFeeAsync(ibc.applications.fee.v1.Tx.MsgPayPacketFeeAsync.newBuilder()
+                .setPacketId(packetID)
+                .setPacketFee(packetFee)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.Tx.MsgRegisterCounterpartyPayeeResponse> ibcAppFeeMsgRegisterCounterpartyPayee(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull String relayer,
+            @NotNull String counterpartyPayee
+    ) {
+        return ibcApplicationsFeeMsgStub.registerCounterpartyPayee(ibc.applications.fee.v1.Tx.MsgRegisterCounterpartyPayee.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setRelayer(relayer)
+                .setCounterpartyPayee(counterpartyPayee)
+                .build());
+    }
+
+    public ListenableFuture<ibc.applications.fee.v1.Tx.MsgRegisterPayeeResponse> ibcAppFeeMsgRegisterPayee(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull String relayer,
+            @NotNull String payee
+    ) {
+        return ibcApplicationsFeeMsgStub.registerPayee(ibc.applications.fee.v1.Tx.MsgRegisterPayee.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setRelayer(relayer)
+                .setPayee(payee)
+                .build());
+    }
+
+    /*****************************************************************
+     ***** Module 'ibc.core.channel' : QUERY
+     *****************************************************************/
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryChannelResponse> ibcCoreChannelQueryChannel(
+            @NotNull String channelID,
+            @NotNull String portID
+    ) {
+        return ibcCoreChannelQueryStub.channel(ibc.core.channel.v1.QueryOuterClass.QueryChannelRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryChannelClientStateResponse> ibcCoreChannelQueryChannelClientState(
+            @NotNull String channelID,
+            @NotNull String portID
+    ) {
+        return ibcCoreChannelQueryStub.channelClientState(ibc.core.channel.v1.QueryOuterClass.QueryChannelClientStateRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryChannelConsensusStateResponse> ibcCoreChannelQueryChannelConsensusState(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Long revisionHeight,
+            @NotNull Long revisionNumber
+            ) {
+        return ibcCoreChannelQueryStub.channelConsensusState(ibc.core.channel.v1.QueryOuterClass.QueryChannelConsensusStateRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setRevisionHeight(revisionHeight)
+                .setRevisionNumber(revisionNumber)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryChannelsResponse> ibcCoreChannelQueryChannels(
+            @NotNull Pagination.PageRequest pageRequest
+    ) {
+        return ibcCoreChannelQueryStub.channels(ibc.core.channel.v1.QueryOuterClass.QueryChannelsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryConnectionChannelsResponse> ibcCoreChannelQueryConnectionChannels(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull String connection
+            ) {
+        return ibcCoreChannelQueryStub.connectionChannels(ibc.core.channel.v1.QueryOuterClass.QueryConnectionChannelsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setConnection(connection)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryNextSequenceReceiveResponse> ibcCoreChannelQueryNextSequenceReceive(
+            @NotNull String channelID,
+            @NotNull String portID
+    ) {
+        return ibcCoreChannelQueryStub.nextSequenceReceive(ibc.core.channel.v1.QueryOuterClass.QueryNextSequenceReceiveRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryPacketAcknowledgementResponse> ibcCoreChannelQueryPacketAcknowledgement(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Long sequence
+    ) {
+        return ibcCoreChannelQueryStub.packetAcknowledgement(ibc.core.channel.v1.QueryOuterClass.QueryPacketAcknowledgementRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setSequence(sequence)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryPacketAcknowledgementsResponse> ibcCoreChannelQueryPacketAcknowledgements(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Iterable<? extends Long> packetCommitmentSequences
+    ) {
+        return ibcCoreChannelQueryStub.packetAcknowledgements(ibc.core.channel.v1.QueryOuterClass.QueryPacketAcknowledgementsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .addAllPacketCommitmentSequences(packetCommitmentSequences)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryPacketCommitmentResponse> ibcCoreChannelQueryPacketCommitment(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Long sequence
+    ) {
+        return ibcCoreChannelQueryStub.packetCommitment(ibc.core.channel.v1.QueryOuterClass.QueryPacketCommitmentRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setSequence(sequence)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryPacketCommitmentsResponse> ibcCoreChannelQueryPacketCommitments(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull String channelID,
+            @NotNull String portID
+    ) {
+        return ibcCoreChannelQueryStub.packetCommitments(ibc.core.channel.v1.QueryOuterClass.QueryPacketCommitmentsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryPacketReceiptResponse> ibcCoreChannelQueryPacketReceipt(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Long sequence
+    ) {
+        return ibcCoreChannelQueryStub.packetReceipt(ibc.core.channel.v1.QueryOuterClass.QueryPacketReceiptRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setSequence(sequence)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryUnreceivedAcksResponse> ibcCoreChannelQueryUnreceivedAcks(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Iterable<? extends Long> packetAckSequences
+    ) {
+        return ibcCoreChannelQueryStub.unreceivedAcks(ibc.core.channel.v1.QueryOuterClass.QueryUnreceivedAcksRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .addAllPacketAckSequences(packetAckSequences)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.QueryOuterClass.QueryUnreceivedPacketsResponse> ibcCoreChannelQueryUnreceivedPackets(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Iterable<? extends Long> packetCommitmentSequences
+    ) {
+        return ibcCoreChannelQueryStub.unreceivedPackets(ibc.core.channel.v1.QueryOuterClass.QueryUnreceivedPacketsRequest.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .addAllPacketCommitmentSequences(packetCommitmentSequences)
+                .build());
+    }
+
+    /*****************************************************************
+     ***** Module 'ibc.core.channel' : MESSAGE
+     *****************************************************************/
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgAcknowledgementResponse> ibcCoreChannelMsgAcknowledgement(
+            @NotNull byte[] acknowledgement,
+            @NotNull ChannelOuterClass.Packet packet,
+            @NotNull byte[] proofAcked,
+            @NotNull Client.Height proofHeight,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.acknowledgement(ibc.core.channel.v1.Tx.MsgAcknowledgement.newBuilder()
+                .setAcknowledgement(ByteString.copyFrom(acknowledgement))
+                .setPacket(packet)
+                .setProofAcked(ByteString.copyFrom(proofAcked))
+                .setProofHeight(proofHeight)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelCloseConfirmResponse> ibcCoreChannelMsgChannelCloseConfirm(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Client.Height proofHeight,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelCloseConfirm(ibc.core.channel.v1.Tx.MsgChannelCloseConfirm.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setProofHeight(proofHeight)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelCloseInitResponse> ibcCoreChannelMsgChannelCloseInit(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelCloseInit(ibc.core.channel.v1.Tx.MsgChannelCloseInit.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelOpenAckResponse> ibcCoreChannelMsgChannelOpenAck(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull String counterpartyChannelID,
+            @NotNull String counterpartyVersion,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofTry,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelOpenAck(ibc.core.channel.v1.Tx.MsgChannelOpenAck.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setCounterpartyChannelId(counterpartyChannelID)
+                .setCounterpartyVersion(counterpartyVersion)
+                .setProofHeight(proofHeight)
+                .setProofTry(ByteString.copyFrom(proofTry))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelOpenConfirmResponse> ibcCoreChannelMsgChannelOpenConfirm(
+            @NotNull String channelID,
+            @NotNull String portID,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofAck,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelOpenConfirm(ibc.core.channel.v1.Tx.MsgChannelOpenConfirm.newBuilder()
+                .setChannelId(channelID)
+                .setPortId(portID)
+                .setProofHeight(proofHeight)
+                .setProofAck(ByteString.copyFrom(proofAck))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelOpenInitResponse> ibcCoreChannelMsgChannelOpenInit(
+            @NotNull ChannelOuterClass.Channel channel,
+            @NotNull String portID,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelOpenInit(ibc.core.channel.v1.Tx.MsgChannelOpenInit.newBuilder()
+                .setChannel(channel)
+                .setPortId(portID)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgChannelOpenTryResponse> ibcCoreChannelMsgChannelOpenTry(
+            @NotNull ChannelOuterClass.Channel channel,
+            @NotNull String portID,
+            @NotNull String previousChannelID,
+            @NotNull String counterpartyVersion,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofInit,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.channelOpenTry(ibc.core.channel.v1.Tx.MsgChannelOpenTry.newBuilder()
+                .setChannel(channel)
+                .setPortId(portID)
+                .setPreviousChannelId(previousChannelID)
+                .setCounterpartyVersion(counterpartyVersion)
+                .setProofHeight(proofHeight)
+                .setProofInit(ByteString.copyFrom(proofInit))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgRecvPacketResponse> ibcCoreChannelMsgRecvPacket(
+            @NotNull ChannelOuterClass.Packet packet,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofCommitment,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.recvPacket(ibc.core.channel.v1.Tx.MsgRecvPacket.newBuilder()
+                .setPacket(packet)
+                .setProofHeight(proofHeight)
+                .setProofCommitment(ByteString.copyFrom(proofCommitment))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgTimeoutResponse> ibcCoreChannelMsgTimeout(
+            @NotNull ChannelOuterClass.Packet packet,
+            @NotNull Long nextSequenceRecv,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofUnreceived,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.timeout(ibc.core.channel.v1.Tx.MsgTimeout.newBuilder()
+                .setPacket(packet)
+                .setNextSequenceRecv(nextSequenceRecv)
+                .setProofHeight(proofHeight)
+                .setProofUnreceived(ByteString.copyFrom(proofUnreceived))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.channel.v1.Tx.MsgTimeoutOnCloseResponse> ibcCoreChannelMsgTimeoutOnClose(
+            @NotNull ChannelOuterClass.Packet packet,
+            @NotNull Long nextSequenceRecv,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofClose,
+            @NotNull byte[] proofUnreceived,
+            @NotNull String signer
+    ) {
+        return ibcCoreChannelMsgStub.timeoutOnClose(ibc.core.channel.v1.Tx.MsgTimeoutOnClose.newBuilder()
+                .setPacket(packet)
+                .setNextSequenceRecv(nextSequenceRecv)
+                .setProofHeight(proofHeight)
+                .setProofClose(ByteString.copyFrom(proofClose))
+                .setProofUnreceived(ByteString.copyFrom(proofUnreceived))
+                .setSigner(signer)
+                .build());
     }
 
     /********************************************************
-     ***** Module 'ibc' : QUERY
+     ***** Module 'ibc.core.client' : QUERY
      *******************************************************/
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceResponse> ibcQueryDenomTrace(
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryClientParamsResponse> ibcCoreClientQueryClientParams() {
+        return ibcCoreClientQueryStub.clientParams(ibc.core.client.v1.QueryOuterClass.QueryClientParamsRequest.newBuilder().build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryClientStateResponse> ibcCoreClientQueryClientState(
+            @NotNull String clientID
+    ) {
+        return ibcCoreClientQueryStub.clientState(ibc.core.client.v1.QueryOuterClass.QueryClientStateRequest.newBuilder()
+                .setClientId(clientID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryClientStatesResponse> ibcCoreClientQueryClientStates(
+            @NotNull Pagination.PageRequest pageRequest
+    ) {
+        return ibcCoreClientQueryStub.clientStates(ibc.core.client.v1.QueryOuterClass.QueryClientStatesRequest.newBuilder()
+                .setPagination(pageRequest)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryClientStatusResponse> ibcCoreClientQueryClientStatus(
+            @NotNull String clientID
+    ) {
+        return ibcCoreClientQueryStub.clientStatus(ibc.core.client.v1.QueryOuterClass.QueryClientStatusRequest.newBuilder()
+                .setClientId(clientID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateResponse> ibcCoreClientQueryConsensusState(
+            @NotNull String clientID,
+            @NotNull Long revisionHeight,
+            @NotNull Long revisionNumber,
+            @NotNull Boolean latestHeight
+            ) {
+        return ibcCoreClientQueryStub.consensusState(ibc.core.client.v1.QueryOuterClass.QueryConsensusStateRequest.newBuilder()
+                .setClientId(clientID)
+                .setRevisionHeight(revisionHeight)
+                .setRevisionNumber(revisionNumber)
+                .setLatestHeight(latestHeight)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesResponse> ibcCoreClientQueryConsensusStates(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull String clientID
+    ) {
+        return ibcCoreClientQueryStub.consensusStates(ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setClientId(clientID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> ibcCoreClientQueryConsensusStateHeights(
+            @NotNull Pagination.PageRequest pageRequest,
+            @NotNull String clientID
+    ) {
+        return ibcCoreClientQueryStub.consensusStateHeights(ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .setClientId(clientID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryUpgradedClientStateResponse> ibcCoreClientQueryUpgradedClientState() {
+        return ibcCoreClientQueryStub.upgradedClientState(ibc.core.client.v1.QueryOuterClass.QueryUpgradedClientStateRequest.newBuilder().build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryUpgradedConsensusStateResponse> ibcCoreClientQueryUpgradedConsensusState() {
+        return ibcCoreClientQueryStub.upgradedConsensusState(ibc.core.client.v1.QueryOuterClass.QueryUpgradedConsensusStateRequest.newBuilder().build());
+    }
+
+    /********************************************************
+     ***** Module 'ibc.core.client' : MESSAGE
+     *******************************************************/
+
+    public ListenableFuture<ibc.core.client.v1.Tx.MsgCreateClientResponse> ibcCoreClientMsgCreateClient(
+            @NotNull Any clientState,
+            @NotNull Any consensusState,
+            @NotNull String signer
+    ) {
+        return ibcCoreClientMsgStub.createClient(ibc.core.client.v1.Tx.MsgCreateClient.newBuilder()
+                .setClientState(clientState)
+                .setConsensusState(consensusState)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.Tx.MsgSubmitMisbehaviourResponse> ibcCoreClientMsgSubmitMisbehaviour(
+            @NotNull String clientID,
+            @NotNull Any misbehaviour,
+            @NotNull String signer
+    ) {
+        return ibcCoreClientMsgStub.submitMisbehaviour(ibc.core.client.v1.Tx.MsgSubmitMisbehaviour.newBuilder()
+                .setClientId(clientID)
+                .setMisbehaviour(misbehaviour)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.Tx.MsgUpdateClientResponse> ibcCoreClientMsgUpdateClient(
+            @NotNull String clientID,
+            @NotNull Any header,
+            @NotNull String signer
+    ) {
+        return ibcCoreClientMsgStub.updateClient(ibc.core.client.v1.Tx.MsgUpdateClient.newBuilder()
+                .setClientId(clientID)
+                .setHeader(header)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.client.v1.Tx.MsgUpgradeClientResponse> ibcCoreClientMsgUpgradeClient(
+            @NotNull String clientID,
+            @NotNull Any clientState,
+            @NotNull Any consensusState,
+            @NotNull byte[] proofUpgradeClient,
+            @NotNull String signer
+    ) {
+        return ibcCoreClientMsgStub.upgradeClient(ibc.core.client.v1.Tx.MsgUpgradeClient.newBuilder()
+                .setClientId(clientID)
+                .setClientState(clientState)
+                .setConsensusState(consensusState)
+                .setProofUpgradeClient(ByteString.copyFrom(proofUpgradeClient))
+                .setSigner(signer)
+                .build());
+    }
+
+    /********************************************************
+     ***** Module 'ibc.core.connection' : QUERY
+     *******************************************************/
+
+    public ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryClientConnectionsResponse> ibcCoreConnectionQueryClientConnections(
+            @NotNull String clientID
+    ) {
+        return ibcCoreConnectionQueryStub.clientConnections(ibc.core.connection.v1.QueryOuterClass.QueryClientConnectionsRequest.newBuilder()
+                .setClientId(clientID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryConnectionResponse> ibcCoreConnectionQueryConnection(
+            @NotNull String connectionID
+    ) {
+        return ibcCoreConnectionQueryStub.connection(ibc.core.connection.v1.QueryOuterClass.QueryConnectionRequest.newBuilder()
+                .setConnectionId(connectionID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryConnectionsResponse> ibcCoreConnectionQueryConnections(
+            @NotNull Pagination.PageRequest pageRequest
+    ) {
+        return ibcCoreConnectionQueryStub.connections(ibc.core.connection.v1.QueryOuterClass.QueryConnectionsRequest.newBuilder()
+                .setPagination(pageRequest)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryConnectionClientStateResponse> ibcCoreConnectionQueryConnectionClientState(
+            @NotNull String connectionID
+    ) {
+        return ibcCoreConnectionQueryStub.connectionClientState(ibc.core.connection.v1.QueryOuterClass.QueryConnectionClientStateRequest.newBuilder()
+                .setConnectionId(connectionID)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateResponse> ibcCoreConnectionQueryConnectionConsensusState(
+            @NotNull String connectionID,
+            @NotNull Long revisionHeight,
+            @NotNull Long revisionNumber
+            ) {
+        return ibcCoreConnectionQueryStub.connectionConsensusState(ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateRequest.newBuilder()
+                .setConnectionId(connectionID)
+                .setRevisionHeight(revisionHeight)
+                .setRevisionNumber(revisionNumber)
+                .build());
+    }
+
+    /********************************************************
+     ***** Module 'ibc.core.connection' : MESSAGE
+     *******************************************************/
+
+    public ListenableFuture<ibc.core.connection.v1.Tx.MsgConnectionOpenAckResponse> ibcCoreConnectionMsgConnectionOpenAck(
+            @NotNull String connectionID,
+            @NotNull String counterpartyConnectionID,
+            @NotNull Any clientState,
+            @NotNull Connection.Version version,
+            @NotNull Client.Height consensusHeight,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofClient,
+            @NotNull byte[] proofTry,
+            @NotNull byte[] proofConsensus,
+            @NotNull String signer
+            ) {
+        return ibcCoreConnectionMsgStub.connectionOpenAck(ibc.core.connection.v1.Tx.MsgConnectionOpenAck.newBuilder()
+                .setConnectionId(connectionID)
+                .setCounterpartyConnectionId(counterpartyConnectionID)
+                .setClientState(clientState)
+                .setVersion(version)
+                .setConsensusHeight(consensusHeight)
+                .setProofHeight(proofHeight)
+                .setProofClient(ByteString.copyFrom(proofClient))
+                .setProofTry(ByteString.copyFrom(proofTry))
+                .setProofConsensus(ByteString.copyFrom(proofConsensus))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.Tx.MsgConnectionOpenConfirmResponse> ibcCoreConnectionMsgConnectionOpenConfirm(
+            @NotNull String connectionID,
+            @NotNull Client.Height proofHeight,
+            @NotNull byte[] proofAck,
+            @NotNull String signer
+    ) {
+        return ibcCoreConnectionMsgStub.connectionOpenConfirm(ibc.core.connection.v1.Tx.MsgConnectionOpenConfirm.newBuilder()
+                .setConnectionId(connectionID)
+                .setProofHeight(proofHeight)
+                .setProofAck(ByteString.copyFrom(proofAck))
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.Tx.MsgConnectionOpenInitResponse> ibcCoreConnectionMsgConnectionOpenInit(
+            @NotNull String clientID,
+            @NotNull Connection.Counterparty counterparty,
+            @NotNull Long delayPeriod,
+            @NotNull Connection.Version version,
+            @NotNull String signer
+    ) {
+        return ibcCoreConnectionMsgStub.connectionOpenInit(ibc.core.connection.v1.Tx.MsgConnectionOpenInit.newBuilder()
+                .setClientId(clientID)
+                .setCounterparty(counterparty)
+                .setDelayPeriod(delayPeriod)
+                .setVersion(version)
+                .setSigner(signer)
+                .build());
+    }
+
+    public ListenableFuture<ibc.core.connection.v1.Tx.MsgConnectionOpenTryResponse> ibcCoreConnectionMsgConnectionOpenTry(
+            @NotNull String clientID,
+            @NotNull String previousConnectionID,
+            @NotNull Connection.Counterparty counterparty,
+            @NotNull Iterable<? extends Connection.Version> counterpartyVersions,
+            @NotNull Any clientState,
+            @NotNull Long delayPeriod,
+            @NotNull Client.Height consensusHeight,
+            @NotNull byte[] proofClient,
+            @NotNull byte[] proofInit,
+            @NotNull byte[] proofConsensus,
+            @NotNull String signer
+    ) {
+        return ibcCoreConnectionMsgStub.connectionOpenTry(ibc.core.connection.v1.Tx.MsgConnectionOpenTry.newBuilder()
+                .setClientId(clientID)
+                .setPreviousConnectionId(previousConnectionID)
+                .setCounterparty(counterparty)
+                .addAllCounterpartyVersions(counterpartyVersions)
+                .setClientState(clientState)
+                .setDelayPeriod(delayPeriod)
+                .setConsensusHeight(consensusHeight)
+                .setProofClient(ByteString.copyFrom(proofClient))
+                .setProofInit(ByteString.copyFrom(proofInit))
+                .setProofConsensus(ByteString.copyFrom(proofConsensus))
+                .setSigner(signer)
+                .build());
+    }
+
+    /********************************************************
+     ***** Module 'ibc.applications.transfer' : QUERY
+     *******************************************************/
+
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceResponse> ibcQueryDenomTrace(
             @NotNull String hash
     ) {
         return this.ibcQueryDenomTrace(hash, null);
     }
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceResponse> ibcQueryDenomTrace(
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceResponse> ibcQueryDenomTrace(
             @NotNull String hash,
             BigInteger height
     ) {
-        fx.ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
+        ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
@@ -5601,20 +7020,20 @@ public class CosmosGrpcApi {
         } else {
             stub = ibcQueryStub;
         }
-        return stub.denomTrace(fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceRequest.newBuilder().setHash(hash).build());
+        return stub.denomTrace(ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTraceRequest.newBuilder().setHash(hash).build());
     }
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesResponse> ibcQueryDenomTraces(
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesResponse> ibcQueryDenomTraces(
             cosmos.base.query.v1beta1.Pagination.PageRequest pagination
     ) {
         return this.ibcQueryDenomTraces(pagination, null);
     }
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesResponse> ibcQueryDenomTraces(
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesResponse> ibcQueryDenomTraces(
             cosmos.base.query.v1beta1.Pagination.PageRequest pagination,
             BigInteger height
     ) {
-        fx.ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
+        ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
@@ -5622,17 +7041,17 @@ public class CosmosGrpcApi {
         } else {
             stub = ibcQueryStub;
         }
-        return stub.denomTraces(fx.ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesRequest.newBuilder().setPagination(pagination).build());
+        return stub.denomTraces(ibc.applications.transfer.v1.QueryOuterClass.QueryDenomTracesRequest.newBuilder().setPagination(pagination).build());
     }
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse> ibcQueryParams() {
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse> ibcQueryParams() {
         return this.ibcQueryParams(null);
     }
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse> ibcQueryParams(
+    public ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse> ibcQueryParams(
             BigInteger height
     ) {
-        fx.ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
+        ibc.applications.transfer.v1.QueryGrpc.QueryFutureStub stub;
         if (height != null) {
             Metadata header = new Metadata();
             header.put(BLOCK_HEIGHT_KEY, height.toString());
@@ -5640,14 +7059,14 @@ public class CosmosGrpcApi {
         } else {
             stub = ibcQueryStub;
         }
-        return stub.params(fx.ibc.applications.transfer.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
+        return stub.params(ibc.applications.transfer.v1.QueryOuterClass.QueryParamsRequest.newBuilder().build());
     }
 
     /********************************************************
-     ***** Module 'ibc' : MESSAGE
+     ***** Module 'ibc.applications.transfer' : MESSAGE
      *******************************************************/
 
-    public ListenableFuture<fx.ibc.applications.transfer.v1.Tx.MsgTransferResponse> ibcMsgTransfer(
+    public ListenableFuture<ibc.applications.transfer.v1.Tx.MsgTransferResponse> ibcMsgTransfer(
             @NotNull String sender,
             @NotNull String receiver,
             @NotNull String router,
@@ -5657,12 +7076,223 @@ public class CosmosGrpcApi {
             @NotNull String sourcePort,
             @NotNull ibc.core.client.v1.Client.Height timeoutHeight
     ) {
-        return ibcMsgStub.transfer(fx.ibc.applications.transfer.v1.Tx.MsgTransfer.newBuilder().setSender(sender).setReceiver(receiver).setRouter(router).setToken(token).setFee(fee).setSourceChannel(sourceChannel).setSourcePort(sourcePort).setTimeoutHeight(timeoutHeight).build());
+        return ibcMsgStub.transfer(ibc.applications.transfer.v1.Tx.MsgTransfer.newBuilder().setSender(sender).setReceiver(receiver).setRouter(router).setToken(token).setFee(fee).setSourceChannel(sourceChannel).setSourcePort(sourcePort).setTimeoutHeight(timeoutHeight).build());
     }
 
+    /**********************************************************
+     ***** Module 'tendermint.abci.ABCIApplicationGrpc' : APP
+     *********************************************************/
+
+    public ListenableFuture<tendermint.abci.Types.ResponseApplySnapshotChunk> tmAbciAppApplySnapshotChunk(
+            @NotNull String sender,
+            @NotNull Integer index,
+            @NotNull byte[] chunk
+            ) {
+        return tendermintAbciAppStub.applySnapshotChunk(tendermint.abci.Types.RequestApplySnapshotChunk.newBuilder()
+                .setSender(sender)
+                .setIndex(index)
+                .setChunk(ByteString.copyFrom(chunk))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseBeginBlock> tmAbciAppBeginBlock(
+            @NotNull tendermint.types.Types.Header header,
+            @NotNull tendermint.abci.Types.LastCommitInfo lastCommitInfo,
+            @NotNull Iterable<? extends tendermint.abci.Types.Evidence> byzantineValidators,
+            @NotNull byte[] hash
+    ) {
+        return tendermintAbciAppStub.beginBlock(tendermint.abci.Types.RequestBeginBlock.newBuilder()
+                .setHeader(header)
+                .setLastCommitInfo(lastCommitInfo)
+                .addAllByzantineValidators(byzantineValidators)
+                .setHash(ByteString.copyFrom(hash))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseCheckTx> tmAbciAppCheckTx(
+            @NotNull tendermint.abci.Types.CheckTxType type,
+            @NotNull byte[] tx,
+            @NotNull Iterable<? extends tendermint.abci.Types.Evidence> byzantineValidators,
+            @NotNull byte[] hash
+    ) {
+        return tendermintAbciAppStub.checkTx(tendermint.abci.Types.RequestCheckTx.newBuilder()
+                .setType(type)
+                .setTx(ByteString.copyFrom(tx))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseCommit> tmAbciAppCommit() {
+        return tendermintAbciAppStub.commit(tendermint.abci.Types.RequestCommit.newBuilder().build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseDeliverTx> tmAbciAppDeliverTx(
+            @NotNull byte[] tx
+    ) {
+        return tendermintAbciAppStub.deliverTx(tendermint.abci.Types.RequestDeliverTx.newBuilder()
+                .setTx(ByteString.copyFrom(tx))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseEcho> tmAbciAppEcho(
+            @NotNull String message
+    ) {
+        return tendermintAbciAppStub.echo(tendermint.abci.Types.RequestEcho.newBuilder()
+                .setMessage(message)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseEndBlock> tmAbciAppEndBlock(
+            @NotNull Long height
+    ) {
+        return tendermintAbciAppStub.endBlock(tendermint.abci.Types.RequestEndBlock.newBuilder()
+                .setHeight(height)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseFlush> tmAbciAppFlush() {
+        return tendermintAbciAppStub.flush(tendermint.abci.Types.RequestFlush.newBuilder().build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseInfo> tmAbciAppInfo(
+            @NotNull String version,
+            @NotNull Long blockVersion,
+            @NotNull Long p2pVersion
+            ) {
+        return tendermintAbciAppStub.info(tendermint.abci.Types.RequestInfo.newBuilder()
+                .setVersion(version)
+                .setBlockVersion(blockVersion)
+                .setP2PVersion(p2pVersion)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseInitChain> tmAbciAppInitChain(
+            @NotNull String chainID,
+            @NotNull Long initialHeight,
+            @NotNull tendermint.abci.Types.ConsensusParams consensusParams,
+            @NotNull Timestamp time,
+            @NotNull byte[] appState,
+            @NotNull Iterable<? extends tendermint.abci.Types.ValidatorUpdate> validators
+            ) {
+        return tendermintAbciAppStub.initChain(tendermint.abci.Types.RequestInitChain.newBuilder()
+                .setChainId(chainID)
+                .setInitialHeight(initialHeight)
+                .setConsensusParams(consensusParams)
+                .setTime(time)
+                .setAppStateBytes(ByteString.copyFrom(appState))
+                .addAllValidators(validators)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseLoadSnapshotChunk> tmAbciAppLoadSnapshotChunk(
+            @NotNull Long height,
+            @NotNull Integer format,
+            @NotNull Integer chunk
+    ) {
+        return tendermintAbciAppStub.loadSnapshotChunk(tendermint.abci.Types.RequestLoadSnapshotChunk.newBuilder()
+                .setHeight(height)
+                .setFormat(format)
+                .setChunk(chunk)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseListSnapshots> tmAbciAppListSnapshots() {
+        return tendermintAbciAppStub.listSnapshots(tendermint.abci.Types.RequestListSnapshots.newBuilder().build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseOfferSnapshot> tmAbciAppOfferSnapshot(
+            @NotNull tendermint.abci.Types.Snapshot snapshot,
+            @NotNull byte[] appHash
+    ) {
+        return tendermintAbciAppStub.offerSnapshot(tendermint.abci.Types.RequestOfferSnapshot.newBuilder()
+                .setSnapshot(snapshot)
+                .setAppHash(ByteString.copyFrom(appHash))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseQuery> tmAbciAppQuery(
+            @NotNull Long height,
+            @NotNull String path,
+            @NotNull byte[] data,
+            @NotNull Boolean prove
+            ) {
+        return tendermintAbciAppStub.query(tendermint.abci.Types.RequestQuery.newBuilder()
+                .setHeight(height)
+                .setPath(path)
+                .setData(ByteString.copyFrom(data))
+                .setProve(prove)
+                .build());
+    }
+
+    public ListenableFuture<tendermint.abci.Types.ResponseSetOption> tmAbciAppSetOption(
+            @NotNull String key,
+            @NotNull String value
+    ) {
+        return tendermintAbciAppStub.setOption(tendermint.abci.Types.RequestSetOption.newBuilder()
+                .setKey(key)
+                .setValue(value)
+                .build());
+    }
+
+    /**********************************************************
+     ***** Module 'tendermint.rpc.grpc.BroadcastAPIGrpc' : APP
+     *********************************************************/
+
+    public ListenableFuture<tendermint.rpc.grpc.Types.ResponseBroadcastTx> tmRpcRequestBroadcastTx(
+            @NotNull byte[] tx
+    ) {
+        return tendermintRpcBroadcastStub.broadcastTx(tendermint.rpc.grpc.Types.RequestBroadcastTx.newBuilder()
+                .setTx(ByteString.copyFrom(tx))
+                .build());
+    }
+
+    public ListenableFuture<tendermint.rpc.grpc.Types.ResponsePing> tmRpcRequestPing() {
+        return tendermintRpcBroadcastStub.ping(tendermint.rpc.grpc.Types.RequestPing.newBuilder().build());
+    }
 
     /********************************************************
-     ***** Module 'other' : MESSAGE
+     ***** Module 'fx.migrate' : QUERY
      *******************************************************/
+
+    public ListenableFuture<fx.migrate.v1.QueryOuterClass.QueryMigrateCheckAccountResponse> fxMigrateQueryMigrateCheckAccount(
+            @NotNull String from,
+            @NotNull String to
+    ) {
+        return fxMigrateQueryStub.migrateCheckAccount(fx.migrate.v1.QueryOuterClass.QueryMigrateCheckAccountRequest.newBuilder()
+                .setFrom(from)
+                .setTo(to)
+                .build());
+    }
+
+    public ListenableFuture<fx.migrate.v1.QueryOuterClass.QueryMigrateRecordResponse> fxMigrateQueryMigrateRecord(
+            @NotNull String address
+    ) {
+        return fxMigrateQueryStub.migrateRecord(fx.migrate.v1.QueryOuterClass.QueryMigrateRecordRequest.newBuilder()
+                .setAddress(address)
+                .build());
+    }
+
+    /********************************************************
+     ***** Module 'fx.migrate' : MESSAGE
+     *******************************************************/
+
+    public ListenableFuture<fx.migrate.v1.Tx.MsgMigrateAccountResponse> fxMigrateMsgMigrateAccount(
+            @NotNull String from,
+            @NotNull String to,
+            @NotNull String signature
+    ) {
+        return fxMigrateMsgStub.migrateAccount(fx.migrate.v1.Tx.MsgMigrateAccount.newBuilder()
+                .setFrom(from)
+                .setTo(to)
+                .setSignature(signature)
+                .build());
+    }
+
+    /********************************************************
+     ***** Module 'fx.other' : MESSAGE
+     *******************************************************/
+
+    public ListenableFuture<fx.other.QueryOuterClass.GasPriceResponse> fxOtherQueryGasPrice() {
+        return fxOtherQueryStub.gasPrice(fx.other.QueryOuterClass.GasPriceRequest.newBuilder().build());
+    }
 
 }

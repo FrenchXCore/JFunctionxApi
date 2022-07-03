@@ -28,7 +28,7 @@ import java.io.IOException;
  * message SomeRequest {          Foo some_parameter &#x3D; 1;          PageRequest pagination &#x3D; 2;  }
  */
 @ApiModel(description = "message SomeRequest {          Foo some_parameter = 1;          PageRequest pagination = 2;  }")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class CosmosBaseQueryV1beta1PageRequest {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

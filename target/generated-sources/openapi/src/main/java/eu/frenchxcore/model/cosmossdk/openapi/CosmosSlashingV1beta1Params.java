@@ -28,7 +28,7 @@ import java.io.IOException;
  * Params represents the parameters used for by the slashing module.
  */
 @ApiModel(description = "Params represents the parameters used for by the slashing module.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class CosmosSlashingV1beta1Params {
   public static final String SERIALIZED_NAME_SIGNED_BLOCKS_WINDOW = "signed_blocks_window";
   @SerializedName(SERIALIZED_NAME_SIGNED_BLOCKS_WINDOW)

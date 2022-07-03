@@ -31,7 +31,7 @@ import java.util.List;
  * VersionInfo is the type for the GetNodeInfoResponse message.
  */
 @ApiModel(description = "VersionInfo is the type for the GetNodeInfoResponse message.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class InlineResponse20012ApplicationVersion {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

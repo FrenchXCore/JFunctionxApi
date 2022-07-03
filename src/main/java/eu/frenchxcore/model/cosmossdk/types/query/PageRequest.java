@@ -27,7 +27,7 @@ public class PageRequest {
     public BigInteger offset;
 
     /**
-     * limit is the total number of results to be returned in the result page.
+     * limit is the total number of results to be returned to the result page.
      * If left empty it will default to a value to be set by each app.
      */
     @JsonProperty("limit")

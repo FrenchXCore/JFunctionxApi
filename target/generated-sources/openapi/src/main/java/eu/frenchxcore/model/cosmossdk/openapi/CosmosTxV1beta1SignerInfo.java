@@ -30,7 +30,7 @@ import java.io.IOException;
  * SignerInfo describes the public key and signing mode of a single top-level signer.
  */
 @ApiModel(description = "SignerInfo describes the public key and signing mode of a single top-level signer.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class CosmosTxV1beta1SignerInfo {
   public static final String SERIALIZED_NAME_PUBLIC_KEY = "public_key";
   @SerializedName(SERIALIZED_NAME_PUBLIC_KEY)

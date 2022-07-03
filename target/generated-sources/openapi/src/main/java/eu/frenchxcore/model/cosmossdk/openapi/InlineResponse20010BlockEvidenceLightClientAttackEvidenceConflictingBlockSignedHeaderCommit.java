@@ -32,7 +32,7 @@ import java.util.List;
  * Commit contains the evidence that a block was committed by a set of validators.
  */
 @ApiModel(description = "Commit contains the evidence that a block was committed by a set of validators.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceLightClientAttackEvidenceConflictingBlockSignedHeaderCommit {
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)

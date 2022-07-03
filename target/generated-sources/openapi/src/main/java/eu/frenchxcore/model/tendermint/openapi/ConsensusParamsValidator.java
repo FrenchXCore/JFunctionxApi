@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ConsensusParamsValidator
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:27.236230800+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:08.580695600+02:00[Europe/Paris]")
 public class ConsensusParamsValidator {
   public static final String SERIALIZED_NAME_PUB_KEY_TYPES = "pub_key_types";
   @SerializedName(SERIALIZED_NAME_PUB_KEY_TYPES)

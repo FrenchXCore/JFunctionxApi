@@ -42,15 +42,15 @@ public class Example {
                     .build();
 
             cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse resp0 = client.stakingQueryValidators().get();
-            cosmos.auth.v1beta1.QueryAccountResponse resp1 = client.authQueryAccount("fx1z67rkadwrp2nf4zwxpktpqnw969plely6rfzpt").get();
-            if (resp1.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
-                cosmos.auth.v1beta1.BaseAccount account = resp1.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);
+            cosmos.auth.v1beta1.QueryOuterClass.QueryAccountResponse resp1 = client.authQueryAccount("fx1z67rkadwrp2nf4zwxpktpqnw969plely6rfzpt").get();
+            if (resp1.getAccount().is(cosmos.auth.v1beta1.Auth.BaseAccount.class)) {
+                cosmos.auth.v1beta1.Auth.BaseAccount account = resp1.getAccount().unpack(cosmos.auth.v1beta1.Auth.BaseAccount.class);
             }
-            cosmos.auth.v1beta1.QueryAccountResponse resp2 = client.authQueryAccount("fx1q2lnaudfxm9l06td642jae9kmhwsq6zpt905uj").get();
-            if (resp2.getAccount().is(cosmos.auth.v1beta1.BaseAccount.class)) {
-                cosmos.auth.v1beta1.BaseAccount account = resp2.getAccount().unpack(cosmos.auth.v1beta1.BaseAccount.class);
+            cosmos.auth.v1beta1.QueryOuterClass.QueryAccountResponse resp2 = client.authQueryAccount("fx1q2lnaudfxm9l06td642jae9kmhwsq6zpt905uj").get();
+            if (resp2.getAccount().is(cosmos.auth.v1beta1.Auth.BaseAccount.class)) {
+                cosmos.auth.v1beta1.Auth.BaseAccount account = resp2.getAccount().unpack(cosmos.auth.v1beta1.Auth.BaseAccount.class);
             }
-            cosmos.auth.v1beta1.QueryParamsResponse resp3 = client.authQueryParams().get();
+            cosmos.auth.v1beta1.QueryOuterClass.QueryParamsResponse resp3 = client.authQueryParams().get();
 
             /** To grab Cosmos events :
              * Bank:            https://github.com/cosmos/cosmos-sdk/blob/main/x/bank/spec/04_events.md

@@ -32,7 +32,7 @@ import java.util.List;
  * QueryDelegationTotalRewardsResponse is the response type for the Query/DelegationTotalRewards RPC method.
  */
 @ApiModel(description = "QueryDelegationTotalRewardsResponse is the response type for the Query/DelegationTotalRewards RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-28T00:22:37.119222300+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
 public class InlineResponse20017 {
   public static final String SERIALIZED_NAME_REWARDS = "rewards";
   @SerializedName(SERIALIZED_NAME_REWARDS)
