@@ -29,7 +29,7 @@ import java.io.IOException;
  * RedelegationEntryResponse is equivalent to a RedelegationEntry except that it contains a balance in addition to shares which is more suitable for client responses.
  */
 @ApiModel(description = "RedelegationEntryResponse is equivalent to a RedelegationEntry except that it contains a balance in addition to shares which is more suitable for client responses.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class InlineResponse20039Entries {
   public static final String SERIALIZED_NAME_REDELEGATION_ENTRY = "redelegation_entry";
   @SerializedName(SERIALIZED_NAME_REDELEGATION_ENTRY)

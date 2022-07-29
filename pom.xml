@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.frenchxcore</groupId>
     <artifactId>jfunctionxapi</artifactId>
-    <version>2.1.0.0</version>
+    <version>2.2.1.0</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -179,6 +179,8 @@
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.44.1:exe:${os.detected.classifier}</pluginArtifact>
                     <useArgumentFile>true</useArgumentFile>
+                    <checkStaleness>true</checkStaleness>
+                    <staleMillis>10000</staleMillis>
                 </configuration>
                 <executions>
                     <execution>

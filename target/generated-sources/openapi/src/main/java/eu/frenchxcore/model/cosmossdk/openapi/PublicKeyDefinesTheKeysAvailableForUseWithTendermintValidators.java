@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PublicKeyDefinesTheKeysAvailableForUseWithTendermintValidators
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class PublicKeyDefinesTheKeysAvailableForUseWithTendermintValidators {
   public static final String SERIALIZED_NAME_ED25519 = "ed25519";
   @SerializedName(SERIALIZED_NAME_ED25519)

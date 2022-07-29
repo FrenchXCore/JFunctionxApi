@@ -10027,7 +10027,7 @@ public final class Gov {
       "ta1.VoteOption\022O\n\006weight\030\002 \001(\tB?\332\336\037&gith" +
       "ub.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000\362\336" +
       "\037\ryaml:\"weight\"\"C\n\014TextProposal\022\r\n\005title" +
-      "\030\001 \001(\t\022\023\n\013description\030\002 \001(\t:\017\312\264-\007Content" +
+      "\030\001 \001(\t\022\023\n\013description\030\002 \001(\t:\017\322\264-\007Content" +
       "\350\240\037\001\"\260\001\n\007Deposit\022+\n\013proposal_id\030\001 \001(\004B\026\362" +
       "\336\037\022yaml:\"proposal_id\"\022\021\n\tdepositor\030\002 \001(\t" +
       "\022[\n\006amount\030\003 \003(\0132\031.cosmos.base.v1beta1.C" +

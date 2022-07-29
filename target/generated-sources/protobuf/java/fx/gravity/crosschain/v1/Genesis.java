@@ -19,153 +19,231 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     fx.gravity.crosschain.v1.Types.Params getParams();
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder();
 
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>uint64 last_observed_event_nonce = 2;</code>
+     * @return The lastObservedEventNonce.
+     */
+    long getLastObservedEventNonce();
+
+    /**
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the lastObservedBlockHeight field is set.
      */
     boolean hasLastObservedBlockHeight();
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      * @return The lastObservedBlockHeight.
      */
     fx.gravity.crosschain.v1.Types.LastObservedBlockHeight getLastObservedBlockHeight();
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.LastObservedBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder();
 
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> 
-        getOracleSetList();
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    fx.gravity.crosschain.v1.Types.OracleSet getOracleSet(int index);
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    int getOracleSetCount();
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
-        getOracleSetOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.crosschain.v1.Types.Oracle> 
-        getOracleList();
+        getOraclesList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
-    fx.gravity.crosschain.v1.Types.Oracle getOracle(int index);
+    fx.gravity.crosschain.v1.Types.Oracle getOracles(int index);
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
-    int getOracleCount();
+    int getOraclesCount();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
-        getOracleOrBuilderList();
+        getOraclesOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
-    fx.gravity.crosschain.v1.Types.OracleOrBuilder getOracleOrBuilder(
+    fx.gravity.crosschain.v1.Types.OracleOrBuilder getOraclesOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> 
+        getOracleSetsList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.OracleSet getOracleSets(int index);
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    int getOracleSetsCount();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
+        getOracleSetsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> 
+        getBridgeTokensList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.BridgeToken getBridgeTokens(int index);
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    int getBridgeTokensCount();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
+        getBridgeTokensOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokensOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx> 
         getUnbatchedTransfersList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.OutgoingTransferTx getUnbatchedTransfers(int index);
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     int getUnbatchedTransfersCount();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder> 
         getUnbatchedTransfersOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch> 
         getBatchesList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.OutgoingTxBatch getBatches(int index);
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     int getBatchesCount();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder> 
         getBatchesOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> 
-        getBridgeTokenList();
+    java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> 
+        getOracleSetConfirmsList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
-    fx.gravity.crosschain.v1.Types.BridgeToken getBridgeToken(int index);
+    fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm getOracleSetConfirms(int index);
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
-    int getBridgeTokenCount();
+    int getOracleSetConfirmsCount();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
-        getBridgeTokenOrBuilderList();
+    java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder> 
+        getOracleSetConfirmsOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
-    fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokenOrBuilder(
+    fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder getOracleSetConfirmsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> 
+        getBatchConfirmsList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Tx.MsgConfirmBatch getBatchConfirms(int index);
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    int getBatchConfirmsCount();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder> 
+        getBatchConfirmsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.crosschain.v1.Types.Attestation> 
+        getAttestationsList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.Attestation getAttestations(int index);
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    int getAttestationsCount();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.crosschain.v1.Types.AttestationOrBuilder> 
+        getAttestationsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.crosschain.v1.Types.AttestationOrBuilder getAttestationsOrBuilder(
         int index);
   }
   /**
@@ -185,11 +263,14 @@ public final class Genesis {
       super(builder);
     }
     private GenesisState() {
-      oracleSet_ = java.util.Collections.emptyList();
-      oracle_ = java.util.Collections.emptyList();
+      oracles_ = java.util.Collections.emptyList();
+      oracleSets_ = java.util.Collections.emptyList();
+      bridgeTokens_ = java.util.Collections.emptyList();
       unbatchedTransfers_ = java.util.Collections.emptyList();
       batches_ = java.util.Collections.emptyList();
-      bridgeToken_ = java.util.Collections.emptyList();
+      oracleSetConfirms_ = java.util.Collections.emptyList();
+      batchConfirms_ = java.util.Collections.emptyList();
+      attestations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -236,7 +317,12 @@ public final class Genesis {
 
               break;
             }
-            case 18: {
+            case 16: {
+
+              lastObservedEventNonce_ = input.readUInt64();
+              break;
+            }
+            case 26: {
               fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.Builder subBuilder = null;
               if (lastObservedBlockHeight_ != null) {
                 subBuilder = lastObservedBlockHeight_.toBuilder();
@@ -249,49 +335,76 @@ public final class Genesis {
 
               break;
             }
-            case 26: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oracleSet_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OracleSet>();
+                oracles_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Oracle>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              oracleSet_.add(
-                  input.readMessage(fx.gravity.crosschain.v1.Types.OracleSet.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                oracle_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Oracle>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              oracle_.add(
+              oracles_.add(
                   input.readMessage(fx.gravity.crosschain.v1.Types.Oracle.parser(), extensionRegistry));
               break;
             }
             case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                oracleSets_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OracleSet>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              oracleSets_.add(
+                  input.readMessage(fx.gravity.crosschain.v1.Types.OracleSet.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unbatchedTransfers_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OutgoingTransferTx>();
+                bridgeTokens_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.BridgeToken>();
                 mutable_bitField0_ |= 0x00000004;
+              }
+              bridgeTokens_.add(
+                  input.readMessage(fx.gravity.crosschain.v1.Types.BridgeToken.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                unbatchedTransfers_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OutgoingTransferTx>();
+                mutable_bitField0_ |= 0x00000008;
               }
               unbatchedTransfers_.add(
                   input.readMessage(fx.gravity.crosschain.v1.Types.OutgoingTransferTx.parser(), extensionRegistry));
               break;
             }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 batches_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OutgoingTxBatch>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               batches_.add(
                   input.readMessage(fx.gravity.crosschain.v1.Types.OutgoingTxBatch.parser(), extensionRegistry));
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                bridgeToken_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.BridgeToken>();
-                mutable_bitField0_ |= 0x00000010;
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                oracleSetConfirms_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm>();
+                mutable_bitField0_ |= 0x00000020;
               }
-              bridgeToken_.add(
-                  input.readMessage(fx.gravity.crosschain.v1.Types.BridgeToken.parser(), extensionRegistry));
+              oracleSetConfirms_.add(
+                  input.readMessage(fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                batchConfirms_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              batchConfirms_.add(
+                  input.readMessage(fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.parser(), extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                attestations_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Attestation>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              attestations_.add(
+                  input.readMessage(fx.gravity.crosschain.v1.Types.Attestation.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -310,19 +423,28 @@ public final class Genesis {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          oracleSet_ = java.util.Collections.unmodifiableList(oracleSet_);
+          oracles_ = java.util.Collections.unmodifiableList(oracles_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          oracle_ = java.util.Collections.unmodifiableList(oracle_);
+          oracleSets_ = java.util.Collections.unmodifiableList(oracleSets_);
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unbatchedTransfers_ = java.util.Collections.unmodifiableList(unbatchedTransfers_);
+          bridgeTokens_ = java.util.Collections.unmodifiableList(bridgeTokens_);
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          batches_ = java.util.Collections.unmodifiableList(batches_);
+          unbatchedTransfers_ = java.util.Collections.unmodifiableList(unbatchedTransfers_);
         }
         if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          bridgeToken_ = java.util.Collections.unmodifiableList(bridgeToken_);
+          batches_ = java.util.Collections.unmodifiableList(batches_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          oracleSetConfirms_ = java.util.Collections.unmodifiableList(oracleSetConfirms_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          attestations_ = java.util.Collections.unmodifiableList(attestations_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -344,7 +466,7 @@ public final class Genesis {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private fx.gravity.crosschain.v1.Types.Params params_;
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -352,7 +474,7 @@ public final class Genesis {
       return params_ != null;
     }
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -360,17 +482,28 @@ public final class Genesis {
       return params_ == null ? fx.gravity.crosschain.v1.Types.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+     * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
     }
 
-    public static final int LAST_OBSERVED_BLOCK_HEIGHT_FIELD_NUMBER = 2;
+    public static final int LAST_OBSERVED_EVENT_NONCE_FIELD_NUMBER = 2;
+    private long lastObservedEventNonce_;
+    /**
+     * <code>uint64 last_observed_event_nonce = 2;</code>
+     * @return The lastObservedEventNonce.
+     */
+    @java.lang.Override
+    public long getLastObservedEventNonce() {
+      return lastObservedEventNonce_;
+    }
+
+    public static final int LAST_OBSERVED_BLOCK_HEIGHT_FIELD_NUMBER = 3;
     private fx.gravity.crosschain.v1.Types.LastObservedBlockHeight lastObservedBlockHeight_;
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the lastObservedBlockHeight field is set.
      */
     @java.lang.Override
@@ -378,7 +511,7 @@ public final class Genesis {
       return lastObservedBlockHeight_ != null;
     }
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      * @return The lastObservedBlockHeight.
      */
     @java.lang.Override
@@ -386,104 +519,144 @@ public final class Genesis {
       return lastObservedBlockHeight_ == null ? fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.getDefaultInstance() : lastObservedBlockHeight_;
     }
     /**
-     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+     * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.LastObservedBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder() {
       return getLastObservedBlockHeight();
     }
 
-    public static final int ORACLESET_FIELD_NUMBER = 3;
-    private java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> oracleSet_;
+    public static final int ORACLES_FIELD_NUMBER = 4;
+    private java.util.List<fx.gravity.crosschain.v1.Types.Oracle> oracles_;
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> getOracleSetList() {
-      return oracleSet_;
+    public java.util.List<fx.gravity.crosschain.v1.Types.Oracle> getOraclesList() {
+      return oracles_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
-        getOracleSetOrBuilderList() {
-      return oracleSet_;
-    }
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    @java.lang.Override
-    public int getOracleSetCount() {
-      return oracleSet_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.OracleSet getOracleSet(int index) {
-      return oracleSet_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetOrBuilder(
-        int index) {
-      return oracleSet_.get(index);
-    }
-
-    public static final int ORACLE_FIELD_NUMBER = 4;
-    private java.util.List<fx.gravity.crosschain.v1.Types.Oracle> oracle_;
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<fx.gravity.crosschain.v1.Types.Oracle> getOracleList() {
-      return oracle_;
-    }
-    /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
-        getOracleOrBuilderList() {
-      return oracle_;
+        getOraclesOrBuilderList() {
+      return oracles_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public int getOracleCount() {
-      return oracle_.size();
+    public int getOraclesCount() {
+      return oracles_.size();
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.Oracle getOracle(int index) {
-      return oracle_.get(index);
+    public fx.gravity.crosschain.v1.Types.Oracle getOracles(int index) {
+      return oracles_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.OracleOrBuilder getOracleOrBuilder(
+    public fx.gravity.crosschain.v1.Types.OracleOrBuilder getOraclesOrBuilder(
         int index) {
-      return oracle_.get(index);
+      return oracles_.get(index);
     }
 
-    public static final int UNBATCHED_TRANSFERS_FIELD_NUMBER = 5;
+    public static final int ORACLE_SETS_FIELD_NUMBER = 5;
+    private java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> oracleSets_;
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> getOracleSetsList() {
+      return oracleSets_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
+        getOracleSetsOrBuilderList() {
+      return oracleSets_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getOracleSetsCount() {
+      return oracleSets_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.OracleSet getOracleSets(int index) {
+      return oracleSets_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetsOrBuilder(
+        int index) {
+      return oracleSets_.get(index);
+    }
+
+    public static final int BRIDGE_TOKENS_FIELD_NUMBER = 6;
+    private java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> bridgeTokens_;
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> getBridgeTokensList() {
+      return bridgeTokens_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
+        getBridgeTokensOrBuilderList() {
+      return bridgeTokens_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getBridgeTokensCount() {
+      return bridgeTokens_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.BridgeToken getBridgeTokens(int index) {
+      return bridgeTokens_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokensOrBuilder(
+        int index) {
+      return bridgeTokens_.get(index);
+    }
+
+    public static final int UNBATCHED_TRANSFERS_FIELD_NUMBER = 7;
     private java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx> unbatchedTransfers_;
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx> getUnbatchedTransfersList() {
       return unbatchedTransfers_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder> 
@@ -491,21 +664,21 @@ public final class Genesis {
       return unbatchedTransfers_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getUnbatchedTransfersCount() {
       return unbatchedTransfers_.size();
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.OutgoingTransferTx getUnbatchedTransfers(int index) {
       return unbatchedTransfers_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
@@ -513,17 +686,17 @@ public final class Genesis {
       return unbatchedTransfers_.get(index);
     }
 
-    public static final int BATCHES_FIELD_NUMBER = 6;
+    public static final int BATCHES_FIELD_NUMBER = 8;
     private java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch> batches_;
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch> getBatchesList() {
       return batches_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder> 
@@ -531,21 +704,21 @@ public final class Genesis {
       return batches_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getBatchesCount() {
       return batches_.size();
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.OutgoingTxBatch getBatches(int index) {
       return batches_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
@@ -553,44 +726,124 @@ public final class Genesis {
       return batches_.get(index);
     }
 
-    public static final int BRIDGE_TOKEN_FIELD_NUMBER = 7;
-    private java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> bridgeToken_;
+    public static final int ORACLE_SET_CONFIRMS_FIELD_NUMBER = 9;
+    private java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> oracleSetConfirms_;
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> getBridgeTokenList() {
-      return bridgeToken_;
+    public java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> getOracleSetConfirmsList() {
+      return oracleSetConfirms_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
-        getBridgeTokenOrBuilderList() {
-      return bridgeToken_;
+    public java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder> 
+        getOracleSetConfirmsOrBuilderList() {
+      return oracleSetConfirms_;
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public int getBridgeTokenCount() {
-      return bridgeToken_.size();
+    public int getOracleSetConfirmsCount() {
+      return oracleSetConfirms_.size();
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.BridgeToken getBridgeToken(int index) {
-      return bridgeToken_.get(index);
+    public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm getOracleSetConfirms(int index) {
+      return oracleSetConfirms_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+     * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokenOrBuilder(
+    public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder getOracleSetConfirmsOrBuilder(
         int index) {
-      return bridgeToken_.get(index);
+      return oracleSetConfirms_.get(index);
+    }
+
+    public static final int BATCH_CONFIRMS_FIELD_NUMBER = 10;
+    private java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> batchConfirms_;
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
+      return batchConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder> 
+        getBatchConfirmsOrBuilderList() {
+      return batchConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getBatchConfirmsCount() {
+      return batchConfirms_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
+      return batchConfirms_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+        int index) {
+      return batchConfirms_.get(index);
+    }
+
+    public static final int ATTESTATIONS_FIELD_NUMBER = 11;
+    private java.util.List<fx.gravity.crosschain.v1.Types.Attestation> attestations_;
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.crosschain.v1.Types.Attestation> getAttestationsList() {
+      return attestations_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.crosschain.v1.Types.AttestationOrBuilder> 
+        getAttestationsOrBuilderList() {
+      return attestations_;
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getAttestationsCount() {
+      return attestations_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.Attestation getAttestations(int index) {
+      return attestations_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.AttestationOrBuilder getAttestationsOrBuilder(
+        int index) {
+      return attestations_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -610,23 +863,35 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
+      if (lastObservedEventNonce_ != 0L) {
+        output.writeUInt64(2, lastObservedEventNonce_);
+      }
       if (lastObservedBlockHeight_ != null) {
-        output.writeMessage(2, getLastObservedBlockHeight());
+        output.writeMessage(3, getLastObservedBlockHeight());
       }
-      for (int i = 0; i < oracleSet_.size(); i++) {
-        output.writeMessage(3, oracleSet_.get(i));
+      for (int i = 0; i < oracles_.size(); i++) {
+        output.writeMessage(4, oracles_.get(i));
       }
-      for (int i = 0; i < oracle_.size(); i++) {
-        output.writeMessage(4, oracle_.get(i));
+      for (int i = 0; i < oracleSets_.size(); i++) {
+        output.writeMessage(5, oracleSets_.get(i));
+      }
+      for (int i = 0; i < bridgeTokens_.size(); i++) {
+        output.writeMessage(6, bridgeTokens_.get(i));
       }
       for (int i = 0; i < unbatchedTransfers_.size(); i++) {
-        output.writeMessage(5, unbatchedTransfers_.get(i));
+        output.writeMessage(7, unbatchedTransfers_.get(i));
       }
       for (int i = 0; i < batches_.size(); i++) {
-        output.writeMessage(6, batches_.get(i));
+        output.writeMessage(8, batches_.get(i));
       }
-      for (int i = 0; i < bridgeToken_.size(); i++) {
-        output.writeMessage(7, bridgeToken_.get(i));
+      for (int i = 0; i < oracleSetConfirms_.size(); i++) {
+        output.writeMessage(9, oracleSetConfirms_.get(i));
+      }
+      for (int i = 0; i < batchConfirms_.size(); i++) {
+        output.writeMessage(10, batchConfirms_.get(i));
+      }
+      for (int i = 0; i < attestations_.size(); i++) {
+        output.writeMessage(11, attestations_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -641,29 +906,45 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
       }
+      if (lastObservedEventNonce_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, lastObservedEventNonce_);
+      }
       if (lastObservedBlockHeight_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getLastObservedBlockHeight());
+          .computeMessageSize(3, getLastObservedBlockHeight());
       }
-      for (int i = 0; i < oracleSet_.size(); i++) {
+      for (int i = 0; i < oracles_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, oracleSet_.get(i));
+          .computeMessageSize(4, oracles_.get(i));
       }
-      for (int i = 0; i < oracle_.size(); i++) {
+      for (int i = 0; i < oracleSets_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, oracle_.get(i));
+          .computeMessageSize(5, oracleSets_.get(i));
+      }
+      for (int i = 0; i < bridgeTokens_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, bridgeTokens_.get(i));
       }
       for (int i = 0; i < unbatchedTransfers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, unbatchedTransfers_.get(i));
+          .computeMessageSize(7, unbatchedTransfers_.get(i));
       }
       for (int i = 0; i < batches_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, batches_.get(i));
+          .computeMessageSize(8, batches_.get(i));
       }
-      for (int i = 0; i < bridgeToken_.size(); i++) {
+      for (int i = 0; i < oracleSetConfirms_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, bridgeToken_.get(i));
+          .computeMessageSize(9, oracleSetConfirms_.get(i));
+      }
+      for (int i = 0; i < batchConfirms_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, batchConfirms_.get(i));
+      }
+      for (int i = 0; i < attestations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, attestations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -685,21 +966,29 @@ public final class Genesis {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
+      if (getLastObservedEventNonce()
+          != other.getLastObservedEventNonce()) return false;
       if (hasLastObservedBlockHeight() != other.hasLastObservedBlockHeight()) return false;
       if (hasLastObservedBlockHeight()) {
         if (!getLastObservedBlockHeight()
             .equals(other.getLastObservedBlockHeight())) return false;
       }
-      if (!getOracleSetList()
-          .equals(other.getOracleSetList())) return false;
-      if (!getOracleList()
-          .equals(other.getOracleList())) return false;
+      if (!getOraclesList()
+          .equals(other.getOraclesList())) return false;
+      if (!getOracleSetsList()
+          .equals(other.getOracleSetsList())) return false;
+      if (!getBridgeTokensList()
+          .equals(other.getBridgeTokensList())) return false;
       if (!getUnbatchedTransfersList()
           .equals(other.getUnbatchedTransfersList())) return false;
       if (!getBatchesList()
           .equals(other.getBatchesList())) return false;
-      if (!getBridgeTokenList()
-          .equals(other.getBridgeTokenList())) return false;
+      if (!getOracleSetConfirmsList()
+          .equals(other.getOracleSetConfirmsList())) return false;
+      if (!getBatchConfirmsList()
+          .equals(other.getBatchConfirmsList())) return false;
+      if (!getAttestationsList()
+          .equals(other.getAttestationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -715,17 +1004,24 @@ public final class Genesis {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
       }
+      hash = (37 * hash) + LAST_OBSERVED_EVENT_NONCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastObservedEventNonce());
       if (hasLastObservedBlockHeight()) {
         hash = (37 * hash) + LAST_OBSERVED_BLOCK_HEIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getLastObservedBlockHeight().hashCode();
       }
-      if (getOracleSetCount() > 0) {
-        hash = (37 * hash) + ORACLESET_FIELD_NUMBER;
-        hash = (53 * hash) + getOracleSetList().hashCode();
+      if (getOraclesCount() > 0) {
+        hash = (37 * hash) + ORACLES_FIELD_NUMBER;
+        hash = (53 * hash) + getOraclesList().hashCode();
       }
-      if (getOracleCount() > 0) {
-        hash = (37 * hash) + ORACLE_FIELD_NUMBER;
-        hash = (53 * hash) + getOracleList().hashCode();
+      if (getOracleSetsCount() > 0) {
+        hash = (37 * hash) + ORACLE_SETS_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSetsList().hashCode();
+      }
+      if (getBridgeTokensCount() > 0) {
+        hash = (37 * hash) + BRIDGE_TOKENS_FIELD_NUMBER;
+        hash = (53 * hash) + getBridgeTokensList().hashCode();
       }
       if (getUnbatchedTransfersCount() > 0) {
         hash = (37 * hash) + UNBATCHED_TRANSFERS_FIELD_NUMBER;
@@ -735,9 +1031,17 @@ public final class Genesis {
         hash = (37 * hash) + BATCHES_FIELD_NUMBER;
         hash = (53 * hash) + getBatchesList().hashCode();
       }
-      if (getBridgeTokenCount() > 0) {
-        hash = (37 * hash) + BRIDGE_TOKEN_FIELD_NUMBER;
-        hash = (53 * hash) + getBridgeTokenList().hashCode();
+      if (getOracleSetConfirmsCount() > 0) {
+        hash = (37 * hash) + ORACLE_SET_CONFIRMS_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSetConfirmsList().hashCode();
+      }
+      if (getBatchConfirmsCount() > 0) {
+        hash = (37 * hash) + BATCH_CONFIRMS_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchConfirmsList().hashCode();
+      }
+      if (getAttestationsCount() > 0) {
+        hash = (37 * hash) + ATTESTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAttestationsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -871,11 +1175,14 @@ public final class Genesis {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getOracleSetFieldBuilder();
-          getOracleFieldBuilder();
+          getOraclesFieldBuilder();
+          getOracleSetsFieldBuilder();
+          getBridgeTokensFieldBuilder();
           getUnbatchedTransfersFieldBuilder();
           getBatchesFieldBuilder();
-          getBridgeTokenFieldBuilder();
+          getOracleSetConfirmsFieldBuilder();
+          getBatchConfirmsFieldBuilder();
+          getAttestationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -887,41 +1194,61 @@ public final class Genesis {
           params_ = null;
           paramsBuilder_ = null;
         }
+        lastObservedEventNonce_ = 0L;
+
         if (lastObservedBlockHeightBuilder_ == null) {
           lastObservedBlockHeight_ = null;
         } else {
           lastObservedBlockHeight_ = null;
           lastObservedBlockHeightBuilder_ = null;
         }
-        if (oracleSetBuilder_ == null) {
-          oracleSet_ = java.util.Collections.emptyList();
+        if (oraclesBuilder_ == null) {
+          oracles_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          oracleSetBuilder_.clear();
+          oraclesBuilder_.clear();
         }
-        if (oracleBuilder_ == null) {
-          oracle_ = java.util.Collections.emptyList();
+        if (oracleSetsBuilder_ == null) {
+          oracleSets_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          oracleBuilder_.clear();
+          oracleSetsBuilder_.clear();
+        }
+        if (bridgeTokensBuilder_ == null) {
+          bridgeTokens_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          bridgeTokensBuilder_.clear();
         }
         if (unbatchedTransfersBuilder_ == null) {
           unbatchedTransfers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           unbatchedTransfersBuilder_.clear();
         }
         if (batchesBuilder_ == null) {
           batches_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           batchesBuilder_.clear();
         }
-        if (bridgeTokenBuilder_ == null) {
-          bridgeToken_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+        if (oracleSetConfirmsBuilder_ == null) {
+          oracleSetConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          bridgeTokenBuilder_.clear();
+          oracleSetConfirmsBuilder_.clear();
+        }
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          batchConfirmsBuilder_.clear();
+        }
+        if (attestationsBuilder_ == null) {
+          attestations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          attestationsBuilder_.clear();
         }
         return this;
       }
@@ -955,55 +1282,83 @@ public final class Genesis {
         } else {
           result.params_ = paramsBuilder_.build();
         }
+        result.lastObservedEventNonce_ = lastObservedEventNonce_;
         if (lastObservedBlockHeightBuilder_ == null) {
           result.lastObservedBlockHeight_ = lastObservedBlockHeight_;
         } else {
           result.lastObservedBlockHeight_ = lastObservedBlockHeightBuilder_.build();
         }
-        if (oracleSetBuilder_ == null) {
+        if (oraclesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            oracleSet_ = java.util.Collections.unmodifiableList(oracleSet_);
+            oracles_ = java.util.Collections.unmodifiableList(oracles_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.oracleSet_ = oracleSet_;
+          result.oracles_ = oracles_;
         } else {
-          result.oracleSet_ = oracleSetBuilder_.build();
+          result.oracles_ = oraclesBuilder_.build();
         }
-        if (oracleBuilder_ == null) {
+        if (oracleSetsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            oracle_ = java.util.Collections.unmodifiableList(oracle_);
+            oracleSets_ = java.util.Collections.unmodifiableList(oracleSets_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.oracle_ = oracle_;
+          result.oracleSets_ = oracleSets_;
         } else {
-          result.oracle_ = oracleBuilder_.build();
+          result.oracleSets_ = oracleSetsBuilder_.build();
+        }
+        if (bridgeTokensBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            bridgeTokens_ = java.util.Collections.unmodifiableList(bridgeTokens_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.bridgeTokens_ = bridgeTokens_;
+        } else {
+          result.bridgeTokens_ = bridgeTokensBuilder_.build();
         }
         if (unbatchedTransfersBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             unbatchedTransfers_ = java.util.Collections.unmodifiableList(unbatchedTransfers_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.unbatchedTransfers_ = unbatchedTransfers_;
         } else {
           result.unbatchedTransfers_ = unbatchedTransfersBuilder_.build();
         }
         if (batchesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             batches_ = java.util.Collections.unmodifiableList(batches_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.batches_ = batches_;
         } else {
           result.batches_ = batchesBuilder_.build();
         }
-        if (bridgeTokenBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
-            bridgeToken_ = java.util.Collections.unmodifiableList(bridgeToken_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+        if (oracleSetConfirmsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            oracleSetConfirms_ = java.util.Collections.unmodifiableList(oracleSetConfirms_);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
-          result.bridgeToken_ = bridgeToken_;
+          result.oracleSetConfirms_ = oracleSetConfirms_;
         } else {
-          result.bridgeToken_ = bridgeTokenBuilder_.build();
+          result.oracleSetConfirms_ = oracleSetConfirmsBuilder_.build();
+        }
+        if (batchConfirmsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.batchConfirms_ = batchConfirms_;
+        } else {
+          result.batchConfirms_ = batchConfirmsBuilder_.build();
+        }
+        if (attestationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            attestations_ = java.util.Collections.unmodifiableList(attestations_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.attestations_ = attestations_;
+        } else {
+          result.attestations_ = attestationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1056,58 +1411,87 @@ public final class Genesis {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
+        if (other.getLastObservedEventNonce() != 0L) {
+          setLastObservedEventNonce(other.getLastObservedEventNonce());
+        }
         if (other.hasLastObservedBlockHeight()) {
           mergeLastObservedBlockHeight(other.getLastObservedBlockHeight());
         }
-        if (oracleSetBuilder_ == null) {
-          if (!other.oracleSet_.isEmpty()) {
-            if (oracleSet_.isEmpty()) {
-              oracleSet_ = other.oracleSet_;
+        if (oraclesBuilder_ == null) {
+          if (!other.oracles_.isEmpty()) {
+            if (oracles_.isEmpty()) {
+              oracles_ = other.oracles_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureOracleSetIsMutable();
-              oracleSet_.addAll(other.oracleSet_);
+              ensureOraclesIsMutable();
+              oracles_.addAll(other.oracles_);
             }
             onChanged();
           }
         } else {
-          if (!other.oracleSet_.isEmpty()) {
-            if (oracleSetBuilder_.isEmpty()) {
-              oracleSetBuilder_.dispose();
-              oracleSetBuilder_ = null;
-              oracleSet_ = other.oracleSet_;
+          if (!other.oracles_.isEmpty()) {
+            if (oraclesBuilder_.isEmpty()) {
+              oraclesBuilder_.dispose();
+              oraclesBuilder_ = null;
+              oracles_ = other.oracles_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              oracleSetBuilder_ = 
+              oraclesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOracleSetFieldBuilder() : null;
+                   getOraclesFieldBuilder() : null;
             } else {
-              oracleSetBuilder_.addAllMessages(other.oracleSet_);
+              oraclesBuilder_.addAllMessages(other.oracles_);
             }
           }
         }
-        if (oracleBuilder_ == null) {
-          if (!other.oracle_.isEmpty()) {
-            if (oracle_.isEmpty()) {
-              oracle_ = other.oracle_;
+        if (oracleSetsBuilder_ == null) {
+          if (!other.oracleSets_.isEmpty()) {
+            if (oracleSets_.isEmpty()) {
+              oracleSets_ = other.oracleSets_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureOracleIsMutable();
-              oracle_.addAll(other.oracle_);
+              ensureOracleSetsIsMutable();
+              oracleSets_.addAll(other.oracleSets_);
             }
             onChanged();
           }
         } else {
-          if (!other.oracle_.isEmpty()) {
-            if (oracleBuilder_.isEmpty()) {
-              oracleBuilder_.dispose();
-              oracleBuilder_ = null;
-              oracle_ = other.oracle_;
+          if (!other.oracleSets_.isEmpty()) {
+            if (oracleSetsBuilder_.isEmpty()) {
+              oracleSetsBuilder_.dispose();
+              oracleSetsBuilder_ = null;
+              oracleSets_ = other.oracleSets_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              oracleBuilder_ = 
+              oracleSetsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOracleFieldBuilder() : null;
+                   getOracleSetsFieldBuilder() : null;
             } else {
-              oracleBuilder_.addAllMessages(other.oracle_);
+              oracleSetsBuilder_.addAllMessages(other.oracleSets_);
+            }
+          }
+        }
+        if (bridgeTokensBuilder_ == null) {
+          if (!other.bridgeTokens_.isEmpty()) {
+            if (bridgeTokens_.isEmpty()) {
+              bridgeTokens_ = other.bridgeTokens_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureBridgeTokensIsMutable();
+              bridgeTokens_.addAll(other.bridgeTokens_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.bridgeTokens_.isEmpty()) {
+            if (bridgeTokensBuilder_.isEmpty()) {
+              bridgeTokensBuilder_.dispose();
+              bridgeTokensBuilder_ = null;
+              bridgeTokens_ = other.bridgeTokens_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              bridgeTokensBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBridgeTokensFieldBuilder() : null;
+            } else {
+              bridgeTokensBuilder_.addAllMessages(other.bridgeTokens_);
             }
           }
         }
@@ -1115,7 +1499,7 @@ public final class Genesis {
           if (!other.unbatchedTransfers_.isEmpty()) {
             if (unbatchedTransfers_.isEmpty()) {
               unbatchedTransfers_ = other.unbatchedTransfers_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureUnbatchedTransfersIsMutable();
               unbatchedTransfers_.addAll(other.unbatchedTransfers_);
@@ -1128,7 +1512,7 @@ public final class Genesis {
               unbatchedTransfersBuilder_.dispose();
               unbatchedTransfersBuilder_ = null;
               unbatchedTransfers_ = other.unbatchedTransfers_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               unbatchedTransfersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnbatchedTransfersFieldBuilder() : null;
@@ -1141,7 +1525,7 @@ public final class Genesis {
           if (!other.batches_.isEmpty()) {
             if (batches_.isEmpty()) {
               batches_ = other.batches_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureBatchesIsMutable();
               batches_.addAll(other.batches_);
@@ -1154,7 +1538,7 @@ public final class Genesis {
               batchesBuilder_.dispose();
               batchesBuilder_ = null;
               batches_ = other.batches_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               batchesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBatchesFieldBuilder() : null;
@@ -1163,29 +1547,81 @@ public final class Genesis {
             }
           }
         }
-        if (bridgeTokenBuilder_ == null) {
-          if (!other.bridgeToken_.isEmpty()) {
-            if (bridgeToken_.isEmpty()) {
-              bridgeToken_ = other.bridgeToken_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+        if (oracleSetConfirmsBuilder_ == null) {
+          if (!other.oracleSetConfirms_.isEmpty()) {
+            if (oracleSetConfirms_.isEmpty()) {
+              oracleSetConfirms_ = other.oracleSetConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
-              ensureBridgeTokenIsMutable();
-              bridgeToken_.addAll(other.bridgeToken_);
+              ensureOracleSetConfirmsIsMutable();
+              oracleSetConfirms_.addAll(other.oracleSetConfirms_);
             }
             onChanged();
           }
         } else {
-          if (!other.bridgeToken_.isEmpty()) {
-            if (bridgeTokenBuilder_.isEmpty()) {
-              bridgeTokenBuilder_.dispose();
-              bridgeTokenBuilder_ = null;
-              bridgeToken_ = other.bridgeToken_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              bridgeTokenBuilder_ = 
+          if (!other.oracleSetConfirms_.isEmpty()) {
+            if (oracleSetConfirmsBuilder_.isEmpty()) {
+              oracleSetConfirmsBuilder_.dispose();
+              oracleSetConfirmsBuilder_ = null;
+              oracleSetConfirms_ = other.oracleSetConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              oracleSetConfirmsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBridgeTokenFieldBuilder() : null;
+                   getOracleSetConfirmsFieldBuilder() : null;
             } else {
-              bridgeTokenBuilder_.addAllMessages(other.bridgeToken_);
+              oracleSetConfirmsBuilder_.addAllMessages(other.oracleSetConfirms_);
+            }
+          }
+        }
+        if (batchConfirmsBuilder_ == null) {
+          if (!other.batchConfirms_.isEmpty()) {
+            if (batchConfirms_.isEmpty()) {
+              batchConfirms_ = other.batchConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureBatchConfirmsIsMutable();
+              batchConfirms_.addAll(other.batchConfirms_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.batchConfirms_.isEmpty()) {
+            if (batchConfirmsBuilder_.isEmpty()) {
+              batchConfirmsBuilder_.dispose();
+              batchConfirmsBuilder_ = null;
+              batchConfirms_ = other.batchConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              batchConfirmsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBatchConfirmsFieldBuilder() : null;
+            } else {
+              batchConfirmsBuilder_.addAllMessages(other.batchConfirms_);
+            }
+          }
+        }
+        if (attestationsBuilder_ == null) {
+          if (!other.attestations_.isEmpty()) {
+            if (attestations_.isEmpty()) {
+              attestations_ = other.attestations_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureAttestationsIsMutable();
+              attestations_.addAll(other.attestations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.attestations_.isEmpty()) {
+            if (attestationsBuilder_.isEmpty()) {
+              attestationsBuilder_.dispose();
+              attestationsBuilder_ = null;
+              attestations_ = other.attestations_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              attestationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAttestationsFieldBuilder() : null;
+            } else {
+              attestationsBuilder_.addAllMessages(other.attestations_);
             }
           }
         }
@@ -1223,14 +1659,14 @@ public final class Genesis {
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.crosschain.v1.Types.Params, fx.gravity.crosschain.v1.Types.Params.Builder, fx.gravity.crosschain.v1.Types.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        * @return The params.
        */
       public fx.gravity.crosschain.v1.Types.Params getParams() {
@@ -1241,7 +1677,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(fx.gravity.crosschain.v1.Types.Params value) {
         if (paramsBuilder_ == null) {
@@ -1257,7 +1693,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           fx.gravity.crosschain.v1.Types.Params.Builder builderForValue) {
@@ -1271,7 +1707,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(fx.gravity.crosschain.v1.Types.Params value) {
         if (paramsBuilder_ == null) {
@@ -1289,7 +1725,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1303,7 +1739,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.Params.Builder getParamsBuilder() {
         
@@ -1311,7 +1747,7 @@ public final class Genesis {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1322,7 +1758,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.Params params = 1;</code>
+       * <code>.fx.gravity.crosschain.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.crosschain.v1.Types.Params, fx.gravity.crosschain.v1.Types.Params.Builder, fx.gravity.crosschain.v1.Types.ParamsOrBuilder> 
@@ -1338,18 +1774,49 @@ public final class Genesis {
         return paramsBuilder_;
       }
 
+      private long lastObservedEventNonce_ ;
+      /**
+       * <code>uint64 last_observed_event_nonce = 2;</code>
+       * @return The lastObservedEventNonce.
+       */
+      @java.lang.Override
+      public long getLastObservedEventNonce() {
+        return lastObservedEventNonce_;
+      }
+      /**
+       * <code>uint64 last_observed_event_nonce = 2;</code>
+       * @param value The lastObservedEventNonce to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastObservedEventNonce(long value) {
+        
+        lastObservedEventNonce_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 last_observed_event_nonce = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastObservedEventNonce() {
+        
+        lastObservedEventNonce_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private fx.gravity.crosschain.v1.Types.LastObservedBlockHeight lastObservedBlockHeight_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.crosschain.v1.Types.LastObservedBlockHeight, fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.Builder, fx.gravity.crosschain.v1.Types.LastObservedBlockHeightOrBuilder> lastObservedBlockHeightBuilder_;
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        * @return Whether the lastObservedBlockHeight field is set.
        */
       public boolean hasLastObservedBlockHeight() {
         return lastObservedBlockHeightBuilder_ != null || lastObservedBlockHeight_ != null;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        * @return The lastObservedBlockHeight.
        */
       public fx.gravity.crosschain.v1.Types.LastObservedBlockHeight getLastObservedBlockHeight() {
@@ -1360,7 +1827,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setLastObservedBlockHeight(fx.gravity.crosschain.v1.Types.LastObservedBlockHeight value) {
         if (lastObservedBlockHeightBuilder_ == null) {
@@ -1376,7 +1843,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setLastObservedBlockHeight(
           fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.Builder builderForValue) {
@@ -1390,7 +1857,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeLastObservedBlockHeight(fx.gravity.crosschain.v1.Types.LastObservedBlockHeight value) {
         if (lastObservedBlockHeightBuilder_ == null) {
@@ -1408,7 +1875,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearLastObservedBlockHeight() {
         if (lastObservedBlockHeightBuilder_ == null) {
@@ -1422,7 +1889,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.Builder getLastObservedBlockHeightBuilder() {
         
@@ -1430,7 +1897,7 @@ public final class Genesis {
         return getLastObservedBlockHeightFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.LastObservedBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder() {
         if (lastObservedBlockHeightBuilder_ != null) {
@@ -1441,7 +1908,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 2;</code>
+       * <code>.fx.gravity.crosschain.v1.LastObservedBlockHeight last_observed_block_height = 3 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.crosschain.v1.Types.LastObservedBlockHeight, fx.gravity.crosschain.v1.Types.LastObservedBlockHeight.Builder, fx.gravity.crosschain.v1.Types.LastObservedBlockHeightOrBuilder> 
@@ -1457,492 +1924,732 @@ public final class Genesis {
         return lastObservedBlockHeightBuilder_;
       }
 
-      private java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> oracleSet_ =
+      private java.util.List<fx.gravity.crosschain.v1.Types.Oracle> oracles_ =
         java.util.Collections.emptyList();
-      private void ensureOracleSetIsMutable() {
+      private void ensureOraclesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          oracleSet_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OracleSet>(oracleSet_);
+          oracles_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Oracle>(oracles_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> oracleSetBuilder_;
+          fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder> oraclesBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> getOracleSetList() {
-        if (oracleSetBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(oracleSet_);
+      public java.util.List<fx.gravity.crosschain.v1.Types.Oracle> getOraclesList() {
+        if (oraclesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(oracles_);
         } else {
-          return oracleSetBuilder_.getMessageList();
+          return oraclesBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public int getOracleSetCount() {
-        if (oracleSetBuilder_ == null) {
-          return oracleSet_.size();
+      public int getOraclesCount() {
+        if (oraclesBuilder_ == null) {
+          return oracles_.size();
         } else {
-          return oracleSetBuilder_.getCount();
+          return oraclesBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleSet getOracleSet(int index) {
-        if (oracleSetBuilder_ == null) {
-          return oracleSet_.get(index);
+      public fx.gravity.crosschain.v1.Types.Oracle getOracles(int index) {
+        if (oraclesBuilder_ == null) {
+          return oracles_.get(index);
         } else {
-          return oracleSetBuilder_.getMessage(index);
+          return oraclesBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setOracleSet(
-          int index, fx.gravity.crosschain.v1.Types.OracleSet value) {
-        if (oracleSetBuilder_ == null) {
+      public Builder setOracles(
+          int index, fx.gravity.crosschain.v1.Types.Oracle value) {
+        if (oraclesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleSetIsMutable();
-          oracleSet_.set(index, value);
+          ensureOraclesIsMutable();
+          oracles_.set(index, value);
           onChanged();
         } else {
-          oracleSetBuilder_.setMessage(index, value);
+          oraclesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setOracleSet(
-          int index, fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
-        if (oracleSetBuilder_ == null) {
-          ensureOracleSetIsMutable();
-          oracleSet_.set(index, builderForValue.build());
+      public Builder setOracles(
+          int index, fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
+        if (oraclesBuilder_ == null) {
+          ensureOraclesIsMutable();
+          oracles_.set(index, builderForValue.build());
           onChanged();
         } else {
-          oracleSetBuilder_.setMessage(index, builderForValue.build());
+          oraclesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracleSet(fx.gravity.crosschain.v1.Types.OracleSet value) {
-        if (oracleSetBuilder_ == null) {
+      public Builder addOracles(fx.gravity.crosschain.v1.Types.Oracle value) {
+        if (oraclesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleSetIsMutable();
-          oracleSet_.add(value);
+          ensureOraclesIsMutable();
+          oracles_.add(value);
           onChanged();
         } else {
-          oracleSetBuilder_.addMessage(value);
+          oraclesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracleSet(
-          int index, fx.gravity.crosschain.v1.Types.OracleSet value) {
-        if (oracleSetBuilder_ == null) {
+      public Builder addOracles(
+          int index, fx.gravity.crosschain.v1.Types.Oracle value) {
+        if (oraclesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleSetIsMutable();
-          oracleSet_.add(index, value);
+          ensureOraclesIsMutable();
+          oracles_.add(index, value);
           onChanged();
         } else {
-          oracleSetBuilder_.addMessage(index, value);
+          oraclesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracleSet(
-          fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
-        if (oracleSetBuilder_ == null) {
-          ensureOracleSetIsMutable();
-          oracleSet_.add(builderForValue.build());
+      public Builder addOracles(
+          fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
+        if (oraclesBuilder_ == null) {
+          ensureOraclesIsMutable();
+          oracles_.add(builderForValue.build());
           onChanged();
         } else {
-          oracleSetBuilder_.addMessage(builderForValue.build());
+          oraclesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracleSet(
-          int index, fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
-        if (oracleSetBuilder_ == null) {
-          ensureOracleSetIsMutable();
-          oracleSet_.add(index, builderForValue.build());
+      public Builder addOracles(
+          int index, fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
+        if (oraclesBuilder_ == null) {
+          ensureOraclesIsMutable();
+          oracles_.add(index, builderForValue.build());
           onChanged();
         } else {
-          oracleSetBuilder_.addMessage(index, builderForValue.build());
+          oraclesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addAllOracleSet(
-          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.OracleSet> values) {
-        if (oracleSetBuilder_ == null) {
-          ensureOracleSetIsMutable();
+      public Builder addAllOracles(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.Oracle> values) {
+        if (oraclesBuilder_ == null) {
+          ensureOraclesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, oracleSet_);
+              values, oracles_);
           onChanged();
         } else {
-          oracleSetBuilder_.addAllMessages(values);
+          oraclesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder clearOracleSet() {
-        if (oracleSetBuilder_ == null) {
-          oracleSet_ = java.util.Collections.emptyList();
+      public Builder clearOracles() {
+        if (oraclesBuilder_ == null) {
+          oracles_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          oracleSetBuilder_.clear();
+          oraclesBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder removeOracleSet(int index) {
-        if (oracleSetBuilder_ == null) {
-          ensureOracleSetIsMutable();
-          oracleSet_.remove(index);
+      public Builder removeOracles(int index) {
+        if (oraclesBuilder_ == null) {
+          ensureOraclesIsMutable();
+          oracles_.remove(index);
           onChanged();
         } else {
-          oracleSetBuilder_.remove(index);
+          oraclesBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleSet.Builder getOracleSetBuilder(
+      public fx.gravity.crosschain.v1.Types.Oracle.Builder getOraclesBuilder(
           int index) {
-        return getOracleSetFieldBuilder().getBuilder(index);
+        return getOraclesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetOrBuilder(
+      public fx.gravity.crosschain.v1.Types.OracleOrBuilder getOraclesOrBuilder(
           int index) {
-        if (oracleSetBuilder_ == null) {
-          return oracleSet_.get(index);  } else {
-          return oracleSetBuilder_.getMessageOrBuilder(index);
+        if (oraclesBuilder_ == null) {
+          return oracles_.get(index);  } else {
+          return oraclesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
-           getOracleSetOrBuilderList() {
-        if (oracleSetBuilder_ != null) {
-          return oracleSetBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
+           getOraclesOrBuilderList() {
+        if (oraclesBuilder_ != null) {
+          return oraclesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(oracleSet_);
+          return java.util.Collections.unmodifiableList(oracles_);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleSet.Builder addOracleSetBuilder() {
-        return getOracleSetFieldBuilder().addBuilder(
-            fx.gravity.crosschain.v1.Types.OracleSet.getDefaultInstance());
+      public fx.gravity.crosschain.v1.Types.Oracle.Builder addOraclesBuilder() {
+        return getOraclesFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Types.Oracle.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleSet.Builder addOracleSetBuilder(
+      public fx.gravity.crosschain.v1.Types.Oracle.Builder addOraclesBuilder(
           int index) {
-        return getOracleSetFieldBuilder().addBuilder(
-            index, fx.gravity.crosschain.v1.Types.OracleSet.getDefaultInstance());
+        return getOraclesFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Types.Oracle.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OracleSet OracleSet = 3;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracles = 4 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet.Builder> 
-           getOracleSetBuilderList() {
-        return getOracleSetFieldBuilder().getBuilderList();
+      public java.util.List<fx.gravity.crosschain.v1.Types.Oracle.Builder> 
+           getOraclesBuilderList() {
+        return getOraclesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
-          getOracleSetFieldBuilder() {
-        if (oracleSetBuilder_ == null) {
-          oracleSetBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder>(
-                  oracleSet_,
+          fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
+          getOraclesFieldBuilder() {
+        if (oraclesBuilder_ == null) {
+          oraclesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder>(
+                  oracles_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          oracleSet_ = null;
+          oracles_ = null;
         }
-        return oracleSetBuilder_;
+        return oraclesBuilder_;
       }
 
-      private java.util.List<fx.gravity.crosschain.v1.Types.Oracle> oracle_ =
+      private java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> oracleSets_ =
         java.util.Collections.emptyList();
-      private void ensureOracleIsMutable() {
+      private void ensureOracleSetsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          oracle_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Oracle>(oracle_);
+          oracleSets_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OracleSet>(oracleSets_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder> oracleBuilder_;
+          fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> oracleSetsBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.Oracle> getOracleList() {
-        if (oracleBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(oracle_);
+      public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet> getOracleSetsList() {
+        if (oracleSetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(oracleSets_);
         } else {
-          return oracleBuilder_.getMessageList();
+          return oracleSetsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public int getOracleCount() {
-        if (oracleBuilder_ == null) {
-          return oracle_.size();
+      public int getOracleSetsCount() {
+        if (oracleSetsBuilder_ == null) {
+          return oracleSets_.size();
         } else {
-          return oracleBuilder_.getCount();
+          return oracleSetsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.Oracle getOracle(int index) {
-        if (oracleBuilder_ == null) {
-          return oracle_.get(index);
+      public fx.gravity.crosschain.v1.Types.OracleSet getOracleSets(int index) {
+        if (oracleSetsBuilder_ == null) {
+          return oracleSets_.get(index);
         } else {
-          return oracleBuilder_.getMessage(index);
+          return oracleSetsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setOracle(
-          int index, fx.gravity.crosschain.v1.Types.Oracle value) {
-        if (oracleBuilder_ == null) {
+      public Builder setOracleSets(
+          int index, fx.gravity.crosschain.v1.Types.OracleSet value) {
+        if (oracleSetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleIsMutable();
-          oracle_.set(index, value);
+          ensureOracleSetsIsMutable();
+          oracleSets_.set(index, value);
           onChanged();
         } else {
-          oracleBuilder_.setMessage(index, value);
+          oracleSetsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setOracle(
-          int index, fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
-        if (oracleBuilder_ == null) {
-          ensureOracleIsMutable();
-          oracle_.set(index, builderForValue.build());
+      public Builder setOracleSets(
+          int index, fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
+        if (oracleSetsBuilder_ == null) {
+          ensureOracleSetsIsMutable();
+          oracleSets_.set(index, builderForValue.build());
           onChanged();
         } else {
-          oracleBuilder_.setMessage(index, builderForValue.build());
+          oracleSetsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracle(fx.gravity.crosschain.v1.Types.Oracle value) {
-        if (oracleBuilder_ == null) {
+      public Builder addOracleSets(fx.gravity.crosschain.v1.Types.OracleSet value) {
+        if (oracleSetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleIsMutable();
-          oracle_.add(value);
+          ensureOracleSetsIsMutable();
+          oracleSets_.add(value);
           onChanged();
         } else {
-          oracleBuilder_.addMessage(value);
+          oracleSetsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracle(
-          int index, fx.gravity.crosschain.v1.Types.Oracle value) {
-        if (oracleBuilder_ == null) {
+      public Builder addOracleSets(
+          int index, fx.gravity.crosschain.v1.Types.OracleSet value) {
+        if (oracleSetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOracleIsMutable();
-          oracle_.add(index, value);
+          ensureOracleSetsIsMutable();
+          oracleSets_.add(index, value);
           onChanged();
         } else {
-          oracleBuilder_.addMessage(index, value);
+          oracleSetsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracle(
-          fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
-        if (oracleBuilder_ == null) {
-          ensureOracleIsMutable();
-          oracle_.add(builderForValue.build());
+      public Builder addOracleSets(
+          fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
+        if (oracleSetsBuilder_ == null) {
+          ensureOracleSetsIsMutable();
+          oracleSets_.add(builderForValue.build());
           onChanged();
         } else {
-          oracleBuilder_.addMessage(builderForValue.build());
+          oracleSetsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addOracle(
-          int index, fx.gravity.crosschain.v1.Types.Oracle.Builder builderForValue) {
-        if (oracleBuilder_ == null) {
-          ensureOracleIsMutable();
-          oracle_.add(index, builderForValue.build());
+      public Builder addOracleSets(
+          int index, fx.gravity.crosschain.v1.Types.OracleSet.Builder builderForValue) {
+        if (oracleSetsBuilder_ == null) {
+          ensureOracleSetsIsMutable();
+          oracleSets_.add(index, builderForValue.build());
           onChanged();
         } else {
-          oracleBuilder_.addMessage(index, builderForValue.build());
+          oracleSetsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addAllOracle(
-          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.Oracle> values) {
-        if (oracleBuilder_ == null) {
-          ensureOracleIsMutable();
+      public Builder addAllOracleSets(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.OracleSet> values) {
+        if (oracleSetsBuilder_ == null) {
+          ensureOracleSetsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, oracle_);
+              values, oracleSets_);
           onChanged();
         } else {
-          oracleBuilder_.addAllMessages(values);
+          oracleSetsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder clearOracle() {
-        if (oracleBuilder_ == null) {
-          oracle_ = java.util.Collections.emptyList();
+      public Builder clearOracleSets() {
+        if (oracleSetsBuilder_ == null) {
+          oracleSets_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          oracleBuilder_.clear();
+          oracleSetsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder removeOracle(int index) {
-        if (oracleBuilder_ == null) {
-          ensureOracleIsMutable();
-          oracle_.remove(index);
+      public Builder removeOracleSets(int index) {
+        if (oracleSetsBuilder_ == null) {
+          ensureOracleSetsIsMutable();
+          oracleSets_.remove(index);
           onChanged();
         } else {
-          oracleBuilder_.remove(index);
+          oracleSetsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.Oracle.Builder getOracleBuilder(
+      public fx.gravity.crosschain.v1.Types.OracleSet.Builder getOracleSetsBuilder(
           int index) {
-        return getOracleFieldBuilder().getBuilder(index);
+        return getOracleSetsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.OracleOrBuilder getOracleOrBuilder(
+      public fx.gravity.crosschain.v1.Types.OracleSetOrBuilder getOracleSetsOrBuilder(
           int index) {
-        if (oracleBuilder_ == null) {
-          return oracle_.get(index);  } else {
-          return oracleBuilder_.getMessageOrBuilder(index);
+        if (oracleSetsBuilder_ == null) {
+          return oracleSets_.get(index);  } else {
+          return oracleSetsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
-           getOracleOrBuilderList() {
-        if (oracleBuilder_ != null) {
-          return oracleBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
+           getOracleSetsOrBuilderList() {
+        if (oracleSetsBuilder_ != null) {
+          return oracleSetsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(oracle_);
+          return java.util.Collections.unmodifiableList(oracleSets_);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.Oracle.Builder addOracleBuilder() {
-        return getOracleFieldBuilder().addBuilder(
-            fx.gravity.crosschain.v1.Types.Oracle.getDefaultInstance());
+      public fx.gravity.crosschain.v1.Types.OracleSet.Builder addOracleSetsBuilder() {
+        return getOracleSetsFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Types.OracleSet.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.Oracle.Builder addOracleBuilder(
+      public fx.gravity.crosschain.v1.Types.OracleSet.Builder addOracleSetsBuilder(
           int index) {
-        return getOracleFieldBuilder().addBuilder(
-            index, fx.gravity.crosschain.v1.Types.Oracle.getDefaultInstance());
+        return getOracleSetsFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Types.OracleSet.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.Oracle oracle = 4;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OracleSet oracle_sets = 5 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.Oracle.Builder> 
-           getOracleBuilderList() {
-        return getOracleFieldBuilder().getBuilderList();
+      public java.util.List<fx.gravity.crosschain.v1.Types.OracleSet.Builder> 
+           getOracleSetsBuilderList() {
+        return getOracleSetsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder> 
-          getOracleFieldBuilder() {
-        if (oracleBuilder_ == null) {
-          oracleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.crosschain.v1.Types.Oracle, fx.gravity.crosschain.v1.Types.Oracle.Builder, fx.gravity.crosschain.v1.Types.OracleOrBuilder>(
-                  oracle_,
+          fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder> 
+          getOracleSetsFieldBuilder() {
+        if (oracleSetsBuilder_ == null) {
+          oracleSetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Types.OracleSet, fx.gravity.crosschain.v1.Types.OracleSet.Builder, fx.gravity.crosschain.v1.Types.OracleSetOrBuilder>(
+                  oracleSets_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          oracle_ = null;
+          oracleSets_ = null;
         }
-        return oracleBuilder_;
+        return oracleSetsBuilder_;
+      }
+
+      private java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> bridgeTokens_ =
+        java.util.Collections.emptyList();
+      private void ensureBridgeTokensIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          bridgeTokens_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.BridgeToken>(bridgeTokens_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> bridgeTokensBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> getBridgeTokensList() {
+        if (bridgeTokensBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bridgeTokens_);
+        } else {
+          return bridgeTokensBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getBridgeTokensCount() {
+        if (bridgeTokensBuilder_ == null) {
+          return bridgeTokens_.size();
+        } else {
+          return bridgeTokensBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.BridgeToken getBridgeTokens(int index) {
+        if (bridgeTokensBuilder_ == null) {
+          return bridgeTokens_.get(index);
+        } else {
+          return bridgeTokensBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBridgeTokens(
+          int index, fx.gravity.crosschain.v1.Types.BridgeToken value) {
+        if (bridgeTokensBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.set(index, value);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBridgeTokens(
+          int index, fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
+        if (bridgeTokensBuilder_ == null) {
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBridgeTokens(fx.gravity.crosschain.v1.Types.BridgeToken value) {
+        if (bridgeTokensBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.add(value);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBridgeTokens(
+          int index, fx.gravity.crosschain.v1.Types.BridgeToken value) {
+        if (bridgeTokensBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.add(index, value);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBridgeTokens(
+          fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
+        if (bridgeTokensBuilder_ == null) {
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.add(builderForValue.build());
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBridgeTokens(
+          int index, fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
+        if (bridgeTokensBuilder_ == null) {
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllBridgeTokens(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.BridgeToken> values) {
+        if (bridgeTokensBuilder_ == null) {
+          ensureBridgeTokensIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, bridgeTokens_);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearBridgeTokens() {
+        if (bridgeTokensBuilder_ == null) {
+          bridgeTokens_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeBridgeTokens(int index) {
+        if (bridgeTokensBuilder_ == null) {
+          ensureBridgeTokensIsMutable();
+          bridgeTokens_.remove(index);
+          onChanged();
+        } else {
+          bridgeTokensBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder getBridgeTokensBuilder(
+          int index) {
+        return getBridgeTokensFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokensOrBuilder(
+          int index) {
+        if (bridgeTokensBuilder_ == null) {
+          return bridgeTokens_.get(index);  } else {
+          return bridgeTokensBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
+           getBridgeTokensOrBuilderList() {
+        if (bridgeTokensBuilder_ != null) {
+          return bridgeTokensBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(bridgeTokens_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder addBridgeTokensBuilder() {
+        return getBridgeTokensFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Types.BridgeToken.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder addBridgeTokensBuilder(
+          int index) {
+        return getBridgeTokensFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Types.BridgeToken.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_tokens = 6 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken.Builder> 
+           getBridgeTokensBuilderList() {
+        return getBridgeTokensFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
+          getBridgeTokensFieldBuilder() {
+        if (bridgeTokensBuilder_ == null) {
+          bridgeTokensBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder>(
+                  bridgeTokens_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          bridgeTokens_ = null;
+        }
+        return bridgeTokensBuilder_;
       }
 
       private java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx> unbatchedTransfers_ =
         java.util.Collections.emptyList();
       private void ensureUnbatchedTransfersIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           unbatchedTransfers_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OutgoingTransferTx>(unbatchedTransfers_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1950,7 +2657,7 @@ public final class Genesis {
           fx.gravity.crosschain.v1.Types.OutgoingTransferTx, fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder, fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder> unbatchedTransfersBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx> getUnbatchedTransfersList() {
         if (unbatchedTransfersBuilder_ == null) {
@@ -1960,7 +2667,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public int getUnbatchedTransfersCount() {
         if (unbatchedTransfersBuilder_ == null) {
@@ -1970,7 +2677,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTransferTx getUnbatchedTransfers(int index) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -1980,7 +2687,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setUnbatchedTransfers(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTransferTx value) {
@@ -1997,7 +2704,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setUnbatchedTransfers(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder builderForValue) {
@@ -2011,7 +2718,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(fx.gravity.crosschain.v1.Types.OutgoingTransferTx value) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -2027,7 +2734,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTransferTx value) {
@@ -2044,7 +2751,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder builderForValue) {
@@ -2058,7 +2765,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder builderForValue) {
@@ -2072,7 +2779,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllUnbatchedTransfers(
           java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.OutgoingTransferTx> values) {
@@ -2087,12 +2794,12 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearUnbatchedTransfers() {
         if (unbatchedTransfersBuilder_ == null) {
           unbatchedTransfers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           unbatchedTransfersBuilder_.clear();
@@ -2100,7 +2807,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeUnbatchedTransfers(int index) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -2113,14 +2820,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder getUnbatchedTransfersBuilder(
           int index) {
         return getUnbatchedTransfersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
           int index) {
@@ -2130,7 +2837,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder> 
            getUnbatchedTransfersOrBuilderList() {
@@ -2141,14 +2848,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder addUnbatchedTransfersBuilder() {
         return getUnbatchedTransfersFieldBuilder().addBuilder(
             fx.gravity.crosschain.v1.Types.OutgoingTransferTx.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder addUnbatchedTransfersBuilder(
           int index) {
@@ -2156,7 +2863,7 @@ public final class Genesis {
             index, fx.gravity.crosschain.v1.Types.OutgoingTransferTx.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 5;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder> 
            getUnbatchedTransfersBuilderList() {
@@ -2169,7 +2876,7 @@ public final class Genesis {
           unbatchedTransfersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fx.gravity.crosschain.v1.Types.OutgoingTransferTx, fx.gravity.crosschain.v1.Types.OutgoingTransferTx.Builder, fx.gravity.crosschain.v1.Types.OutgoingTransferTxOrBuilder>(
                   unbatchedTransfers_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           unbatchedTransfers_ = null;
@@ -2180,9 +2887,9 @@ public final class Genesis {
       private java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch> batches_ =
         java.util.Collections.emptyList();
       private void ensureBatchesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           batches_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.OutgoingTxBatch>(batches_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -2190,7 +2897,7 @@ public final class Genesis {
           fx.gravity.crosschain.v1.Types.OutgoingTxBatch, fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder, fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder> batchesBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch> getBatchesList() {
         if (batchesBuilder_ == null) {
@@ -2200,7 +2907,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public int getBatchesCount() {
         if (batchesBuilder_ == null) {
@@ -2210,7 +2917,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTxBatch getBatches(int index) {
         if (batchesBuilder_ == null) {
@@ -2220,7 +2927,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setBatches(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTxBatch value) {
@@ -2237,7 +2944,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setBatches(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder builderForValue) {
@@ -2251,7 +2958,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBatches(fx.gravity.crosschain.v1.Types.OutgoingTxBatch value) {
         if (batchesBuilder_ == null) {
@@ -2267,7 +2974,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBatches(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTxBatch value) {
@@ -2284,7 +2991,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBatches(
           fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder builderForValue) {
@@ -2298,7 +3005,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addBatches(
           int index, fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder builderForValue) {
@@ -2312,7 +3019,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllBatches(
           java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.OutgoingTxBatch> values) {
@@ -2327,12 +3034,12 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearBatches() {
         if (batchesBuilder_ == null) {
           batches_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           batchesBuilder_.clear();
@@ -2340,7 +3047,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeBatches(int index) {
         if (batchesBuilder_ == null) {
@@ -2353,14 +3060,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder getBatchesBuilder(
           int index) {
         return getBatchesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
           int index) {
@@ -2370,7 +3077,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder> 
            getBatchesOrBuilderList() {
@@ -2381,14 +3088,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder addBatchesBuilder() {
         return getBatchesFieldBuilder().addBuilder(
             fx.gravity.crosschain.v1.Types.OutgoingTxBatch.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder addBatchesBuilder(
           int index) {
@@ -2396,7 +3103,7 @@ public final class Genesis {
             index, fx.gravity.crosschain.v1.Types.OutgoingTxBatch.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 6;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder> 
            getBatchesBuilderList() {
@@ -2409,7 +3116,7 @@ public final class Genesis {
           batchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fx.gravity.crosschain.v1.Types.OutgoingTxBatch, fx.gravity.crosschain.v1.Types.OutgoingTxBatch.Builder, fx.gravity.crosschain.v1.Types.OutgoingTxBatchOrBuilder>(
                   batches_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           batches_ = null;
@@ -2417,244 +3124,724 @@ public final class Genesis {
         return batchesBuilder_;
       }
 
-      private java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> bridgeToken_ =
+      private java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> oracleSetConfirms_ =
         java.util.Collections.emptyList();
-      private void ensureBridgeTokenIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          bridgeToken_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.BridgeToken>(bridgeToken_);
-          bitField0_ |= 0x00000010;
+      private void ensureOracleSetConfirmsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          oracleSetConfirms_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm>(oracleSetConfirms_);
+          bitField0_ |= 0x00000020;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> bridgeTokenBuilder_;
+          fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder> oracleSetConfirmsBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken> getBridgeTokenList() {
-        if (bridgeTokenBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(bridgeToken_);
+      public java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> getOracleSetConfirmsList() {
+        if (oracleSetConfirmsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(oracleSetConfirms_);
         } else {
-          return bridgeTokenBuilder_.getMessageList();
+          return oracleSetConfirmsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public int getBridgeTokenCount() {
-        if (bridgeTokenBuilder_ == null) {
-          return bridgeToken_.size();
+      public int getOracleSetConfirmsCount() {
+        if (oracleSetConfirmsBuilder_ == null) {
+          return oracleSetConfirms_.size();
         } else {
-          return bridgeTokenBuilder_.getCount();
+          return oracleSetConfirmsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.BridgeToken getBridgeToken(int index) {
-        if (bridgeTokenBuilder_ == null) {
-          return bridgeToken_.get(index);
+      public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm getOracleSetConfirms(int index) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          return oracleSetConfirms_.get(index);
         } else {
-          return bridgeTokenBuilder_.getMessage(index);
+          return oracleSetConfirmsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setBridgeToken(
-          int index, fx.gravity.crosschain.v1.Types.BridgeToken value) {
-        if (bridgeTokenBuilder_ == null) {
+      public Builder setOracleSetConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm value) {
+        if (oracleSetConfirmsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.set(index, value);
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.set(index, value);
           onChanged();
         } else {
-          bridgeTokenBuilder_.setMessage(index, value);
+          oracleSetConfirmsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setBridgeToken(
-          int index, fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
-        if (bridgeTokenBuilder_ == null) {
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.set(index, builderForValue.build());
+      public Builder setOracleSetConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder builderForValue) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.set(index, builderForValue.build());
           onChanged();
         } else {
-          bridgeTokenBuilder_.setMessage(index, builderForValue.build());
+          oracleSetConfirmsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addBridgeToken(fx.gravity.crosschain.v1.Types.BridgeToken value) {
-        if (bridgeTokenBuilder_ == null) {
+      public Builder addOracleSetConfirms(fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm value) {
+        if (oracleSetConfirmsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.add(value);
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.add(value);
           onChanged();
         } else {
-          bridgeTokenBuilder_.addMessage(value);
+          oracleSetConfirmsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addBridgeToken(
-          int index, fx.gravity.crosschain.v1.Types.BridgeToken value) {
-        if (bridgeTokenBuilder_ == null) {
+      public Builder addOracleSetConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm value) {
+        if (oracleSetConfirmsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.add(index, value);
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.add(index, value);
           onChanged();
         } else {
-          bridgeTokenBuilder_.addMessage(index, value);
+          oracleSetConfirmsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addBridgeToken(
-          fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
-        if (bridgeTokenBuilder_ == null) {
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.add(builderForValue.build());
+      public Builder addOracleSetConfirms(
+          fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder builderForValue) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.add(builderForValue.build());
           onChanged();
         } else {
-          bridgeTokenBuilder_.addMessage(builderForValue.build());
+          oracleSetConfirmsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addBridgeToken(
-          int index, fx.gravity.crosschain.v1.Types.BridgeToken.Builder builderForValue) {
-        if (bridgeTokenBuilder_ == null) {
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.add(index, builderForValue.build());
+      public Builder addOracleSetConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder builderForValue) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.add(index, builderForValue.build());
           onChanged();
         } else {
-          bridgeTokenBuilder_.addMessage(index, builderForValue.build());
+          oracleSetConfirmsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addAllBridgeToken(
-          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.BridgeToken> values) {
-        if (bridgeTokenBuilder_ == null) {
-          ensureBridgeTokenIsMutable();
+      public Builder addAllOracleSetConfirms(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm> values) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          ensureOracleSetConfirmsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, bridgeToken_);
+              values, oracleSetConfirms_);
           onChanged();
         } else {
-          bridgeTokenBuilder_.addAllMessages(values);
+          oracleSetConfirmsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder clearBridgeToken() {
-        if (bridgeTokenBuilder_ == null) {
-          bridgeToken_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+      public Builder clearOracleSetConfirms() {
+        if (oracleSetConfirmsBuilder_ == null) {
+          oracleSetConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
-          bridgeTokenBuilder_.clear();
+          oracleSetConfirmsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder removeBridgeToken(int index) {
-        if (bridgeTokenBuilder_ == null) {
-          ensureBridgeTokenIsMutable();
-          bridgeToken_.remove(index);
+      public Builder removeOracleSetConfirms(int index) {
+        if (oracleSetConfirmsBuilder_ == null) {
+          ensureOracleSetConfirmsIsMutable();
+          oracleSetConfirms_.remove(index);
           onChanged();
         } else {
-          bridgeTokenBuilder_.remove(index);
+          oracleSetConfirmsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder getBridgeTokenBuilder(
+      public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder getOracleSetConfirmsBuilder(
           int index) {
-        return getBridgeTokenFieldBuilder().getBuilder(index);
+        return getOracleSetConfirmsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder getBridgeTokenOrBuilder(
+      public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder getOracleSetConfirmsOrBuilder(
           int index) {
-        if (bridgeTokenBuilder_ == null) {
-          return bridgeToken_.get(index);  } else {
-          return bridgeTokenBuilder_.getMessageOrBuilder(index);
+        if (oracleSetConfirmsBuilder_ == null) {
+          return oracleSetConfirms_.get(index);  } else {
+          return oracleSetConfirmsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<? extends fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
-           getBridgeTokenOrBuilderList() {
-        if (bridgeTokenBuilder_ != null) {
-          return bridgeTokenBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder> 
+           getOracleSetConfirmsOrBuilderList() {
+        if (oracleSetConfirmsBuilder_ != null) {
+          return oracleSetConfirmsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(bridgeToken_);
+          return java.util.Collections.unmodifiableList(oracleSetConfirms_);
         }
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder addBridgeTokenBuilder() {
-        return getBridgeTokenFieldBuilder().addBuilder(
-            fx.gravity.crosschain.v1.Types.BridgeToken.getDefaultInstance());
+      public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder addOracleSetConfirmsBuilder() {
+        return getOracleSetConfirmsFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public fx.gravity.crosschain.v1.Types.BridgeToken.Builder addBridgeTokenBuilder(
+      public fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder addOracleSetConfirmsBuilder(
           int index) {
-        return getBridgeTokenFieldBuilder().addBuilder(
-            index, fx.gravity.crosschain.v1.Types.BridgeToken.getDefaultInstance());
+        return getOracleSetConfirmsFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.crosschain.v1.BridgeToken bridge_token = 7;</code>
+       * <code>repeated .fx.gravity.crosschain.v1.MsgOracleSetConfirm oracle_set_confirms = 9 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<fx.gravity.crosschain.v1.Types.BridgeToken.Builder> 
-           getBridgeTokenBuilderList() {
-        return getBridgeTokenFieldBuilder().getBuilderList();
+      public java.util.List<fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder> 
+           getOracleSetConfirmsBuilderList() {
+        return getOracleSetConfirmsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder> 
-          getBridgeTokenFieldBuilder() {
-        if (bridgeTokenBuilder_ == null) {
-          bridgeTokenBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.crosschain.v1.Types.BridgeToken, fx.gravity.crosschain.v1.Types.BridgeToken.Builder, fx.gravity.crosschain.v1.Types.BridgeTokenOrBuilder>(
-                  bridgeToken_,
-                  ((bitField0_ & 0x00000010) != 0),
+          fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder> 
+          getOracleSetConfirmsFieldBuilder() {
+        if (oracleSetConfirmsBuilder_ == null) {
+          oracleSetConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirm.Builder, fx.gravity.crosschain.v1.Tx.MsgOracleSetConfirmOrBuilder>(
+                  oracleSetConfirms_,
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
-          bridgeToken_ = null;
+          oracleSetConfirms_ = null;
         }
-        return bridgeTokenBuilder_;
+        return oracleSetConfirmsBuilder_;
+      }
+
+      private java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> batchConfirms_ =
+        java.util.Collections.emptyList();
+      private void ensureBatchConfirmsIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          batchConfirms_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch>(batchConfirms_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Tx.MsgConfirmBatch, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder> batchConfirmsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
+        if (batchConfirmsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(batchConfirms_);
+        } else {
+          return batchConfirmsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getBatchConfirmsCount() {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.size();
+        } else {
+          return batchConfirmsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.get(index);
+        } else {
+          return batchConfirmsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBatchConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.set(index, value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBatchConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(fx.gravity.crosschain.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(index, value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          int index, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllBatchConfirms(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Tx.MsgConfirmBatch> values) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, batchConfirms_);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearBatchConfirms() {
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeBatchConfirms(int index) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.remove(index);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder getBatchConfirmsBuilder(
+          int index) {
+        return getBatchConfirmsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+          int index) {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.get(index);  } else {
+          return batchConfirmsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder> 
+           getBatchConfirmsOrBuilderList() {
+        if (batchConfirmsBuilder_ != null) {
+          return batchConfirmsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(batchConfirms_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder() {
+        return getBatchConfirmsFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder(
+          int index) {
+        return getBatchConfirmsFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.MsgConfirmBatch batch_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder> 
+           getBatchConfirmsBuilderList() {
+        return getBatchConfirmsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Tx.MsgConfirmBatch, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder> 
+          getBatchConfirmsFieldBuilder() {
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Tx.MsgConfirmBatch, fx.gravity.crosschain.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.crosschain.v1.Tx.MsgConfirmBatchOrBuilder>(
+                  batchConfirms_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          batchConfirms_ = null;
+        }
+        return batchConfirmsBuilder_;
+      }
+
+      private java.util.List<fx.gravity.crosschain.v1.Types.Attestation> attestations_ =
+        java.util.Collections.emptyList();
+      private void ensureAttestationsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          attestations_ = new java.util.ArrayList<fx.gravity.crosschain.v1.Types.Attestation>(attestations_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.Attestation, fx.gravity.crosschain.v1.Types.Attestation.Builder, fx.gravity.crosschain.v1.Types.AttestationOrBuilder> attestationsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Types.Attestation> getAttestationsList() {
+        if (attestationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(attestations_);
+        } else {
+          return attestationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getAttestationsCount() {
+        if (attestationsBuilder_ == null) {
+          return attestations_.size();
+        } else {
+          return attestationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.Attestation getAttestations(int index) {
+        if (attestationsBuilder_ == null) {
+          return attestations_.get(index);
+        } else {
+          return attestationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAttestations(
+          int index, fx.gravity.crosschain.v1.Types.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.set(index, value);
+          onChanged();
+        } else {
+          attestationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAttestations(
+          int index, fx.gravity.crosschain.v1.Types.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(fx.gravity.crosschain.v1.Types.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.add(value);
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          int index, fx.gravity.crosschain.v1.Types.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.add(index, value);
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          fx.gravity.crosschain.v1.Types.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          int index, fx.gravity.crosschain.v1.Types.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllAttestations(
+          java.lang.Iterable<? extends fx.gravity.crosschain.v1.Types.Attestation> values) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, attestations_);
+          onChanged();
+        } else {
+          attestationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearAttestations() {
+        if (attestationsBuilder_ == null) {
+          attestations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          attestationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeAttestations(int index) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.remove(index);
+          onChanged();
+        } else {
+          attestationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.Attestation.Builder getAttestationsBuilder(
+          int index) {
+        return getAttestationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.AttestationOrBuilder getAttestationsOrBuilder(
+          int index) {
+        if (attestationsBuilder_ == null) {
+          return attestations_.get(index);  } else {
+          return attestationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.crosschain.v1.Types.AttestationOrBuilder> 
+           getAttestationsOrBuilderList() {
+        if (attestationsBuilder_ != null) {
+          return attestationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(attestations_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.Attestation.Builder addAttestationsBuilder() {
+        return getAttestationsFieldBuilder().addBuilder(
+            fx.gravity.crosschain.v1.Types.Attestation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.crosschain.v1.Types.Attestation.Builder addAttestationsBuilder(
+          int index) {
+        return getAttestationsFieldBuilder().addBuilder(
+            index, fx.gravity.crosschain.v1.Types.Attestation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.crosschain.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.crosschain.v1.Types.Attestation.Builder> 
+           getAttestationsBuilderList() {
+        return getAttestationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.Attestation, fx.gravity.crosschain.v1.Types.Attestation.Builder, fx.gravity.crosschain.v1.Types.AttestationOrBuilder> 
+          getAttestationsFieldBuilder() {
+        if (attestationsBuilder_ == null) {
+          attestationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.crosschain.v1.Types.Attestation, fx.gravity.crosschain.v1.Types.Attestation.Builder, fx.gravity.crosschain.v1.Types.AttestationOrBuilder>(
+                  attestations_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          attestations_ = null;
+        }
+        return attestationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2724,25 +3911,34 @@ public final class Genesis {
   static {
     java.lang.String[] descriptorData = {
       "\n\036fx/crosschain/v1/genesis.proto\022\030fx.gra" +
-      "vity.crosschain.v1\032\034fx/crosschain/v1/typ" +
-      "es.proto\032\031fx/crosschain/v1/tx.proto\"\305\003\n\014" +
-      "GenesisState\0220\n\006params\030\001 \001(\0132 .fx.gravit" +
-      "y.crosschain.v1.Params\022U\n\032last_observed_" +
-      "block_height\030\002 \001(\01321.fx.gravity.crosscha" +
-      "in.v1.LastObservedBlockHeight\0226\n\tOracleS" +
-      "et\030\003 \003(\0132#.fx.gravity.crosschain.v1.Orac" +
-      "leSet\0220\n\006oracle\030\004 \003(\0132 .fx.gravity.cross" +
-      "chain.v1.Oracle\022I\n\023unbatched_transfers\030\005" +
-      " \003(\0132,.fx.gravity.crosschain.v1.Outgoing" +
-      "TransferTx\022:\n\007batches\030\006 \003(\0132).fx.gravity" +
-      ".crosschain.v1.OutgoingTxBatch\022;\n\014bridge" +
-      "_token\030\007 \003(\0132%.fx.gravity.crosschain.v1." +
-      "BridgeTokenB1Z/github.com/functionx/fx-c" +
-      "ore/x/crosschain/typesb\006proto3"
+      "vity.crosschain.v1\032\024gogoproto/gogo.proto" +
+      "\032\034fx/crosschain/v1/types.proto\032\031fx/cross" +
+      "chain/v1/tx.proto\"\364\005\n\014GenesisState\0226\n\006pa" +
+      "rams\030\001 \001(\0132 .fx.gravity.crosschain.v1.Pa" +
+      "ramsB\004\310\336\037\000\022!\n\031last_observed_event_nonce\030" +
+      "\002 \001(\004\022[\n\032last_observed_block_height\030\003 \001(" +
+      "\01321.fx.gravity.crosschain.v1.LastObserve" +
+      "dBlockHeightB\004\310\336\037\000\0227\n\007oracles\030\004 \003(\0132 .fx" +
+      ".gravity.crosschain.v1.OracleB\004\310\336\037\000\022>\n\013o" +
+      "racle_sets\030\005 \003(\0132#.fx.gravity.crosschain" +
+      ".v1.OracleSetB\004\310\336\037\000\022B\n\rbridge_tokens\030\006 \003" +
+      "(\0132%.fx.gravity.crosschain.v1.BridgeToke" +
+      "nB\004\310\336\037\000\022O\n\023unbatched_transfers\030\007 \003(\0132,.f" +
+      "x.gravity.crosschain.v1.OutgoingTransfer" +
+      "TxB\004\310\336\037\000\022@\n\007batches\030\010 \003(\0132).fx.gravity.c" +
+      "rosschain.v1.OutgoingTxBatchB\004\310\336\037\000\022P\n\023or" +
+      "acle_set_confirms\030\t \003(\0132-.fx.gravity.cro" +
+      "sschain.v1.MsgOracleSetConfirmB\004\310\336\037\000\022G\n\016" +
+      "batch_confirms\030\n \003(\0132).fx.gravity.crossc" +
+      "hain.v1.MsgConfirmBatchB\004\310\336\037\000\022A\n\014attesta" +
+      "tions\030\013 \003(\0132%.fx.gravity.crosschain.v1.A" +
+      "ttestationB\004\310\336\037\000B1Z/github.com/functionx" +
+      "/fx-core/x/crosschain/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           fx.gravity.crosschain.v1.Types.getDescriptor(),
           fx.gravity.crosschain.v1.Tx.getDescriptor(),
         });
@@ -2751,7 +3947,13 @@ public final class Genesis {
     internal_static_fx_gravity_crosschain_v1_GenesisState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fx_gravity_crosschain_v1_GenesisState_descriptor,
-        new java.lang.String[] { "Params", "LastObservedBlockHeight", "OracleSet", "Oracle", "UnbatchedTransfers", "Batches", "BridgeToken", });
+        new java.lang.String[] { "Params", "LastObservedEventNonce", "LastObservedBlockHeight", "Oracles", "OracleSets", "BridgeTokens", "UnbatchedTransfers", "Batches", "OracleSetConfirms", "BatchConfirms", "Attestations", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.protobuf.GoGoProtos.getDescriptor();
     fx.gravity.crosschain.v1.Types.getDescriptor();
     fx.gravity.crosschain.v1.Tx.getDescriptor();
   }

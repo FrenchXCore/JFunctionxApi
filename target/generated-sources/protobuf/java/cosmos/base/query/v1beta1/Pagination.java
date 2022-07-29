@@ -44,7 +44,7 @@ public final class Pagination {
 
     /**
      * <pre>
-     * limit is the total number of results to be returned to the result page.
+     * limit is the total number of results to be returned in the result page.
      * If left empty it will default to a value to be set by each app.
      * </pre>
      *
@@ -227,7 +227,7 @@ public final class Pagination {
     private long limit_;
     /**
      * <pre>
-     * limit is the total number of results to be returned to the result page.
+     * limit is the total number of results to be returned in the result page.
      * If left empty it will default to a value to be set by each app.
      * </pre>
      *
@@ -760,7 +760,7 @@ public final class Pagination {
       private long limit_ ;
       /**
        * <pre>
-       * limit is the total number of results to be returned to the result page.
+       * limit is the total number of results to be returned in the result page.
        * If left empty it will default to a value to be set by each app.
        * </pre>
        *
@@ -773,7 +773,7 @@ public final class Pagination {
       }
       /**
        * <pre>
-       * limit is the total number of results to be returned to the result page.
+       * limit is the total number of results to be returned in the result page.
        * If left empty it will default to a value to be set by each app.
        * </pre>
        *
@@ -789,7 +789,7 @@ public final class Pagination {
       }
       /**
        * <pre>
-       * limit is the total number of results to be returned to the result page.
+       * limit is the total number of results to be returned in the result page.
        * If left empty it will default to a value to be set by each app.
        * </pre>
        *

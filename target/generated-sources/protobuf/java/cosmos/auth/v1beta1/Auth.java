@@ -2751,11 +2751,11 @@ public final class Auth {
       "yB-\352\336\037\024public_key,omitempty\362\336\037\021yaml:\"pub" +
       "lic_key\"\0221\n\016account_number\030\003 \001(\004B\031\362\336\037\025ya" +
       "ml:\"account_number\"\022\020\n\010sequence\030\004 \001(\004:\030\210" +
-      "\240\037\000\230\240\037\000\350\240\037\000\312\264-\010AccountI\"\243\001\n\rModuleAccoun" +
+      "\240\037\000\230\240\037\000\350\240\037\000\322\264-\010AccountI\"\243\001\n\rModuleAccoun" +
       "t\022S\n\014base_account\030\001 \001(\0132 .cosmos.auth.v1" +
       "beta1.BaseAccountB\033\320\336\037\001\362\336\037\023yaml:\"base_ac" +
       "count\"\022\014\n\004name\030\002 \001(\t\022\023\n\013permissions\030\003 \003(" +
-      "\t:\032\210\240\037\000\230\240\037\000\312\264-\016ModuleAccountI\"\377\002\n\006Params" +
+      "\t:\032\210\240\037\000\230\240\037\000\322\264-\016ModuleAccountI\"\377\002\n\006Params" +
       "\022;\n\023max_memo_characters\030\001 \001(\004B\036\362\336\037\032yaml:" +
       "\"max_memo_characters\"\022-\n\014tx_sig_limit\030\002 " +
       "\001(\004B\027\362\336\037\023yaml:\"tx_sig_limit\"\022?\n\025tx_size_" +

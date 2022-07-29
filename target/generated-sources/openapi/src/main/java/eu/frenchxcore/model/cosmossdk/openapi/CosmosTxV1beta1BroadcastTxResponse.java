@@ -29,7 +29,7 @@ import java.io.IOException;
  * BroadcastTxResponse is the response type for the Service.BroadcastTx method.
  */
 @ApiModel(description = "BroadcastTxResponse is the response type for the Service.BroadcastTx method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class CosmosTxV1beta1BroadcastTxResponse {
   public static final String SERIALIZED_NAME_TX_RESPONSE = "tx_response";
   @SerializedName(SERIALIZED_NAME_TX_RESPONSE)

@@ -32,7 +32,7 @@ import java.util.List;
  * GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
  */
 @ApiModel(description = "GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class CosmosBaseTendermintV1beta1GetLatestValidatorSetResponse {
   public static final String SERIALIZED_NAME_BLOCK_HEIGHT = "block_height";
   @SerializedName(SERIALIZED_NAME_BLOCK_HEIGHT)

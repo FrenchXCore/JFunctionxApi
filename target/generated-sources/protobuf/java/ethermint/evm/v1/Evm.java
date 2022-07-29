@@ -118,14 +118,13 @@ public final class Evm {
 
     /**
      * <pre>
-     * Allow unprotected transactions defines if replay-protected (i.e non EIP155 
-     * signed) transactions can be executed on the state machine.
+     * reject replay-unprotected transactions
      * </pre>
      *
-     * <code>bool allow_unprotected_txs = 6;</code>
-     * @return The allowUnprotectedTxs.
+     * <code>bool reject_unprotected_tx = 6;</code>
+     * @return The rejectUnprotectedTx.
      */
-    boolean getAllowUnprotectedTxs();
+    boolean getRejectUnprotectedTx();
   }
   /**
    * <pre>
@@ -231,7 +230,7 @@ public final class Evm {
             }
             case 48: {
 
-              allowUnprotectedTxs_ = input.readBool();
+              rejectUnprotectedTx_ = input.readBool();
               break;
             }
             default: {
@@ -425,20 +424,19 @@ public final class Evm {
       return getChainConfig();
     }
 
-    public static final int ALLOW_UNPROTECTED_TXS_FIELD_NUMBER = 6;
-    private boolean allowUnprotectedTxs_;
+    public static final int REJECT_UNPROTECTED_TX_FIELD_NUMBER = 6;
+    private boolean rejectUnprotectedTx_;
     /**
      * <pre>
-     * Allow unprotected transactions defines if replay-protected (i.e non EIP155 
-     * signed) transactions can be executed on the state machine.
+     * reject replay-unprotected transactions
      * </pre>
      *
-     * <code>bool allow_unprotected_txs = 6;</code>
-     * @return The allowUnprotectedTxs.
+     * <code>bool reject_unprotected_tx = 6;</code>
+     * @return The rejectUnprotectedTx.
      */
     @java.lang.Override
-    public boolean getAllowUnprotectedTxs() {
-      return allowUnprotectedTxs_;
+    public boolean getRejectUnprotectedTx() {
+      return rejectUnprotectedTx_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -475,8 +473,8 @@ public final class Evm {
       if (chainConfig_ != null) {
         output.writeMessage(5, getChainConfig());
       }
-      if (allowUnprotectedTxs_ != false) {
-        output.writeBool(6, allowUnprotectedTxs_);
+      if (rejectUnprotectedTx_ != false) {
+        output.writeBool(6, rejectUnprotectedTx_);
       }
       unknownFields.writeTo(output);
     }
@@ -516,9 +514,9 @@ public final class Evm {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getChainConfig());
       }
-      if (allowUnprotectedTxs_ != false) {
+      if (rejectUnprotectedTx_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, allowUnprotectedTxs_);
+          .computeBoolSize(6, rejectUnprotectedTx_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -548,8 +546,8 @@ public final class Evm {
         if (!getChainConfig()
             .equals(other.getChainConfig())) return false;
       }
-      if (getAllowUnprotectedTxs()
-          != other.getAllowUnprotectedTxs()) return false;
+      if (getRejectUnprotectedTx()
+          != other.getRejectUnprotectedTx()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -577,9 +575,9 @@ public final class Evm {
         hash = (37 * hash) + CHAIN_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getChainConfig().hashCode();
       }
-      hash = (37 * hash) + ALLOW_UNPROTECTED_TXS_FIELD_NUMBER;
+      hash = (37 * hash) + REJECT_UNPROTECTED_TX_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getAllowUnprotectedTxs());
+          getRejectUnprotectedTx());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -731,7 +729,7 @@ public final class Evm {
           chainConfig_ = null;
           chainConfigBuilder_ = null;
         }
-        allowUnprotectedTxs_ = false;
+        rejectUnprotectedTx_ = false;
 
         return this;
       }
@@ -773,7 +771,7 @@ public final class Evm {
         } else {
           result.chainConfig_ = chainConfigBuilder_.build();
         }
-        result.allowUnprotectedTxs_ = allowUnprotectedTxs_;
+        result.rejectUnprotectedTx_ = rejectUnprotectedTx_;
         onBuilt();
         return result;
       }
@@ -845,8 +843,8 @@ public final class Evm {
         if (other.hasChainConfig()) {
           mergeChainConfig(other.getChainConfig());
         }
-        if (other.getAllowUnprotectedTxs() != false) {
-          setAllowUnprotectedTxs(other.getAllowUnprotectedTxs());
+        if (other.getRejectUnprotectedTx() != false) {
+          setRejectUnprotectedTx(other.getRejectUnprotectedTx());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1327,48 +1325,45 @@ public final class Evm {
         return chainConfigBuilder_;
       }
 
-      private boolean allowUnprotectedTxs_ ;
+      private boolean rejectUnprotectedTx_ ;
       /**
        * <pre>
-       * Allow unprotected transactions defines if replay-protected (i.e non EIP155 
-       * signed) transactions can be executed on the state machine.
+       * reject replay-unprotected transactions
        * </pre>
        *
-       * <code>bool allow_unprotected_txs = 6;</code>
-       * @return The allowUnprotectedTxs.
+       * <code>bool reject_unprotected_tx = 6;</code>
+       * @return The rejectUnprotectedTx.
        */
       @java.lang.Override
-      public boolean getAllowUnprotectedTxs() {
-        return allowUnprotectedTxs_;
+      public boolean getRejectUnprotectedTx() {
+        return rejectUnprotectedTx_;
       }
       /**
        * <pre>
-       * Allow unprotected transactions defines if replay-protected (i.e non EIP155 
-       * signed) transactions can be executed on the state machine.
+       * reject replay-unprotected transactions
        * </pre>
        *
-       * <code>bool allow_unprotected_txs = 6;</code>
-       * @param value The allowUnprotectedTxs to set.
+       * <code>bool reject_unprotected_tx = 6;</code>
+       * @param value The rejectUnprotectedTx to set.
        * @return This builder for chaining.
        */
-      public Builder setAllowUnprotectedTxs(boolean value) {
+      public Builder setRejectUnprotectedTx(boolean value) {
         
-        allowUnprotectedTxs_ = value;
+        rejectUnprotectedTx_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Allow unprotected transactions defines if replay-protected (i.e non EIP155 
-       * signed) transactions can be executed on the state machine.
+       * reject replay-unprotected transactions
        * </pre>
        *
-       * <code>bool allow_unprotected_txs = 6;</code>
+       * <code>bool reject_unprotected_tx = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAllowUnprotectedTxs() {
+      public Builder clearRejectUnprotectedTx() {
         
-        allowUnprotectedTxs_ = false;
+        rejectUnprotectedTx_ = false;
         onChanged();
         return this;
       }
@@ -12109,8 +12104,8 @@ public final class Evm {
       ":\"enable_call\"\0226\n\nextra_eips\030\004 \003(\003B\"\342\336\037\t" +
       "ExtraEIPs\362\336\037\021yaml:\"extra_eips\"\022P\n\014chain_" +
       "config\030\005 \001(\0132\035.ethermint.evm.v1.ChainCon" +
-      "figB\033\362\336\037\023yaml:\"chain_config\"\310\336\037\000\022\035\n\025allo" +
-      "w_unprotected_txs\030\006 \001(\010\"\274\014\n\013ChainConfig\022" +
+      "figB\033\362\336\037\023yaml:\"chain_config\"\310\336\037\000\022\035\n\025reje" +
+      "ct_unprotected_tx\030\006 \001(\010\"\274\014\n\013ChainConfig\022" +
       "]\n\017homestead_block\030\001 \001(\tBD\332\336\037&github.com" +
       "/cosmos/cosmos-sdk/types.Int\362\336\037\026yaml:\"ho" +
       "mestead_block\"\022k\n\016dao_fork_block\030\002 \001(\tBS" +
@@ -12189,7 +12184,7 @@ public final class Evm {
     internal_static_ethermint_evm_v1_Params_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ethermint_evm_v1_Params_descriptor,
-        new java.lang.String[] { "EvmDenom", "EnableCreate", "EnableCall", "ExtraEips", "ChainConfig", "AllowUnprotectedTxs", });
+        new java.lang.String[] { "EvmDenom", "EnableCreate", "EnableCall", "ExtraEips", "ChainConfig", "RejectUnprotectedTx", });
     internal_static_ethermint_evm_v1_ChainConfig_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ethermint_evm_v1_ChainConfig_fieldAccessorTable = new

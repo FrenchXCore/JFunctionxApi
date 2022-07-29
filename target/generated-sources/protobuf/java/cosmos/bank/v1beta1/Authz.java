@@ -839,7 +839,7 @@ public final class Authz {
       "eta1/coin.proto\"\210\001\n\021SendAuthorization\022`\n" +
       "\013spend_limit\030\001 \003(\0132\031.cosmos.base.v1beta1" +
       ".CoinB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-" +
-      "sdk/types.Coins:\021\312\264-\rAuthorizationB+Z)gi" +
+      "sdk/types.Coins:\021\322\264-\rAuthorizationB+Z)gi" +
       "thub.com/cosmos/cosmos-sdk/x/bank/typesb" +
       "\006proto3"
     };

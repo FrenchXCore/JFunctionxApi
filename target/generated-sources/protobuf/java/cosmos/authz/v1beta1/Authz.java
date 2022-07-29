@@ -2627,7 +2627,7 @@ public final class Authz {
       "oto\032\037google/protobuf/timestamp.proto\032\024go" +
       "goproto/gogo.proto\032\031google/protobuf/any." +
       "proto\"6\n\024GenericAuthorization\022\013\n\003msg\030\001 \001" +
-      "(\t:\021\312\264-\rAuthorization\"\201\001\n\005Grant\022>\n\rautho" +
+      "(\t:\021\322\264-\rAuthorization\"\201\001\n\005Grant\022>\n\rautho" +
       "rization\030\001 \001(\0132\024.google.protobuf.AnyB\021\312\264" +
       "-\rAuthorization\0228\n\nexpiration\030\002 \001(\0132\032.go" +
       "ogle.protobuf.TimestampB\010\220\337\037\001\310\336\037\000\"\260\001\n\022Gr" +

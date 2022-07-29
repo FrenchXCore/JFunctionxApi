@@ -2367,7 +2367,7 @@ public final class Authz {
       "s.staking.v1beta1.StakeAuthorization.Val" +
       "idatorsH\000\022E\n\022authorization_type\030\004 \001(\0162)." +
       "cosmos.staking.v1beta1.AuthorizationType" +
-      "\032\035\n\nValidators\022\017\n\007address\030\001 \003(\t:\021\312\264-\rAut" +
+      "\032\035\n\nValidators\022\017\n\007address\030\001 \003(\t:\021\322\264-\rAut" +
       "horizationB\014\n\nvalidators*\236\001\n\021Authorizati" +
       "onType\022\"\n\036AUTHORIZATION_TYPE_UNSPECIFIED" +
       "\020\000\022\037\n\033AUTHORIZATION_TYPE_DELEGATE\020\001\022!\n\035A" +

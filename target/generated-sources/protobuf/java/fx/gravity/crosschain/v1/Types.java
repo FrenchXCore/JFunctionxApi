@@ -11838,22 +11838,63 @@ public final class Types {
     long getIbcTransferTimeoutHeight();
 
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @return A list containing the oracles.
+     */
+    java.util.List<java.lang.String>
+        getOraclesList();
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @return The count of oracles.
+     */
+    int getOraclesCount();
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @param index The index of the element to return.
+     * @return The oracles at the given index.
+     */
+    java.lang.String getOracles(int index);
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the oracles at the given index.
+     */
+    com.google.protobuf.ByteString
+        getOraclesBytes(int index);
+
+    /**
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      * @return Whether the delegateThreshold field is set.
      */
     boolean hasDelegateThreshold();
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      * @return The delegateThreshold.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getDelegateThreshold();
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getDelegateThresholdOrBuilder();
 
     /**
-     * <code>int64 delegate_multiple = 10;</code>
+     * <code>int64 delegate_multiple = 11;</code>
      * @return The delegateMultiple.
      */
     long getDelegateMultiple();
@@ -11880,6 +11921,7 @@ public final class Types {
       gravityId_ = "";
       slashFraction_ = com.google.protobuf.ByteString.EMPTY;
       oracleSetUpdatePowerChangePercent_ = com.google.protobuf.ByteString.EMPTY;
+      oracles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -11902,6 +11944,7 @@ public final class Types {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11954,6 +11997,15 @@ public final class Types {
               break;
             }
             case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                oracles_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              oracles_.add(s);
+              break;
+            }
+            case 82: {
               cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
               if (delegateThreshold_ != null) {
                 subBuilder = delegateThreshold_.toBuilder();
@@ -11966,7 +12018,7 @@ public final class Types {
 
               break;
             }
-            case 80: {
+            case 88: {
 
               delegateMultiple_ = input.readInt64();
               break;
@@ -11986,6 +12038,9 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          oracles_ = oracles_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -12118,10 +12173,61 @@ public final class Types {
       return ibcTransferTimeoutHeight_;
     }
 
-    public static final int DELEGATE_THRESHOLD_FIELD_NUMBER = 9;
+    public static final int ORACLES_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList oracles_;
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @return A list containing the oracles.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getOraclesList() {
+      return oracles_;
+    }
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @return The count of oracles.
+     */
+    public int getOraclesCount() {
+      return oracles_.size();
+    }
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @param index The index of the element to return.
+     * @return The oracles at the given index.
+     */
+    public java.lang.String getOracles(int index) {
+      return oracles_.get(index);
+    }
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the oracles at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getOraclesBytes(int index) {
+      return oracles_.getByteString(index);
+    }
+
+    public static final int DELEGATE_THRESHOLD_FIELD_NUMBER = 10;
     private cosmos.base.v1beta1.CoinOuterClass.Coin delegateThreshold_;
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      * @return Whether the delegateThreshold field is set.
      */
     @java.lang.Override
@@ -12129,7 +12235,7 @@ public final class Types {
       return delegateThreshold_ != null;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      * @return The delegateThreshold.
      */
     @java.lang.Override
@@ -12137,17 +12243,17 @@ public final class Types {
       return delegateThreshold_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : delegateThreshold_;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getDelegateThresholdOrBuilder() {
       return getDelegateThreshold();
     }
 
-    public static final int DELEGATE_MULTIPLE_FIELD_NUMBER = 10;
+    public static final int DELEGATE_MULTIPLE_FIELD_NUMBER = 11;
     private long delegateMultiple_;
     /**
-     * <code>int64 delegate_multiple = 10;</code>
+     * <code>int64 delegate_multiple = 11;</code>
      * @return The delegateMultiple.
      */
     @java.lang.Override
@@ -12193,11 +12299,14 @@ public final class Types {
       if (ibcTransferTimeoutHeight_ != 0L) {
         output.writeUInt64(8, ibcTransferTimeoutHeight_);
       }
+      for (int i = 0; i < oracles_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, oracles_.getRaw(i));
+      }
       if (delegateThreshold_ != null) {
-        output.writeMessage(9, getDelegateThreshold());
+        output.writeMessage(10, getDelegateThreshold());
       }
       if (delegateMultiple_ != 0L) {
-        output.writeInt64(10, delegateMultiple_);
+        output.writeInt64(11, delegateMultiple_);
       }
       unknownFields.writeTo(output);
     }
@@ -12239,13 +12348,21 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(8, ibcTransferTimeoutHeight_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < oracles_.size(); i++) {
+          dataSize += computeStringSizeNoTag(oracles_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getOraclesList().size();
+      }
       if (delegateThreshold_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getDelegateThreshold());
+          .computeMessageSize(10, getDelegateThreshold());
       }
       if (delegateMultiple_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, delegateMultiple_);
+          .computeInt64Size(11, delegateMultiple_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12278,6 +12395,8 @@ public final class Types {
           .equals(other.getOracleSetUpdatePowerChangePercent())) return false;
       if (getIbcTransferTimeoutHeight()
           != other.getIbcTransferTimeoutHeight()) return false;
+      if (!getOraclesList()
+          .equals(other.getOraclesList())) return false;
       if (hasDelegateThreshold() != other.hasDelegateThreshold()) return false;
       if (hasDelegateThreshold()) {
         if (!getDelegateThreshold()
@@ -12317,6 +12436,10 @@ public final class Types {
       hash = (37 * hash) + IBC_TRANSFER_TIMEOUT_HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIbcTransferTimeoutHeight());
+      if (getOraclesCount() > 0) {
+        hash = (37 * hash) + ORACLES_FIELD_NUMBER;
+        hash = (53 * hash) + getOraclesList().hashCode();
+      }
       if (hasDelegateThreshold()) {
         hash = (37 * hash) + DELEGATE_THRESHOLD_FIELD_NUMBER;
         hash = (53 * hash) + getDelegateThreshold().hashCode();
@@ -12479,6 +12602,8 @@ public final class Types {
 
         ibcTransferTimeoutHeight_ = 0L;
 
+        oracles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (delegateThresholdBuilder_ == null) {
           delegateThreshold_ = null;
         } else {
@@ -12513,6 +12638,7 @@ public final class Types {
       @java.lang.Override
       public fx.gravity.crosschain.v1.Types.Params buildPartial() {
         fx.gravity.crosschain.v1.Types.Params result = new fx.gravity.crosschain.v1.Types.Params(this);
+        int from_bitField0_ = bitField0_;
         result.gravityId_ = gravityId_;
         result.averageBlockTime_ = averageBlockTime_;
         result.externalBatchTimeout_ = externalBatchTimeout_;
@@ -12521,6 +12647,11 @@ public final class Types {
         result.slashFraction_ = slashFraction_;
         result.oracleSetUpdatePowerChangePercent_ = oracleSetUpdatePowerChangePercent_;
         result.ibcTransferTimeoutHeight_ = ibcTransferTimeoutHeight_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          oracles_ = oracles_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.oracles_ = oracles_;
         if (delegateThresholdBuilder_ == null) {
           result.delegateThreshold_ = delegateThreshold_;
         } else {
@@ -12600,6 +12731,16 @@ public final class Types {
         if (other.getIbcTransferTimeoutHeight() != 0L) {
           setIbcTransferTimeoutHeight(other.getIbcTransferTimeoutHeight());
         }
+        if (!other.oracles_.isEmpty()) {
+          if (oracles_.isEmpty()) {
+            oracles_ = other.oracles_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureOraclesIsMutable();
+            oracles_.addAll(other.oracles_);
+          }
+          onChanged();
+        }
         if (other.hasDelegateThreshold()) {
           mergeDelegateThreshold(other.getDelegateThreshold());
         }
@@ -12634,6 +12775,7 @@ public final class Types {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object gravityId_ = "";
       /**
@@ -12934,18 +13076,164 @@ public final class Types {
         return this;
       }
 
+      private com.google.protobuf.LazyStringList oracles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureOraclesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          oracles_ = new com.google.protobuf.LazyStringArrayList(oracles_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @return A list containing the oracles.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getOraclesList() {
+        return oracles_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @return The count of oracles.
+       */
+      public int getOraclesCount() {
+        return oracles_.size();
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param index The index of the element to return.
+       * @return The oracles at the given index.
+       */
+      public java.lang.String getOracles(int index) {
+        return oracles_.get(index);
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the oracles at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getOraclesBytes(int index) {
+        return oracles_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param index The index to set the value at.
+       * @param value The oracles to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOracles(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOraclesIsMutable();
+        oracles_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param value The oracles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOracles(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOraclesIsMutable();
+        oracles_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param values The oracles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllOracles(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureOraclesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, oracles_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOracles() {
+        oracles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Deprecated
+       * </pre>
+       *
+       * <code>repeated string oracles = 9 [(.gogoproto.nullable) = true];</code>
+       * @param value The bytes of the oracles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOraclesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureOraclesIsMutable();
+        oracles_.add(value);
+        onChanged();
+        return this;
+      }
+
       private cosmos.base.v1beta1.CoinOuterClass.Coin delegateThreshold_;
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> delegateThresholdBuilder_;
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        * @return Whether the delegateThreshold field is set.
        */
       public boolean hasDelegateThreshold() {
         return delegateThresholdBuilder_ != null || delegateThreshold_ != null;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        * @return The delegateThreshold.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getDelegateThreshold() {
@@ -12956,7 +13244,7 @@ public final class Types {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDelegateThreshold(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (delegateThresholdBuilder_ == null) {
@@ -12972,7 +13260,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDelegateThreshold(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -12986,7 +13274,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeDelegateThreshold(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (delegateThresholdBuilder_ == null) {
@@ -13004,7 +13292,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearDelegateThreshold() {
         if (delegateThresholdBuilder_ == null) {
@@ -13018,7 +13306,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getDelegateThresholdBuilder() {
         
@@ -13026,7 +13314,7 @@ public final class Types {
         return getDelegateThresholdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getDelegateThresholdOrBuilder() {
         if (delegateThresholdBuilder_ != null) {
@@ -13037,7 +13325,7 @@ public final class Types {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 9 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin delegate_threshold = 10 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -13055,7 +13343,7 @@ public final class Types {
 
       private long delegateMultiple_ ;
       /**
-       * <code>int64 delegate_multiple = 10;</code>
+       * <code>int64 delegate_multiple = 11;</code>
        * @return The delegateMultiple.
        */
       @java.lang.Override
@@ -13063,7 +13351,7 @@ public final class Types {
         return delegateMultiple_;
       }
       /**
-       * <code>int64 delegate_multiple = 10;</code>
+       * <code>int64 delegate_multiple = 11;</code>
        * @param value The delegateMultiple to set.
        * @return This builder for chaining.
        */
@@ -13074,7 +13362,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>int64 delegate_multiple = 10;</code>
+       * <code>int64 delegate_multiple = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegateMultiple() {
@@ -13131,6 +13419,1085 @@ public final class Types {
 
     @java.lang.Override
     public fx.gravity.crosschain.v1.Types.Params getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface InitCrossChainParamsProposalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:fx.gravity.crosschain.v1.InitCrossChainParamsProposal)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string title = 1;</code>
+     * @return The title.
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>string title = 1;</code>
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     * @return Whether the params field is set.
+     */
+    boolean hasParams();
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     * @return The params.
+     */
+    fx.gravity.crosschain.v1.Types.Params getParams();
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     */
+    fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder();
+
+    /**
+     * <code>string chain_name = 4;</code>
+     * @return The chainName.
+     */
+    java.lang.String getChainName();
+    /**
+     * <code>string chain_name = 4;</code>
+     * @return The bytes for chainName.
+     */
+    com.google.protobuf.ByteString
+        getChainNameBytes();
+  }
+  /**
+   * <pre>
+   * Deprecated
+   * </pre>
+   *
+   * Protobuf type {@code fx.gravity.crosschain.v1.InitCrossChainParamsProposal}
+   */
+  public static final class InitCrossChainParamsProposal extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:fx.gravity.crosschain.v1.InitCrossChainParamsProposal)
+      InitCrossChainParamsProposalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InitCrossChainParamsProposal.newBuilder() to construct.
+    private InitCrossChainParamsProposal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InitCrossChainParamsProposal() {
+      title_ = "";
+      description_ = "";
+      chainName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InitCrossChainParamsProposal();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InitCrossChainParamsProposal(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              title_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 26: {
+              fx.gravity.crosschain.v1.Types.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(fx.gravity.crosschain.v1.Types.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fx.gravity.crosschain.v1.Types.internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fx.gravity.crosschain.v1.Types.internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.class, fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.Builder.class);
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object title_;
+    /**
+     * <code>string title = 1;</code>
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string title = 1;</code>
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARAMS_FIELD_NUMBER = 3;
+    private fx.gravity.crosschain.v1.Types.Params params_;
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     * @return Whether the params field is set.
+     */
+    @java.lang.Override
+    public boolean hasParams() {
+      return params_ != null;
+    }
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     * @return The params.
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.Params getParams() {
+      return params_ == null ? fx.gravity.crosschain.v1.Types.Params.getDefaultInstance() : params_;
+    }
+    /**
+     * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+     */
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder() {
+      return getParams();
+    }
+
+    public static final int CHAIN_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object chainName_;
+    /**
+     * <code>string chain_name = 4;</code>
+     * @return The chainName.
+     */
+    @java.lang.Override
+    public java.lang.String getChainName() {
+      java.lang.Object ref = chainName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chainName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string chain_name = 4;</code>
+     * @return The bytes for chainName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChainNameBytes() {
+      java.lang.Object ref = chainName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        chainName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+      }
+      if (params_ != null) {
+        output.writeMessage(3, getParams());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, chainName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      }
+      if (params_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getParams());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, chainName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal)) {
+        return super.equals(obj);
+      }
+      fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal other = (fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal) obj;
+
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (hasParams() != other.hasParams()) return false;
+      if (hasParams()) {
+        if (!getParams()
+            .equals(other.getParams())) return false;
+      }
+      if (!getChainName()
+          .equals(other.getChainName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      if (hasParams()) {
+        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+        hash = (53 * hash) + getParams().hashCode();
+      }
+      hash = (37 * hash) + CHAIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getChainName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Deprecated
+     * </pre>
+     *
+     * Protobuf type {@code fx.gravity.crosschain.v1.InitCrossChainParamsProposal}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:fx.gravity.crosschain.v1.InitCrossChainParamsProposal)
+        fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fx.gravity.crosschain.v1.Types.internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fx.gravity.crosschain.v1.Types.internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.class, fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.Builder.class);
+      }
+
+      // Construct using fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        title_ = "";
+
+        description_ = "";
+
+        if (paramsBuilder_ == null) {
+          params_ = null;
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+        chainName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fx.gravity.crosschain.v1.Types.internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor;
+      }
+
+      @java.lang.Override
+      public fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal getDefaultInstanceForType() {
+        return fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal build() {
+        fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal buildPartial() {
+        fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal result = new fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal(this);
+        result.title_ = title_;
+        result.description_ = description_;
+        if (paramsBuilder_ == null) {
+          result.params_ = params_;
+        } else {
+          result.params_ = paramsBuilder_.build();
+        }
+        result.chainName_ = chainName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal) {
+          return mergeFrom((fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal other) {
+        if (other == fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal.getDefaultInstance()) return this;
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.hasParams()) {
+          mergeParams(other.getParams());
+        }
+        if (!other.getChainName().isEmpty()) {
+          chainName_ = other.chainName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>string title = 1;</code>
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string title = 1;</code>
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string title = 1;</code>
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        title_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 1;</code>
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        title_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 2;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private fx.gravity.crosschain.v1.Types.Params params_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.Params, fx.gravity.crosschain.v1.Types.Params.Builder, fx.gravity.crosschain.v1.Types.ParamsOrBuilder> paramsBuilder_;
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       * @return Whether the params field is set.
+       */
+      public boolean hasParams() {
+        return paramsBuilder_ != null || params_ != null;
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       * @return The params.
+       */
+      public fx.gravity.crosschain.v1.Types.Params getParams() {
+        if (paramsBuilder_ == null) {
+          return params_ == null ? fx.gravity.crosschain.v1.Types.Params.getDefaultInstance() : params_;
+        } else {
+          return paramsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public Builder setParams(fx.gravity.crosschain.v1.Types.Params value) {
+        if (paramsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          params_ = value;
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public Builder setParams(
+          fx.gravity.crosschain.v1.Types.Params.Builder builderForValue) {
+        if (paramsBuilder_ == null) {
+          params_ = builderForValue.build();
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public Builder mergeParams(fx.gravity.crosschain.v1.Types.Params value) {
+        if (paramsBuilder_ == null) {
+          if (params_ != null) {
+            params_ =
+              fx.gravity.crosschain.v1.Types.Params.newBuilder(params_).mergeFrom(value).buildPartial();
+          } else {
+            params_ = value;
+          }
+          onChanged();
+        } else {
+          paramsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public Builder clearParams() {
+        if (paramsBuilder_ == null) {
+          params_ = null;
+          onChanged();
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public fx.gravity.crosschain.v1.Types.Params.Builder getParamsBuilder() {
+        
+        onChanged();
+        return getParamsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      public fx.gravity.crosschain.v1.Types.ParamsOrBuilder getParamsOrBuilder() {
+        if (paramsBuilder_ != null) {
+          return paramsBuilder_.getMessageOrBuilder();
+        } else {
+          return params_ == null ?
+              fx.gravity.crosschain.v1.Types.Params.getDefaultInstance() : params_;
+        }
+      }
+      /**
+       * <code>.fx.gravity.crosschain.v1.Params params = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fx.gravity.crosschain.v1.Types.Params, fx.gravity.crosschain.v1.Types.Params.Builder, fx.gravity.crosschain.v1.Types.ParamsOrBuilder> 
+          getParamsFieldBuilder() {
+        if (paramsBuilder_ == null) {
+          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fx.gravity.crosschain.v1.Types.Params, fx.gravity.crosschain.v1.Types.Params.Builder, fx.gravity.crosschain.v1.Types.ParamsOrBuilder>(
+                  getParams(),
+                  getParentForChildren(),
+                  isClean());
+          params_ = null;
+        }
+        return paramsBuilder_;
+      }
+
+      private java.lang.Object chainName_ = "";
+      /**
+       * <code>string chain_name = 4;</code>
+       * @return The chainName.
+       */
+      public java.lang.String getChainName() {
+        java.lang.Object ref = chainName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chainName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string chain_name = 4;</code>
+       * @return The bytes for chainName.
+       */
+      public com.google.protobuf.ByteString
+          getChainNameBytes() {
+        java.lang.Object ref = chainName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          chainName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string chain_name = 4;</code>
+       * @param value The chainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        chainName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string chain_name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainName() {
+        
+        chainName_ = getDefaultInstance().getChainName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string chain_name = 4;</code>
+       * @param value The bytes for chainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        chainName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:fx.gravity.crosschain.v1.InitCrossChainParamsProposal)
+    }
+
+    // @@protoc_insertion_point(class_scope:fx.gravity.crosschain.v1.InitCrossChainParamsProposal)
+    private static final fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal();
+    }
+
+    public static fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InitCrossChainParamsProposal>
+        PARSER = new com.google.protobuf.AbstractParser<InitCrossChainParamsProposal>() {
+      @java.lang.Override
+      public InitCrossChainParamsProposal parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InitCrossChainParamsProposal(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InitCrossChainParamsProposal> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InitCrossChainParamsProposal> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fx.gravity.crosschain.v1.Types.InitCrossChainParamsProposal getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14367,6 +15734,11 @@ public final class Types {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_fx_gravity_crosschain_v1_Params_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_fx_gravity_crosschain_v1_UpdateChainOraclesProposal_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14420,7 +15792,7 @@ public final class Types {
       "B.\332\336\037&github.com/cosmos/cosmos-sdk/types" +
       ".Int\310\336\037\000\"f\n\013MinBatchFee\022\026\n\016token_contrac" +
       "t\030\001 \001(\t\022?\n\007baseFee\030\002 \001(\tB.\332\336\037&github.com" +
-      "/cosmos/cosmos-sdk/types.Int\310\336\037\000\"\277\003\n\006Par" +
+      "/cosmos/cosmos-sdk/types.Int\310\336\037\000\"\326\003\n\006Par" +
       "ams\022\022\n\ngravity_id\030\001 \001(\t\022\032\n\022average_block" +
       "_time\030\002 \001(\004\022\036\n\026external_batch_timeout\030\003 " +
       "\001(\004\022#\n\033average_external_block_time\030\004 \001(\004" +
@@ -14429,18 +15801,23 @@ public final class Types {
       "k/types.Dec\310\336\037\000\022^\n&oracle_set_update_pow" +
       "er_change_percent\030\007 \001(\014B.\332\336\037&github.com/" +
       "cosmos/cosmos-sdk/types.Dec\310\336\037\000\022#\n\033ibc_t" +
-      "ransfer_timeout_height\030\010 \001(\004\022;\n\022delegate" +
-      "_threshold\030\t \001(\0132\031.cosmos.base.v1beta1.C" +
-      "oinB\004\310\336\037\000\022\031\n\021delegate_multiple\030\n \001(\003:\004\200\334" +
-      " \000\"s\n\032UpdateChainOraclesProposal\022\r\n\005titl" +
-      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\017\n\007oracles\030" +
-      "\003 \003(\t\022\022\n\nchain_name\030\004 \001(\t:\014\350\240\037\000\210\240\037\000\230\240\037\000*" +
-      "\251\001\n\tClaimType\022\032\n\026CLAIM_TYPE_UNSPECIFIED\020" +
-      "\000\022\031\n\025CLAIM_TYPE_SEND_TO_FX\020\001\022\037\n\033CLAIM_TY" +
-      "PE_SEND_TO_EXTERNAL\020\002\022\033\n\027CLAIM_TYPE_BRID" +
-      "GE_TOKEN\020\003\022!\n\035CLAIM_TYPE_ORACLE_SET_UPDA" +
-      "TED\020\004\032\004\210\243\036\000B1Z/github.com/functionx/fx-c" +
-      "ore/x/crosschain/typesb\006proto3"
+      "ransfer_timeout_height\030\010 \001(\004\022\025\n\007oracles\030" +
+      "\t \003(\tB\004\310\336\037\001\022;\n\022delegate_threshold\030\n \001(\0132" +
+      "\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000\022\031\n\021dele" +
+      "gate_multiple\030\013 \001(\003:\004\200\334 \000\"\226\001\n\034InitCrossC" +
+      "hainParamsProposal\022\r\n\005title\030\001 \001(\t\022\023\n\013des" +
+      "cription\030\002 \001(\t\0220\n\006params\030\003 \001(\0132 .fx.grav" +
+      "ity.crosschain.v1.Params\022\022\n\nchain_name\030\004" +
+      " \001(\t:\014\350\240\037\000\210\240\037\000\230\240\037\000\"s\n\032UpdateChainOracles" +
+      "Proposal\022\r\n\005title\030\001 \001(\t\022\023\n\013description\030\002" +
+      " \001(\t\022\017\n\007oracles\030\003 \003(\t\022\022\n\nchain_name\030\004 \001(" +
+      "\t:\014\350\240\037\000\210\240\037\000\230\240\037\000*\251\001\n\tClaimType\022\032\n\026CLAIM_T" +
+      "YPE_UNSPECIFIED\020\000\022\031\n\025CLAIM_TYPE_SEND_TO_" +
+      "FX\020\001\022\037\n\033CLAIM_TYPE_SEND_TO_EXTERNAL\020\002\022\033\n" +
+      "\027CLAIM_TYPE_BRIDGE_TOKEN\020\003\022!\n\035CLAIM_TYPE" +
+      "_ORACLE_SET_UPDATED\020\004\032\004\210\243\036\000B1Z/github.co" +
+      "m/functionx/fx-core/x/crosschain/typesb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14532,9 +15909,15 @@ public final class Types {
     internal_static_fx_gravity_crosschain_v1_Params_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fx_gravity_crosschain_v1_Params_descriptor,
-        new java.lang.String[] { "GravityId", "AverageBlockTime", "ExternalBatchTimeout", "AverageExternalBlockTime", "SignedWindow", "SlashFraction", "OracleSetUpdatePowerChangePercent", "IbcTransferTimeoutHeight", "DelegateThreshold", "DelegateMultiple", });
-    internal_static_fx_gravity_crosschain_v1_UpdateChainOraclesProposal_descriptor =
+        new java.lang.String[] { "GravityId", "AverageBlockTime", "ExternalBatchTimeout", "AverageExternalBlockTime", "SignedWindow", "SlashFraction", "OracleSetUpdatePowerChangePercent", "IbcTransferTimeoutHeight", "Oracles", "DelegateThreshold", "DelegateMultiple", });
+    internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor =
       getDescriptor().getMessageTypes().get(14);
+    internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_fx_gravity_crosschain_v1_InitCrossChainParamsProposal_descriptor,
+        new java.lang.String[] { "Title", "Description", "Params", "ChainName", });
+    internal_static_fx_gravity_crosschain_v1_UpdateChainOraclesProposal_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_fx_gravity_crosschain_v1_UpdateChainOraclesProposal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fx_gravity_crosschain_v1_UpdateChainOraclesProposal_descriptor,

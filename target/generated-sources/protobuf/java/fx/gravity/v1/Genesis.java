@@ -1908,17 +1908,17 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     fx.gravity.v1.Genesis.Params getParams();
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Genesis.ParamsOrBuilder getParamsOrBuilder();
 
@@ -1929,219 +1929,210 @@ public final class Genesis {
     long getLastObservedNonce();
 
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+     * @return Whether the lastObservedBlockHeight field is set.
      */
-    java.util.List<fx.gravity.v1.Types.Valset> 
-        getValsetsList();
+    boolean hasLastObservedBlockHeight();
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+     * @return The lastObservedBlockHeight.
      */
-    fx.gravity.v1.Types.Valset getValsets(int index);
+    fx.gravity.v1.Types.LastObservedEthereumBlockHeight getLastObservedBlockHeight();
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
      */
-    int getValsetsCount();
-    /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-     */
-    java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
-        getValsetsOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-     */
-    fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
-        int index);
+    fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder();
 
     /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> 
-        getValsetConfirmsList();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index);
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    int getValsetConfirmsCount();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
-        getValsetConfirmsOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> 
-        getBatchesList();
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index);
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    int getBatchesCount();
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
-        getBatchesOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> 
-        getBatchConfirmsList();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index);
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    int getBatchConfirmsCount();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
-        getBatchConfirmsOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> 
-        getAttestationsList();
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index);
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    int getAttestationsCount();
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
-        getAttestationsOrBuilderList();
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress> 
         getDelegateKeysList();
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Tx.MsgSetOrchestratorAddress getDelegateKeys(int index);
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     int getDelegateKeysCount();
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder> 
         getDelegateKeysOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder getDelegateKeysOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.v1.Types.Valset> 
+        getValsetsList();
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Types.Valset getValsets(int index);
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    int getValsetsCount();
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
+        getValsetsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.v1.Types.ERC20ToDenom> 
         getErc20ToDenomsList();
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Types.ERC20ToDenom getErc20ToDenoms(int index);
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     int getErc20ToDenomsCount();
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.v1.Types.ERC20ToDenomOrBuilder> 
         getErc20ToDenomsOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Types.ERC20ToDenomOrBuilder getErc20ToDenomsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx> 
         getUnbatchedTransfersList();
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Batch.OutgoingTransferTx getUnbatchedTransfers(int index);
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     int getUnbatchedTransfersCount();
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder> 
         getUnbatchedTransfersOrBuilderList();
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
         int index);
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
-        getModuleCoinsList();
+    java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> 
+        getBatchesList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
-    cosmos.base.v1beta1.CoinOuterClass.Coin getModuleCoins(int index);
+    fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
-    int getModuleCoinsCount();
+    int getBatchesCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-        getModuleCoinsOrBuilderList();
+    java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
+        getBatchesOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
-    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getModuleCoinsOrBuilder(
+    fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> 
+        getBatchConfirmsList();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index);
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    int getBatchConfirmsCount();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
+        getBatchConfirmsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> 
+        getValsetConfirmsList();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index);
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    int getValsetConfirmsCount();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
+        getValsetConfirmsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> 
+        getAttestationsList();
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index);
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    int getAttestationsCount();
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
+        getAttestationsOrBuilderList();
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
         int index);
   }
   /**
@@ -2161,15 +2152,14 @@ public final class Genesis {
       super(builder);
     }
     private GenesisState() {
-      valsets_ = java.util.Collections.emptyList();
-      valsetConfirms_ = java.util.Collections.emptyList();
-      batches_ = java.util.Collections.emptyList();
-      batchConfirms_ = java.util.Collections.emptyList();
-      attestations_ = java.util.Collections.emptyList();
       delegateKeys_ = java.util.Collections.emptyList();
+      valsets_ = java.util.Collections.emptyList();
       erc20ToDenoms_ = java.util.Collections.emptyList();
       unbatchedTransfers_ = java.util.Collections.emptyList();
-      moduleCoins_ = java.util.Collections.emptyList();
+      batches_ = java.util.Collections.emptyList();
+      batchConfirms_ = java.util.Collections.emptyList();
+      valsetConfirms_ = java.util.Collections.emptyList();
+      attestations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2222,84 +2212,88 @@ public final class Genesis {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                valsets_ = new java.util.ArrayList<fx.gravity.v1.Types.Valset>();
-                mutable_bitField0_ |= 0x00000001;
+              fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder subBuilder = null;
+              if (lastObservedBlockHeight_ != null) {
+                subBuilder = lastObservedBlockHeight_.toBuilder();
               }
-              valsets_.add(
-                  input.readMessage(fx.gravity.v1.Types.Valset.parser(), extensionRegistry));
+              lastObservedBlockHeight_ = input.readMessage(fx.gravity.v1.Types.LastObservedEthereumBlockHeight.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastObservedBlockHeight_);
+                lastObservedBlockHeight_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                valsetConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgValsetConfirm>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              valsetConfirms_.add(
-                  input.readMessage(fx.gravity.v1.Tx.MsgValsetConfirm.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                batches_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTxBatch>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              batches_.add(
-                  input.readMessage(fx.gravity.v1.Batch.OutgoingTxBatch.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                batchConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgConfirmBatch>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              batchConfirms_.add(
-                  input.readMessage(fx.gravity.v1.Tx.MsgConfirmBatch.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                attestations_ = new java.util.ArrayList<fx.gravity.v1.AttestationOuterClass.Attestation>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              attestations_.add(
-                  input.readMessage(fx.gravity.v1.AttestationOuterClass.Attestation.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 delegateKeys_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgSetOrchestratorAddress>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               delegateKeys_.add(
                   input.readMessage(fx.gravity.v1.Tx.MsgSetOrchestratorAddress.parser(), extensionRegistry));
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                valsets_ = new java.util.ArrayList<fx.gravity.v1.Types.Valset>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              valsets_.add(
+                  input.readMessage(fx.gravity.v1.Types.Valset.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 erc20ToDenoms_ = new java.util.ArrayList<fx.gravity.v1.Types.ERC20ToDenom>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000004;
               }
               erc20ToDenoms_.add(
                   input.readMessage(fx.gravity.v1.Types.ERC20ToDenom.parser(), extensionRegistry));
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 unbatchedTransfers_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTransferTx>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000008;
               }
               unbatchedTransfers_.add(
                   input.readMessage(fx.gravity.v1.Batch.OutgoingTransferTx.parser(), extensionRegistry));
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                moduleCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000100;
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                batches_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTxBatch>();
+                mutable_bitField0_ |= 0x00000010;
               }
-              moduleCoins_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              batches_.add(
+                  input.readMessage(fx.gravity.v1.Batch.OutgoingTxBatch.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                batchConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgConfirmBatch>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              batchConfirms_.add(
+                  input.readMessage(fx.gravity.v1.Tx.MsgConfirmBatch.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                valsetConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgValsetConfirm>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              valsetConfirms_.add(
+                  input.readMessage(fx.gravity.v1.Tx.MsgValsetConfirm.parser(), extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                attestations_ = new java.util.ArrayList<fx.gravity.v1.AttestationOuterClass.Attestation>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              attestations_.add(
+                  input.readMessage(fx.gravity.v1.AttestationOuterClass.Attestation.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -2318,31 +2312,28 @@ public final class Genesis {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          valsets_ = java.util.Collections.unmodifiableList(valsets_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          valsetConfirms_ = java.util.Collections.unmodifiableList(valsetConfirms_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          batches_ = java.util.Collections.unmodifiableList(batches_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          attestations_ = java.util.Collections.unmodifiableList(attestations_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           delegateKeys_ = java.util.Collections.unmodifiableList(delegateKeys_);
         }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          valsets_ = java.util.Collections.unmodifiableList(valsets_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           erc20ToDenoms_ = java.util.Collections.unmodifiableList(erc20ToDenoms_);
         }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           unbatchedTransfers_ = java.util.Collections.unmodifiableList(unbatchedTransfers_);
         }
-        if (((mutable_bitField0_ & 0x00000100) != 0)) {
-          moduleCoins_ = java.util.Collections.unmodifiableList(moduleCoins_);
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          batches_ = java.util.Collections.unmodifiableList(batches_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          valsetConfirms_ = java.util.Collections.unmodifiableList(valsetConfirms_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          attestations_ = java.util.Collections.unmodifiableList(attestations_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2364,7 +2355,7 @@ public final class Genesis {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private fx.gravity.v1.Genesis.Params params_;
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -2372,7 +2363,7 @@ public final class Genesis {
       return params_ != null;
     }
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -2380,7 +2371,7 @@ public final class Genesis {
       return params_ == null ? fx.gravity.v1.Genesis.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>.fx.gravity.v1.Params params = 1;</code>
+     * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Genesis.ParamsOrBuilder getParamsOrBuilder() {
@@ -2398,217 +2389,43 @@ public final class Genesis {
       return lastObservedNonce_;
     }
 
-    public static final int VALSETS_FIELD_NUMBER = 3;
-    private java.util.List<fx.gravity.v1.Types.Valset> valsets_;
+    public static final int LAST_OBSERVED_BLOCK_HEIGHT_FIELD_NUMBER = 3;
+    private fx.gravity.v1.Types.LastObservedEthereumBlockHeight lastObservedBlockHeight_;
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+     * @return Whether the lastObservedBlockHeight field is set.
      */
     @java.lang.Override
-    public java.util.List<fx.gravity.v1.Types.Valset> getValsetsList() {
-      return valsets_;
+    public boolean hasLastObservedBlockHeight() {
+      return lastObservedBlockHeight_ != null;
     }
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+     * @return The lastObservedBlockHeight.
      */
     @java.lang.Override
-    public java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
-        getValsetsOrBuilderList() {
-      return valsets_;
+    public fx.gravity.v1.Types.LastObservedEthereumBlockHeight getLastObservedBlockHeight() {
+      return lastObservedBlockHeight_ == null ? fx.gravity.v1.Types.LastObservedEthereumBlockHeight.getDefaultInstance() : lastObservedBlockHeight_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+     * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
      */
     @java.lang.Override
-    public int getValsetsCount() {
-      return valsets_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Types.Valset getValsets(int index) {
-      return valsets_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
-        int index) {
-      return valsets_.get(index);
+    public fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder() {
+      return getLastObservedBlockHeight();
     }
 
-    public static final int VALSET_CONFIRMS_FIELD_NUMBER = 4;
-    private java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> valsetConfirms_;
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> getValsetConfirmsList() {
-      return valsetConfirms_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
-        getValsetConfirmsOrBuilderList() {
-      return valsetConfirms_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    @java.lang.Override
-    public int getValsetConfirmsCount() {
-      return valsetConfirms_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index) {
-      return valsetConfirms_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
-        int index) {
-      return valsetConfirms_.get(index);
-    }
-
-    public static final int BATCHES_FIELD_NUMBER = 5;
-    private java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> batches_;
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    @java.lang.Override
-    public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> getBatchesList() {
-      return batches_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
-        getBatchesOrBuilderList() {
-      return batches_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    @java.lang.Override
-    public int getBatchesCount() {
-      return batches_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index) {
-      return batches_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
-        int index) {
-      return batches_.get(index);
-    }
-
-    public static final int BATCH_CONFIRMS_FIELD_NUMBER = 6;
-    private java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> batchConfirms_;
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
-      return batchConfirms_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
-        getBatchConfirmsOrBuilderList() {
-      return batchConfirms_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public int getBatchConfirmsCount() {
-      return batchConfirms_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
-      return batchConfirms_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
-        int index) {
-      return batchConfirms_.get(index);
-    }
-
-    public static final int ATTESTATIONS_FIELD_NUMBER = 7;
-    private java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> attestations_;
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> getAttestationsList() {
-      return attestations_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
-        getAttestationsOrBuilderList() {
-      return attestations_;
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public int getAttestationsCount() {
-      return attestations_.size();
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index) {
-      return attestations_.get(index);
-    }
-    /**
-     * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-     */
-    @java.lang.Override
-    public fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
-        int index) {
-      return attestations_.get(index);
-    }
-
-    public static final int DELEGATE_KEYS_FIELD_NUMBER = 8;
+    public static final int DELEGATE_KEYS_FIELD_NUMBER = 4;
     private java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress> delegateKeys_;
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress> getDelegateKeysList() {
       return delegateKeys_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder> 
@@ -2616,21 +2433,21 @@ public final class Genesis {
       return delegateKeys_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getDelegateKeysCount() {
       return delegateKeys_.size();
     }
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Tx.MsgSetOrchestratorAddress getDelegateKeys(int index) {
       return delegateKeys_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+     * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder getDelegateKeysOrBuilder(
@@ -2638,17 +2455,57 @@ public final class Genesis {
       return delegateKeys_.get(index);
     }
 
-    public static final int ERC20_TO_DENOMS_FIELD_NUMBER = 9;
+    public static final int VALSETS_FIELD_NUMBER = 5;
+    private java.util.List<fx.gravity.v1.Types.Valset> valsets_;
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.v1.Types.Valset> getValsetsList() {
+      return valsets_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
+        getValsetsOrBuilderList() {
+      return valsets_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getValsetsCount() {
+      return valsets_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Types.Valset getValsets(int index) {
+      return valsets_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
+        int index) {
+      return valsets_.get(index);
+    }
+
+    public static final int ERC20_TO_DENOMS_FIELD_NUMBER = 6;
     private java.util.List<fx.gravity.v1.Types.ERC20ToDenom> erc20ToDenoms_;
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<fx.gravity.v1.Types.ERC20ToDenom> getErc20ToDenomsList() {
       return erc20ToDenoms_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.v1.Types.ERC20ToDenomOrBuilder> 
@@ -2656,21 +2513,21 @@ public final class Genesis {
       return erc20ToDenoms_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getErc20ToDenomsCount() {
       return erc20ToDenoms_.size();
     }
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Types.ERC20ToDenom getErc20ToDenoms(int index) {
       return erc20ToDenoms_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+     * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Types.ERC20ToDenomOrBuilder getErc20ToDenomsOrBuilder(
@@ -2678,17 +2535,17 @@ public final class Genesis {
       return erc20ToDenoms_.get(index);
     }
 
-    public static final int UNBATCHED_TRANSFERS_FIELD_NUMBER = 10;
+    public static final int UNBATCHED_TRANSFERS_FIELD_NUMBER = 7;
     private java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx> unbatchedTransfers_;
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx> getUnbatchedTransfersList() {
       return unbatchedTransfers_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder> 
@@ -2696,21 +2553,21 @@ public final class Genesis {
       return unbatchedTransfers_;
     }
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getUnbatchedTransfersCount() {
       return unbatchedTransfers_.size();
     }
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Batch.OutgoingTransferTx getUnbatchedTransfers(int index) {
       return unbatchedTransfers_.get(index);
     }
     /**
-     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
@@ -2718,44 +2575,164 @@ public final class Genesis {
       return unbatchedTransfers_.get(index);
     }
 
-    public static final int MODULE_COINS_FIELD_NUMBER = 11;
-    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> moduleCoins_;
+    public static final int BATCHES_FIELD_NUMBER = 8;
+    private java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> batches_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getModuleCoinsList() {
-      return moduleCoins_;
+    public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> getBatchesList() {
+      return batches_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-        getModuleCoinsOrBuilderList() {
-      return moduleCoins_;
+    public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
+        getBatchesOrBuilderList() {
+      return batches_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public int getModuleCoinsCount() {
-      return moduleCoins_.size();
+    public int getBatchesCount() {
+      return batches_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.Coin getModuleCoins(int index) {
-      return moduleCoins_.get(index);
+    public fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index) {
+      return batches_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getModuleCoinsOrBuilder(
+    public fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
         int index) {
-      return moduleCoins_.get(index);
+      return batches_.get(index);
+    }
+
+    public static final int BATCH_CONFIRMS_FIELD_NUMBER = 9;
+    private java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> batchConfirms_;
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
+      return batchConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
+        getBatchConfirmsOrBuilderList() {
+      return batchConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getBatchConfirmsCount() {
+      return batchConfirms_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
+      return batchConfirms_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+        int index) {
+      return batchConfirms_.get(index);
+    }
+
+    public static final int VALSET_CONFIRMS_FIELD_NUMBER = 10;
+    private java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> valsetConfirms_;
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> getValsetConfirmsList() {
+      return valsetConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
+        getValsetConfirmsOrBuilderList() {
+      return valsetConfirms_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getValsetConfirmsCount() {
+      return valsetConfirms_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index) {
+      return valsetConfirms_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
+        int index) {
+      return valsetConfirms_.get(index);
+    }
+
+    public static final int ATTESTATIONS_FIELD_NUMBER = 11;
+    private java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> attestations_;
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> getAttestationsList() {
+      return attestations_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
+        getAttestationsOrBuilderList() {
+      return attestations_;
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getAttestationsCount() {
+      return attestations_.size();
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index) {
+      return attestations_.get(index);
+    }
+    /**
+     * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
+        int index) {
+      return attestations_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2778,32 +2755,32 @@ public final class Genesis {
       if (lastObservedNonce_ != 0L) {
         output.writeUInt64(2, lastObservedNonce_);
       }
-      for (int i = 0; i < valsets_.size(); i++) {
-        output.writeMessage(3, valsets_.get(i));
-      }
-      for (int i = 0; i < valsetConfirms_.size(); i++) {
-        output.writeMessage(4, valsetConfirms_.get(i));
-      }
-      for (int i = 0; i < batches_.size(); i++) {
-        output.writeMessage(5, batches_.get(i));
-      }
-      for (int i = 0; i < batchConfirms_.size(); i++) {
-        output.writeMessage(6, batchConfirms_.get(i));
-      }
-      for (int i = 0; i < attestations_.size(); i++) {
-        output.writeMessage(7, attestations_.get(i));
+      if (lastObservedBlockHeight_ != null) {
+        output.writeMessage(3, getLastObservedBlockHeight());
       }
       for (int i = 0; i < delegateKeys_.size(); i++) {
-        output.writeMessage(8, delegateKeys_.get(i));
+        output.writeMessage(4, delegateKeys_.get(i));
+      }
+      for (int i = 0; i < valsets_.size(); i++) {
+        output.writeMessage(5, valsets_.get(i));
       }
       for (int i = 0; i < erc20ToDenoms_.size(); i++) {
-        output.writeMessage(9, erc20ToDenoms_.get(i));
+        output.writeMessage(6, erc20ToDenoms_.get(i));
       }
       for (int i = 0; i < unbatchedTransfers_.size(); i++) {
-        output.writeMessage(10, unbatchedTransfers_.get(i));
+        output.writeMessage(7, unbatchedTransfers_.get(i));
       }
-      for (int i = 0; i < moduleCoins_.size(); i++) {
-        output.writeMessage(11, moduleCoins_.get(i));
+      for (int i = 0; i < batches_.size(); i++) {
+        output.writeMessage(8, batches_.get(i));
+      }
+      for (int i = 0; i < batchConfirms_.size(); i++) {
+        output.writeMessage(9, batchConfirms_.get(i));
+      }
+      for (int i = 0; i < valsetConfirms_.size(); i++) {
+        output.writeMessage(10, valsetConfirms_.get(i));
+      }
+      for (int i = 0; i < attestations_.size(); i++) {
+        output.writeMessage(11, attestations_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2822,41 +2799,41 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, lastObservedNonce_);
       }
-      for (int i = 0; i < valsets_.size(); i++) {
+      if (lastObservedBlockHeight_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, valsets_.get(i));
-      }
-      for (int i = 0; i < valsetConfirms_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, valsetConfirms_.get(i));
-      }
-      for (int i = 0; i < batches_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, batches_.get(i));
-      }
-      for (int i = 0; i < batchConfirms_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, batchConfirms_.get(i));
-      }
-      for (int i = 0; i < attestations_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, attestations_.get(i));
+          .computeMessageSize(3, getLastObservedBlockHeight());
       }
       for (int i = 0; i < delegateKeys_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, delegateKeys_.get(i));
+          .computeMessageSize(4, delegateKeys_.get(i));
+      }
+      for (int i = 0; i < valsets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, valsets_.get(i));
       }
       for (int i = 0; i < erc20ToDenoms_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, erc20ToDenoms_.get(i));
+          .computeMessageSize(6, erc20ToDenoms_.get(i));
       }
       for (int i = 0; i < unbatchedTransfers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, unbatchedTransfers_.get(i));
+          .computeMessageSize(7, unbatchedTransfers_.get(i));
       }
-      for (int i = 0; i < moduleCoins_.size(); i++) {
+      for (int i = 0; i < batches_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, moduleCoins_.get(i));
+          .computeMessageSize(8, batches_.get(i));
+      }
+      for (int i = 0; i < batchConfirms_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, batchConfirms_.get(i));
+      }
+      for (int i = 0; i < valsetConfirms_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, valsetConfirms_.get(i));
+      }
+      for (int i = 0; i < attestations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, attestations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2880,24 +2857,27 @@ public final class Genesis {
       }
       if (getLastObservedNonce()
           != other.getLastObservedNonce()) return false;
-      if (!getValsetsList()
-          .equals(other.getValsetsList())) return false;
-      if (!getValsetConfirmsList()
-          .equals(other.getValsetConfirmsList())) return false;
-      if (!getBatchesList()
-          .equals(other.getBatchesList())) return false;
-      if (!getBatchConfirmsList()
-          .equals(other.getBatchConfirmsList())) return false;
-      if (!getAttestationsList()
-          .equals(other.getAttestationsList())) return false;
+      if (hasLastObservedBlockHeight() != other.hasLastObservedBlockHeight()) return false;
+      if (hasLastObservedBlockHeight()) {
+        if (!getLastObservedBlockHeight()
+            .equals(other.getLastObservedBlockHeight())) return false;
+      }
       if (!getDelegateKeysList()
           .equals(other.getDelegateKeysList())) return false;
+      if (!getValsetsList()
+          .equals(other.getValsetsList())) return false;
       if (!getErc20ToDenomsList()
           .equals(other.getErc20ToDenomsList())) return false;
       if (!getUnbatchedTransfersList()
           .equals(other.getUnbatchedTransfersList())) return false;
-      if (!getModuleCoinsList()
-          .equals(other.getModuleCoinsList())) return false;
+      if (!getBatchesList()
+          .equals(other.getBatchesList())) return false;
+      if (!getBatchConfirmsList()
+          .equals(other.getBatchConfirmsList())) return false;
+      if (!getValsetConfirmsList()
+          .equals(other.getValsetConfirmsList())) return false;
+      if (!getAttestationsList()
+          .equals(other.getAttestationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2916,29 +2896,17 @@ public final class Genesis {
       hash = (37 * hash) + LAST_OBSERVED_NONCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLastObservedNonce());
-      if (getValsetsCount() > 0) {
-        hash = (37 * hash) + VALSETS_FIELD_NUMBER;
-        hash = (53 * hash) + getValsetsList().hashCode();
-      }
-      if (getValsetConfirmsCount() > 0) {
-        hash = (37 * hash) + VALSET_CONFIRMS_FIELD_NUMBER;
-        hash = (53 * hash) + getValsetConfirmsList().hashCode();
-      }
-      if (getBatchesCount() > 0) {
-        hash = (37 * hash) + BATCHES_FIELD_NUMBER;
-        hash = (53 * hash) + getBatchesList().hashCode();
-      }
-      if (getBatchConfirmsCount() > 0) {
-        hash = (37 * hash) + BATCH_CONFIRMS_FIELD_NUMBER;
-        hash = (53 * hash) + getBatchConfirmsList().hashCode();
-      }
-      if (getAttestationsCount() > 0) {
-        hash = (37 * hash) + ATTESTATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getAttestationsList().hashCode();
+      if (hasLastObservedBlockHeight()) {
+        hash = (37 * hash) + LAST_OBSERVED_BLOCK_HEIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getLastObservedBlockHeight().hashCode();
       }
       if (getDelegateKeysCount() > 0) {
         hash = (37 * hash) + DELEGATE_KEYS_FIELD_NUMBER;
         hash = (53 * hash) + getDelegateKeysList().hashCode();
+      }
+      if (getValsetsCount() > 0) {
+        hash = (37 * hash) + VALSETS_FIELD_NUMBER;
+        hash = (53 * hash) + getValsetsList().hashCode();
       }
       if (getErc20ToDenomsCount() > 0) {
         hash = (37 * hash) + ERC20_TO_DENOMS_FIELD_NUMBER;
@@ -2948,9 +2916,21 @@ public final class Genesis {
         hash = (37 * hash) + UNBATCHED_TRANSFERS_FIELD_NUMBER;
         hash = (53 * hash) + getUnbatchedTransfersList().hashCode();
       }
-      if (getModuleCoinsCount() > 0) {
-        hash = (37 * hash) + MODULE_COINS_FIELD_NUMBER;
-        hash = (53 * hash) + getModuleCoinsList().hashCode();
+      if (getBatchesCount() > 0) {
+        hash = (37 * hash) + BATCHES_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchesList().hashCode();
+      }
+      if (getBatchConfirmsCount() > 0) {
+        hash = (37 * hash) + BATCH_CONFIRMS_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchConfirmsList().hashCode();
+      }
+      if (getValsetConfirmsCount() > 0) {
+        hash = (37 * hash) + VALSET_CONFIRMS_FIELD_NUMBER;
+        hash = (53 * hash) + getValsetConfirmsList().hashCode();
+      }
+      if (getAttestationsCount() > 0) {
+        hash = (37 * hash) + ATTESTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAttestationsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3084,15 +3064,14 @@ public final class Genesis {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValsetsFieldBuilder();
-          getValsetConfirmsFieldBuilder();
-          getBatchesFieldBuilder();
-          getBatchConfirmsFieldBuilder();
-          getAttestationsFieldBuilder();
           getDelegateKeysFieldBuilder();
+          getValsetsFieldBuilder();
           getErc20ToDenomsFieldBuilder();
           getUnbatchedTransfersFieldBuilder();
-          getModuleCoinsFieldBuilder();
+          getBatchesFieldBuilder();
+          getBatchConfirmsFieldBuilder();
+          getValsetConfirmsFieldBuilder();
+          getAttestationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3106,59 +3085,59 @@ public final class Genesis {
         }
         lastObservedNonce_ = 0L;
 
-        if (valsetsBuilder_ == null) {
-          valsets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (lastObservedBlockHeightBuilder_ == null) {
+          lastObservedBlockHeight_ = null;
         } else {
-          valsetsBuilder_.clear();
-        }
-        if (valsetConfirmsBuilder_ == null) {
-          valsetConfirms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          valsetConfirmsBuilder_.clear();
-        }
-        if (batchesBuilder_ == null) {
-          batches_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          batchesBuilder_.clear();
-        }
-        if (batchConfirmsBuilder_ == null) {
-          batchConfirms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          batchConfirmsBuilder_.clear();
-        }
-        if (attestationsBuilder_ == null) {
-          attestations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        } else {
-          attestationsBuilder_.clear();
+          lastObservedBlockHeight_ = null;
+          lastObservedBlockHeightBuilder_ = null;
         }
         if (delegateKeysBuilder_ == null) {
           delegateKeys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           delegateKeysBuilder_.clear();
         }
+        if (valsetsBuilder_ == null) {
+          valsets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          valsetsBuilder_.clear();
+        }
         if (erc20ToDenomsBuilder_ == null) {
           erc20ToDenoms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           erc20ToDenomsBuilder_.clear();
         }
         if (unbatchedTransfersBuilder_ == null) {
           unbatchedTransfers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           unbatchedTransfersBuilder_.clear();
         }
-        if (moduleCoinsBuilder_ == null) {
-          moduleCoins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+        if (batchesBuilder_ == null) {
+          batches_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          moduleCoinsBuilder_.clear();
+          batchesBuilder_.clear();
+        }
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          batchConfirmsBuilder_.clear();
+        }
+        if (valsetConfirmsBuilder_ == null) {
+          valsetConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          valsetConfirmsBuilder_.clear();
+        }
+        if (attestationsBuilder_ == null) {
+          attestations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          attestationsBuilder_.clear();
         }
         return this;
       }
@@ -3193,86 +3172,82 @@ public final class Genesis {
           result.params_ = paramsBuilder_.build();
         }
         result.lastObservedNonce_ = lastObservedNonce_;
-        if (valsetsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            valsets_ = java.util.Collections.unmodifiableList(valsets_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.valsets_ = valsets_;
+        if (lastObservedBlockHeightBuilder_ == null) {
+          result.lastObservedBlockHeight_ = lastObservedBlockHeight_;
         } else {
-          result.valsets_ = valsetsBuilder_.build();
-        }
-        if (valsetConfirmsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            valsetConfirms_ = java.util.Collections.unmodifiableList(valsetConfirms_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.valsetConfirms_ = valsetConfirms_;
-        } else {
-          result.valsetConfirms_ = valsetConfirmsBuilder_.build();
-        }
-        if (batchesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            batches_ = java.util.Collections.unmodifiableList(batches_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.batches_ = batches_;
-        } else {
-          result.batches_ = batchesBuilder_.build();
-        }
-        if (batchConfirmsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.batchConfirms_ = batchConfirms_;
-        } else {
-          result.batchConfirms_ = batchConfirmsBuilder_.build();
-        }
-        if (attestationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
-            attestations_ = java.util.Collections.unmodifiableList(attestations_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.attestations_ = attestations_;
-        } else {
-          result.attestations_ = attestationsBuilder_.build();
+          result.lastObservedBlockHeight_ = lastObservedBlockHeightBuilder_.build();
         }
         if (delegateKeysBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             delegateKeys_ = java.util.Collections.unmodifiableList(delegateKeys_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.delegateKeys_ = delegateKeys_;
         } else {
           result.delegateKeys_ = delegateKeysBuilder_.build();
         }
+        if (valsetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            valsets_ = java.util.Collections.unmodifiableList(valsets_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.valsets_ = valsets_;
+        } else {
+          result.valsets_ = valsetsBuilder_.build();
+        }
         if (erc20ToDenomsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             erc20ToDenoms_ = java.util.Collections.unmodifiableList(erc20ToDenoms_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.erc20ToDenoms_ = erc20ToDenoms_;
         } else {
           result.erc20ToDenoms_ = erc20ToDenomsBuilder_.build();
         }
         if (unbatchedTransfersBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             unbatchedTransfers_ = java.util.Collections.unmodifiableList(unbatchedTransfers_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.unbatchedTransfers_ = unbatchedTransfers_;
         } else {
           result.unbatchedTransfers_ = unbatchedTransfersBuilder_.build();
         }
-        if (moduleCoinsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)) {
-            moduleCoins_ = java.util.Collections.unmodifiableList(moduleCoins_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+        if (batchesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            batches_ = java.util.Collections.unmodifiableList(batches_);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.moduleCoins_ = moduleCoins_;
+          result.batches_ = batches_;
         } else {
-          result.moduleCoins_ = moduleCoinsBuilder_.build();
+          result.batches_ = batchesBuilder_.build();
+        }
+        if (batchConfirmsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            batchConfirms_ = java.util.Collections.unmodifiableList(batchConfirms_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.batchConfirms_ = batchConfirms_;
+        } else {
+          result.batchConfirms_ = batchConfirmsBuilder_.build();
+        }
+        if (valsetConfirmsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            valsetConfirms_ = java.util.Collections.unmodifiableList(valsetConfirms_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.valsetConfirms_ = valsetConfirms_;
+        } else {
+          result.valsetConfirms_ = valsetConfirmsBuilder_.build();
+        }
+        if (attestationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            attestations_ = java.util.Collections.unmodifiableList(attestations_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.attestations_ = attestations_;
+        } else {
+          result.attestations_ = attestationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3328,141 +3303,14 @@ public final class Genesis {
         if (other.getLastObservedNonce() != 0L) {
           setLastObservedNonce(other.getLastObservedNonce());
         }
-        if (valsetsBuilder_ == null) {
-          if (!other.valsets_.isEmpty()) {
-            if (valsets_.isEmpty()) {
-              valsets_ = other.valsets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureValsetsIsMutable();
-              valsets_.addAll(other.valsets_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.valsets_.isEmpty()) {
-            if (valsetsBuilder_.isEmpty()) {
-              valsetsBuilder_.dispose();
-              valsetsBuilder_ = null;
-              valsets_ = other.valsets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              valsetsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValsetsFieldBuilder() : null;
-            } else {
-              valsetsBuilder_.addAllMessages(other.valsets_);
-            }
-          }
-        }
-        if (valsetConfirmsBuilder_ == null) {
-          if (!other.valsetConfirms_.isEmpty()) {
-            if (valsetConfirms_.isEmpty()) {
-              valsetConfirms_ = other.valsetConfirms_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureValsetConfirmsIsMutable();
-              valsetConfirms_.addAll(other.valsetConfirms_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.valsetConfirms_.isEmpty()) {
-            if (valsetConfirmsBuilder_.isEmpty()) {
-              valsetConfirmsBuilder_.dispose();
-              valsetConfirmsBuilder_ = null;
-              valsetConfirms_ = other.valsetConfirms_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              valsetConfirmsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValsetConfirmsFieldBuilder() : null;
-            } else {
-              valsetConfirmsBuilder_.addAllMessages(other.valsetConfirms_);
-            }
-          }
-        }
-        if (batchesBuilder_ == null) {
-          if (!other.batches_.isEmpty()) {
-            if (batches_.isEmpty()) {
-              batches_ = other.batches_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureBatchesIsMutable();
-              batches_.addAll(other.batches_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.batches_.isEmpty()) {
-            if (batchesBuilder_.isEmpty()) {
-              batchesBuilder_.dispose();
-              batchesBuilder_ = null;
-              batches_ = other.batches_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              batchesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBatchesFieldBuilder() : null;
-            } else {
-              batchesBuilder_.addAllMessages(other.batches_);
-            }
-          }
-        }
-        if (batchConfirmsBuilder_ == null) {
-          if (!other.batchConfirms_.isEmpty()) {
-            if (batchConfirms_.isEmpty()) {
-              batchConfirms_ = other.batchConfirms_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureBatchConfirmsIsMutable();
-              batchConfirms_.addAll(other.batchConfirms_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.batchConfirms_.isEmpty()) {
-            if (batchConfirmsBuilder_.isEmpty()) {
-              batchConfirmsBuilder_.dispose();
-              batchConfirmsBuilder_ = null;
-              batchConfirms_ = other.batchConfirms_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              batchConfirmsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBatchConfirmsFieldBuilder() : null;
-            } else {
-              batchConfirmsBuilder_.addAllMessages(other.batchConfirms_);
-            }
-          }
-        }
-        if (attestationsBuilder_ == null) {
-          if (!other.attestations_.isEmpty()) {
-            if (attestations_.isEmpty()) {
-              attestations_ = other.attestations_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureAttestationsIsMutable();
-              attestations_.addAll(other.attestations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.attestations_.isEmpty()) {
-            if (attestationsBuilder_.isEmpty()) {
-              attestationsBuilder_.dispose();
-              attestationsBuilder_ = null;
-              attestations_ = other.attestations_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              attestationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAttestationsFieldBuilder() : null;
-            } else {
-              attestationsBuilder_.addAllMessages(other.attestations_);
-            }
-          }
+        if (other.hasLastObservedBlockHeight()) {
+          mergeLastObservedBlockHeight(other.getLastObservedBlockHeight());
         }
         if (delegateKeysBuilder_ == null) {
           if (!other.delegateKeys_.isEmpty()) {
             if (delegateKeys_.isEmpty()) {
               delegateKeys_ = other.delegateKeys_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureDelegateKeysIsMutable();
               delegateKeys_.addAll(other.delegateKeys_);
@@ -3475,7 +3323,7 @@ public final class Genesis {
               delegateKeysBuilder_.dispose();
               delegateKeysBuilder_ = null;
               delegateKeys_ = other.delegateKeys_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000001);
               delegateKeysBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDelegateKeysFieldBuilder() : null;
@@ -3484,11 +3332,37 @@ public final class Genesis {
             }
           }
         }
+        if (valsetsBuilder_ == null) {
+          if (!other.valsets_.isEmpty()) {
+            if (valsets_.isEmpty()) {
+              valsets_ = other.valsets_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureValsetsIsMutable();
+              valsets_.addAll(other.valsets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.valsets_.isEmpty()) {
+            if (valsetsBuilder_.isEmpty()) {
+              valsetsBuilder_.dispose();
+              valsetsBuilder_ = null;
+              valsets_ = other.valsets_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              valsetsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getValsetsFieldBuilder() : null;
+            } else {
+              valsetsBuilder_.addAllMessages(other.valsets_);
+            }
+          }
+        }
         if (erc20ToDenomsBuilder_ == null) {
           if (!other.erc20ToDenoms_.isEmpty()) {
             if (erc20ToDenoms_.isEmpty()) {
               erc20ToDenoms_ = other.erc20ToDenoms_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureErc20ToDenomsIsMutable();
               erc20ToDenoms_.addAll(other.erc20ToDenoms_);
@@ -3501,7 +3375,7 @@ public final class Genesis {
               erc20ToDenomsBuilder_.dispose();
               erc20ToDenomsBuilder_ = null;
               erc20ToDenoms_ = other.erc20ToDenoms_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000004);
               erc20ToDenomsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getErc20ToDenomsFieldBuilder() : null;
@@ -3514,7 +3388,7 @@ public final class Genesis {
           if (!other.unbatchedTransfers_.isEmpty()) {
             if (unbatchedTransfers_.isEmpty()) {
               unbatchedTransfers_ = other.unbatchedTransfers_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureUnbatchedTransfersIsMutable();
               unbatchedTransfers_.addAll(other.unbatchedTransfers_);
@@ -3527,7 +3401,7 @@ public final class Genesis {
               unbatchedTransfersBuilder_.dispose();
               unbatchedTransfersBuilder_ = null;
               unbatchedTransfers_ = other.unbatchedTransfers_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000008);
               unbatchedTransfersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnbatchedTransfersFieldBuilder() : null;
@@ -3536,29 +3410,107 @@ public final class Genesis {
             }
           }
         }
-        if (moduleCoinsBuilder_ == null) {
-          if (!other.moduleCoins_.isEmpty()) {
-            if (moduleCoins_.isEmpty()) {
-              moduleCoins_ = other.moduleCoins_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+        if (batchesBuilder_ == null) {
+          if (!other.batches_.isEmpty()) {
+            if (batches_.isEmpty()) {
+              batches_ = other.batches_;
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
-              ensureModuleCoinsIsMutable();
-              moduleCoins_.addAll(other.moduleCoins_);
+              ensureBatchesIsMutable();
+              batches_.addAll(other.batches_);
             }
             onChanged();
           }
         } else {
-          if (!other.moduleCoins_.isEmpty()) {
-            if (moduleCoinsBuilder_.isEmpty()) {
-              moduleCoinsBuilder_.dispose();
-              moduleCoinsBuilder_ = null;
-              moduleCoins_ = other.moduleCoins_;
-              bitField0_ = (bitField0_ & ~0x00000100);
-              moduleCoinsBuilder_ = 
+          if (!other.batches_.isEmpty()) {
+            if (batchesBuilder_.isEmpty()) {
+              batchesBuilder_.dispose();
+              batchesBuilder_ = null;
+              batches_ = other.batches_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              batchesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getModuleCoinsFieldBuilder() : null;
+                   getBatchesFieldBuilder() : null;
             } else {
-              moduleCoinsBuilder_.addAllMessages(other.moduleCoins_);
+              batchesBuilder_.addAllMessages(other.batches_);
+            }
+          }
+        }
+        if (batchConfirmsBuilder_ == null) {
+          if (!other.batchConfirms_.isEmpty()) {
+            if (batchConfirms_.isEmpty()) {
+              batchConfirms_ = other.batchConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureBatchConfirmsIsMutable();
+              batchConfirms_.addAll(other.batchConfirms_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.batchConfirms_.isEmpty()) {
+            if (batchConfirmsBuilder_.isEmpty()) {
+              batchConfirmsBuilder_.dispose();
+              batchConfirmsBuilder_ = null;
+              batchConfirms_ = other.batchConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              batchConfirmsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBatchConfirmsFieldBuilder() : null;
+            } else {
+              batchConfirmsBuilder_.addAllMessages(other.batchConfirms_);
+            }
+          }
+        }
+        if (valsetConfirmsBuilder_ == null) {
+          if (!other.valsetConfirms_.isEmpty()) {
+            if (valsetConfirms_.isEmpty()) {
+              valsetConfirms_ = other.valsetConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureValsetConfirmsIsMutable();
+              valsetConfirms_.addAll(other.valsetConfirms_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.valsetConfirms_.isEmpty()) {
+            if (valsetConfirmsBuilder_.isEmpty()) {
+              valsetConfirmsBuilder_.dispose();
+              valsetConfirmsBuilder_ = null;
+              valsetConfirms_ = other.valsetConfirms_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              valsetConfirmsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getValsetConfirmsFieldBuilder() : null;
+            } else {
+              valsetConfirmsBuilder_.addAllMessages(other.valsetConfirms_);
+            }
+          }
+        }
+        if (attestationsBuilder_ == null) {
+          if (!other.attestations_.isEmpty()) {
+            if (attestations_.isEmpty()) {
+              attestations_ = other.attestations_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureAttestationsIsMutable();
+              attestations_.addAll(other.attestations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.attestations_.isEmpty()) {
+            if (attestationsBuilder_.isEmpty()) {
+              attestationsBuilder_.dispose();
+              attestationsBuilder_ = null;
+              attestations_ = other.attestations_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              attestationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAttestationsFieldBuilder() : null;
+            } else {
+              attestationsBuilder_.addAllMessages(other.attestations_);
             }
           }
         }
@@ -3596,14 +3548,14 @@ public final class Genesis {
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.v1.Genesis.Params, fx.gravity.v1.Genesis.Params.Builder, fx.gravity.v1.Genesis.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        * @return The params.
        */
       public fx.gravity.v1.Genesis.Params getParams() {
@@ -3614,7 +3566,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(fx.gravity.v1.Genesis.Params value) {
         if (paramsBuilder_ == null) {
@@ -3630,7 +3582,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           fx.gravity.v1.Genesis.Params.Builder builderForValue) {
@@ -3644,7 +3596,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(fx.gravity.v1.Genesis.Params value) {
         if (paramsBuilder_ == null) {
@@ -3662,7 +3614,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -3676,7 +3628,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Genesis.Params.Builder getParamsBuilder() {
         
@@ -3684,7 +3636,7 @@ public final class Genesis {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Genesis.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -3695,7 +3647,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>.fx.gravity.v1.Params params = 1;</code>
+       * <code>.fx.gravity.v1.Params params = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           fx.gravity.v1.Genesis.Params, fx.gravity.v1.Genesis.Params.Builder, fx.gravity.v1.Genesis.ParamsOrBuilder> 
@@ -3742,1212 +3694,131 @@ public final class Genesis {
         return this;
       }
 
-      private java.util.List<fx.gravity.v1.Types.Valset> valsets_ =
-        java.util.Collections.emptyList();
-      private void ensureValsetsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          valsets_ = new java.util.ArrayList<fx.gravity.v1.Types.Valset>(valsets_);
-          bitField0_ |= 0x00000001;
-         }
+      private fx.gravity.v1.Types.LastObservedEthereumBlockHeight lastObservedBlockHeight_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fx.gravity.v1.Types.LastObservedEthereumBlockHeight, fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder, fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder> lastObservedBlockHeightBuilder_;
+      /**
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+       * @return Whether the lastObservedBlockHeight field is set.
+       */
+      public boolean hasLastObservedBlockHeight() {
+        return lastObservedBlockHeightBuilder_ != null || lastObservedBlockHeight_ != null;
       }
+      /**
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+       * @return The lastObservedBlockHeight.
+       */
+      public fx.gravity.v1.Types.LastObservedEthereumBlockHeight getLastObservedBlockHeight() {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          return lastObservedBlockHeight_ == null ? fx.gravity.v1.Types.LastObservedEthereumBlockHeight.getDefaultInstance() : lastObservedBlockHeight_;
+        } else {
+          return lastObservedBlockHeightBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+       */
+      public Builder setLastObservedBlockHeight(fx.gravity.v1.Types.LastObservedEthereumBlockHeight value) {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastObservedBlockHeight_ = value;
+          onChanged();
+        } else {
+          lastObservedBlockHeightBuilder_.setMessage(value);
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder> valsetsBuilder_;
+        return this;
+      }
+      /**
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+       */
+      public Builder setLastObservedBlockHeight(
+          fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder builderForValue) {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          lastObservedBlockHeight_ = builderForValue.build();
+          onChanged();
+        } else {
+          lastObservedBlockHeightBuilder_.setMessage(builderForValue.build());
+        }
 
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public java.util.List<fx.gravity.v1.Types.Valset> getValsetsList() {
-        if (valsetsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(valsets_);
-        } else {
-          return valsetsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
        */
-      public int getValsetsCount() {
-        if (valsetsBuilder_ == null) {
-          return valsets_.size();
-        } else {
-          return valsetsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public fx.gravity.v1.Types.Valset getValsets(int index) {
-        if (valsetsBuilder_ == null) {
-          return valsets_.get(index);
-        } else {
-          return valsetsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder setValsets(
-          int index, fx.gravity.v1.Types.Valset value) {
-        if (valsetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeLastObservedBlockHeight(fx.gravity.v1.Types.LastObservedEthereumBlockHeight value) {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          if (lastObservedBlockHeight_ != null) {
+            lastObservedBlockHeight_ =
+              fx.gravity.v1.Types.LastObservedEthereumBlockHeight.newBuilder(lastObservedBlockHeight_).mergeFrom(value).buildPartial();
+          } else {
+            lastObservedBlockHeight_ = value;
           }
-          ensureValsetsIsMutable();
-          valsets_.set(index, value);
           onChanged();
         } else {
-          valsetsBuilder_.setMessage(index, value);
+          lastObservedBlockHeightBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
        */
-      public Builder setValsets(
-          int index, fx.gravity.v1.Types.Valset.Builder builderForValue) {
-        if (valsetsBuilder_ == null) {
-          ensureValsetsIsMutable();
-          valsets_.set(index, builderForValue.build());
+      public Builder clearLastObservedBlockHeight() {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          lastObservedBlockHeight_ = null;
           onChanged();
         } else {
-          valsetsBuilder_.setMessage(index, builderForValue.build());
+          lastObservedBlockHeight_ = null;
+          lastObservedBlockHeightBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
        */
-      public Builder addValsets(fx.gravity.v1.Types.Valset value) {
-        if (valsetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValsetsIsMutable();
-          valsets_.add(value);
-          onChanged();
+      public fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder getLastObservedBlockHeightBuilder() {
+        
+        onChanged();
+        return getLastObservedBlockHeightFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
+       */
+      public fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder getLastObservedBlockHeightOrBuilder() {
+        if (lastObservedBlockHeightBuilder_ != null) {
+          return lastObservedBlockHeightBuilder_.getMessageOrBuilder();
         } else {
-          valsetsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder addValsets(
-          int index, fx.gravity.v1.Types.Valset value) {
-        if (valsetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValsetsIsMutable();
-          valsets_.add(index, value);
-          onChanged();
-        } else {
-          valsetsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder addValsets(
-          fx.gravity.v1.Types.Valset.Builder builderForValue) {
-        if (valsetsBuilder_ == null) {
-          ensureValsetsIsMutable();
-          valsets_.add(builderForValue.build());
-          onChanged();
-        } else {
-          valsetsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder addValsets(
-          int index, fx.gravity.v1.Types.Valset.Builder builderForValue) {
-        if (valsetsBuilder_ == null) {
-          ensureValsetsIsMutable();
-          valsets_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          valsetsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder addAllValsets(
-          java.lang.Iterable<? extends fx.gravity.v1.Types.Valset> values) {
-        if (valsetsBuilder_ == null) {
-          ensureValsetsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, valsets_);
-          onChanged();
-        } else {
-          valsetsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder clearValsets() {
-        if (valsetsBuilder_ == null) {
-          valsets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          valsetsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public Builder removeValsets(int index) {
-        if (valsetsBuilder_ == null) {
-          ensureValsetsIsMutable();
-          valsets_.remove(index);
-          onChanged();
-        } else {
-          valsetsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public fx.gravity.v1.Types.Valset.Builder getValsetsBuilder(
-          int index) {
-        return getValsetsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
-          int index) {
-        if (valsetsBuilder_ == null) {
-          return valsets_.get(index);  } else {
-          return valsetsBuilder_.getMessageOrBuilder(index);
+          return lastObservedBlockHeight_ == null ?
+              fx.gravity.v1.Types.LastObservedEthereumBlockHeight.getDefaultInstance() : lastObservedBlockHeight_;
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
+       * <code>.fx.gravity.v1.LastObservedEthereumBlockHeight last_observed_block_height = 3;</code>
        */
-      public java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
-           getValsetsOrBuilderList() {
-        if (valsetsBuilder_ != null) {
-          return valsetsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(valsets_);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public fx.gravity.v1.Types.Valset.Builder addValsetsBuilder() {
-        return getValsetsFieldBuilder().addBuilder(
-            fx.gravity.v1.Types.Valset.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public fx.gravity.v1.Types.Valset.Builder addValsetsBuilder(
-          int index) {
-        return getValsetsFieldBuilder().addBuilder(
-            index, fx.gravity.v1.Types.Valset.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Valset valsets = 3;</code>
-       */
-      public java.util.List<fx.gravity.v1.Types.Valset.Builder> 
-           getValsetsBuilderList() {
-        return getValsetsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder> 
-          getValsetsFieldBuilder() {
-        if (valsetsBuilder_ == null) {
-          valsetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder>(
-                  valsets_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fx.gravity.v1.Types.LastObservedEthereumBlockHeight, fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder, fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder> 
+          getLastObservedBlockHeightFieldBuilder() {
+        if (lastObservedBlockHeightBuilder_ == null) {
+          lastObservedBlockHeightBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fx.gravity.v1.Types.LastObservedEthereumBlockHeight, fx.gravity.v1.Types.LastObservedEthereumBlockHeight.Builder, fx.gravity.v1.Types.LastObservedEthereumBlockHeightOrBuilder>(
+                  getLastObservedBlockHeight(),
                   getParentForChildren(),
                   isClean());
-          valsets_ = null;
+          lastObservedBlockHeight_ = null;
         }
-        return valsetsBuilder_;
-      }
-
-      private java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> valsetConfirms_ =
-        java.util.Collections.emptyList();
-      private void ensureValsetConfirmsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          valsetConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgValsetConfirm>(valsetConfirms_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> valsetConfirmsBuilder_;
-
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> getValsetConfirmsList() {
-        if (valsetConfirmsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(valsetConfirms_);
-        } else {
-          return valsetConfirmsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public int getValsetConfirmsCount() {
-        if (valsetConfirmsBuilder_ == null) {
-          return valsetConfirms_.size();
-        } else {
-          return valsetConfirmsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index) {
-        if (valsetConfirmsBuilder_ == null) {
-          return valsetConfirms_.get(index);
-        } else {
-          return valsetConfirmsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder setValsetConfirms(
-          int index, fx.gravity.v1.Tx.MsgValsetConfirm value) {
-        if (valsetConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.set(index, value);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder setValsetConfirms(
-          int index, fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
-        if (valsetConfirmsBuilder_ == null) {
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder addValsetConfirms(fx.gravity.v1.Tx.MsgValsetConfirm value) {
-        if (valsetConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.add(value);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder addValsetConfirms(
-          int index, fx.gravity.v1.Tx.MsgValsetConfirm value) {
-        if (valsetConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.add(index, value);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder addValsetConfirms(
-          fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
-        if (valsetConfirmsBuilder_ == null) {
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.add(builderForValue.build());
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder addValsetConfirms(
-          int index, fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
-        if (valsetConfirmsBuilder_ == null) {
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder addAllValsetConfirms(
-          java.lang.Iterable<? extends fx.gravity.v1.Tx.MsgValsetConfirm> values) {
-        if (valsetConfirmsBuilder_ == null) {
-          ensureValsetConfirmsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, valsetConfirms_);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder clearValsetConfirms() {
-        if (valsetConfirmsBuilder_ == null) {
-          valsetConfirms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public Builder removeValsetConfirms(int index) {
-        if (valsetConfirmsBuilder_ == null) {
-          ensureValsetConfirmsIsMutable();
-          valsetConfirms_.remove(index);
-          onChanged();
-        } else {
-          valsetConfirmsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder getValsetConfirmsBuilder(
-          int index) {
-        return getValsetConfirmsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
-          int index) {
-        if (valsetConfirmsBuilder_ == null) {
-          return valsetConfirms_.get(index);  } else {
-          return valsetConfirmsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
-           getValsetConfirmsOrBuilderList() {
-        if (valsetConfirmsBuilder_ != null) {
-          return valsetConfirmsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(valsetConfirms_);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder addValsetConfirmsBuilder() {
-        return getValsetConfirmsFieldBuilder().addBuilder(
-            fx.gravity.v1.Tx.MsgValsetConfirm.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder addValsetConfirmsBuilder(
-          int index) {
-        return getValsetConfirmsFieldBuilder().addBuilder(
-            index, fx.gravity.v1.Tx.MsgValsetConfirm.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 4;</code>
-       */
-      public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm.Builder> 
-           getValsetConfirmsBuilderList() {
-        return getValsetConfirmsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
-          getValsetConfirmsFieldBuilder() {
-        if (valsetConfirmsBuilder_ == null) {
-          valsetConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder>(
-                  valsetConfirms_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          valsetConfirms_ = null;
-        }
-        return valsetConfirmsBuilder_;
-      }
-
-      private java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> batches_ =
-        java.util.Collections.emptyList();
-      private void ensureBatchesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          batches_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTxBatch>(batches_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> batchesBuilder_;
-
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> getBatchesList() {
-        if (batchesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(batches_);
-        } else {
-          return batchesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public int getBatchesCount() {
-        if (batchesBuilder_ == null) {
-          return batches_.size();
-        } else {
-          return batchesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index) {
-        if (batchesBuilder_ == null) {
-          return batches_.get(index);
-        } else {
-          return batchesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder setBatches(
-          int index, fx.gravity.v1.Batch.OutgoingTxBatch value) {
-        if (batchesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchesIsMutable();
-          batches_.set(index, value);
-          onChanged();
-        } else {
-          batchesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder setBatches(
-          int index, fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
-        if (batchesBuilder_ == null) {
-          ensureBatchesIsMutable();
-          batches_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          batchesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder addBatches(fx.gravity.v1.Batch.OutgoingTxBatch value) {
-        if (batchesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchesIsMutable();
-          batches_.add(value);
-          onChanged();
-        } else {
-          batchesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder addBatches(
-          int index, fx.gravity.v1.Batch.OutgoingTxBatch value) {
-        if (batchesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchesIsMutable();
-          batches_.add(index, value);
-          onChanged();
-        } else {
-          batchesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder addBatches(
-          fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
-        if (batchesBuilder_ == null) {
-          ensureBatchesIsMutable();
-          batches_.add(builderForValue.build());
-          onChanged();
-        } else {
-          batchesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder addBatches(
-          int index, fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
-        if (batchesBuilder_ == null) {
-          ensureBatchesIsMutable();
-          batches_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          batchesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder addAllBatches(
-          java.lang.Iterable<? extends fx.gravity.v1.Batch.OutgoingTxBatch> values) {
-        if (batchesBuilder_ == null) {
-          ensureBatchesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, batches_);
-          onChanged();
-        } else {
-          batchesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder clearBatches() {
-        if (batchesBuilder_ == null) {
-          batches_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          batchesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public Builder removeBatches(int index) {
-        if (batchesBuilder_ == null) {
-          ensureBatchesIsMutable();
-          batches_.remove(index);
-          onChanged();
-        } else {
-          batchesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder getBatchesBuilder(
-          int index) {
-        return getBatchesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
-          int index) {
-        if (batchesBuilder_ == null) {
-          return batches_.get(index);  } else {
-          return batchesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
-           getBatchesOrBuilderList() {
-        if (batchesBuilder_ != null) {
-          return batchesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(batches_);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder addBatchesBuilder() {
-        return getBatchesFieldBuilder().addBuilder(
-            fx.gravity.v1.Batch.OutgoingTxBatch.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder addBatchesBuilder(
-          int index) {
-        return getBatchesFieldBuilder().addBuilder(
-            index, fx.gravity.v1.Batch.OutgoingTxBatch.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 5;</code>
-       */
-      public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch.Builder> 
-           getBatchesBuilderList() {
-        return getBatchesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
-          getBatchesFieldBuilder() {
-        if (batchesBuilder_ == null) {
-          batchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder>(
-                  batches_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          batches_ = null;
-        }
-        return batchesBuilder_;
-      }
-
-      private java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> batchConfirms_ =
-        java.util.Collections.emptyList();
-      private void ensureBatchConfirmsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          batchConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgConfirmBatch>(batchConfirms_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> batchConfirmsBuilder_;
-
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
-        if (batchConfirmsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(batchConfirms_);
-        } else {
-          return batchConfirmsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public int getBatchConfirmsCount() {
-        if (batchConfirmsBuilder_ == null) {
-          return batchConfirms_.size();
-        } else {
-          return batchConfirmsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
-        if (batchConfirmsBuilder_ == null) {
-          return batchConfirms_.get(index);
-        } else {
-          return batchConfirmsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder setBatchConfirms(
-          int index, fx.gravity.v1.Tx.MsgConfirmBatch value) {
-        if (batchConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.set(index, value);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder setBatchConfirms(
-          int index, fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
-        if (batchConfirmsBuilder_ == null) {
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addBatchConfirms(fx.gravity.v1.Tx.MsgConfirmBatch value) {
-        if (batchConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.add(value);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addBatchConfirms(
-          int index, fx.gravity.v1.Tx.MsgConfirmBatch value) {
-        if (batchConfirmsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.add(index, value);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addBatchConfirms(
-          fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
-        if (batchConfirmsBuilder_ == null) {
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.add(builderForValue.build());
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addBatchConfirms(
-          int index, fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
-        if (batchConfirmsBuilder_ == null) {
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAllBatchConfirms(
-          java.lang.Iterable<? extends fx.gravity.v1.Tx.MsgConfirmBatch> values) {
-        if (batchConfirmsBuilder_ == null) {
-          ensureBatchConfirmsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, batchConfirms_);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder clearBatchConfirms() {
-        if (batchConfirmsBuilder_ == null) {
-          batchConfirms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder removeBatchConfirms(int index) {
-        if (batchConfirmsBuilder_ == null) {
-          ensureBatchConfirmsIsMutable();
-          batchConfirms_.remove(index);
-          onChanged();
-        } else {
-          batchConfirmsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder getBatchConfirmsBuilder(
-          int index) {
-        return getBatchConfirmsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
-          int index) {
-        if (batchConfirmsBuilder_ == null) {
-          return batchConfirms_.get(index);  } else {
-          return batchConfirmsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
-           getBatchConfirmsOrBuilderList() {
-        if (batchConfirmsBuilder_ != null) {
-          return batchConfirmsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(batchConfirms_);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder() {
-        return getBatchConfirmsFieldBuilder().addBuilder(
-            fx.gravity.v1.Tx.MsgConfirmBatch.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder(
-          int index) {
-        return getBatchConfirmsFieldBuilder().addBuilder(
-            index, fx.gravity.v1.Tx.MsgConfirmBatch.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 6 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch.Builder> 
-           getBatchConfirmsBuilderList() {
-        return getBatchConfirmsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
-          getBatchConfirmsFieldBuilder() {
-        if (batchConfirmsBuilder_ == null) {
-          batchConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder>(
-                  batchConfirms_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          batchConfirms_ = null;
-        }
-        return batchConfirmsBuilder_;
-      }
-
-      private java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> attestations_ =
-        java.util.Collections.emptyList();
-      private void ensureAttestationsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          attestations_ = new java.util.ArrayList<fx.gravity.v1.AttestationOuterClass.Attestation>(attestations_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> attestationsBuilder_;
-
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> getAttestationsList() {
-        if (attestationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(attestations_);
-        } else {
-          return attestationsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public int getAttestationsCount() {
-        if (attestationsBuilder_ == null) {
-          return attestations_.size();
-        } else {
-          return attestationsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index) {
-        if (attestationsBuilder_ == null) {
-          return attestations_.get(index);
-        } else {
-          return attestationsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder setAttestations(
-          int index, fx.gravity.v1.AttestationOuterClass.Attestation value) {
-        if (attestationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttestationsIsMutable();
-          attestations_.set(index, value);
-          onChanged();
-        } else {
-          attestationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder setAttestations(
-          int index, fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
-        if (attestationsBuilder_ == null) {
-          ensureAttestationsIsMutable();
-          attestations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          attestationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAttestations(fx.gravity.v1.AttestationOuterClass.Attestation value) {
-        if (attestationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttestationsIsMutable();
-          attestations_.add(value);
-          onChanged();
-        } else {
-          attestationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAttestations(
-          int index, fx.gravity.v1.AttestationOuterClass.Attestation value) {
-        if (attestationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAttestationsIsMutable();
-          attestations_.add(index, value);
-          onChanged();
-        } else {
-          attestationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAttestations(
-          fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
-        if (attestationsBuilder_ == null) {
-          ensureAttestationsIsMutable();
-          attestations_.add(builderForValue.build());
-          onChanged();
-        } else {
-          attestationsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAttestations(
-          int index, fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
-        if (attestationsBuilder_ == null) {
-          ensureAttestationsIsMutable();
-          attestations_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          attestationsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder addAllAttestations(
-          java.lang.Iterable<? extends fx.gravity.v1.AttestationOuterClass.Attestation> values) {
-        if (attestationsBuilder_ == null) {
-          ensureAttestationsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, attestations_);
-          onChanged();
-        } else {
-          attestationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder clearAttestations() {
-        if (attestationsBuilder_ == null) {
-          attestations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
-        } else {
-          attestationsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public Builder removeAttestations(int index) {
-        if (attestationsBuilder_ == null) {
-          ensureAttestationsIsMutable();
-          attestations_.remove(index);
-          onChanged();
-        } else {
-          attestationsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder getAttestationsBuilder(
-          int index) {
-        return getAttestationsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
-          int index) {
-        if (attestationsBuilder_ == null) {
-          return attestations_.get(index);  } else {
-          return attestationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
-           getAttestationsOrBuilderList() {
-        if (attestationsBuilder_ != null) {
-          return attestationsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(attestations_);
-        }
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder addAttestationsBuilder() {
-        return getAttestationsFieldBuilder().addBuilder(
-            fx.gravity.v1.AttestationOuterClass.Attestation.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder addAttestationsBuilder(
-          int index) {
-        return getAttestationsFieldBuilder().addBuilder(
-            index, fx.gravity.v1.AttestationOuterClass.Attestation.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .fx.gravity.v1.Attestation attestations = 7 [(.gogoproto.nullable) = false];</code>
-       */
-      public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation.Builder> 
-           getAttestationsBuilderList() {
-        return getAttestationsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
-          getAttestationsFieldBuilder() {
-        if (attestationsBuilder_ == null) {
-          attestationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder>(
-                  attestations_,
-                  ((bitField0_ & 0x00000010) != 0),
-                  getParentForChildren(),
-                  isClean());
-          attestations_ = null;
-        }
-        return attestationsBuilder_;
+        return lastObservedBlockHeightBuilder_;
       }
 
       private java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress> delegateKeys_ =
         java.util.Collections.emptyList();
       private void ensureDelegateKeysIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           delegateKeys_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgSetOrchestratorAddress>(delegateKeys_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -4955,7 +3826,7 @@ public final class Genesis {
           fx.gravity.v1.Tx.MsgSetOrchestratorAddress, fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder, fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder> delegateKeysBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress> getDelegateKeysList() {
         if (delegateKeysBuilder_ == null) {
@@ -4965,7 +3836,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public int getDelegateKeysCount() {
         if (delegateKeysBuilder_ == null) {
@@ -4975,7 +3846,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Tx.MsgSetOrchestratorAddress getDelegateKeys(int index) {
         if (delegateKeysBuilder_ == null) {
@@ -4985,7 +3856,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDelegateKeys(
           int index, fx.gravity.v1.Tx.MsgSetOrchestratorAddress value) {
@@ -5002,7 +3873,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDelegateKeys(
           int index, fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder builderForValue) {
@@ -5016,7 +3887,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addDelegateKeys(fx.gravity.v1.Tx.MsgSetOrchestratorAddress value) {
         if (delegateKeysBuilder_ == null) {
@@ -5032,7 +3903,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addDelegateKeys(
           int index, fx.gravity.v1.Tx.MsgSetOrchestratorAddress value) {
@@ -5049,7 +3920,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addDelegateKeys(
           fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder builderForValue) {
@@ -5063,7 +3934,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addDelegateKeys(
           int index, fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder builderForValue) {
@@ -5077,7 +3948,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllDelegateKeys(
           java.lang.Iterable<? extends fx.gravity.v1.Tx.MsgSetOrchestratorAddress> values) {
@@ -5092,12 +3963,12 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearDelegateKeys() {
         if (delegateKeysBuilder_ == null) {
           delegateKeys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           delegateKeysBuilder_.clear();
@@ -5105,7 +3976,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeDelegateKeys(int index) {
         if (delegateKeysBuilder_ == null) {
@@ -5118,14 +3989,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder getDelegateKeysBuilder(
           int index) {
         return getDelegateKeysFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder getDelegateKeysOrBuilder(
           int index) {
@@ -5135,7 +4006,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder> 
            getDelegateKeysOrBuilderList() {
@@ -5146,14 +4017,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder addDelegateKeysBuilder() {
         return getDelegateKeysFieldBuilder().addBuilder(
             fx.gravity.v1.Tx.MsgSetOrchestratorAddress.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder addDelegateKeysBuilder(
           int index) {
@@ -5161,7 +4032,7 @@ public final class Genesis {
             index, fx.gravity.v1.Tx.MsgSetOrchestratorAddress.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 8;</code>
+       * <code>repeated .fx.gravity.v1.MsgSetOrchestratorAddress delegate_keys = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder> 
            getDelegateKeysBuilderList() {
@@ -5174,7 +4045,7 @@ public final class Genesis {
           delegateKeysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fx.gravity.v1.Tx.MsgSetOrchestratorAddress, fx.gravity.v1.Tx.MsgSetOrchestratorAddress.Builder, fx.gravity.v1.Tx.MsgSetOrchestratorAddressOrBuilder>(
                   delegateKeys_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           delegateKeys_ = null;
@@ -5182,12 +4053,252 @@ public final class Genesis {
         return delegateKeysBuilder_;
       }
 
+      private java.util.List<fx.gravity.v1.Types.Valset> valsets_ =
+        java.util.Collections.emptyList();
+      private void ensureValsetsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          valsets_ = new java.util.ArrayList<fx.gravity.v1.Types.Valset>(valsets_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder> valsetsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Types.Valset> getValsetsList() {
+        if (valsetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(valsets_);
+        } else {
+          return valsetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getValsetsCount() {
+        if (valsetsBuilder_ == null) {
+          return valsets_.size();
+        } else {
+          return valsetsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Types.Valset getValsets(int index) {
+        if (valsetsBuilder_ == null) {
+          return valsets_.get(index);
+        } else {
+          return valsetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setValsets(
+          int index, fx.gravity.v1.Types.Valset value) {
+        if (valsetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetsIsMutable();
+          valsets_.set(index, value);
+          onChanged();
+        } else {
+          valsetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setValsets(
+          int index, fx.gravity.v1.Types.Valset.Builder builderForValue) {
+        if (valsetsBuilder_ == null) {
+          ensureValsetsIsMutable();
+          valsets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          valsetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsets(fx.gravity.v1.Types.Valset value) {
+        if (valsetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetsIsMutable();
+          valsets_.add(value);
+          onChanged();
+        } else {
+          valsetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsets(
+          int index, fx.gravity.v1.Types.Valset value) {
+        if (valsetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetsIsMutable();
+          valsets_.add(index, value);
+          onChanged();
+        } else {
+          valsetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsets(
+          fx.gravity.v1.Types.Valset.Builder builderForValue) {
+        if (valsetsBuilder_ == null) {
+          ensureValsetsIsMutable();
+          valsets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          valsetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsets(
+          int index, fx.gravity.v1.Types.Valset.Builder builderForValue) {
+        if (valsetsBuilder_ == null) {
+          ensureValsetsIsMutable();
+          valsets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          valsetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllValsets(
+          java.lang.Iterable<? extends fx.gravity.v1.Types.Valset> values) {
+        if (valsetsBuilder_ == null) {
+          ensureValsetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, valsets_);
+          onChanged();
+        } else {
+          valsetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearValsets() {
+        if (valsetsBuilder_ == null) {
+          valsets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          valsetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeValsets(int index) {
+        if (valsetsBuilder_ == null) {
+          ensureValsetsIsMutable();
+          valsets_.remove(index);
+          onChanged();
+        } else {
+          valsetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Types.Valset.Builder getValsetsBuilder(
+          int index) {
+        return getValsetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Types.ValsetOrBuilder getValsetsOrBuilder(
+          int index) {
+        if (valsetsBuilder_ == null) {
+          return valsets_.get(index);  } else {
+          return valsetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.v1.Types.ValsetOrBuilder> 
+           getValsetsOrBuilderList() {
+        if (valsetsBuilder_ != null) {
+          return valsetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(valsets_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Types.Valset.Builder addValsetsBuilder() {
+        return getValsetsFieldBuilder().addBuilder(
+            fx.gravity.v1.Types.Valset.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Types.Valset.Builder addValsetsBuilder(
+          int index) {
+        return getValsetsFieldBuilder().addBuilder(
+            index, fx.gravity.v1.Types.Valset.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Valset valsets = 5 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Types.Valset.Builder> 
+           getValsetsBuilderList() {
+        return getValsetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder> 
+          getValsetsFieldBuilder() {
+        if (valsetsBuilder_ == null) {
+          valsetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.v1.Types.Valset, fx.gravity.v1.Types.Valset.Builder, fx.gravity.v1.Types.ValsetOrBuilder>(
+                  valsets_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          valsets_ = null;
+        }
+        return valsetsBuilder_;
+      }
+
       private java.util.List<fx.gravity.v1.Types.ERC20ToDenom> erc20ToDenoms_ =
         java.util.Collections.emptyList();
       private void ensureErc20ToDenomsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           erc20ToDenoms_ = new java.util.ArrayList<fx.gravity.v1.Types.ERC20ToDenom>(erc20ToDenoms_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -5195,7 +4306,7 @@ public final class Genesis {
           fx.gravity.v1.Types.ERC20ToDenom, fx.gravity.v1.Types.ERC20ToDenom.Builder, fx.gravity.v1.Types.ERC20ToDenomOrBuilder> erc20ToDenomsBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Types.ERC20ToDenom> getErc20ToDenomsList() {
         if (erc20ToDenomsBuilder_ == null) {
@@ -5205,7 +4316,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public int getErc20ToDenomsCount() {
         if (erc20ToDenomsBuilder_ == null) {
@@ -5215,7 +4326,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Types.ERC20ToDenom getErc20ToDenoms(int index) {
         if (erc20ToDenomsBuilder_ == null) {
@@ -5225,7 +4336,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setErc20ToDenoms(
           int index, fx.gravity.v1.Types.ERC20ToDenom value) {
@@ -5242,7 +4353,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setErc20ToDenoms(
           int index, fx.gravity.v1.Types.ERC20ToDenom.Builder builderForValue) {
@@ -5256,7 +4367,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addErc20ToDenoms(fx.gravity.v1.Types.ERC20ToDenom value) {
         if (erc20ToDenomsBuilder_ == null) {
@@ -5272,7 +4383,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addErc20ToDenoms(
           int index, fx.gravity.v1.Types.ERC20ToDenom value) {
@@ -5289,7 +4400,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addErc20ToDenoms(
           fx.gravity.v1.Types.ERC20ToDenom.Builder builderForValue) {
@@ -5303,7 +4414,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addErc20ToDenoms(
           int index, fx.gravity.v1.Types.ERC20ToDenom.Builder builderForValue) {
@@ -5317,7 +4428,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllErc20ToDenoms(
           java.lang.Iterable<? extends fx.gravity.v1.Types.ERC20ToDenom> values) {
@@ -5332,12 +4443,12 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearErc20ToDenoms() {
         if (erc20ToDenomsBuilder_ == null) {
           erc20ToDenoms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           erc20ToDenomsBuilder_.clear();
@@ -5345,7 +4456,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeErc20ToDenoms(int index) {
         if (erc20ToDenomsBuilder_ == null) {
@@ -5358,14 +4469,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Types.ERC20ToDenom.Builder getErc20ToDenomsBuilder(
           int index) {
         return getErc20ToDenomsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Types.ERC20ToDenomOrBuilder getErc20ToDenomsOrBuilder(
           int index) {
@@ -5375,7 +4486,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends fx.gravity.v1.Types.ERC20ToDenomOrBuilder> 
            getErc20ToDenomsOrBuilderList() {
@@ -5386,14 +4497,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Types.ERC20ToDenom.Builder addErc20ToDenomsBuilder() {
         return getErc20ToDenomsFieldBuilder().addBuilder(
             fx.gravity.v1.Types.ERC20ToDenom.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Types.ERC20ToDenom.Builder addErc20ToDenomsBuilder(
           int index) {
@@ -5401,7 +4512,7 @@ public final class Genesis {
             index, fx.gravity.v1.Types.ERC20ToDenom.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 9;</code>
+       * <code>repeated .fx.gravity.v1.ERC20ToDenom erc20_to_denoms = 6 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Types.ERC20ToDenom.Builder> 
            getErc20ToDenomsBuilderList() {
@@ -5414,7 +4525,7 @@ public final class Genesis {
           erc20ToDenomsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fx.gravity.v1.Types.ERC20ToDenom, fx.gravity.v1.Types.ERC20ToDenom.Builder, fx.gravity.v1.Types.ERC20ToDenomOrBuilder>(
                   erc20ToDenoms_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           erc20ToDenoms_ = null;
@@ -5425,9 +4536,9 @@ public final class Genesis {
       private java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx> unbatchedTransfers_ =
         java.util.Collections.emptyList();
       private void ensureUnbatchedTransfersIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           unbatchedTransfers_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTransferTx>(unbatchedTransfers_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -5435,7 +4546,7 @@ public final class Genesis {
           fx.gravity.v1.Batch.OutgoingTransferTx, fx.gravity.v1.Batch.OutgoingTransferTx.Builder, fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder> unbatchedTransfersBuilder_;
 
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx> getUnbatchedTransfersList() {
         if (unbatchedTransfersBuilder_ == null) {
@@ -5445,7 +4556,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public int getUnbatchedTransfersCount() {
         if (unbatchedTransfersBuilder_ == null) {
@@ -5455,7 +4566,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Batch.OutgoingTransferTx getUnbatchedTransfers(int index) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -5465,7 +4576,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setUnbatchedTransfers(
           int index, fx.gravity.v1.Batch.OutgoingTransferTx value) {
@@ -5482,7 +4593,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setUnbatchedTransfers(
           int index, fx.gravity.v1.Batch.OutgoingTransferTx.Builder builderForValue) {
@@ -5496,7 +4607,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(fx.gravity.v1.Batch.OutgoingTransferTx value) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -5512,7 +4623,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           int index, fx.gravity.v1.Batch.OutgoingTransferTx value) {
@@ -5529,7 +4640,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           fx.gravity.v1.Batch.OutgoingTransferTx.Builder builderForValue) {
@@ -5543,7 +4654,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addUnbatchedTransfers(
           int index, fx.gravity.v1.Batch.OutgoingTransferTx.Builder builderForValue) {
@@ -5557,7 +4668,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllUnbatchedTransfers(
           java.lang.Iterable<? extends fx.gravity.v1.Batch.OutgoingTransferTx> values) {
@@ -5572,12 +4683,12 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearUnbatchedTransfers() {
         if (unbatchedTransfersBuilder_ == null) {
           unbatchedTransfers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           unbatchedTransfersBuilder_.clear();
@@ -5585,7 +4696,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeUnbatchedTransfers(int index) {
         if (unbatchedTransfersBuilder_ == null) {
@@ -5598,14 +4709,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Batch.OutgoingTransferTx.Builder getUnbatchedTransfersBuilder(
           int index) {
         return getUnbatchedTransfersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder getUnbatchedTransfersOrBuilder(
           int index) {
@@ -5615,7 +4726,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder> 
            getUnbatchedTransfersOrBuilderList() {
@@ -5626,14 +4737,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Batch.OutgoingTransferTx.Builder addUnbatchedTransfersBuilder() {
         return getUnbatchedTransfersFieldBuilder().addBuilder(
             fx.gravity.v1.Batch.OutgoingTransferTx.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public fx.gravity.v1.Batch.OutgoingTransferTx.Builder addUnbatchedTransfersBuilder(
           int index) {
@@ -5641,7 +4752,7 @@ public final class Genesis {
             index, fx.gravity.v1.Batch.OutgoingTransferTx.getDefaultInstance());
       }
       /**
-       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 10;</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTransferTx unbatched_transfers = 7 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<fx.gravity.v1.Batch.OutgoingTransferTx.Builder> 
            getUnbatchedTransfersBuilderList() {
@@ -5654,7 +4765,7 @@ public final class Genesis {
           unbatchedTransfersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fx.gravity.v1.Batch.OutgoingTransferTx, fx.gravity.v1.Batch.OutgoingTransferTx.Builder, fx.gravity.v1.Batch.OutgoingTransferTxOrBuilder>(
                   unbatchedTransfers_,
-                  ((bitField0_ & 0x00000080) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           unbatchedTransfers_ = null;
@@ -5662,244 +4773,964 @@ public final class Genesis {
         return unbatchedTransfersBuilder_;
       }
 
-      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> moduleCoins_ =
+      private java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> batches_ =
         java.util.Collections.emptyList();
-      private void ensureModuleCoinsIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
-          moduleCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(moduleCoins_);
-          bitField0_ |= 0x00000100;
+      private void ensureBatchesIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          batches_ = new java.util.ArrayList<fx.gravity.v1.Batch.OutgoingTxBatch>(batches_);
+          bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> moduleCoinsBuilder_;
+          fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> batchesBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getModuleCoinsList() {
-        if (moduleCoinsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(moduleCoins_);
+      public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch> getBatchesList() {
+        if (batchesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(batches_);
         } else {
-          return moduleCoinsBuilder_.getMessageList();
+          return batchesBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public int getModuleCoinsCount() {
-        if (moduleCoinsBuilder_ == null) {
-          return moduleCoins_.size();
+      public int getBatchesCount() {
+        if (batchesBuilder_ == null) {
+          return batches_.size();
         } else {
-          return moduleCoinsBuilder_.getCount();
+          return batchesBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin getModuleCoins(int index) {
-        if (moduleCoinsBuilder_ == null) {
-          return moduleCoins_.get(index);
+      public fx.gravity.v1.Batch.OutgoingTxBatch getBatches(int index) {
+        if (batchesBuilder_ == null) {
+          return batches_.get(index);
         } else {
-          return moduleCoinsBuilder_.getMessage(index);
+          return batchesBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setModuleCoins(
-          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (moduleCoinsBuilder_ == null) {
+      public Builder setBatches(
+          int index, fx.gravity.v1.Batch.OutgoingTxBatch value) {
+        if (batchesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.set(index, value);
+          ensureBatchesIsMutable();
+          batches_.set(index, value);
           onChanged();
         } else {
-          moduleCoinsBuilder_.setMessage(index, value);
+          batchesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setModuleCoins(
-          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
-        if (moduleCoinsBuilder_ == null) {
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.set(index, builderForValue.build());
+      public Builder setBatches(
+          int index, fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
+        if (batchesBuilder_ == null) {
+          ensureBatchesIsMutable();
+          batches_.set(index, builderForValue.build());
           onChanged();
         } else {
-          moduleCoinsBuilder_.setMessage(index, builderForValue.build());
+          batchesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addModuleCoins(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (moduleCoinsBuilder_ == null) {
+      public Builder addBatches(fx.gravity.v1.Batch.OutgoingTxBatch value) {
+        if (batchesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.add(value);
+          ensureBatchesIsMutable();
+          batches_.add(value);
           onChanged();
         } else {
-          moduleCoinsBuilder_.addMessage(value);
+          batchesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addModuleCoins(
-          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (moduleCoinsBuilder_ == null) {
+      public Builder addBatches(
+          int index, fx.gravity.v1.Batch.OutgoingTxBatch value) {
+        if (batchesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.add(index, value);
+          ensureBatchesIsMutable();
+          batches_.add(index, value);
           onChanged();
         } else {
-          moduleCoinsBuilder_.addMessage(index, value);
+          batchesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addModuleCoins(
-          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
-        if (moduleCoinsBuilder_ == null) {
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.add(builderForValue.build());
+      public Builder addBatches(
+          fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
+        if (batchesBuilder_ == null) {
+          ensureBatchesIsMutable();
+          batches_.add(builderForValue.build());
           onChanged();
         } else {
-          moduleCoinsBuilder_.addMessage(builderForValue.build());
+          batchesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addModuleCoins(
-          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
-        if (moduleCoinsBuilder_ == null) {
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.add(index, builderForValue.build());
+      public Builder addBatches(
+          int index, fx.gravity.v1.Batch.OutgoingTxBatch.Builder builderForValue) {
+        if (batchesBuilder_ == null) {
+          ensureBatchesIsMutable();
+          batches_.add(index, builderForValue.build());
           onChanged();
         } else {
-          moduleCoinsBuilder_.addMessage(index, builderForValue.build());
+          batchesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addAllModuleCoins(
-          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
-        if (moduleCoinsBuilder_ == null) {
-          ensureModuleCoinsIsMutable();
+      public Builder addAllBatches(
+          java.lang.Iterable<? extends fx.gravity.v1.Batch.OutgoingTxBatch> values) {
+        if (batchesBuilder_ == null) {
+          ensureBatchesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, moduleCoins_);
+              values, batches_);
           onChanged();
         } else {
-          moduleCoinsBuilder_.addAllMessages(values);
+          batchesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder clearModuleCoins() {
-        if (moduleCoinsBuilder_ == null) {
-          moduleCoins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+      public Builder clearBatches() {
+        if (batchesBuilder_ == null) {
+          batches_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
-          moduleCoinsBuilder_.clear();
+          batchesBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder removeModuleCoins(int index) {
-        if (moduleCoinsBuilder_ == null) {
-          ensureModuleCoinsIsMutable();
-          moduleCoins_.remove(index);
+      public Builder removeBatches(int index) {
+        if (batchesBuilder_ == null) {
+          ensureBatchesIsMutable();
+          batches_.remove(index);
           onChanged();
         } else {
-          moduleCoinsBuilder_.remove(index);
+          batchesBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getModuleCoinsBuilder(
+      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder getBatchesBuilder(
           int index) {
-        return getModuleCoinsFieldBuilder().getBuilder(index);
+        return getBatchesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getModuleCoinsOrBuilder(
+      public fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder getBatchesOrBuilder(
           int index) {
-        if (moduleCoinsBuilder_ == null) {
-          return moduleCoins_.get(index);  } else {
-          return moduleCoinsBuilder_.getMessageOrBuilder(index);
+        if (batchesBuilder_ == null) {
+          return batches_.get(index);  } else {
+          return batchesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-           getModuleCoinsOrBuilderList() {
-        if (moduleCoinsBuilder_ != null) {
-          return moduleCoinsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
+           getBatchesOrBuilderList() {
+        if (batchesBuilder_ != null) {
+          return batchesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(moduleCoins_);
+          return java.util.Collections.unmodifiableList(batches_);
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addModuleCoinsBuilder() {
-        return getModuleCoinsFieldBuilder().addBuilder(
-            cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder addBatchesBuilder() {
+        return getBatchesFieldBuilder().addBuilder(
+            fx.gravity.v1.Batch.OutgoingTxBatch.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addModuleCoinsBuilder(
+      public fx.gravity.v1.Batch.OutgoingTxBatch.Builder addBatchesBuilder(
           int index) {
-        return getModuleCoinsFieldBuilder().addBuilder(
-            index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+        return getBatchesFieldBuilder().addBuilder(
+            index, fx.gravity.v1.Batch.OutgoingTxBatch.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin module_coins = 11 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .fx.gravity.v1.OutgoingTxBatch batches = 8 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
-           getModuleCoinsBuilderList() {
-        return getModuleCoinsFieldBuilder().getBuilderList();
+      public java.util.List<fx.gravity.v1.Batch.OutgoingTxBatch.Builder> 
+           getBatchesBuilderList() {
+        return getBatchesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-          getModuleCoinsFieldBuilder() {
-        if (moduleCoinsBuilder_ == null) {
-          moduleCoinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
-                  moduleCoins_,
-                  ((bitField0_ & 0x00000100) != 0),
+          fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder> 
+          getBatchesFieldBuilder() {
+        if (batchesBuilder_ == null) {
+          batchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.v1.Batch.OutgoingTxBatch, fx.gravity.v1.Batch.OutgoingTxBatch.Builder, fx.gravity.v1.Batch.OutgoingTxBatchOrBuilder>(
+                  batches_,
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
-          moduleCoins_ = null;
+          batches_ = null;
         }
-        return moduleCoinsBuilder_;
+        return batchesBuilder_;
+      }
+
+      private java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> batchConfirms_ =
+        java.util.Collections.emptyList();
+      private void ensureBatchConfirmsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          batchConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgConfirmBatch>(batchConfirms_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> batchConfirmsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch> getBatchConfirmsList() {
+        if (batchConfirmsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(batchConfirms_);
+        } else {
+          return batchConfirmsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getBatchConfirmsCount() {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.size();
+        } else {
+          return batchConfirmsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgConfirmBatch getBatchConfirms(int index) {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.get(index);
+        } else {
+          return batchConfirmsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBatchConfirms(
+          int index, fx.gravity.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.set(index, value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setBatchConfirms(
+          int index, fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(fx.gravity.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          int index, fx.gravity.v1.Tx.MsgConfirmBatch value) {
+        if (batchConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(index, value);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addBatchConfirms(
+          int index, fx.gravity.v1.Tx.MsgConfirmBatch.Builder builderForValue) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllBatchConfirms(
+          java.lang.Iterable<? extends fx.gravity.v1.Tx.MsgConfirmBatch> values) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, batchConfirms_);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearBatchConfirms() {
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeBatchConfirms(int index) {
+        if (batchConfirmsBuilder_ == null) {
+          ensureBatchConfirmsIsMutable();
+          batchConfirms_.remove(index);
+          onChanged();
+        } else {
+          batchConfirmsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder getBatchConfirmsBuilder(
+          int index) {
+        return getBatchConfirmsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder getBatchConfirmsOrBuilder(
+          int index) {
+        if (batchConfirmsBuilder_ == null) {
+          return batchConfirms_.get(index);  } else {
+          return batchConfirmsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
+           getBatchConfirmsOrBuilderList() {
+        if (batchConfirmsBuilder_ != null) {
+          return batchConfirmsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(batchConfirms_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder() {
+        return getBatchConfirmsFieldBuilder().addBuilder(
+            fx.gravity.v1.Tx.MsgConfirmBatch.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgConfirmBatch.Builder addBatchConfirmsBuilder(
+          int index) {
+        return getBatchConfirmsFieldBuilder().addBuilder(
+            index, fx.gravity.v1.Tx.MsgConfirmBatch.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgConfirmBatch batch_confirms = 9 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Tx.MsgConfirmBatch.Builder> 
+           getBatchConfirmsBuilderList() {
+        return getBatchConfirmsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder> 
+          getBatchConfirmsFieldBuilder() {
+        if (batchConfirmsBuilder_ == null) {
+          batchConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.v1.Tx.MsgConfirmBatch, fx.gravity.v1.Tx.MsgConfirmBatch.Builder, fx.gravity.v1.Tx.MsgConfirmBatchOrBuilder>(
+                  batchConfirms_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          batchConfirms_ = null;
+        }
+        return batchConfirmsBuilder_;
+      }
+
+      private java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> valsetConfirms_ =
+        java.util.Collections.emptyList();
+      private void ensureValsetConfirmsIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          valsetConfirms_ = new java.util.ArrayList<fx.gravity.v1.Tx.MsgValsetConfirm>(valsetConfirms_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> valsetConfirmsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm> getValsetConfirmsList() {
+        if (valsetConfirmsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(valsetConfirms_);
+        } else {
+          return valsetConfirmsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getValsetConfirmsCount() {
+        if (valsetConfirmsBuilder_ == null) {
+          return valsetConfirms_.size();
+        } else {
+          return valsetConfirmsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgValsetConfirm getValsetConfirms(int index) {
+        if (valsetConfirmsBuilder_ == null) {
+          return valsetConfirms_.get(index);
+        } else {
+          return valsetConfirmsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setValsetConfirms(
+          int index, fx.gravity.v1.Tx.MsgValsetConfirm value) {
+        if (valsetConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.set(index, value);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setValsetConfirms(
+          int index, fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
+        if (valsetConfirmsBuilder_ == null) {
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsetConfirms(fx.gravity.v1.Tx.MsgValsetConfirm value) {
+        if (valsetConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.add(value);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsetConfirms(
+          int index, fx.gravity.v1.Tx.MsgValsetConfirm value) {
+        if (valsetConfirmsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.add(index, value);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsetConfirms(
+          fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
+        if (valsetConfirmsBuilder_ == null) {
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.add(builderForValue.build());
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addValsetConfirms(
+          int index, fx.gravity.v1.Tx.MsgValsetConfirm.Builder builderForValue) {
+        if (valsetConfirmsBuilder_ == null) {
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllValsetConfirms(
+          java.lang.Iterable<? extends fx.gravity.v1.Tx.MsgValsetConfirm> values) {
+        if (valsetConfirmsBuilder_ == null) {
+          ensureValsetConfirmsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, valsetConfirms_);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearValsetConfirms() {
+        if (valsetConfirmsBuilder_ == null) {
+          valsetConfirms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeValsetConfirms(int index) {
+        if (valsetConfirmsBuilder_ == null) {
+          ensureValsetConfirmsIsMutable();
+          valsetConfirms_.remove(index);
+          onChanged();
+        } else {
+          valsetConfirmsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder getValsetConfirmsBuilder(
+          int index) {
+        return getValsetConfirmsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder getValsetConfirmsOrBuilder(
+          int index) {
+        if (valsetConfirmsBuilder_ == null) {
+          return valsetConfirms_.get(index);  } else {
+          return valsetConfirmsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
+           getValsetConfirmsOrBuilderList() {
+        if (valsetConfirmsBuilder_ != null) {
+          return valsetConfirmsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(valsetConfirms_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder addValsetConfirmsBuilder() {
+        return getValsetConfirmsFieldBuilder().addBuilder(
+            fx.gravity.v1.Tx.MsgValsetConfirm.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.Tx.MsgValsetConfirm.Builder addValsetConfirmsBuilder(
+          int index) {
+        return getValsetConfirmsFieldBuilder().addBuilder(
+            index, fx.gravity.v1.Tx.MsgValsetConfirm.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.MsgValsetConfirm valset_confirms = 10 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.Tx.MsgValsetConfirm.Builder> 
+           getValsetConfirmsBuilderList() {
+        return getValsetConfirmsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder> 
+          getValsetConfirmsFieldBuilder() {
+        if (valsetConfirmsBuilder_ == null) {
+          valsetConfirmsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.v1.Tx.MsgValsetConfirm, fx.gravity.v1.Tx.MsgValsetConfirm.Builder, fx.gravity.v1.Tx.MsgValsetConfirmOrBuilder>(
+                  valsetConfirms_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          valsetConfirms_ = null;
+        }
+        return valsetConfirmsBuilder_;
+      }
+
+      private java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> attestations_ =
+        java.util.Collections.emptyList();
+      private void ensureAttestationsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          attestations_ = new java.util.ArrayList<fx.gravity.v1.AttestationOuterClass.Attestation>(attestations_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> attestationsBuilder_;
+
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation> getAttestationsList() {
+        if (attestationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(attestations_);
+        } else {
+          return attestationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getAttestationsCount() {
+        if (attestationsBuilder_ == null) {
+          return attestations_.size();
+        } else {
+          return attestationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.AttestationOuterClass.Attestation getAttestations(int index) {
+        if (attestationsBuilder_ == null) {
+          return attestations_.get(index);
+        } else {
+          return attestationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAttestations(
+          int index, fx.gravity.v1.AttestationOuterClass.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.set(index, value);
+          onChanged();
+        } else {
+          attestationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAttestations(
+          int index, fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(fx.gravity.v1.AttestationOuterClass.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.add(value);
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          int index, fx.gravity.v1.AttestationOuterClass.Attestation value) {
+        if (attestationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttestationsIsMutable();
+          attestations_.add(index, value);
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAttestations(
+          int index, fx.gravity.v1.AttestationOuterClass.Attestation.Builder builderForValue) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          attestationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllAttestations(
+          java.lang.Iterable<? extends fx.gravity.v1.AttestationOuterClass.Attestation> values) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, attestations_);
+          onChanged();
+        } else {
+          attestationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearAttestations() {
+        if (attestationsBuilder_ == null) {
+          attestations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          attestationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeAttestations(int index) {
+        if (attestationsBuilder_ == null) {
+          ensureAttestationsIsMutable();
+          attestations_.remove(index);
+          onChanged();
+        } else {
+          attestationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder getAttestationsBuilder(
+          int index) {
+        return getAttestationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder getAttestationsOrBuilder(
+          int index) {
+        if (attestationsBuilder_ == null) {
+          return attestations_.get(index);  } else {
+          return attestationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
+           getAttestationsOrBuilderList() {
+        if (attestationsBuilder_ != null) {
+          return attestationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(attestations_);
+        }
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder addAttestationsBuilder() {
+        return getAttestationsFieldBuilder().addBuilder(
+            fx.gravity.v1.AttestationOuterClass.Attestation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public fx.gravity.v1.AttestationOuterClass.Attestation.Builder addAttestationsBuilder(
+          int index) {
+        return getAttestationsFieldBuilder().addBuilder(
+            index, fx.gravity.v1.AttestationOuterClass.Attestation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fx.gravity.v1.Attestation attestations = 11 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<fx.gravity.v1.AttestationOuterClass.Attestation.Builder> 
+           getAttestationsBuilderList() {
+        return getAttestationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder> 
+          getAttestationsFieldBuilder() {
+        if (attestationsBuilder_ == null) {
+          attestationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fx.gravity.v1.AttestationOuterClass.Attestation, fx.gravity.v1.AttestationOuterClass.Attestation.Builder, fx.gravity.v1.AttestationOuterClass.AttestationOrBuilder>(
+                  attestations_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          attestations_ = null;
+        }
+        return attestationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5998,24 +5829,24 @@ public final class Genesis {
       "ansfer_timeout_height\030\022 \001(\004\022Z\n\"valset_up" +
       "date_power_change_percent\030\023 \001(\014B.\332\336\037&git" +
       "hub.com/cosmos/cosmos-sdk/types.Dec\310\336\037\000:" +
-      "\004\200\334 \000\"\365\004\n\014GenesisState\022%\n\006params\030\001 \001(\0132\025" +
-      ".fx.gravity.v1.Params\022\033\n\023last_observed_n" +
-      "once\030\002 \001(\004\022&\n\007valsets\030\003 \003(\0132\025.fx.gravity" +
-      ".v1.Valset\0228\n\017valset_confirms\030\004 \003(\0132\037.fx" +
-      ".gravity.v1.MsgValsetConfirm\022/\n\007batches\030" +
-      "\005 \003(\0132\036.fx.gravity.v1.OutgoingTxBatch\022<\n" +
-      "\016batch_confirms\030\006 \003(\0132\036.fx.gravity.v1.Ms" +
-      "gConfirmBatchB\004\310\336\037\000\0226\n\014attestations\030\007 \003(" +
-      "\0132\032.fx.gravity.v1.AttestationB\004\310\336\037\000\022?\n\rd" +
-      "elegate_keys\030\010 \003(\0132(.fx.gravity.v1.MsgSe" +
-      "tOrchestratorAddress\0224\n\017erc20_to_denoms\030" +
-      "\t \003(\0132\033.fx.gravity.v1.ERC20ToDenom\022>\n\023un" +
-      "batched_transfers\030\n \003(\0132!.fx.gravity.v1." +
-      "OutgoingTransferTx\022a\n\014module_coins\030\013 \003(\013" +
-      "2\031.cosmos.base.v1beta1.CoinB0\252\337\037(github." +
-      "com/cosmos/cosmos-sdk/types.Coins\310\336\037\000B.Z" +
-      ",github.com/functionx/fx-core/x/gravity/" +
-      "typesb\006proto3"
+      "\004\200\334 \000\"\220\005\n\014GenesisState\022+\n\006params\030\001 \001(\0132\025" +
+      ".fx.gravity.v1.ParamsB\004\310\336\037\000\022\033\n\023last_obse" +
+      "rved_nonce\030\002 \001(\004\022R\n\032last_observed_block_" +
+      "height\030\003 \001(\0132..fx.gravity.v1.LastObserve" +
+      "dEthereumBlockHeight\022E\n\rdelegate_keys\030\004 " +
+      "\003(\0132(.fx.gravity.v1.MsgSetOrchestratorAd" +
+      "dressB\004\310\336\037\000\022,\n\007valsets\030\005 \003(\0132\025.fx.gravit" +
+      "y.v1.ValsetB\004\310\336\037\000\022:\n\017erc20_to_denoms\030\006 \003" +
+      "(\0132\033.fx.gravity.v1.ERC20ToDenomB\004\310\336\037\000\022D\n" +
+      "\023unbatched_transfers\030\007 \003(\0132!.fx.gravity." +
+      "v1.OutgoingTransferTxB\004\310\336\037\000\0225\n\007batches\030\010" +
+      " \003(\0132\036.fx.gravity.v1.OutgoingTxBatchB\004\310\336" +
+      "\037\000\022<\n\016batch_confirms\030\t \003(\0132\036.fx.gravity." +
+      "v1.MsgConfirmBatchB\004\310\336\037\000\022>\n\017valset_confi" +
+      "rms\030\n \003(\0132\037.fx.gravity.v1.MsgValsetConfi" +
+      "rmB\004\310\336\037\000\0226\n\014attestations\030\013 \003(\0132\032.fx.grav" +
+      "ity.v1.AttestationB\004\310\336\037\000B.Z,github.com/f" +
+      "unctionx/fx-core/x/gravity/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6038,10 +5869,9 @@ public final class Genesis {
     internal_static_fx_gravity_v1_GenesisState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fx_gravity_v1_GenesisState_descriptor,
-        new java.lang.String[] { "Params", "LastObservedNonce", "Valsets", "ValsetConfirms", "Batches", "BatchConfirms", "Attestations", "DelegateKeys", "Erc20ToDenoms", "UnbatchedTransfers", "ModuleCoins", });
+        new java.lang.String[] { "Params", "LastObservedNonce", "LastObservedBlockHeight", "DelegateKeys", "Valsets", "Erc20ToDenoms", "UnbatchedTransfers", "Batches", "BatchConfirms", "ValsetConfirms", "Attestations", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.protobuf.GoGoProtos.stringer);

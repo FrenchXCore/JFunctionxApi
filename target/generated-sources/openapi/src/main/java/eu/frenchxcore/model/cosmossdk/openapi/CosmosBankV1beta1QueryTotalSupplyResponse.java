@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * CosmosBankV1beta1QueryTotalSupplyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class CosmosBankV1beta1QueryTotalSupplyResponse {
   public static final String SERIALIZED_NAME_SUPPLY = "supply";
   @SerializedName(SERIALIZED_NAME_SUPPLY)

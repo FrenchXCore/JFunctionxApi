@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Validator
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:07.698929500+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:09.914489900+02:00[Europe/Paris]")
 public class Validator {
   public static final String SERIALIZED_NAME_PUB_KEY = "pub_key";
   @SerializedName(SERIALIZED_NAME_PUB_KEY)

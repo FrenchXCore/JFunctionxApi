@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Vote represents a prevote, precommit, or commit vote from validators for consensus.
  */
 @ApiModel(description = "Vote represents a prevote, precommit, or commit vote from validators for consensus.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class TendermintTypesVote {
   /**
    * SignedMsgType is a type of signed message in the consensus.   - SIGNED_MSG_TYPE_PREVOTE: Votes  - SIGNED_MSG_TYPE_PROPOSAL: Proposals

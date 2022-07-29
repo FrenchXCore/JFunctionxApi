@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InlineResponse20010BlockEvidenceLightClientAttackEvidenceConflictingBlock
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceLightClientAttackEvidenceConflictingBlock {
   public static final String SERIALIZED_NAME_SIGNED_HEADER = "signed_header";
   @SerializedName(SERIALIZED_NAME_SIGNED_HEADER)

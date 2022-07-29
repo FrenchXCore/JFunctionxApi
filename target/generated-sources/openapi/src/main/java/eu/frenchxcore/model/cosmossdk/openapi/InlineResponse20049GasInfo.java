@@ -28,7 +28,7 @@ import java.io.IOException;
  * gas_info is the information about gas used in the simulation.
  */
 @ApiModel(description = "gas_info is the information about gas used in the simulation.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class InlineResponse20049GasInfo {
   public static final String SERIALIZED_NAME_GAS_WANTED = "gas_wanted";
   @SerializedName(SERIALIZED_NAME_GAS_WANTED)

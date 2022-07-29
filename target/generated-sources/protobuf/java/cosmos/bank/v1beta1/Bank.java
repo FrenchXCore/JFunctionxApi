@@ -7161,7 +7161,7 @@ public final class Bank {
       "mos-sdk/types.Coins:\010\350\240\037\000\210\240\037\000\"\254\001\n\006Supply" +
       "\022Z\n\005total\030\001 \003(\0132\031.cosmos.base.v1beta1.Co" +
       "inB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sdk" +
-      "/types.Coins:F\030\001\350\240\037\001\210\240\037\000\312\264-8*github.com/" +
+      "/types.Coins:F\030\001\350\240\037\001\210\240\037\000\322\264-8*github.com/" +
       "cosmos/cosmos-sdk/x/bank/legacy/v040.Sup" +
       "plyI\"=\n\tDenomUnit\022\r\n\005denom\030\001 \001(\t\022\020\n\010expo" +
       "nent\030\002 \001(\r\022\017\n\007aliases\030\003 \003(\t\"\221\001\n\010Metadata" +

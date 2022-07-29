@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.44.1)",
-    comments = "Source: fx/other/v1/query.proto")
+    comments = "Source: fx/other/query.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QueryGrpc {
 
@@ -95,6 +95,9 @@ public final class QueryGrpc {
   public static abstract class QueryImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Deprecated
+     * </pre>
      */
     public void gasPrice(fx.other.QueryOuterClass.GasPriceRequest request,
         io.grpc.stub.StreamObserver<fx.other.QueryOuterClass.GasPriceResponse> responseObserver) {
@@ -129,6 +132,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated
+     * </pre>
      */
     public void gasPrice(fx.other.QueryOuterClass.GasPriceRequest request,
         io.grpc.stub.StreamObserver<fx.other.QueryOuterClass.GasPriceResponse> responseObserver) {
@@ -152,6 +158,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated
+     * </pre>
      */
     public fx.other.QueryOuterClass.GasPriceResponse gasPrice(fx.other.QueryOuterClass.GasPriceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -174,6 +183,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<fx.other.QueryOuterClass.GasPriceResponse> gasPrice(
         fx.other.QueryOuterClass.GasPriceRequest request) {

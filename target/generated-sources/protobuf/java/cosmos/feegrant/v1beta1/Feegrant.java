@@ -5586,7 +5586,7 @@ public final class Feegrant {
       ".cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337\037(githu" +
       "b.com/cosmos/cosmos-sdk/types.Coins\0224\n\ne" +
       "xpiration\030\002 \001(\0132\032.google.protobuf.Timest" +
-      "ampB\004\220\337\037\001:\021\312\264-\rFeeAllowanceI\"\245\003\n\021Periodi" +
+      "ampB\004\220\337\037\001:\021\322\264-\rFeeAllowanceI\"\245\003\n\021Periodi" +
       "cAllowance\022<\n\005basic\030\001 \001(\0132\'.cosmos.feegr" +
       "ant.v1beta1.BasicAllowanceB\004\310\336\037\000\0223\n\006peri" +
       "od\030\002 \001(\0132\031.google.protobuf.DurationB\010\230\337\037" +
@@ -5596,11 +5596,11 @@ public final class Feegrant {
       "_can_spend\030\004 \003(\0132\031.cosmos.base.v1beta1.C" +
       "oinB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sd" +
       "k/types.Coins\022:\n\014period_reset\030\005 \001(\0132\032.go" +
-      "ogle.protobuf.TimestampB\010\220\337\037\001\310\336\037\000:\021\312\264-\rF" +
+      "ogle.protobuf.TimestampB\010\220\337\037\001\310\336\037\000:\021\322\264-\rF" +
       "eeAllowanceI\"\202\001\n\023AllowedMsgAllowance\022:\n\t" +
       "allowance\030\001 \001(\0132\024.google.protobuf.AnyB\021\312" +
       "\264-\rFeeAllowanceI\022\030\n\020allowed_messages\030\002 \003" +
-      "(\t:\025\210\240\037\000\312\264-\rFeeAllowanceI\"e\n\005Grant\022\017\n\007gr" +
+      "(\t:\025\210\240\037\000\322\264-\rFeeAllowanceI\"e\n\005Grant\022\017\n\007gr" +
       "anter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022:\n\tallowanc" +
       "e\030\003 \001(\0132\024.google.protobuf.AnyB\021\312\264-\rFeeAl" +
       "lowanceIB)Z\'github.com/cosmos/cosmos-sdk" +

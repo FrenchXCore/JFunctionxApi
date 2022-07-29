@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InlineResponse20010BlockEvidenceEvidence
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceEvidence {
   public static final String SERIALIZED_NAME_DUPLICATE_VOTE_EVIDENCE = "duplicate_vote_evidence";
   @SerializedName(SERIALIZED_NAME_DUPLICATE_VOTE_EVIDENCE)

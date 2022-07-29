@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryAllowanceResponse is the response type for the Query/Allowance RPC method.
  */
 @ApiModel(description = "QueryAllowanceResponse is the response type for the Query/Allowance RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class CosmosFeegrantV1beta1QueryAllowanceResponse {
   public static final String SERIALIZED_NAME_ALLOWANCE = "allowance";
   @SerializedName(SERIALIZED_NAME_ALLOWANCE)

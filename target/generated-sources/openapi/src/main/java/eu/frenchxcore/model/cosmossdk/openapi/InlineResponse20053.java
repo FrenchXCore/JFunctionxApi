@@ -31,7 +31,7 @@ import java.util.List;
  * QueryModuleVersionsResponse is the response type for the Query/ModuleVersions RPC method.
  */
 @ApiModel(description = "QueryModuleVersionsResponse is the response type for the Query/ModuleVersions RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
 public class InlineResponse20053 {
   public static final String SERIALIZED_NAME_MODULE_VERSIONS = "module_versions";
   @SerializedName(SERIALIZED_NAME_MODULE_VERSIONS)

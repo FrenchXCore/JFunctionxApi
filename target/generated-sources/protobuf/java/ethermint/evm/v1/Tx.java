@@ -1312,8 +1312,7 @@ public final class Tx {
   /**
    * <pre>
    * LegacyTx is the transaction data of regular Ethereum transactions.
-   * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the
-   * AllowUnprotectedTxs parameter is disabled. 
+   * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the RejectUnprotectedTx parameter is enabled. 
    * </pre>
    *
    * Protobuf type {@code ethermint.evm.v1.LegacyTx}
@@ -1920,8 +1919,7 @@ public final class Tx {
     /**
      * <pre>
      * LegacyTx is the transaction data of regular Ethereum transactions.
-     * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the
-     * AllowUnprotectedTxs parameter is disabled. 
+     * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the RejectUnprotectedTx parameter is enabled. 
      * </pre>
      *
      * Protobuf type {@code ethermint.evm.v1.LegacyTx}
@@ -9114,7 +9112,7 @@ public final class Tx {
       " \001(\004B\014\342\336\037\010GasLimit\022\n\n\002to\030\004 \001(\t\022C\n\005value\030" +
       "\005 \001(\tB4\332\336\037&github.com/cosmos/cosmos-sdk/" +
       "types.Int\342\336\037\006Amount\022\014\n\004data\030\006 \001(\014\022\t\n\001v\030\007" +
-      " \001(\014\022\t\n\001r\030\010 \001(\014\022\t\n\001s\030\t \001(\014:\016\210\240\037\000\312\264-\006TxDa" +
+      " \001(\014\022\t\n\001r\030\010 \001(\014\022\t\n\001s\030\t \001(\014:\016\210\240\037\000\322\264-\006TxDa" +
       "ta\"\256\003\n\014AccessListTx\022R\n\010chain_id\030\001 \001(\tB@\332" +
       "\336\037&github.com/cosmos/cosmos-sdk/types.In" +
       "t\342\336\037\007ChainID\352\336\037\007chainID\022\r\n\005nonce\030\002 \001(\004\022=" +
@@ -9125,7 +9123,7 @@ public final class Tx {
       "\336\037\006Amount\022\014\n\004data\030\007 \001(\014\022Q\n\010accesses\030\010 \003(" +
       "\0132\035.ethermint.evm.v1.AccessTupleB \252\337\037\nAc" +
       "cessList\352\336\037\naccessList\310\336\037\000\022\t\n\001v\030\t \001(\014\022\t\n" +
-      "\001r\030\n \001(\014\022\t\n\001s\030\013 \001(\014:\016\210\240\037\000\312\264-\006TxData\"\361\003\n\014" +
+      "\001r\030\n \001(\014\022\t\n\001s\030\013 \001(\014:\016\210\240\037\000\322\264-\006TxData\"\361\003\n\014" +
       "DynamicFeeTx\022R\n\010chain_id\030\001 \001(\tB@\332\336\037&gith" +
       "ub.com/cosmos/cosmos-sdk/types.Int\342\336\037\007Ch" +
       "ainID\352\336\037\007chainID\022\r\n\005nonce\030\002 \001(\004\022?\n\013gas_t" +
@@ -9138,7 +9136,7 @@ public final class Tx {
       "\001(\014\022Q\n\010accesses\030\t \003(\0132\035.ethermint.evm.v1" +
       ".AccessTupleB \252\337\037\nAccessList\352\336\037\naccessLi" +
       "st\310\336\037\000\022\t\n\001v\030\n \001(\014\022\t\n\001r\030\013 \001(\014\022\t\n\001s\030\014 \001(\014:" +
-      "\016\210\240\037\000\312\264-\006TxData\"\"\n\032ExtensionOptionsEther" +
+      "\016\210\240\037\000\322\264-\006TxData\"\"\n\032ExtensionOptionsEther" +
       "eumTx:\004\210\240\037\000\"\201\001\n\025MsgEthereumTxResponse\022\014\n" +
       "\004hash\030\001 \001(\t\022#\n\004logs\030\002 \003(\0132\025.ethermint.ev" +
       "m.v1.Log\022\013\n\003ret\030\003 \001(\014\022\020\n\010vm_error\030\004 \001(\t\022" +
