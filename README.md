@@ -56,5 +56,6 @@ This library is not yet fully tested. So please be indulgent.
 - v0.8.2 : addition of gravity, crosschain and ibc module query and message methods.
 - v0.8.3 : Splitting CosmosGrpcApi in 2 : CosmosGrpcApi and TendermintGrpcApi. Started full java-documenting CosmosGrpcApi. 
 - v0.8.5 : Max java documentation of the API. Updated to fit future FxCore v2.1.0.
+- v2.1.0.0 : Matching FXCore version and this API version.
 
 Have fun !

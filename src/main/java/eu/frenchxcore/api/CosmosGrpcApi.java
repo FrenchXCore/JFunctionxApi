@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
+import cosmos.authz.v1beta1.Authz;
 import cosmos.base.query.v1beta1.Pagination;
 import eu.frenchxcore.tools.LocalExecutor;
 import eu.frenchxcore.tools.XLogger;
@@ -591,6 +592,7 @@ public class CosmosGrpcApi {
             @NotNull String grantee,
             @NotNull cosmos.authz.v1beta1.Authz.Grant grant
     ) {
+        cosmos.authz.v1beta1.Authz.Grant.newBuilder().set
         return authzMsgStub.grant(cosmos.authz.v1beta1.Tx.MsgGrant.newBuilder().setGranter(granter).setGrantee(grantee).setGrant(grant).build());
     }
 
@@ -3353,8 +3355,7 @@ public class CosmosGrpcApi {
             cosmos.base.query.v1beta1.Pagination.PageRequest pageRequest,
             BigInteger height
     ) {
-        cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest.Builder _builder = cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest.newBuilder()
-                .setValidatorAddr(validatorAddress);
+        cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest.Builder _builder = cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest.newBuilder();
         if (pageRequest != null) {
             _builder.setPagination(pageRequest);
         }
@@ -3367,7 +3368,7 @@ public class CosmosGrpcApi {
         } else {
             stub = stakingQueryStub;
         }
-        return stub.validatorDelegations(_builder.build());
+        return stub.validatorDelegations(_builder.setValidatorAddr(validatorAddress).build());
     }
 
     /**
