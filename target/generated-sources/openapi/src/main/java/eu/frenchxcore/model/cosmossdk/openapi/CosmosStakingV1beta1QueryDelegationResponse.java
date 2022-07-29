@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryDelegationResponse is response type for the Query/Delegation RPC method.
  */
 @ApiModel(description = "QueryDelegationResponse is response type for the Query/Delegation RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1QueryDelegationResponse {
   public static final String SERIALIZED_NAME_DELEGATION_RESPONSE = "delegation_response";
   @SerializedName(SERIALIZED_NAME_DELEGATION_RESPONSE)

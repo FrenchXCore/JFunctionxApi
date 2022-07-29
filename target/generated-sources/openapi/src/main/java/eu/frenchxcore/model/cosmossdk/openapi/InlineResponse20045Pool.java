@@ -28,7 +28,7 @@ import java.io.IOException;
  * pool defines the pool info.
  */
 @ApiModel(description = "pool defines the pool info.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class InlineResponse20045Pool {
   public static final String SERIALIZED_NAME_NOT_BONDED_TOKENS = "not_bonded_tokens";
   @SerializedName(SERIALIZED_NAME_NOT_BONDED_TOKENS)

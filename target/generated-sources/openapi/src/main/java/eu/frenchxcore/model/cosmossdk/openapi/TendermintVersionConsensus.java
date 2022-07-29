@@ -28,7 +28,7 @@ import java.io.IOException;
  * Consensus captures the consensus rules for processing a block in the blockchain, including all blockchain data structures and the rules of the application&#39;s state transition machine.
  */
 @ApiModel(description = "Consensus captures the consensus rules for processing a block in the blockchain, including all blockchain data structures and the rules of the application's state transition machine.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class TendermintVersionConsensus {
   public static final String SERIALIZED_NAME_BLOCK = "block";
   @SerializedName(SERIALIZED_NAME_BLOCK)

@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client.
  */
 @ApiModel(description = "LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class TendermintTypesLightClientAttackEvidence {
   public static final String SERIALIZED_NAME_CONFLICTING_BLOCK = "conflicting_block";
   @SerializedName(SERIALIZED_NAME_CONFLICTING_BLOCK)

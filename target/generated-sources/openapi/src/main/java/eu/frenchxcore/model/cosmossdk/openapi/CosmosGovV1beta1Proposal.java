@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * Proposal defines the core field members of a governance proposal.
  */
 @ApiModel(description = "Proposal defines the core field members of a governance proposal.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosGovV1beta1Proposal {
   public static final String SERIALIZED_NAME_PROPOSAL_ID = "proposal_id";
   @SerializedName(SERIALIZED_NAME_PROPOSAL_ID)

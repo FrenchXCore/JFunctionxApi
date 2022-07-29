@@ -28,7 +28,7 @@ import java.io.IOException;
  * SendEnabled maps coin denom to a send_enabled status (whether a denom is sendable).
  */
 @ApiModel(description = "SendEnabled maps coin denom to a send_enabled status (whether a denom is sendable).")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosBankV1beta1SendEnabled {
   public static final String SERIALIZED_NAME_DENOM = "denom";
   @SerializedName(SERIALIZED_NAME_DENOM)

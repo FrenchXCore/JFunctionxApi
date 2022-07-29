@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CommitResponseResultSignedHeaderCommitSignatures
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:08.580695600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:07.698929500+02:00[Europe/Paris]")
 public class CommitResponseResultSignedHeaderCommitSignatures {
   public static final String SERIALIZED_NAME_BLOCK_ID_FLAG = "block_id_flag";
   @SerializedName(SERIALIZED_NAME_BLOCK_ID_FLAG)

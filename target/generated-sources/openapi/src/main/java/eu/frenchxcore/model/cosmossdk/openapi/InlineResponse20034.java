@@ -28,7 +28,7 @@ import java.io.IOException;
  * QueryAnnualProvisionsResponse is the response type for the Query/AnnualProvisions RPC method.
  */
 @ApiModel(description = "QueryAnnualProvisionsResponse is the response type for the Query/AnnualProvisions RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class InlineResponse20034 {
   public static final String SERIALIZED_NAME_ANNUAL_PROVISIONS = "annual_provisions";
   @SerializedName(SERIALIZED_NAME_ANNUAL_PROVISIONS)

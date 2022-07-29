@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * ValidatorSigningInfo defines a validator&#39;s signing info for monitoring their liveness activity.
  */
 @ApiModel(description = "ValidatorSigningInfo defines a validator's signing info for monitoring their liveness activity.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosSlashingV1beta1ValidatorSigningInfo {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)

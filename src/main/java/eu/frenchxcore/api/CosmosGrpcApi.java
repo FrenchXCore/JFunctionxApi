@@ -592,7 +592,6 @@ public class CosmosGrpcApi {
             @NotNull String grantee,
             @NotNull cosmos.authz.v1beta1.Authz.Grant grant
     ) {
-        cosmos.authz.v1beta1.Authz.Grant.newBuilder().set
         return authzMsgStub.grant(cosmos.authz.v1beta1.Tx.MsgGrant.newBuilder().setGranter(granter).setGrantee(grantee).setGrant(grant).build());
     }
 

@@ -32,7 +32,7 @@ import java.util.List;
  * QueryAllowancesResponse is the response type for the Query/Allowances RPC method.
  */
 @ApiModel(description = "QueryAllowancesResponse is the response type for the Query/Allowances RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosFeegrantV1beta1QueryAllowancesResponse {
   public static final String SERIALIZED_NAME_ALLOWANCES = "allowances";
   @SerializedName(SERIALIZED_NAME_ALLOWANCES)

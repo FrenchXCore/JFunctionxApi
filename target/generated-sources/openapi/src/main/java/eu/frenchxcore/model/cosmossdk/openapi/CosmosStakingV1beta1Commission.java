@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Commission defines commission parameters for a given validator.
  */
 @ApiModel(description = "Commission defines commission parameters for a given validator.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1Commission {
   public static final String SERIALIZED_NAME_COMMISSION_RATES = "commission_rates";
   @SerializedName(SERIALIZED_NAME_COMMISSION_RATES)

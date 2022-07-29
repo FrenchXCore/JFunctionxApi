@@ -28,7 +28,7 @@ import java.io.IOException;
  * Delegation represents the bond with tokens held by an account. It is owned by one delegator, and is associated with the voting power of one validator.
  */
 @ApiModel(description = "Delegation represents the bond with tokens held by an account. It is owned by one delegator, and is associated with the voting power of one validator.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-03T14:44:16.849699+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T09:44:15.814924900+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1Delegation {
   public static final String SERIALIZED_NAME_DELEGATOR_ADDRESS = "delegator_address";
   @SerializedName(SERIALIZED_NAME_DELEGATOR_ADDRESS)
