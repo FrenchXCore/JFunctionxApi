@@ -28,7 +28,7 @@ import java.io.IOException;
  * DecCoin defines a token with a denomination and a decimal amount.  NOTE: The amount field is an Dec which implements the custom method signatures required by gogoproto.
  */
 @ApiModel(description = "DecCoin defines a token with a denomination and a decimal amount.  NOTE: The amount field is an Dec which implements the custom method signatures required by gogoproto.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20016Pool {
   public static final String SERIALIZED_NAME_DENOM = "denom";
   @SerializedName(SERIALIZED_NAME_DENOM)

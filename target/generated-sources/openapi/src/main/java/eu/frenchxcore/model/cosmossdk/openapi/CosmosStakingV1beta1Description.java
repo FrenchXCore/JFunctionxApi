@@ -28,7 +28,7 @@ import java.io.IOException;
  * Description defines a validator description.
  */
 @ApiModel(description = "Description defines a validator description.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1Description {
   public static final String SERIALIZED_NAME_MONIKER = "moniker";
   @SerializedName(SERIALIZED_NAME_MONIKER)

@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * DuplicateVoteEvidence contains evidence of a validator signed two conflicting votes.
  */
 @ApiModel(description = "DuplicateVoteEvidence contains evidence of a validator signed two conflicting votes.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20010BlockEvidenceDuplicateVoteEvidence {
   public static final String SERIALIZED_NAME_VOTE_A = "vote_a";
   @SerializedName(SERIALIZED_NAME_VOTE_A)

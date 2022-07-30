@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * CosmosDistributionV1beta1QueryValidatorCommissionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosDistributionV1beta1QueryValidatorCommissionResponse {
   public static final String SERIALIZED_NAME_COMMISSION = "commission";
   @SerializedName(SERIALIZED_NAME_COMMISSION)

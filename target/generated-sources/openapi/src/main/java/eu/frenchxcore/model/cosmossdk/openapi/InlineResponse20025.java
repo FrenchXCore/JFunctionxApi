@@ -29,7 +29,7 @@ import java.io.IOException;
  * QueryEvidenceResponse is the response type for the Query/Evidence RPC method.
  */
 @ApiModel(description = "QueryEvidenceResponse is the response type for the Query/Evidence RPC method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20025 {
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)

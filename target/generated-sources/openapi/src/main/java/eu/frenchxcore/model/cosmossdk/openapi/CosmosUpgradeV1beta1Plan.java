@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Plan specifies information about a planned upgrade and when it should occur.
  */
 @ApiModel(description = "Plan specifies information about a planned upgrade and when it should occur.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosUpgradeV1beta1Plan {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

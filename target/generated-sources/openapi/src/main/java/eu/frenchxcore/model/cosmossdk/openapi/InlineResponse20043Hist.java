@@ -32,7 +32,7 @@ import java.util.List;
  * hist defines the historical info at the given height.
  */
 @ApiModel(description = "hist defines the historical info at the given height.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20043Hist {
   public static final String SERIALIZED_NAME_HEADER = "header";
   @SerializedName(SERIALIZED_NAME_HEADER)

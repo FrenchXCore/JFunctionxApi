@@ -32,7 +32,7 @@ import java.util.List;
  * HistoricalInfo contains header and validator information for a given block. It is stored as part of staking module&#39;s state, which persists the &#x60;n&#x60; most recent HistoricalInfo (&#x60;n&#x60; is set by the staking module&#39;s &#x60;historical_entries&#x60; parameter).
  */
 @ApiModel(description = "HistoricalInfo contains header and validator information for a given block. It is stored as part of staking module's state, which persists the `n` most recent HistoricalInfo (`n` is set by the staking module's `historical_entries` parameter).")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosStakingV1beta1HistoricalInfo {
   public static final String SERIALIZED_NAME_HEADER = "header";
   @SerializedName(SERIALIZED_NAME_HEADER)

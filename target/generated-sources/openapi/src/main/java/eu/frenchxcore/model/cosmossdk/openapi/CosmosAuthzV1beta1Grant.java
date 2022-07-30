@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Grant gives permissions to execute the provide method with expiration time.
  */
 @ApiModel(description = "Grant gives permissions to execute the provide method with expiration time.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosAuthzV1beta1Grant {
   public static final String SERIALIZED_NAME_AUTHORIZATION = "authorization";
   @SerializedName(SERIALIZED_NAME_AUTHORIZATION)

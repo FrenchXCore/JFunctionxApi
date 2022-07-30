@@ -31,7 +31,7 @@ import java.util.List;
  * Deposit defines an amount deposited by an account address to an active proposal.
  */
 @ApiModel(description = "Deposit defines an amount deposited by an account address to an active proposal.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosGovV1beta1Deposit {
   public static final String SERIALIZED_NAME_PROPOSAL_ID = "proposal_id";
   @SerializedName(SERIALIZED_NAME_PROPOSAL_ID)

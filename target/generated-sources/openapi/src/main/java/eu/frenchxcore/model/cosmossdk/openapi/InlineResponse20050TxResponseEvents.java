@@ -31,7 +31,7 @@ import java.util.List;
  * StringEvent defines en Event object wrapper where all the attributes contain key/value pairs that are strings instead of raw bytes.
  */
 @ApiModel(description = "StringEvent defines en Event object wrapper where all the attributes contain key/value pairs that are strings instead of raw bytes.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20050TxResponseEvents {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)

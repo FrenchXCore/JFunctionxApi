@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * QuerySigningInfosResponseIsTheResponseTypeForTheQuerySigningInfosRPCMethod
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class QuerySigningInfosResponseIsTheResponseTypeForTheQuerySigningInfosRPCMethod {
   public static final String SERIALIZED_NAME_INFO = "info";
   @SerializedName(SERIALIZED_NAME_INFO)

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Delegation represents the bond with tokens held by an account. It is owned by one delegator, and is associated with the voting power of one validator.
  */
 @ApiModel(description = "Delegation represents the bond with tokens held by an account. It is owned by one delegator, and is associated with the voting power of one validator.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20038Delegation {
   public static final String SERIALIZED_NAME_DELEGATOR_ADDRESS = "delegator_address";
   @SerializedName(SERIALIZED_NAME_DELEGATOR_ADDRESS)

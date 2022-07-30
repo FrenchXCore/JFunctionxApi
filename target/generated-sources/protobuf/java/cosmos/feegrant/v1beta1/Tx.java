@@ -2757,25 +2757,27 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n cosmos/feegrant/v1beta1/tx.proto\022\027cosm" +
-      "os.feegrant.v1beta1\032\031google/protobuf/any" +
-      ".proto\032\031cosmos_proto/cosmos.proto\"q\n\021Msg" +
-      "GrantAllowance\022\017\n\007granter\030\001 \001(\t\022\017\n\007grant" +
-      "ee\030\002 \001(\t\022:\n\tallowance\030\003 \001(\0132\024.google.pro" +
-      "tobuf.AnyB\021\312\264-\rFeeAllowanceI\"\033\n\031MsgGrant" +
-      "AllowanceResponse\"6\n\022MsgRevokeAllowance\022" +
-      "\017\n\007granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\"\034\n\032Msg" +
-      "RevokeAllowanceResponse2\354\001\n\003Msg\022p\n\016Grant" +
-      "Allowance\022*.cosmos.feegrant.v1beta1.MsgG" +
-      "rantAllowance\0322.cosmos.feegrant.v1beta1." +
-      "MsgGrantAllowanceResponse\022s\n\017RevokeAllow" +
-      "ance\022+.cosmos.feegrant.v1beta1.MsgRevoke" +
-      "Allowance\0323.cosmos.feegrant.v1beta1.MsgR" +
-      "evokeAllowanceResponseB)Z\'github.com/cos" +
-      "mos/cosmos-sdk/x/feegrantb\006proto3"
+      "os.feegrant.v1beta1\032\024gogoproto/gogo.prot" +
+      "o\032\031google/protobuf/any.proto\032\031cosmos_pro" +
+      "to/cosmos.proto\"q\n\021MsgGrantAllowance\022\017\n\007" +
+      "granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022:\n\tallowa" +
+      "nce\030\003 \001(\0132\024.google.protobuf.AnyB\021\312\264-\rFee" +
+      "AllowanceI\"\033\n\031MsgGrantAllowanceResponse\"" +
+      "6\n\022MsgRevokeAllowance\022\017\n\007granter\030\001 \001(\t\022\017" +
+      "\n\007grantee\030\002 \001(\t\"\034\n\032MsgRevokeAllowanceRes" +
+      "ponse2\354\001\n\003Msg\022p\n\016GrantAllowance\022*.cosmos" +
+      ".feegrant.v1beta1.MsgGrantAllowance\0322.co" +
+      "smos.feegrant.v1beta1.MsgGrantAllowanceR" +
+      "esponse\022s\n\017RevokeAllowance\022+.cosmos.feeg" +
+      "rant.v1beta1.MsgRevokeAllowance\0323.cosmos" +
+      ".feegrant.v1beta1.MsgRevokeAllowanceResp" +
+      "onseB)Z\'github.com/cosmos/cosmos-sdk/x/f" +
+      "eegrantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
         });
@@ -2808,6 +2810,7 @@ public final class Tx {
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.protobuf.GoGoProtos.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
   }

@@ -31,7 +31,7 @@ import java.util.List;
  * Fee includes the amount of coins paid in fees and the maximum gas to be used by the transaction. The ratio yields an effective \&quot;gasprice\&quot;, which must be above some miminum to be accepted into the mempool.
  */
 @ApiModel(description = "Fee includes the amount of coins paid in fees and the maximum gas to be used by the transaction. The ratio yields an effective \"gasprice\", which must be above some miminum to be accepted into the mempool.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class CosmosTxV1beta1Fee {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)

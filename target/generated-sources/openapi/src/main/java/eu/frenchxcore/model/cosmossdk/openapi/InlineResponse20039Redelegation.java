@@ -31,7 +31,7 @@ import java.util.List;
  * Redelegation contains the list of a particular delegator&#39;s redelegating bonds from a particular source validator to a particular destination validator.
  */
 @ApiModel(description = "Redelegation contains the list of a particular delegator's redelegating bonds from a particular source validator to a particular destination validator.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-29T12:07:17.959489600+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-30T14:34:33.051705600+02:00[Europe/Paris]")
 public class InlineResponse20039Redelegation {
   public static final String SERIALIZED_NAME_DELEGATOR_ADDRESS = "delegator_address";
   @SerializedName(SERIALIZED_NAME_DELEGATOR_ADDRESS)
